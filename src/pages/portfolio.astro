@@ -1,0 +1,37 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import PostPreviewList from "~/components/PostPreviewList.astro"
+
+import { getCollection } from "astro:content";
+import {useTranslation} from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
+
+import '~/styles/home.css';
+import '~/styles/collection.css'
+
+const t = useTranslation(Astro.currentLocale as Locale);
+
+const projects = await getCollection("portfolio");
+---
+
+<Layout
+		title = "Portfolio"
+		description = "">
+	<section class="home">
+		<h2>{t.portfolio.title}</h2>
+        <div class="collection-container list">
+            {
+                projects.map(project =>
+                    (
+                            <PostPreviewList
+                                    url = {`/portfolio/${project.id}`}
+                                    title = {project.data.title}
+                                    subtitle = {project.data.subtitle}
+                                    image = {project.data.image}
+                                    tags = {project.data.tags}
+                            />
+                    ))
+            }
+        </div>
+	</section>
+</Layout>

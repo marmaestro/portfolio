@@ -1,0 +1,51 @@
+#error {
+    margin: 5rem 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .error-number {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 10rem;
+        color: hsl(var(--text-normal));
+        fill: hsl(var(--text-normal));
+
+        @media screen and (max-width: 800px) {
+            font-size: 5rem;
+        }
+
+        h1 {
+            display: inherit;
+        }
+
+        #bug {
+            position: relative;
+            top: 2rem;
+
+            @media screen and (max-width: 800px) {
+                margin-top: -1rem;
+            }
+        }
+    }
+
+    .error-text {
+        text-align: center;
+        font-weight: 600;
+        letter-spacing: 2px;
+
+        @media screen and (min-width: 800px) {
+            width: 40%;
+        }
+
+        @media screen and (max-width: 800px) {
+            width: 60%
+        }
+
+        h2 {
+            margin: 10px 0;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+---
+import { Footer, Row } from 'studiocms:ui/components';
+import { Icon } from 'astro-icon/components';
+---
+
+<Footer
+        links = {{
+            'Contact': [
+                { label: 'Linkedin', href: 'https://linkedin.com/in/marmaestro' },
+                { label: 'Bluesky', href: 'https://bsky.app/profile/marmaestro.itch.io' },
+            ],
+            'My works': [
+                { label: 'GitHub', href: 'https://github.com/marmaestro' },
+                { label: 'itch.io', href: 'https://marmaestro.itch.io/' },
+            ],
+            'More of it': [
+                { label: 'Medium', href: 'https://medium.com/@marmaestro' },
+                { label: 'Tumblr', href: 'https://filmteapot.tumblr.com/' },
+            ],
+        }}
+        copyright = 'MIT License © 2025 - marmaestro'
+>
+
+    <div slot='brand' class='footer-brand'>
+        <span class='studiocms-footer-text'>
+            <a href = "mailto:marmaestro@pm.me?subject=Contact">marmaestro</a>
+        </span>
+    </div>
+
+    <div slot='socials' class='socials'>
+        <Row>
+           <a href='https://www.linkedin.com/in/marmaestro'>
+               <Icon name = "bi:linkedin"/>
+           </a>
+            <a href='https://github.com/marmaestro'>
+                <Icon name = "bi:github"/>
+            </a>
+            <a href='https://bsky.app/profile/marmaestro.itch.io'>
+                <Icon name = "bi:bluesky"/>
+            </a>
+        </Row>
+    </div>
+</Footer>

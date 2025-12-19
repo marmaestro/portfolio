@@ -1,0 +1,25 @@
+---
+import { Row, Badge } from 'studiocms:ui/components';
+
+import '~/styles/collection.css'
+
+const { title, subtitle, description, url, image, tags } = Astro.props;
+---
+
+<div class="collection-post-preview">
+    <a href={url}>
+        <div>
+            <img src={image.url} alt={image.alt}/>
+            <h1>{title}</h1>
+            <h2>{subtitle}</h2>
+            <p>{description}</p>
+            <Row id="tags-row" gapSize="md">
+                {
+                    tags && tags.map((tag: string) => (
+                            <Badge label={tag} variant="flat" color="mono"/>
+                    ))
+                }
+			</Row>
+		</div>
+    </a>
+</div>

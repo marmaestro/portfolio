@@ -1,0 +1,15 @@
+#languageToggle {
+    display: flex;
+    flex-direction: row;
+}
+
+#languageToggle a {
+    font-size: large;
+    padding: 0 0.5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+#languageToggle a {
+    color: var(--secondary);
+}

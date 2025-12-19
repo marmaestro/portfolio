@@ -1,0 +1,64 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import PostPreviewGrid from '~/components/PostPreviewGrid.astro';
+import PostPreviewList from '~/components/PostPreviewList.astro';
+
+import { getCollection } from "astro:content";
+import { useTranslation } from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
+
+import '~/styles/home.css';
+import '~/styles/collection.css'
+
+const t = useTranslation(Astro.currentLocale as Locale);
+
+const lastPosts = (await getCollection('blog')).sort
+((a, b) =>
+    b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
+
+const posts = (await getCollection('blog')).sort
+((a, b) =>
+    b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout
+		siteName = "marmaestro"
+		title = "Blog"
+		description = "">
+    <section class="home">
+		<h1>{t.blog.title}</h1>
+        <h2>{t.blog.titles.top}</h2>
+        <div class="collection-container grid">
+            {
+                lastPosts.map(post =>
+                    (
+                            <PostPreviewGrid
+                                    url = {`/blog/${post.id}`}
+                                    title = {post.data.title}
+                                    subtitle = {post.data.subtitle}
+                                    description = {post.data.description}
+                                    image = {post.data.image}
+                                    tags = {post.data.tags}
+                            />
+                    ))
+            }
+        </div>
+
+        <h2>{t.blog.titles.all}</h2>
+        <div class="collection-container list">
+            {
+                posts.map(post =>
+                    (
+                            <PostPreviewList
+                                    url = {`/blog/${post.id}`}
+                                    title = {post.data.title}
+                                    subtitle = {post.data.subtitle}
+                                    image = {post.data.image}
+                                    tags = {post.data.tags}
+                            />
+                    ))
+            }
+        </div>
+    </section>
+
+</Layout>

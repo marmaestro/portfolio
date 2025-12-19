@@ -1,0 +1,25 @@
+---
+import Layout from "~/layouts/Layout.astro"
+import { Icon } from 'astro-icon/components';
+import '~/styles/404.css'
+---
+
+<Layout
+        siteName = "marmaestro"
+        title = "404"
+        description = "Page not found."
+>
+    <div id="error">
+        <div class="error-number">
+            <h1>
+                <b>4 </b> <Icon name="bi:bug" id="bug"/> <b> 4</b>
+            </h1>
+        </div>
+        <div class="error-text">
+            <h2>Oops!</h2>
+            <p>
+                We couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all.
+            </p>
+        </div>
+    </div>
+</Layout>

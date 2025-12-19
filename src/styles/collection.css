@@ -1,0 +1,131 @@
+.collection-container {
+    margin: 2rem auto;
+
+    .collection-post-preview {
+        background-color: hsl(var(--background-step-1));
+        backdrop-filter: blur(10px);
+        border-radius: var(--radius-lg);
+        transition:
+                background-color 0.3s ease,
+                filter 0.3s ease;
+
+        a {
+            display: block;
+
+            img {
+                border-radius: var(--radius-md);
+            }
+
+            h1 {
+                font-weight: bold;
+            }
+
+            h2 {
+                font-style: italic;
+            }
+        }
+    }
+
+    .collection-post-preview:hover {
+        background-color: hsl(from hsl(var(--background-step-1)) h s calc(l + 2));
+
+        img {
+            filter: saturate(0.75);
+        }
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1.5em;
+
+    .collection-post-preview {
+
+        a {
+            padding: 2em;
+
+            h1 {
+                font-size: 1.75rem !important;
+                margin-top: 0.7em;
+            }
+
+            h2 {
+                font-size: 1.25rem !important;
+            }
+
+            p {
+                font-size: 1rem !important;
+            }
+
+            #tags-row {
+                margin: 0.75em 0 -0.75em 0;
+            }
+        }
+    }
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+
+    .collection-post-preview {
+        margin-bottom: 1.5em;
+        height: fit-content;
+
+        a {
+            padding: 2em 1.5em;
+
+            img {
+                border-radius: var(--radius-md);
+                max-height: 6em;
+            }
+
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            h2 {
+                font-size: 1rem !important;
+            }
+
+            #tags-row {
+                margin: 0.75em 0 -0.5em 0;
+            }
+
+            #item-row {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+.collection-post {
+    text-align: justify;
+    margin: 3em auto;
+
+    h1 {
+        font-size: 3rem !important;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+        font-style: italic;
+        color: hsl(var(--text-muted));
+    }
+
+    h3 {
+        font-size: 1.25rem !important;
+        font-weight: bold;
+    }
+
+    p {
+        margin-bottom: 1em;
+    }
+
+    img {
+        margin: 1.5em 0;
+    }
+}

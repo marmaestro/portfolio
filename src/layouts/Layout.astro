@@ -1,0 +1,43 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import type { Properties } from "~/types";
+
+import Navbar from '~/components/Navbar.astro';
+import PageFooter from '~/components/PageFooter.astro';
+
+const siteName : string = "marmaestro";
+const { title, description } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = siteName == title ? siteName : `${siteName} | ${title}`;
+
+import "~/styles/global.css";
+---
+
+<!doctype html>
+<html lang = { Astro.currentLocale as lang } >
+<head>
+    <meta charset = "utf-8" />
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1" />
+    <meta name = "generator" content = {Astro.generator} />
+    <title set:html = {pageTitle} />
+    <meta name = "description" content = {description} />
+    <meta property = "og:title" content = {title} />
+    <meta property = "og:type" content = "website" />
+    <meta property = "og:description" content = {description} />
+    <meta property = "og:url" content = {canonicalURL} />
+    <meta property = "og:locale" content = "en_US" />
+    <meta property = "og:site_name" content = {siteName} />
+    <meta name = "generator" content = {Astro.generator} />
+    <ClientRouter/>
+</head>
+<header>
+    <Navbar/>
+</header>
+<body>
+    <slot/>
+</body>
+<footer>
+    <PageFooter/>
+</footer>
+</html>

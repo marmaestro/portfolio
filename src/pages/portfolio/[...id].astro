@@ -1,0 +1,42 @@
+---
+import MarkdownPostLayout from "~/layouts/MarkdownPostLayout.astro";
+
+import { Divider, Badge, Row } from 'studiocms:ui/components';
+
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const portfolio = await getCollection('portfolio');
+    return portfolio.map(project => ({
+        params: { id: project.id },
+        props: { project }
+    }));
+}
+
+const { project } = Astro.props;
+const { Content} = await render(project);
+
+const dateOptions: object = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+};
+
+const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.currentLocale, dateOptions);
+---
+
+<MarkdownPostLayout
+		title = {project.data.title}
+		description = {project.data.description}
+>
+	<section>
+		<Row style="justify-content: space-between; align-items: baseline;">
+			<h1>{project.data.title}</h1>
+            <a href = {project.data.source.url}><Badge variant="outlined" size="sm" label={project.data.source.item}/></a>
+        </Row>
+		<h2 style="text-align: left">{project.data.subtitle}</h2>
+		<Divider>{formattedDate}</Divider>
+        <br>
+		<Content/>
+	</section>
+</MarkdownPostLayout>

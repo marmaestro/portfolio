@@ -1,0 +1,47 @@
+{
+  "name": "eva-astro-starter",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "check": "astro check && biome check",
+    "check:fix": "astro check && biome check --write",
+    "stylelint": "stylelint '**/*.{astro,css}'",
+    "stylelint:fix": "stylelint '**/*.{astro,css}' --fix"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.6",
+    "@astrojs/markdown-remark": "^6.3.9",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/node": "^9.5.1",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astropub/md": "^1.0.0",
+    "@fancyapps/ui": "^6.1.7",
+    "@iconify-json/bi": "^1.2.7",
+    "@studiocms/ui": "^0.4.17",
+    "@tailwindcss/vite": "^4.1.17",
+    "astro": "5.16.4",
+    "astro-icon": "^1.1.5",
+    "astro-webmanifest": "^1.0.0",
+    "help": "^3.0.2",
+    "p-limit": "^7.2.0",
+    "pnpm": "^10.25.0",
+    "react": "^19.2.1",
+    "smartypants": "^0.2.2",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "sharp": "^0.34.5",
+    "stylelint-config-astro": "^2.0.0",
+    "stylelint-config-standard": "^39.0.1"
+  }
+}

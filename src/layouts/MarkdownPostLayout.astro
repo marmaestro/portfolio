@@ -1,0 +1,17 @@
+---
+import Layout from './Layout.astro';
+
+const { title, description } = Astro.props;
+
+import '~/styles/home.css';
+import '~/styles/collection.css';
+---
+
+<Layout
+        siteName = "marmaestro"
+		title = { title }
+		description ={ description }>
+    <section class = "home collection-post">
+        <slot/>
+    </section>
+</Layout>

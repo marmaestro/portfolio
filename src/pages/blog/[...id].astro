@@ -1,0 +1,39 @@
+---
+import MarkdownPostLayout from "~/layouts/MarkdownPostLayout.astro";
+
+import { Divider } from 'studiocms:ui/components';
+
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+    const blog = await getCollection('blog');
+    return blog.map(post => ({
+        params: { id: post.id },
+        props: { post }
+    }));
+}
+
+const { post } = Astro.props;
+const { Content} = await render(post);
+
+const dateOptions: object = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+};
+
+const formattedDate = new Date(post.data.date).toLocaleDateString(Astro.currentLocale, dateOptions);
+---
+
+<MarkdownPostLayout
+    title = {post.data.title}
+    description = {post.data.description}
+>
+    <section>
+		<h1>{post.data.title}</h1>
+        <h2>{post.data.subtitle}</h2>
+        <Divider>{formattedDate}</Divider>
+        <br>
+		<Content/>
+    </section>
+</MarkdownPostLayout>

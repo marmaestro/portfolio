@@ -1,0 +1,44 @@
+@import url('./tailwind.css');
+@import url('./colors.css');
+@import url('./resets.css');
+@import url('./radii.css');
+
+:root {
+    color-scheme: light dark;
+    --font: system-ui, roboto, poppins;
+}
+
+body {
+    background-color: hsl(var(--background-base));
+    font-family: Chivo, Roboto, Poppins, serif;
+    font-size: 1rem;
+    color: hsl(var(--text-normal));
+}
+
+section {
+    margin: auto;
+
+    @media screen and (min-width: 900px) {
+        max-width: 70%;
+    }
+
+    @media screen and (min-width: 600px) and (max-width: 900px) {
+        max-width: 80%;
+    }
+
+    @media screen and (max-width: 600px) {
+        max-width: 90%;
+    }
+}
+
+a {
+    transition: color 0.3s ease;
+}
+
+a:hover, button:hover {
+    color: hsl(var(--primary-hover));
+}
+
+a:is(:focus,:active), button:is(:focus,:active){
+    color: hsl(var(--primary-active));
+}

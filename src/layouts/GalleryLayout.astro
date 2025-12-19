@@ -1,0 +1,21 @@
+---
+import Layout from './Layout.astro';
+
+const { image } = Astro.props;
+
+import "~/styles/gallery.css";
+---
+
+<Layout
+    title = "Gallery"
+    description = "A comprehensive gallery of my photography work.">
+    {
+        image &&    (
+					<>
+						<meta property = "og:image" content = {image.src} />
+						<meta property = "og:image:alt" content = {image.alt} />
+					</>
+        )
+    }
+	<slot/>
+</Layout>
