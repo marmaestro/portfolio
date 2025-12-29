@@ -11,14 +11,15 @@ import '~/styles/collection.css'
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
-const projects = await getCollection("portfolio");
+const projects = (await getCollection("portfolio")).sort
+((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout
-		title = "Portfolio"
-		description = "">
+		title = {t.portfolio.title}
+		description = {t.portfolio.description}>
 	<section class="home">
-		<h2>{t.portfolio.title}</h2>
+		<h1>{t.portfolio.title}</h1>
         <div class="collection-container list">
             {
                 projects.map(project =>
@@ -29,6 +30,7 @@ const projects = await getCollection("portfolio");
                                     subtitle = {project.data.subtitle}
                                     image = {project.data.image}
                                     tags = {project.data.tags}
+                                    pinned = {project.data.pinned}
                             />
                     ))
             }

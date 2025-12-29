@@ -1,9 +1,9 @@
 ---
 import MarkdownPostLayout from "~/layouts/MarkdownPostLayout.astro";
-
 import { Divider, Badge, Row } from 'studiocms:ui/components';
-
 import { getCollection, render } from 'astro:content';
+
+import '~/styles/collection.css';
 
 export async function getStaticPaths() {
     const portfolio = await getCollection('portfolio');
@@ -23,6 +23,8 @@ const dateOptions: object = {
 };
 
 const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.currentLocale, dateOptions);
+
+const roles = project.data.roles;
 ---
 
 <MarkdownPostLayout
@@ -35,6 +37,13 @@ const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.curre
             <a href = {project.data.source.url}><Badge variant="outlined" size="sm" label={project.data.source.item}/></a>
         </Row>
 		<h2 style="text-align: left">{project.data.subtitle}</h2>
+		<Row id="project-roles">
+            {
+                roles.map((role) => (
+						<Badge label={role} variant="flat" color="mono" size="sm"/>
+                ))
+            }
+		</Row>
 		<Divider>{formattedDate}</Divider>
         <br>
 		<Content/>

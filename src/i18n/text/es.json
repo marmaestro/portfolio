@@ -9,7 +9,6 @@
 	"home": {
 		"title": "marmaestro",
 		"description": "Web portfolio de Mar Maestro Momparler",
-		"introduction": "",
 		"previews": {
 			"portfolio": "Algunos de mis proyectos",
 			"blog": "Últimas publicaciones en el blog"
@@ -33,6 +32,20 @@
 	},
 	"about": {
 		"title": "Sobre Mí",
-		"description": "Sección de contacto, y un poquito sobre mí y mi trayectoria."
+		"description": "Sección de contacto, y un poquito sobre mí y mi trayectoria.",
+		"headline": "",
+		"content": [
+
+		],
+		"resume": {
+			"text": "Mira mi currículum",
+			"url": "public/cv_es_marmaestro.pdf"
+		},
+		"error": {
+			"title": "Page not found",
+			"description": "Error 404, página no encontrada.",
+			"oops": "Oops!",
+			"text": "No hemos podido encontrar la página que buscas. Puede haber sido movida o borrada, o puede no haber existido nunca."
+		}
 	}
 }

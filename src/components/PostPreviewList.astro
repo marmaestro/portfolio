@@ -3,7 +3,7 @@ import { Row, Badge } from 'studiocms:ui/components';
 
 import '~/styles/collection.css'
 
-const { title, subtitle, url, image, tags } = Astro.props;
+const { title, subtitle, url, image, tags, pinned } = Astro.props;
 ---
 
 <div class="collection-post-preview">
@@ -11,7 +11,8 @@ const { title, subtitle, url, image, tags } = Astro.props;
         <div>
             <Row id="item-row" gapSize="lg">
                 <div>
-                    <h1>{title}</h1>
+                    <h1>{title} <sup>{pinned ? "⭐" : ""}</sup>
+                    </h1>
                     <h2>{subtitle}</h2>
 					<Row id="tags-row" gapSize="md">
                     {

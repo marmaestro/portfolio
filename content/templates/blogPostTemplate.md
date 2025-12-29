@@ -1,5 +1,5 @@
 ---
-title: 
+title:  
 subtitle: 
 description: 
 date: 
@@ -10,4 +10,4 @@ image:
 tags: [  ] 
 ---
 
-![alt-text](url)
+

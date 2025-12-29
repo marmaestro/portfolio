@@ -1,0 +1,22 @@
+---
+title: Prop Trip
+subtitle: What doesn't kill you is now your weapon, I guess
+description: ""
+date: 2024-02-04
+author: Back to Bits and Punic Goose
+source:
+    url: https://punicgoose.itch.io/prop-trip
+    item: 'itch.io'
+image:
+    url: ../src/img/portfolio/prop-trip.png
+    alt: game cover
+roles: [ 3D art director, game designer, narrative assistant ]
+tags: [ game, game jam ] 
+pinned: False
+---
+
+Eli is a miserable guy that ends up having to fight all kinds of objects inside a weird dream, or nightmare. _Prop Trip_ is a high-speed platformer first-person shooter with high scores, plenty of weaponry, and a load of weird sweets.
+
+Made for the UJI Game Jam 2024 with the theme _"Everything is a weapon"_.
+
+!["game over" screenshot](https://img.itch.zone/aW1hZ2UvMjUxMTA3Ny8xNDkzMTMyMi5qcGc=/original/vj2TEL.jpg)

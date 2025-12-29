@@ -1,0 +1,26 @@
+---
+title: Plomes i Piulades
+subtitle: Learn fun facts about bird species of Valencia by playing
+description: ""
+date: 2024-09-30
+author: Punic Goose
+source:
+    url: https://punicgoose.itch.io/plomes-piulades
+    item: 'itch.io'
+image:
+    url: ../src/img/portfolio/plomes-piulades.png
+    alt: game cover
+roles: [ programmer, game designer ]
+tags: [ game, game jam ] 
+pinned: False
+---
+
+A puzzle game about birds and their peculiar objects.
+
+![in-game screenshot 1](https://img.itch.zone/aW1hZ2UvMjk5NDYwMy8xNzkxOTgxNS5wbmc=/original/TgDYnJ.png)
+
+This game intends to portray the idea of [six degrees of separation](https://en.wikipedia.org/wiki/Six_degrees_of_separation), that everyone is connected to any other person. These birds do favours for one another, and share their objects. In the end, they all know eachother.
+
+Made for the Anima Valencia Game Jam 2024 with the theme _"Webs"_.
+
+![in-game screenshot 2](https://img.itch.zone/aW1hZ2UvMjk5NDYwMy8xNzkxOTgxNy5wbmc=/original/O9JsNI.png)

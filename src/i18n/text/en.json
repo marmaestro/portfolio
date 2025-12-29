@@ -9,7 +9,6 @@
 	"home": {
 		"title": "marmaestro",
 		"description": "Mar Maestro Momparler's portfolio site.",
-		"introduction": "",
 		"previews": {
 			"portfolio": "Some of my Projects",
 			"blog": "Latest Blog Posts"
@@ -33,6 +32,23 @@
 	},
 	"about": {
 		"title": "About Me",
-		"description": "Contact section, and a little more about my trajectory."
+		"description": "Contact section, and a little more about my trajectory.",
+		"headline": "Systems programmer with a focus on clean, reliable code and deep debugging skills. Creativity and functionality are my core.",
+		"content": [
+			"I'm a video game design and development student that loves to learn, create, and teach.",
+			"My passions are video games and music, I'm trying to work on both of them in the future. My dream specialization is creative programming at engine level.",
+			"I make games for university and with my friends, along with other kinds of creative projects."
+		],
+		"profileDescription": "Game programmer and designer",
+		"resume": {
+			"text": "Check out my CV!",
+			"url": "public/cv_en_marmaestro.pdf"
+		}
+	},
+	"error": {
+		"title": "Page not found",
+		"description": "Error 404, page not found.",
+		"oops": "Oops!",
+		"text": "We couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all."
 	}
 }
