@@ -23,8 +23,8 @@ const posts = (await getCollection('blog')).sort
 
 <Layout
 		siteName = "marmaestro"
-		title = "Blog"
-		description = "">
+		title ={t.blog.title}
+		description = {t.blog.description}>
     <section class="home">
 		<h1>{t.blog.title}</h1>
         <h2>{t.blog.titles.top}</h2>

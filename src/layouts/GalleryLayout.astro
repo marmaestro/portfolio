@@ -1,14 +1,14 @@
 ---
 import Layout from './Layout.astro';
 
-const { image } = Astro.props;
+const { title, description, image } = Astro.props;
 
 import "~/styles/gallery.css";
 ---
 
 <Layout
-    title = "Gallery"
-    description = "A comprehensive gallery of my photography work.">
+    title = {title}
+    description = {description}>
     {
         image &&    (
 					<>

@@ -1,13 +1,19 @@
 ---
 import Layout from "~/layouts/Layout.astro"
 import { Icon } from 'astro-icon/components';
+
+import {useTranslation} from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
+
 import '~/styles/404.css'
+
+const t = useTranslation(Astro.currentLocale as Locale);
 ---
 
 <Layout
         siteName = "marmaestro"
-        title = "404"
-        description = "Page not found."
+        title = {t.error.title}
+        description = {t.error.description}
 >
     <div id="error">
         <div class="error-number">
@@ -16,10 +22,8 @@ import '~/styles/404.css'
             </h1>
         </div>
         <div class="error-text">
-            <h2>Oops!</h2>
-            <p>
-                We couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all.
-            </p>
+            <h2>{t.error.oops}</h2>
+            <p>{t.error.text}</p>
         </div>
     </div>
 </Layout>

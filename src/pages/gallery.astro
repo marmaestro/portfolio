@@ -4,11 +4,17 @@ import GalleryLayout from "~/layouts/GalleryLayout.astro";
 import Layout from "~/layouts/Layout.astro";
 
 import { Image } from "astro:assets";
+import {useTranslation} from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
 
 const gallery = import.meta.glob<{ default: ImageMetadata }>("../img/gallery/*.{jpg,jpeg,png,webp}");
+
+const t = useTranslation(Astro.currentLocale as Locale);
 ---
 
-<GalleryLayout>
+<GalleryLayout
+		title = {t.gallery.title}
+		description = {t.gallery.description}>
     <div class = "justified-gallery" id = "photoswipe">
         {
             Object.entries(gallery).map(async ([_path, image], index) => {
