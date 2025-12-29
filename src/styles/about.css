@@ -1,0 +1,33 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    margin: 2em 0;
+
+    #description {
+        width: 55%;
+
+        h3 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+
+        p {
+            text-align: justify;
+            margin-bottom: 0.5em;
+        }
+    }
+
+    #sidebar {
+        width: 30%;
+        font-size: 1.1em;
+
+        #badge {
+            margin: 1em 0;
+            justify-content: center;
+        }
+
+        #profile-picture {
+            border-radius: var(--radius-md);
+        }
+    }
+}

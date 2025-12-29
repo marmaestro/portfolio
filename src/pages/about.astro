@@ -1,13 +1,45 @@
 ---
-import Layout from "~/layouts/Layout.astro"
+import Layout from "~/layouts/Layout.astro";
+
+import { Row, Badge, User } from "studiocms:ui/components";
+import { Icon } from 'astro-icon/components';
+import type { Locale } from "~/i18n/constants.ts";
+
+import { useTranslation } from "~/i18n/utils.ts";
+import { SocialLinks } from "~/config/site.ts";
+import profilePicture from "~/img/icon.png";
+
+import '~/styles/home.css';
+import '~/styles/about.css';
+
+const t = useTranslation(Astro.currentLocale as Locale);
+
+const description = t.about.content;
 ---
 
 <Layout
 		siteName = "marmaestro"
-		title = "About Me"
-		description = ""
+		title = {t.about.title}
+		description = {t.about.description}
 >
 	<section class="home">
-        AAAAAAAAAAAAA
+        <div class="about">
+            <div id="description">
+				<h1>{t.about.title}</h1>
+                <h3>{t.about.headline}</h3>
+                {
+                    description.map(par =>
+                        (
+                            <p>{par}</p>
+                        ))
+                }
+            </div>
+            <div id="sidebar">
+				<User name='Mar Maestro Momparler' loading='eager' description={t.about.profileDescription} avatar={profilePicture} />
+				<a href={t.about.resume.url}>
+                    <Badge id="badge" label={t.about.resume.text} variant="flat" />
+				</a>
+                <img id="profile-picture" src="src/img/picture.jpeg" alt=""/>
+        </div>
 	</section>
 </Layout>
