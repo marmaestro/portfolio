@@ -1,9 +1,9 @@
 ---
 import MarkdownPostLayout from "~/layouts/MarkdownPostLayout.astro";
-
-import { Divider } from 'studiocms:ui/components';
-
+import { Divider, Row, Badge } from 'studiocms:ui/components';
 import { getCollection, render } from 'astro:content';
+
+import '~/styles/collection.css';
 
 export async function getStaticPaths() {
     const blog = await getCollection('blog');
@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content} = await render(post);
+const tags = post.data.tags;
 
 const dateOptions: object = {
     year: "numeric",
@@ -32,6 +33,13 @@ const formattedDate = new Date(post.data.date).toLocaleDateString(Astro.currentL
     <section>
 		<h1>{post.data.title}</h1>
         <h2>{post.data.subtitle}</h2>
+		<Row id="project-roles">
+            {
+                tags.map((tag) => (
+						<a href=""><Badge label={tag} variant="flat" color="mono" size="sm"/></a>
+                ))
+            }
+		</Row>
         <Divider>{formattedDate}</Divider>
         <br>
 		<Content/>

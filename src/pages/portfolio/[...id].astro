@@ -15,6 +15,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { Content} = await render(project);
+const roles = project.data.roles;
 
 const dateOptions: object = {
     year: "numeric",
@@ -23,8 +24,6 @@ const dateOptions: object = {
 };
 
 const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.currentLocale, dateOptions);
-
-const roles = project.data.roles;
 ---
 
 <MarkdownPostLayout
