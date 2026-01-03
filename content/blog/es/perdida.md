@@ -10,8 +10,8 @@ image:
 tags: [ Refugio 101, essay ] 
 ---
 
-Emitido en el programa [11x19 (minuto 29:18)](https://go.ivoox.com/rf/124780148) de Refugio 101.
-Incluido en el programa Nuevos Niveles #2 de Sala Arcade.
+Emitido en el programa [**_11x19 | El puzzle de la pérdida_**](https://go.ivoox.com/rf/124780148) de [**Refugio 101**](../../portfolio/refugio101).
+Incluido en el programa [**_Nuevos Niveles #1_**](https://freetoplaylab.com/nuevos-niveles/) de [**Sala Arcade**](https://freetoplaylab.com/podcast/).
 
 ![Inicio de GRIS.](../../../src/img/blog/perdida/gris-wide.png)
 
@@ -26,23 +26,23 @@ Desde que empecé la carrera, he jugado a muchos juegos indie.
 Es sorprendente la cantidad de juegos que tratan, de una forma u otra, la pérdida o el cambio forzado de paradigma.
 Pararme a pensar en ellos (así como jugarlos en su momento) me ha ayudado con mi duelo, y quiero hablar de ellos.
 
-Primero quiero mencionar que he hecho mucha fuerza para no estar media hora hablando de los Yakuza (especialmente del 0) para evitaros los espóileres, y para demostraros que sé hablar de más cosas.
+Primero quiero mencionar que he hecho mucha fuerza para no estar media hora hablando de los _Yakuza_ (especialmente del 0) para evitaros los espóileres, y para demostraros que sé hablar de más cosas.
 
 ### GRIS
 
-Si habéis pasado por narrativa, lleváis suficiente tiempo escuchando el Refugio 101, o lo habéis jugado, sabréis perfectamente de qué va Gris.
-Gris, de Nómada Studio, ha sido el centro de conversaciones sobre el duelo desde que salió en 2018.
+Si habéis pasado por narrativa, lleváis suficiente tiempo escuchando el Refugio 101, o lo habéis jugado, sabréis perfectamente de qué va _GRIS_.
+_GRIS_, de Nómada Studio, ha sido el centro de conversaciones sobre el duelo desde que salió en 2018.
 Y es que retrata perfectamente las fases del duelo a través de sus mecánicas y ambientación.
 
 Cada uno lleva el duelo de forma distinta, y lo que para alguien cuesta de aceptar dos minutos, otros tardan años en comprender.
 Además de que no es una historia lineal: volver atrás porque realmente no hemos superado una fase es completamente normal.
 No voy a entrar en detalles porque todos lo tenemos bien conocido (y si no, juégalo).
 
-![Una de las persecuciones en GRIS.](../../../src/img/blog/perdida/gris-bird.jpg)
+![Una de las persecuciones en _GRIS_.](../../../src/img/blog/perdida/gris-bird.jpg)
 
 ### Florence
 
-Florence, desarrollado por Mountains y sacado en 2018, relata la pérdida de una forma distinta.
+_Florence_, desarrollado por Mountains y sacado en 2018, relata la pérdida de una forma distinta.
 En esta novela visual, también conocidísima y muy recomendada, seguimos a Florence Yeoh en su viaje para encontrarse a sí misma.
 El juego trata desde cómo se encuentra a ella misma y retoma sus pasiones gracias a una relación nueva hasta la muerte de esta y el duelo que pasa después.
 
@@ -50,11 +50,11 @@ No obstante, la narración interpreta esto no solamente como una pérdida, sino 
 El juego concluye con Florence habiendo aprendido de su relación y su vida antes de esta, y recupera sus ganas de vivir y perseguir su sueño.
 El final de algo importante en nuestras vidas no es el final de todo.
 
-![Uno de los momentos iniciales de Florence.](../../../src/img/blog/perdida/florence.jpg)
+![Uno de los momentos iniciales de _Florence_.](../../../src/img/blog/perdida/florence.jpg)
 
 ### Assemble With Care
 
-En Assemble With Care (Ustwo Games, 2019), jugamos como María, una restauradora de antigüedades nómada.
+En _Assemble With Care_ (Ustwo Games, 2019), jugamos como María, una restauradora de antigüedades nómada.
 Pero no me quiero centrar en ella, sino en la gente para la que arregla objetos.
 María trata con el alcalde del pueblo que visita, que está superando la reciente pérdida de su mujer, y repara su caja de música.
 También ayuda a su hija, a quien se le ha roto su Game Boy, y ayuda a ambos a mejorar su relación padre-hija.
@@ -63,7 +63,7 @@ En otra ocasión, ayuda a la propietaria de un café a arreglar distintos objeto
 A lo largo del juego, María ayuda con sus palabras y su trabajo a la gente con la que se encuentra.
 Todos han perdido algo de alguna forma, y me parece una forma muy bonita de enseñar cómo la gente crece y se enfrenta de distintas maneras a los giros de la vida.
 
-![Momento en el que nos piden restaurar una consola en Assemble With Care.](../../../src/img/blog/perdida/assemble-with-care.png)
+![Momento en el que nos piden restaurar una consola en _Assemble With Care_.](../../../src/img/blog/perdida/assemble-with-care.png)
 
 ### Monument Valley
 
@@ -74,7 +74,7 @@ Es un relato sobre lo que viene después de la pérdida.
 Cada vez que lo juego me afecta un poquito más esta historia, seguramente porque cada vez he pasado más tiempo viva.
 Al fin y al cabo, aunque no sea tan exagerado como no saber qué ha pasado antes del ahora y de quién has sido hasta este momento, cada día nos movemos hacia adelante buscando quiénes somos y cuál es nuestro lugar.
 
-![Momento contemplativo en Monument Valley (Panoramic Edition).](../../../src/img/blog/perdida/monument-valley.png)
+![Momento contemplativo en _Monument Valley (Panoramic Edition)_.](../../../src/img/blog/perdida/monument-valley.png)
 
 ## El duelo no desaparece, nosotros crecemos
 
