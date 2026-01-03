@@ -39,7 +39,7 @@
 		],
 		"resume": {
 			"text": "Mira mi currículum",
-			"url": "public/cv_es_marmaestro.pdf"
+			"url": "cv_es_marmaestro.pdf"
 		},
 		"error": {
 			"title": "Page not found",
