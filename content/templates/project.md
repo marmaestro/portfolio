@@ -1,15 +1,15 @@
 ---
-title: 
-subtitle: 
-description:
+title: ''
+subtitle: ''
+description: ''
 date: 
 author: marmaestro
 source:
     url: 
-    item: 'itch.io'
+    item: ''
 image:
     url: ../src/img/portfolio/
-    alt: game cover
+    alt: ''
 roles: [  ]
 tags: [  ] 
 pinned: False
