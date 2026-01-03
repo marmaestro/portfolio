@@ -7,7 +7,7 @@ author: marmaestro
 image:
     url: ../src/img/blog/perdida/monument-valley.png
     alt: 'Screenshot from Monument Valley (Panoramic Edition)'
-tags: [ Refugio 101, essay ] 
+tags: [ Refugio 101, video games, essay, philosophy ] 
 ---
 
 Emitido en el programa [**_11x19 | El puzzle de la pérdida_**](https://go.ivoox.com/rf/124780148) de [**Refugio 101**](../../portfolio/refugio101).
@@ -20,7 +20,7 @@ No es algo que se supere de un día para otro, ni es un paseo agradable.
 Pero ser seres vivos implica que eventualmente morimos, igual que los seres vivos de nuestro entorno.
 Eventualmente todos nos vamos. No pretendo incitar al nihilismo, pero pensar en esto suele hacerme más fácil el camino.
 
-## Juegos sobre la pérdida y el camino que sigue
+### Juegos sobre la pérdida y el camino que sigue
 
 Desde que empecé la carrera, he jugado a muchos juegos indie.
 Es sorprendente la cantidad de juegos que tratan, de una forma u otra, la pérdida o el cambio forzado de paradigma.
@@ -28,10 +28,10 @@ Pararme a pensar en ellos (así como jugarlos en su momento) me ha ayudado con m
 
 Primero quiero mencionar que he hecho mucha fuerza para no estar media hora hablando de los _Yakuza_ (especialmente del 0) para evitaros los espóileres, y para demostraros que sé hablar de más cosas.
 
-### GRIS
+#### GRIS
 
 Si habéis pasado por narrativa, lleváis suficiente tiempo escuchando el Refugio 101, o lo habéis jugado, sabréis perfectamente de qué va _GRIS_.
-_GRIS_, de Nómada Studio, ha sido el centro de conversaciones sobre el duelo desde que salió en 2018.
+[_GRIS_](https://nomada.studio/gris-game/), de Nómada Studio, ha sido el centro de conversaciones sobre el duelo desde que salió en 2018.
 Y es que retrata perfectamente las fases del duelo a través de sus mecánicas y ambientación.
 
 Cada uno lleva el duelo de forma distinta, y lo que para alguien cuesta de aceptar dos minutos, otros tardan años en comprender.
@@ -40,9 +40,9 @@ No voy a entrar en detalles porque todos lo tenemos bien conocido (y si no, jué
 
 ![Una de las persecuciones en _GRIS_.](../../../src/img/blog/perdida/gris-bird.jpg)
 
-### Florence
+#### Florence
 
-_Florence_, desarrollado por Mountains y sacado en 2018, relata la pérdida de una forma distinta.
+[_Florence_](https://annapurnainteractive.com/en/games/florence), desarrollado por Mountains y sacado en 2018, relata la pérdida de una forma distinta.
 En esta novela visual, también conocidísima y muy recomendada, seguimos a Florence Yeoh en su viaje para encontrarse a sí misma.
 El juego trata desde cómo se encuentra a ella misma y retoma sus pasiones gracias a una relación nueva hasta la muerte de esta y el duelo que pasa después.
 
@@ -52,9 +52,9 @@ El final de algo importante en nuestras vidas no es el final de todo.
 
 ![Uno de los momentos iniciales de _Florence_.](../../../src/img/blog/perdida/florence.jpg)
 
-### Assemble With Care
+#### Assemble With Care
 
-En _Assemble With Care_ (Ustwo Games, 2019), jugamos como María, una restauradora de antigüedades nómada.
+En [_Assemble With Care_](https://ustwogames.co.uk/our-games/assemble-with-care/) (Ustwo Games, 2019), jugamos como María, una restauradora de antigüedades nómada.
 Pero no me quiero centrar en ella, sino en la gente para la que arregla objetos.
 María trata con el alcalde del pueblo que visita, que está superando la reciente pérdida de su mujer, y repara su caja de música.
 También ayuda a su hija, a quien se le ha roto su Game Boy, y ayuda a ambos a mejorar su relación padre-hija.
@@ -65,9 +65,9 @@ Todos han perdido algo de alguna forma, y me parece una forma muy bonita de ense
 
 ![Momento en el que nos piden restaurar una consola en _Assemble With Care_.](../../../src/img/blog/perdida/assemble-with-care.png)
 
-### Monument Valley
+#### Monument Valley
 
-Monument Valley también de Ustwo Games es uno de mis juegos favoritos y, aunque extremadamente obtusa y ligera, su historia me encanta.
+_Monument Valley_(https://ustwogames.co.uk/our-games/monument-valley/) también de Ustwo Games es uno de mis juegos favoritos y, aunque extremadamente obtusa y ligera, su historia me encanta.
 A través de pequeñas conexiones descubrimos junto a Ida, la protagonista, quién es, qué hizo en el pasado, y cómo ha llegado a dónde está.
 Es un relato sobre lo que viene después de la pérdida.
 
@@ -76,7 +76,7 @@ Al fin y al cabo, aunque no sea tan exagerado como no saber qué ha pasado antes
 
 ![Momento contemplativo en _Monument Valley (Panoramic Edition)_.](../../../src/img/blog/perdida/monument-valley.png)
 
-## El duelo no desaparece, nosotros crecemos
+### El duelo no desaparece, nosotros crecemos
 
 Con estos cuatro juegos que tratan la pérdida de formas distintas, quería hablaros de lo que es para mí el duelo y qué me ha ayudado con él.
 Me pasa mucho que, cuando algo cambia en mi entorno, me olvido de ello.
