@@ -1,12 +1,11 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 
-import { Row, Badge, User } from "studiocms:ui/components";
-import { Icon } from 'astro-icon/components';
+import { Badge } from 'studiocms:ui/components/badge';
+import { User } from 'studiocms:ui/components/user';
 import type { Locale } from "~/i18n/constants.ts";
 
 import { useTranslation } from "~/i18n/utils.ts";
-import { SocialLinks } from "~/config/site.ts";
 import profilePicture from "~/img/icon.png";
 
 import '~/styles/home.css';

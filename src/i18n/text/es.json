@@ -34,9 +34,7 @@
 		"title": "Sobre Mí",
 		"description": "Sección de contacto, y un poquito sobre mí y mi trayectoria.",
 		"headline": "",
-		"content": [
-
-		],
+		"content": [ "" ],
 		"resume": {
 			"text": "Mira mi currículum",
 			"url": "cv_es_marmaestro.pdf"

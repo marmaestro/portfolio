@@ -1,24 +1,18 @@
 ---
-import { ThemeToggle, Icon } from 'studiocms:ui/components';
 import { Row } from 'studiocms:ui/components';
+import { WebsiteLinks } from '~/config/site.ts';
+import { Toggle } from 'astro-theme-toggle/components';
 
 import NavbarLink from '~/components/NavbarLink.astro';
-import { site, WebsiteLinks } from '~/config/site.ts';
 
 import '~/styles/navbar.css'
 ---
 
 <Row id='navbar'>
-    <ThemeToggle>
-        <div slot='dark'>
-            <Icon name='moon' width={24} height={24} slot='dark' />
-        </div>
-        <div slot='light'>
-            <Icon name='sun' width={24} height={24} slot='light' />
-        </div>
-    </ThemeToggle>
-
-    <Row id='nav-items' gapSize='md'>
+    <div id="theme-toggle">
+		<Toggle/>
+    </div>
+	<Row>
         {
             WebsiteLinks.map((link) => (
                     <NavbarLink
