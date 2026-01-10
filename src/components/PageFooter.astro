@@ -1,9 +1,11 @@
 ---
 import { Footer, Row } from 'studiocms:ui/components';
 import { Icon } from 'astro-icon/components';
+
+import '~/styles/footer.css';
 ---
 
-<Footer
+<Footer id="footer"
         links = {{
             'Contact': [
                 { label: 'Linkedin', href: 'https://linkedin.com/in/marmaestro' },
@@ -13,10 +15,10 @@ import { Icon } from 'astro-icon/components';
                 { label: 'GitHub', href: 'https://github.com/marmaestro' },
                 { label: 'itch.io', href: 'https://marmaestro.itch.io/' },
             ],
-            'More of it': [
+            /*'More of it': [
                 { label: 'Medium', href: 'https://medium.com/@marmaestro' },
                 { label: 'Tumblr', href: 'https://filmteapot.tumblr.com/' },
-            ],
+            ],*/
         }}
         copyright = 'MIT License © 2025 - marmaestro'
 >
