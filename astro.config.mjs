@@ -7,15 +7,14 @@ import studiocmsui from '@studiocms/ui';
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-	siteName: "marmaestro",
+    siteName: "marmaestro",
     site: "https://marmaestro.dev/",
-	prefetch: true,
-	favicon: "/wren-icon.png",
-	vite: {
-		ssr: {
-			noExternal: [ "smartypants" ],
-		},
-		plugins: [ tailwindcss() ]
-	},
-    integrations: [ icon(), studiocmsui() ],
+    prefetch: true,
+    vite: {
+        ssr: {
+            noExternal: [ "smartypants" ],
+        },
+        plugins: [ tailwindcss() ]
+    },
+    integrations: [icon(), studiocmsui()],
 });
