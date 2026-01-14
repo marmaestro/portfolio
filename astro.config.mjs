@@ -5,6 +5,7 @@ import { defineConfig } from "astro/config";
 import icon from "astro-icon";
 import studiocmsui from '@studiocms/ui';
 import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
 
 export default defineConfig({
     siteName: "marmaestro",
@@ -16,5 +17,5 @@ export default defineConfig({
         },
         plugins: [ tailwindcss() ]
     },
-    integrations: [icon(), studiocmsui()],
+    integrations: [icon(), studiocmsui(), react()],
 });

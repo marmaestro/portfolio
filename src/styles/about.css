@@ -21,13 +21,40 @@
         width: 30%;
         font-size: 1.1em;
 
+        p {
+            text-align: center;
+            padding-top: .75em;
+        }
+
         #badge {
             margin: 1em 0;
             justify-content: center;
         }
 
-        #profile-picture {
+        .card {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-side {
+            backface-visibility: hidden;
+            position: absolute;
+        }
+
+        .back {
+            transform: rotateY(180deg);
+        }
+
+        .about-picture {
             border-radius: var(--radius-md);
+            backface-visibility: hidden;
         }
     }
 }
+
