@@ -1,10 +1,5 @@
 #footer {
     background: hsl(var(--background-step-1));
-
-    #languageToggle {
-        display: flex;
-        flex-direction: row;
-    }
 }
 
 

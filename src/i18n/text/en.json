@@ -4,14 +4,41 @@
 		"blog": "Blog",
 		"projects": "Projects",
 		"gallery": "Gallery",
-		"about": "About"
+		"intro": "About"
 	},
 	"home": {
 		"title": "marmaestro",
 		"description": "Mar Maestro Momparler's portfolio site.",
-		"previews": {
-			"portfolio": "Some of my Projects",
-			"blog": "Latest Blog Posts"
+		"intro": {
+			"title": "Hi, I'm Mar Maestro!",
+			"subtitle": "Game Developer, Designer, and Student.",
+			"body": [
+				"1",
+				"2",
+				"3"
+			],
+			"image": {
+				"url": "placeholders/banner.png",
+				"alt": "Placeholder image"
+			}
+		},
+		"skills": {
+			"title": "My Skills",
+			"body": "",
+			"list": [ "Unity", "Godot", "C#", "C++" ]
+		},
+		"portfolio": {
+			"title": "What I've been working on",
+			"body": ""
+		},
+		"contact": {
+			"title": "Let's create something together",
+			"body": "Feel free to  reach out if you're looking for a developer, have a question, or just want to connect.",
+			"message": "Be it a formal mail or a DM somewhere I am.",
+			"image": {
+				"url": "placeholders/banner.png",
+				"alt": "Placeholder image"
+			}
 		}
 	},
 	"blog": {
@@ -33,17 +60,26 @@
 	"about": {
 		"title": "About Me",
 		"description": "Contact section, and a little more about my trajectory.",
-		"headline": "Systems programmer with a focus on clean, reliable code and deep debugging skills. Creativity and functionality are my core.",
+		"headline": "Systems architect, game designer, bird lover.",
 		"content": [
-			"I'm a video game design and development student that loves to learn, create, and teach.",
-			"My passions are video games and music, I'm trying to work on both of them in the future. My dream specialization is creative programming at engine level.",
-			"I make games for university and with my friends, along with other kinds of creative projects."
+			"I'm a video game design and development student that loves to learn, create, and teach. My strength is programming, but I also enjoy creating, whether it be a system to implement, a plot to unravel or a mechanic to balance.",
+			"I make games for university and with my friends, along with other kinds of creative projects. You may see that I did indeed not code for most of my early projects. In the end, I'm a multidisciplinary programmer, ready for whatever is needed from my colleagues in other teams.",
+			"I love sharing my passions and feelings, and hearing about others'. Creating games is the best ways to do communicate this."
 		],
 		"profileDescription": "Game programmer and designer",
 		"resume": {
 			"text": "Check out my CV!",
-			"url": "cv_en_marmaestro.pdf"
+			"url": "cv/cv_en_marmaestro.pdf"
 		}
+	},
+	"contact": {
+		"title": "Get in Contact",
+		"name": "Name",
+		"email": "Email Address",
+		"message": "Message",
+		"subject": "Porfolio Contact Form [EN]",
+		"send": "Send",
+		"warning": "This field is required."
 	},
 	"error": {
 		"title": "Page not found",

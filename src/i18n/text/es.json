@@ -4,7 +4,7 @@
 		"blog": "Blog",
 		"projects": "Proyectos",
 		"gallery": "Galería",
-		"about": "Sobre Mí"
+		"intro": "Sobre Mí"
 	},
 	"home": {
 		"title": "marmaestro",
@@ -30,14 +30,23 @@
 		"title": "Galería",
 		"description": "Mi trabajo de fotografía analógica. Disparo como hobby con una Nikon FM-2."
 	},
-	"about": {
+	"intro": {
 		"title": "Sobre Mí",
 		"description": "Sección de contacto, y un poquito sobre mí y mi trayectoria.",
 		"headline": "",
 		"content": [ "" ],
 		"resume": {
 			"text": "Mira mi currículum",
-			"url": "cv_es_marmaestro.pdf"
+			"url": "es/cv_es_marmaestro.pdf"
+		},
+		"contact": {
+			"title": "Entremos en contacto",
+			"name": "Nombre",
+			"email": "Dirección de correo electrónico",
+			"message": "Mensaje",
+			"subject": "Porfolio Contact Form [ES]",
+			"send": "Enviar",
+			"warning": "Este campo es obligatorio."
 		},
 		"error": {
 			"title": "Page not found",

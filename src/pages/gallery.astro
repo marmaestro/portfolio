@@ -15,7 +15,7 @@ const t = useTranslation(Astro.currentLocale as Locale);
 <GalleryLayout
 		title = {t.gallery.title}
 		description = {t.gallery.description}>
-    <div class = "justified-gallery" id = "photoswipe">
+    <span class = "justified-gallery" id = "photoswipe">
         {
             Object.entries(gallery).map(async ([_path, image], index) => {
                 const { default: imageData } = await image();
@@ -37,7 +37,7 @@ const t = useTranslation(Astro.currentLocale as Locale);
                 );
             })
         }
-    </div>
+    </span>
 </GalleryLayout>
 
 <script>

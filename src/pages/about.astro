@@ -6,13 +6,13 @@ import { User } from 'studiocms:ui/components/user';
 import type { Locale } from "~/i18n/constants.ts";
 
 import { useTranslation } from "~/i18n/utils.ts";
-import profilePicture from "~/img/icon.png";
+import ContactForm from '~/components/contact.jsx';
+import profilePicture from "public/favicon/favicon.svg";
 
-import '~/styles/home.css';
+import '~/styles/section.css';
 import '~/styles/about.css';
 
 const t = useTranslation(Astro.currentLocale as Locale);
-
 const description = t.about.content;
 ---
 
@@ -21,24 +21,39 @@ const description = t.about.content;
 		title = {t.about.title}
 		description = {t.about.description}
 >
-	<section class="home">
-        <div class="about">
-            <div id="description">
-				<h1>{t.about.title}</h1>
-                <h3>{t.about.headline}</h3>
-                {
-                    description.map(par =>
-                        (
-                            <p>{par}</p>
-                        ))
-                }
+
+	<section class="section about">
+        <div id="description">
+            <h1>{t.about.title}</h1>
+            <h3>{t.about.headline}</h3>
+            {
+                description.map(par =>
+                    (
+                        <p>{par}</p>
+                    ))
+            }
+            <br><br>
+            <h3>{t.contact.title}</h3>
+            <ContactForm <!--client:load--> />
+        </div>
+
+        <div id="sidebar">
+            <User name='Mar Maestro Momparler' loading='eager' description={t.about.profileDescription} avatar={profilePicture} />
+            <a href={t.about.resume.url} target="_blank" rel="noopener noreferrer">
+                <Badge id="badge" label={t.about.resume.text} variant="outlined" />
+            </a>
+            <br>
+            <div class='card'>
+                <div class='card-side front'>
+                    <img class='about-picture' src="src/img/about/mar.jpeg" alt=""/>
+                </div>
+                <div class='card-side back'>
+                    <a href={t.about.resume.url} target="_blank" rel="noopener noreferrer">
+                        <img class='about-picture' src="src/img/about/wren.png" alt=""/>
+                    </a>
+                </div>
             </div>
-            <div id="sidebar">
-				<User name='Mar Maestro Momparler' loading='eager' description={t.about.profileDescription} avatar={profilePicture} />
-				<a href={t.about.resume.url}>
-                    <Badge id="badge" label={t.about.resume.text} variant="flat" />
-				</a>
-                <img id="profile-picture" src="src/img/picture.jpeg" alt=""/>
+            <p><a href='mailto:marmaestro@pm.me'>marmaestro@pm.me</a></p>
         </div>
 	</section>
 </Layout>

@@ -8,6 +8,10 @@
     --font: system-ui, roboto, poppins;
 }
 
+::selection {
+    background-color: hsl(from hsl(var(--primary-active)) h s l / 0.45);
+}
+
 body {
     background-color: hsl(var(--background-base));
     font-family: Chivo, Roboto, Poppins, serif;
@@ -31,14 +35,33 @@ section {
     }
 }
 
-a {
-    transition: color 0.3s ease;
+a, button {
+    transition:
+            background-color 0.3s ease,
+            color 0.3s ease;
 }
 
-a:hover, button:hover {
+a:hover {
     color: hsl(var(--primary-hover));
 }
 
-a:is(:focus,:active), button:is(:focus,:active){
+a:is(:focus,:active) {
     color: hsl(var(--primary-active));
+}
+
+button {
+    border-radius: var(--radius-md);
+    background-color: hsl(var(--background-step-1));
+}
+
+button:hover {
+    background-color: hsl(from hsl(var(--background-step-1)) h s calc(l + 2));
+    color: hsl(var(--primary-hover));
+    cursor: pointer;
+}
+
+button:is(:focus,:active){
+    background-color: hsl(from hsl(var(--background-step-1)) h s calc(l + 3));
+    color: hsl(var(--primary-active));
+    cursor: pointer;
 }
