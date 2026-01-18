@@ -1,6 +1,6 @@
 ---
 import Layout from "~/layouts/Layout.astro"
-import PostPreview from '~/components/PostPreview.astro';
+import ProjectPreview from "~/components/ProjectPreview.astro";
 
 import { getCollection } from "astro:content";
 import { useTranslation } from "~/i18n/utils.ts";
@@ -14,8 +14,6 @@ import { Badge } from 'studiocms:ui/components/badge';
 import '~/styles/section.css';
 import '~/styles/collection.css';
 import '~/styles/home.css';
-import {Masonry} from "astro-masonry";
-import ProjectPreview from "~/components/ProjectPreview.astro";
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
@@ -36,54 +34,58 @@ const skills = t.home.skills.list;
         description = {t.home.description}
 >
     <!-- Introduction -->
-    <section class="section introduction">
-        <h1>{t.home.intro.title}</h1>
-        <h2>{t.home.intro.subtitle}</h2>
+    <section class='section introduction'>
+        <h1 id='title'>{t.home.intro.title}</h1>
+        <h1 id='subtitle'>{t.home.intro.subtitle}</h1>
         <!--<Image src={} alt={t.home.intro.image.alt} loading="eager" />-->
         <div class="about-body">
             {
-                intro.map(paragraph => ( <p>{paragraph}</p> ))
+                intro.map(paragraph => ( <p class='muted'>{paragraph}</p> ))
             }
         </div>
     </section>
 
     <!-- Skill set -->
-    <section class="section skillset">
-        <h2>{t.home.skills.title}</h2>
-        <p class="muted">{t.home.skills.body}</p>
-        {
-            skills.map(skill => ( <Badge label={skill} variant="flat" size="lg" icon:="bi:link" /> ))
-        }
+    <section class='section skillset'>
+        <h1>{t.home.skills.title}</h1>
+        <p class='muted'>{t.home.skills.body}</p>
+        <div>
+            {
+                skills.map(skill => ( <Badge label={skill} variant="flat" size="lg" icon:="bi:link" /> ))
+            }
+		</div>
     </section>
 
     <!-- Portfolio preview -->
-    <section class="section portfolio-preview">
-        <h2>{t.home.portfolio.title}</h2>
-        <p>{t.home.portfolio.body}</p>
+    <section class='section portfolio-preview'>
+        <h1>{t.home.portfolio.title}</h1>
+        <p class='muted'>{t.home.portfolio.body}</p>
 
         <div class="collection-container grid">
-            {
-                projects.map(project =>
-                    (
-                            <PostPreview
-                                    url = {`/portfolio/${project.id}`}
-                                    title = {project.data.title}
-                                    subtitle = {project.data.subtitle}
-                                    image = {project.data.image}
-                                    tags = {project.data.tags}
-                            />
-                    ))
-            }
+			<ProjectPreview
+					url = {`/portfolio/${projects[0].id}`}
+					title = {projects[0].data.title}
+					description = {projects[0].data.brief}
+					image = {projects[0].data.image}
+					tags = {projects[0].data.tags}
+			/>
+			<ProjectPreview
+					url = {`/portfolio/${projects[1].id}`}
+					title = {projects[1].data.title}
+					description = {projects[1].data.brief}
+					image = {projects[1].data.image}
+					tags = {projects[1].data.tags}
+			/>
         </div>
     </section>
 
     <!-- Contact -->
     <section class="section contact">
-		<h2>{t.home.contact.title}</h2>
+		<h1>{t.home.contact.title}</h1>
         <div id="contact-grid">
             <div>
-				<p>{t.home.contact.body}</p>
-				<p>{t.home.contact.message}</p>
+				<p class='muted'>{t.home.contact.body}</p>
+				<p class='muted'>{t.home.contact.message}</p>
 				<!-- TODO: Add socials prompt -->
             </div>
 			<ContactForm /> <!--TODO: Add "client:load" on deployment !!-->

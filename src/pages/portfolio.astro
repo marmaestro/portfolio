@@ -21,7 +21,6 @@ const projects = (await getCollection('portfolio')).sort
 		description = {t.portfolio.description}>
 
 	<section class='section'>
-		<!--<h1>{t.portfolio.title}</h1>-->
 
 		<Masonry sortByHeight={true}
 				 class='collection grid portfolio'
@@ -37,7 +36,7 @@ const projects = (await getCollection('portfolio')).sort
             {
                 projects.map(project =>
                     (
-							<ProjectPreview
+							<ProjectPreview fullWidth
 									url = {`/portfolio/${project.id}`}
 									title = {project.data.title}
 									subtitle = {project.data.subtitle}

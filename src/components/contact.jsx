@@ -15,8 +15,6 @@ export default function ContactForm() {
 
 		<form id='contact-form' onSubmit={handleSubmit}>
 
-			<p id='title'>{t.contact.title}</p>
-
 			<input
 				name='name' id='name'
 				type='text'
@@ -36,6 +34,8 @@ export default function ContactForm() {
                 placeholder={t.contact.email}
                 data-validation-required-message={t.contact.warning}
 			/>
+
+			<br/>
 
 			<button id='sendMessageButton' type='submit'>
 				{t.contact.send}

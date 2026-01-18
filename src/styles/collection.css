@@ -14,16 +14,10 @@ img {
     place-self: end;
 }
 
-.list-item {
-    display: grid;
-    grid-template-columns: 2fr 1fr; /* TODO: Modify these with new preview aspect ratios */
-    grid-gap: 1rem;
-}
-
-.list {
+.grid {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
+    flex-direction: row;
+    gap: 1rem;
 }
 
 .blog {

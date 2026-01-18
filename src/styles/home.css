@@ -1,4 +1,27 @@
-/*.introduction {
+h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+p {
+    width: 65%;
+}
+
+section {
+    margin: 6rem 0;
+}
+
+.introduction {
+
+    #title {
+        font-size: 4rem;
+        margin-bottom: 0;
+    }
+
+    #subtitle {
+        margin-top: 0;
+    }
 
     img {
         width: 100%;
@@ -8,19 +31,50 @@
     .about-body {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
         grid-gap: 1em;
+        grid-auto-flow: column;
         margin-top: 1.25em;
     }
-}*/
 
-/*.contact {
+    p {
+        width: 100%;
+    }
+}
+
+.skillset {
+
+    div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+}
+
+.portfolio-preview {
+
+    .project {
+
+        h1, p {
+            margin: 1rem;
+        }
+
+        p {
+            width: 90%;
+        }
+    }
+}
+
+.contact {
     #contact-grid {
         display: grid;
         grid-template-columns: 1.75fr 2fr;
         grid-gap: 2em;
+        align-items: start;
 
         p {
-            padding-top: 1em;
+            width: 100%;
         }
     }
 
@@ -30,13 +84,9 @@
         flex-direction: column;
         justify-content: end;
         min-height: 10em;
-        max-height: 20em;
+        max-height: 15em;
         gap: 1em;
-
-        #title {
-            position: relative;
-            font-weight: 600;
-        }
+        margin-top: 1rem;
 
         input, textarea {
             background-color: hsl(var(--background-step-1));
@@ -46,7 +96,7 @@
         }
 
         textarea {
-            min-height: 15em;
+            min-height: 10em;
             height: contain;
             flex-grow: 5;
             resize: none;
@@ -58,10 +108,10 @@
             margin-bottom: 0.5em;
         }
     }
-}*/
+}
 
-/*.footer {
+.footer {
     img {
         width: 100%;
     }
-}*/
+}

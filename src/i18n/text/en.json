@@ -11,9 +11,9 @@
 		"description": "Mar Maestro Momparler's portfolio site.",
 		"intro": {
 			"title": "Hi, I'm Mar Maestro!",
-			"subtitle": "Game Developer, Designer, and Student.",
+			"subtitle": "Game Developer, Designer and Student.",
 			"body": [
-				"1",
+				"I'm a 24 year-old student at Jaume I University currently studying Video Game Design and Development.",
 				"2",
 				"3"
 			],
@@ -24,17 +24,17 @@
 		},
 		"skills": {
 			"title": "My Skills",
-			"body": "",
-			"list": [ "Unity", "Godot", "C#", "C++" ]
+			"body": "Through my studies and personal projects, I've gained a solid understanding of game development and other branches of computer engineering. I've applied and developed these skills in several projects.",
+			"list": [ "Unity", "Godot", "C#", "Game Design", "C++", "Astro.js", "Jekyll" ]
 		},
 		"portfolio": {
 			"title": "What I've been working on",
-			"body": ""
+			"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out."
 		},
 		"contact": {
 			"title": "Let's create something together",
-			"body": "Feel free to  reach out if you're looking for a developer, have a question, or just want to connect.",
-			"message": "Be it a formal mail or a DM somewhere I am.",
+			"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
+			"message": "I'll be glad to message back.",
 			"image": {
 				"url": "placeholders/banner.png",
 				"alt": "Placeholder banner"
