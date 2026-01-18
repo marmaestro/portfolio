@@ -6,7 +6,7 @@
     url: "http://localhost:4321",
 };*/
 
-export const WebsiteLinks = [
+export const NavigationLinks = [
     {
         name: 'Home',
         url: '/',
@@ -29,7 +29,7 @@ export const WebsiteLinks = [
     },
 ]
 
-export const SocialLinks = [
+/*export const SocialLinks = [
     {
         icon: 'bi:linkedin',
         name: 'LinkedIn',
@@ -55,4 +55,4 @@ export const SocialLinks = [
         name: 'Medium',
         url: 'https://medium.com/@marmaestro',
     }
-]
+]*/

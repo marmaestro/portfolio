@@ -2,6 +2,7 @@
 title: Prop Trip
 subtitle: What doesn't kill you is now your weapon, I guess
 description: ""
+brief: ""
 date: 2024-02-04
 author: Back to Bits and Punic Goose
 source:

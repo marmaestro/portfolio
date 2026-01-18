@@ -1,8 +1,6 @@
 ---
 import { Footer, Row } from 'studiocms:ui/components';
 import { Icon } from 'astro-icon/components';
-
-import '~/styles/footer.css';
 ---
 
 <Footer id="footer"
@@ -20,7 +18,7 @@ import '~/styles/footer.css';
                 { label: 'Tumblr', href: 'https://filmteapot.tumblr.com/' },
             ],*/
         }}
-        copyright = 'MIT License © 2025 - marmaestro'
+        copyright = 'MIT License © 2026 - marmaestro'
 >
 
     <div slot='brand' class='footer-brand'>
@@ -31,13 +29,13 @@ import '~/styles/footer.css';
 
     <div slot='socials' class='socials'>
         <Row>
-           <a href='https://www.linkedin.com/in/marmaestro'>
-               <Icon name = "bi:linkedin"/>
+           <a href='https://www.linkedin.com/in/marmaestro' aria-label="LinkedIn">
+               <Icon name = "bi:linkedin" />
            </a>
-            <a href='https://github.com/marmaestro'>
+            <a href='https://github.com/marmaestro' aria-label="GitHub">
                 <Icon name = "bi:github"/>
             </a>
-            <a href='https://bsky.app/profile/marmaestro.itch.io'>
+            <a href='https://bsky.app/profile/marmaestro.itch.io' aria-label="Itch.io">
                 <Icon name = "bi:bluesky"/>
             </a>
         </Row>

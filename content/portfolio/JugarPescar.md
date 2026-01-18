@@ -2,6 +2,7 @@
 title: Jugar y Pescar
 subtitle: On slow gaming and why fishing is cool
 description: ""
+brief: ""
 date: 2023-06-15
 author: Punic Goose
 source:

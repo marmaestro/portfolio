@@ -1,0 +1,32 @@
+---
+import { Row, Badge } from 'studiocms:ui/components';
+import { Card } from 'studiocms:ui/components/card';
+import { Icon } from 'astro-icon/components';
+
+const { title, subtitle, description, url, image, tags, pinned } = Astro.props;
+---
+
+<Card class='project' fullWidth style='margin-bottom: 3rem;'>
+    <div slot='header'>
+		<img src={image.url} alt={image.alt}/>
+    </div>
+
+    <div >
+        <h1>{title} <sup>{pinned ? "⭐" : ""}</sup></h1>
+        <h2>{subtitle}</h2>
+        <p class='muted'>{description}</p>
+    </div>
+
+    <div slot='footer'>
+        <div class='footer'>
+            <Row id="tags-row" gapSize="md">
+                {
+                    tags && tags.map((tag: string) => (
+                                <Badge label={tag} variant='flat'/>
+                    ))
+                }
+            </Row>
+            <a href={url}><Icon name='bi:arrow-right-short' size={24}/></a>
+        </div>
+    </div>
+</Card>

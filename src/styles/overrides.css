@@ -1,0 +1,48 @@
+/* StudioCMS UI overrides*/
+
+/* Palette */
+:root {
+
+}
+
+[data-theme="light"] {
+    /*--primary-base:  hsl(259, 60%, 71%) !important;
+    --primary-hover: hsl(259, 71%, 79%) !important;
+    --primary-active: hsl(259, 76%, 74%) !important;*/
+}
+
+
+/* Card */
+.sui-card {
+    border-radius: var(--radius-lg) !important;
+    height: min-content !important;
+}
+
+.sui-card-body {
+    padding: 2rem !important;
+
+    img {
+        border-radius: var(--radius-md) !important;
+    }
+}
+
+.project {
+
+    .sui-card {
+        border: none;
+    }
+
+    .sui-card-header {
+        padding: 0;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
+    .sui-card-body {
+        padding: 1rem !important;
+    }
+}

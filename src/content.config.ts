@@ -24,6 +24,7 @@ const portfolio = defineCollection({
         title: z.string(),
         subtitle: z.string(),
         description: z.string(),
+        brief: z.string(),
         date: z.date(),
         author: z.string(),
         source: z.object({

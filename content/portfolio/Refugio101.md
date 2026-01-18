@@ -2,6 +2,7 @@
 title: Refugio 101
 subtitle: Seasons 10.5 - 12
 description: ""
+brief: ""
 date: 2025-06-27
 author: Refugio 101 (4th generation)
 source:

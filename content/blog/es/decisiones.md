@@ -1,6 +1,6 @@
 ---
 title: 'Decisiones: Moralidad jugada y culpa'
-subtitle: 'Elegir un camino cuándo no sabes dónde ir'
+subtitle: 'Elegir un camino cuando no sabes dónde ir'
 description: ''
 date: 2024-04-19
 author: marmaestro

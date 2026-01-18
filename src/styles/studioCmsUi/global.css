@@ -1,7 +1,6 @@
-@import url('./tailwind.css');
-@import url('./colors.css');
-@import url('./resets.css');
-@import url('./radii.css');
+@import url('colors.css');
+@import url('resets.css');
+@import url('radii.css');
 
 :root {
     color-scheme: light dark;
@@ -9,7 +8,7 @@
 }
 
 ::selection {
-    background-color: hsl(from hsl(var(--primary-active)) h s l / 0.45);
+    background-color: hsl(from var(--primary-active) h s l / 0.45);
 }
 
 body {
@@ -23,45 +22,51 @@ section {
     margin: auto;
 
     @media screen and (min-width: 900px) {
-        max-width: 70%;
+        padding: 1rem 20vw;
     }
 
     @media screen and (min-width: 600px) and (max-width: 900px) {
-        max-width: 80%;
+        padding: 1rem 15vw;
     }
 
     @media screen and (max-width: 600px) {
-        max-width: 90%;
+        padding: 1rem 8vw;
     }
 }
 
 a, button {
+    text-decoration: none;
+    color: var(--primary-base);
     transition:
             background-color 0.3s ease,
             color 0.3s ease;
 }
 
 a:hover {
-    color: hsl(var(--primary-hover));
+    color: var(--primary-hover);
 }
 
 a:is(:focus,:active) {
-    color: hsl(var(--primary-active));
+    color: var(--primary-active);
 }
 
 button {
     border-radius: var(--radius-md);
-    background-color: hsl(var(--background-step-1));
+    background-color: var(--background-step-1);
 }
 
 button:hover {
-    background-color: hsl(from hsl(var(--background-step-1)) h s calc(l + 2));
+    background-color: hsl(from var(--background-step-1) h s calc(l + 2));
     color: hsl(var(--primary-hover));
     cursor: pointer;
 }
 
 button:is(:focus,:active){
-    background-color: hsl(from hsl(var(--background-step-1)) h s calc(l + 3));
+    background-color: hsl(from var(--background-step-1) h s calc(l + 3));
     color: hsl(var(--primary-active));
     cursor: pointer;
+}
+
+.muted {
+    color: var(--text-muted);
 }

@@ -1,39 +1,53 @@
 ---
-import Layout from "~/layouts/Layout.astro"
-import PostPreviewList from "~/components/PostPreviewList.astro"
+import Layout from '~/layouts/Layout.astro'
+import ProjectPreview from '~/components/ProjectPreview.astro'
 
-import { getCollection } from "astro:content";
-import {useTranslation} from "~/i18n/utils.ts";
-import type {Locale} from "~/i18n/constants.ts";
+import { Masonry } from 'astro-masonry';
+import { getCollection } from 'astro:content';
+import {useTranslation} from '~/i18n/utils.ts';
+import type { Locale } from '~/i18n/constants.ts';
 
-import '~/styles/section.css';
-import '~/styles/collection.css'
+import '~/styles/collection.css';
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
-const projects = (await getCollection("portfolio")).sort
+const projects = (await getCollection('portfolio')).sort
 ((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
 <Layout
+        sitename = 'marmaestro'
 		title = {t.portfolio.title}
 		description = {t.portfolio.description}>
-	<section class="section">
-		<h1>{t.portfolio.title}</h1>
-        <div class="collection-container list">
+
+	<section class='section'>
+		<!--<h1>{t.portfolio.title}</h1>-->
+
+		<Masonry sortByHeight={true}
+				 class='collection grid portfolio'
+				 columnClass='column'
+				 breakpointCols =
+                     {{
+                         default: 2,
+                         1100: 2,
+                         700: 2,
+                         500: 1
+                     }}
+        >
             {
                 projects.map(project =>
                     (
-                            <PostPreviewList
-                                    url = {`/portfolio/${project.id}`}
-                                    title = {project.data.title}
-                                    subtitle = {project.data.subtitle}
-                                    image = {project.data.image}
-                                    tags = {project.data.tags}
-                                    pinned = {project.data.pinned}
-                            />
+							<ProjectPreview
+									url = {`/portfolio/${project.id}`}
+									title = {project.data.title}
+									subtitle = {project.data.subtitle}
+									description = {project.data.brief}
+									image = {project.data.image}
+									tags = {project.data.tags}
+									pinned = {project.data.pinned}
+							/>
                     ))
             }
-        </div>
+		</Masonry>
 	</section>
 </Layout>

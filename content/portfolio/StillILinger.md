@@ -2,6 +2,7 @@
 title: Still I Linger
 subtitle: See a new city through the eyes of a neurodivergent youth
 description: "An experimental artgame about feeling lost, depression, and life."
+brief: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
 date: 2025-07-11
 author: marmaestro
 source:
@@ -15,7 +16,12 @@ tags: [ game, photography ]
 pinned: True
 ---
 
-![banner](https://img.itch.zone/aW1nLzIxNzkxNjM3LmdpZg==/originalm/tpWYQl.gif)
+<figure>
+    <img src='https://img.itch.zone/aW1nLzIxNzkxNjM3LmdpZg==/originalm/tpWYQl.gif' alt='banner'>
+    <figcaption>
+        Game cover.
+    </figcaption>
+</figure>
 
 An experimental _artgame_ about feeling lost, depression, and life. Combining real-life film photography with digital media, this story shows a fictional city and the new challenges of moving somewhere unknown means.
 

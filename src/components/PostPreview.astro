@@ -1,0 +1,25 @@
+---
+import { Row, Badge, Card } from 'studiocms:ui/components';
+
+import '~/styles/collection.css'
+
+const { title, subtitle, description, url, image, tags } = Astro.props;
+---
+
+<Card variant='filled' style='margin-bottom: 1.5rem;'>
+    <div class='grid-item'>
+		<img src={image.url} alt={image.alt}/>
+		<div>
+			<h1>{title}</h1>
+			<h2>{subtitle}</h2>
+			<p>{description}</p>
+			<Row id="tags-row" gapSize="md">
+                {
+                    tags && tags.map((tag: string) => (
+								<Badge label={tag} variant='flat'/>
+                    ))
+                }
+			</Row>
+		</div>
+    </div>
+</Card>

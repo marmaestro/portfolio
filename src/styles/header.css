@@ -1,0 +1,106 @@
+header.custom-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: var(--background-step-1);
+    padding: 1.75rem 10vw !important;
+    color: var(--text-normal) !important;
+    align-items: center;
+}
+
+.links {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none !important;
+}
+
+.links ul:has(li) {
+    color: var(--text-normal) !important;
+    width: fit-content;
+}
+
+.links > li > a {
+    text-decoration: none;
+    font-size: 1.25em;
+}
+
+
+/* TODO: Check these for a friendlier mobile user experience*/
+@media screen and (max-width: 1440px) {
+    header.custom-header {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .upper {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .links {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .links ul {
+        width: calc(50% - 1rem);
+    }
+}
+
+/* Theme toggler */
+#theme-toggle {
+    width: 32px;
+    height: 32px;
+}
+
+/*#navbar {
+    padding: 1rem 2.5rem;
+    background: hsl(var(--background-step-1));
+    height: auto;
+    display: flex;
+
+    @media screen and (width >= 500px) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @media screen and (width <= 500px) {
+        flex-direction: column-reverse;
+        justify-content: right;
+        float: right;
+        text-align: right;
+    }
+
+     a {
+    font-size: large;
+    padding-top: 1rem;
+    text-decoration: none;
+}*/
+
+/*#nav-items {
+    @media screen and (width >= 500px) {
+        flex-direction: row;
+    }
+    @media screen and (width <= 500px) {
+        flex-direction: column;
+    }
+}*/
+
+/* Mobile toggler */
+/*.navbar-toggler {
+    @media screen and (width >= 500px) { display: none;}
+
+    border: none;
+    background: none;
+    width: fit-content;
+    align-self: end;
+}
+
+.navbar-toggler > svg {
+    font-size: 2rem;
+}*/

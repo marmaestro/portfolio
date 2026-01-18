@@ -1,11 +1,10 @@
 ---
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import GalleryLayout from "~/layouts/GalleryLayout.astro";
-import Layout from "~/layouts/Layout.astro";
 
 import { Image } from "astro:assets";
-import {useTranslation} from "~/i18n/utils.ts";
-import type {Locale} from "~/i18n/constants.ts";
+import { useTranslation } from "~/i18n/utils.ts";
+import type { Locale } from "~/i18n/constants.ts";
 
 const gallery = import.meta.glob<{ default: ImageMetadata }>("../img/gallery/*.{jpg,jpeg,png,webp}");
 

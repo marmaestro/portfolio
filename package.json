@@ -31,6 +31,7 @@
     "@types/react-dom": "^19.2.3",
     "astro": "^5.16.6",
     "astro-icon": "^1.1.5",
+    "astro-masonry": "^1.2.2",
     "astro-theme-toggle": "^0.8.0",
     "astro-webmanifest": "^1.0.0",
     "help": "^3.0.2",

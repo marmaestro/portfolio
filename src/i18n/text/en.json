@@ -19,7 +19,7 @@
 			],
 			"image": {
 				"url": "placeholders/banner.png",
-				"alt": "Placeholder image"
+				"alt": "Placeholder banner"
 			}
 		},
 		"skills": {
@@ -37,7 +37,7 @@
 			"message": "Be it a formal mail or a DM somewhere I am.",
 			"image": {
 				"url": "placeholders/banner.png",
-				"alt": "Placeholder image"
+				"alt": "Placeholder banner"
 			}
 		}
 	},
@@ -45,8 +45,7 @@
 		"title": "Blog",
 		"description": "Some things I've written throughout the years.",
 		"titles": {
-			"top": "Latest Blog Posts",
-			"all": "All Posts"
+			"top": "Latest Blog Posts"
 		}
 	},
 	"portfolio": {

@@ -2,6 +2,7 @@
 title: Growing Fear
 subtitle: What's scarier than vegetables?
 description: ""
+brief: ""
 date: 2023-11-29
 author: Back to Bits
 source:

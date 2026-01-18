@@ -1,31 +1,26 @@
 ---
-import { Row } from 'studiocms:ui/components';
-import { WebsiteLinks } from '~/config/site.ts';
+import { NavigationLinks } from '~/config/site.ts';
 import { Toggle } from 'astro-theme-toggle/components';
 
 import NavbarLink from '~/components/NavbarLink.astro';
 
-import '~/styles/navbar.css'
+import '~/styles/header.css'
 ---
 
-<Row id='navbar'>
-    <div id="theme-toggle">
-		<Toggle/>
-    </div>
-	<Row>
-        {
-            WebsiteLinks.map((link) => (
-                    <NavbarLink
-                            href = {link.url}
-                            target = {link.url.charAt(0) === 'h' ? '_blank' : '_self'}
-                            rel = {link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined}
-                    >
-                        {link.name}
-                    </NavbarLink>
-            ))
-        }
-    </Row>
-</Row>
+<Toggle id="theme-toggle" aria-label="Theme toggle button" />
+<ul class="links">
+    {
+        NavigationLinks.map((link) => (
+                <NavbarLink
+                        href = {link.url}
+                        target = {link.url.charAt(0) === 'h' ? '_blank' : '_self'}
+                        rel = {link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined}
+                >
+                    {link.name}
+                </NavbarLink>
+        ))
+    }
+</ul>
     <!--<nav id = "navbar">
         <div id = "navigation-items">
             {
