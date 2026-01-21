@@ -50,7 +50,7 @@ Pero, lo dicho, vaya señor juego, y cómo me gustó.
 Me alegro de atreverme a tirarme de cabeza a la piscina sin ver el fondo, aunque me diera miedo el proceso.
 
 Y bueno, para exploración, los proyectos que hemos hecho Alan y yo juntos por la broma.
-No sé en qué momento se nos ocurrió hacer un [**híbrido entre reportaje y documental sobre minijuegos de pesca**](../../portfolio/jugarpescar) para audiovisuales, pero es una de las cosas en las que he trabajado para la universidad de las que estoy más orgulloso.
+No sé en qué momento se nos ocurrió hacer un [**híbrido entre reportaje y documental sobre minijuegos de pesca**](../../portfolio/_JugarPescar) para audiovisuales, pero es una de las cosas en las que he trabajado para la universidad de las que estoy más orgulloso.
 Y lo menciono porque puedo, porque quiero, y porque va de videojuegos.
 
 Algunas veces este “querer explorar” es probar algo nuevo, como un género de juego distinto.

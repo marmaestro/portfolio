@@ -68,5 +68,5 @@ button:is(:focus,:active){
 }
 
 .muted {
-    color: var(--text-muted);
+    opacity: 70%;
 }
