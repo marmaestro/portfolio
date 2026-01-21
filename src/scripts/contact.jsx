@@ -21,8 +21,8 @@ export default function ContactForm() {
 				required='required'
 				autoComplete='off'
 
-				placeholder={t.contact.name}
-				data-validation-required-message={t.contact.warning}
+				placeholder={t.contact.form.name}
+				data-validation-required-message={t.contact.form.warning}
 			/>
 
 			<input
@@ -31,14 +31,14 @@ export default function ContactForm() {
                 required='required'
                 autoComplete='off'
 
-                placeholder={t.contact.email}
-                data-validation-required-message={t.contact.warning}
+                placeholder={t.contact.form.email}
+                data-validation-required-message={t.contact.form.warning}
 			/>
 
 			<br/>
 
 			<button id='sendMessageButton' type='submit'>
-				{t.contact.send}
+				{t.contact.form.send}
 			</button>
 
 			<textarea
@@ -46,14 +46,14 @@ export default function ContactForm() {
                 required='required'
                 autoComplete='off'
 
-                placeholder={t.contact.message}
-                data-validation-required-message={t.contact.warning}
+                placeholder={t.contact.form.message}
+                data-validation-required-message={t.contact.form.warning}
 			/>
 
 			<input
                 name='subject' id='subject'
                 type='hidden'
-                value={t.contact.subject}
+                value={t.contact.form.subject}
 			/>
 		</form>
 	);

@@ -11,22 +11,22 @@ export const NavigationLinks = [
         name: 'Home',
         url: '/',
     },
-    {
+    /*{
         name: 'Blog',
         url: '/blog',
-    },
+    },*/
     {
-        name: 'Projects',
+        name: 'Portfolio',
         url: '/portfolio',
     },
     {
-        name: 'Gallery',
+        name: 'Photo Gallery',
         url: '/gallery',
     },
-    {
+    /*{
         name: 'About',
         url: '/about',
-    },
+    },*/
 ]
 
 /*export const SocialLinks = [

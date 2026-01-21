@@ -1,51 +1,40 @@
-/*#error {
-    margin: 5rem 0;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+#errorPage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 
-    .error-number {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        font-size: 10rem;
+    .errorPage-number {
+        font-size: 5rem;
         color: hsl(var(--text-normal));
-        fill: hsl(var(--text-normal));
 
         @media screen and (max-width: 800px) {
-            font-size: 5rem;
+            font-size: 3rem;
         }
 
         h1 {
             display: inherit;
+            margin: 0;
         }
 
         #bug {
             position: relative;
-            top: 2rem;
+            top: 1rem;
 
             @media screen and (max-width: 800px) {
-                margin-top: -1rem;
+                margin-top: -0.5rem;
             }
         }
     }
 
-    .error-text {
+    .errorPage-text {
         text-align: center;
-        font-weight: 600;
+        font-weight: 500;
         letter-spacing: 2px;
-
-        @media screen and (min-width: 800px) {
-            width: 40%;
-        }
-
-        @media screen and (max-width: 800px) {
-            width: 60%
-        }
 
         h2 {
             margin: 10px 0;
         }
     }
-}*/
+}

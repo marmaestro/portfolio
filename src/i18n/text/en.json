@@ -21,25 +21,17 @@
 				"url": "placeholders/banner.png",
 				"alt": "Placeholder banner"
 			}
-		},
-		"skills": {
-			"title": "My Skills",
-			"body": "Through my studies and personal projects, I've gained a solid understanding of game development and other branches of computer engineering. I've applied and developed these skills in several projects.",
-			"list": [ "Unity", "Godot", "C#", "Game Design", "C++", "Astro.js", "Jekyll" ]
-		},
-		"portfolio": {
-			"title": "What I've been working on",
-			"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out."
-		},
-		"contact": {
-			"title": "Let's create something together",
-			"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
-			"message": "I'll be glad to message back.",
-			"image": {
-				"url": "placeholders/banner.png",
-				"alt": "Placeholder banner"
-			}
 		}
+	},
+	"skills": {
+		"title": "My Skills",
+		"body": "Through my studies and personal projects, I've gained a solid understanding of game development and other branches of computer engineering. I've applied and developed these skills in several projects.",
+		"list": [ "Unity", "Godot", "C#", "Game Design", "C++", "Astro.js", "Jekyll" ]
+	},
+	"portfolio": {
+		"title": "What I've been working on",
+		"description": "Things I've worked on.",
+		"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out."
 	},
 	"blog": {
 		"title": "Blog",
@@ -47,10 +39,6 @@
 		"titles": {
 			"top": "Latest Blog Posts"
 		}
-	},
-	"portfolio": {
-		"title": "Projects",
-		"description": "Things I've worked on."
 	},
 	"gallery": {
 		"title": "Gallery",
@@ -72,18 +60,31 @@
 		}
 	},
 	"contact": {
-		"title": "Get in Contact",
-		"name": "Name",
-		"email": "Email Address",
-		"message": "Message",
-		"subject": "Porfolio Contact Form [EN]",
-		"send": "Send",
-		"warning": "This field is required."
+		"title": "Let's create something together",
+		"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
+		"message": "I'll be glad to message back.",
+		"image": {
+			"url": "placeholders/banner.png",
+			"alt": "Placeholder banner"
+		},
+		"form": {
+			"title": "Get in Contact",
+			"name": "Name",
+			"email": "Email Address",
+			"message": "Message",
+			"subject": "Porfolio Contact Form [EN]",
+			"send": "Send",
+			"warning": "This field is required."
+		}
 	},
-	"error": {
+	"errorPage": {
 		"title": "Page not found",
 		"description": "Error 404, page not found.",
 		"oops": "Oops!",
-		"text": "We couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all."
+		"text": "We couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all.",
+		"button": {
+			"text": "Take me back home",
+			"url": "/"
+		}
 	}
 }
