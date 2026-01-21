@@ -39,6 +39,7 @@ img {
 
     h1 {
         margin: 0;
+        letter-spacing: normal;
     }
 
     h2 {
@@ -64,6 +65,16 @@ img {
 
 .post {
 
+    margin-bottom: 5rem;
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
     img {
         width: 100%;
         height: auto;
@@ -77,5 +88,18 @@ img {
             opacity: 0.65;
             font-size: 0.9rem;
         }
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    a.source {
+        text-decoration: none;
+    }
+
+    mark {
+        color: var(--primary-base);
+        background-color: transparent;
     }
 }

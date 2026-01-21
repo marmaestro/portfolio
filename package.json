@@ -23,7 +23,7 @@
     "@astrojs/react": "^4.4.2",
     "@astrojs/sitemap": "^3.6.0",
     "@astropub/md": "^1.0.0",
-    "@fancyapps/ui": "^6.1.7",
+    "@fancyapps/ui": "^6.1.8",
     "@formspree/react": "^3.0.0",
     "@studiocms/ui": "^1.0.0",
     "@tailwindcss/vite": "^4.1.18",
@@ -39,7 +39,6 @@
     "pnpm": "^10.27.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "smartypants": "^0.2.2",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
     "vite": "^6.4.1"

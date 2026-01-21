@@ -1,9 +1,9 @@
-import { glob } from "astro/loaders";
-import { defineCollection } from "astro:content";
-import { z } from "astro/zod";
+import { glob } from 'astro/loaders';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 
 /*const blog = defineCollection({
-    loader: glob({ pattern: '**!/[^_]*.{md,mdx}', base: "~/../content/blog" }),
+    loader: glob({ pattern: '**!/[^_]*.{md,mdx}', base: '~/../content/blog' }),
     schema: z.object({
         title: z.string(),
         subtitle: z.string(),
@@ -19,7 +19,7 @@ import { z } from "astro/zod";
 });*/
 
 const portfolio = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: "~/../content/portfolio" }),
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: '~/../content/portfolio' }),
     schema: z.object({
         title: z.string(),
         subtitle: z.string(),
@@ -41,7 +41,13 @@ const portfolio = defineCollection({
     })
 })
 
+const gallery = defineCollection({
+    loader: glob({ pattern: '**/[^_].*.{jpg,jpeg,webp,png}', base: '~/img/gallery' }),
+    schema: z.any()
+})
+
 export const collections = {
     /*'blog': blog,*/
     'portfolio': portfolio,
+    'gallery': gallery,
 };

@@ -30,8 +30,8 @@ importers:
         specifier: ^1.0.0
         version: 1.0.0(@astrojs/markdown-remark@5.3.0)
       '@fancyapps/ui':
-        specifier: ^6.1.7
-        version: 6.1.7
+        specifier: ^6.1.8
+        version: 6.1.8
       '@formspree/react':
         specifier: ^3.0.0
         version: 3.0.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -53,6 +53,9 @@ importers:
       astro-icon:
         specifier: ^1.1.5
         version: 1.1.5
+      astro-masonry:
+        specifier: ^1.2.2
+        version: 1.2.2
       astro-theme-toggle:
         specifier: ^0.8.0
         version: 0.8.0
@@ -74,9 +77,6 @@ importers:
       react-dom:
         specifier: ^19.2.3
         version: 19.2.3(react@19.2.3)
-      smartypants:
-        specifier: ^0.2.2
-        version: 0.2.2
       tailwindcss:
         specifier: ^4.1.18
         version: 4.1.18
@@ -487,8 +487,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fancyapps/ui@6.1.7':
-    resolution: {integrity: sha512-KHOvuy90JBFDgbNa2V1N9Jg7PE/lSQMXN9VbhR+WQSIxIEi4PV7kndeao7ezir5WeJ8OZRyDelNKJVLicXfBIg==}
+  '@fancyapps/ui@6.1.8':
+    resolution: {integrity: sha512-Hrk1MX25ZTybW8PCf47ZT9nqV2/ilnXUH4QtJXm3TxTKSLVi1nHcq6ZMmtXgl2zHLr4uphiw+1bOz9yL81iSHA==}
 
   '@formspree/core@4.0.0':
     resolution: {integrity: sha512-geNlUut5nME1Ztej5Pzx1BrlQ1fFIcJYIqmF+Vm0jaUbpZxjXvt7SDOGeQVkuxn80QJiIHlwBGGjSBFjPX/KDw==}
@@ -1167,6 +1167,9 @@ packages:
     resolution: {integrity: sha512-0MORMlwJXM3d2RlYoFMKpdBTEOqFEZ7rY5TnQssLsUTfaZgF4XkNJW0mNsDiOdM9LgDn9Px2dZtz8NbuUW75nw==}
     peerDependencies:
       astro: ^4.14.0 || ^5.0.0
+
+  astro-masonry@1.2.2:
+    resolution: {integrity: sha512-416VOoR+6dVjOyM2pxlQFj4AiFIV6NdA6WFUFqkVTitaG61o+5Sz0YTA20FAW7xnbIVWru9h6XIWNeEy3hiPmA==}
 
   astro-theme-toggle@0.8.0:
     resolution: {integrity: sha512-7ngEKDfCLKoVbxX4yxrggtBr8i6W8eT0un0TpNKHUeOG/Pq2g7BrjH+etP/l/XQYYSWQmeOIAI02LvLXDMvOWw==}
@@ -2776,10 +2779,6 @@ packages:
     resolution: {integrity: sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==}
     engines: {node: '>=10'}
 
-  smartypants@0.2.2:
-    resolution: {integrity: sha512-TzobUYoEft/xBtb2voRPryAUIvYguG0V7Tt3de79I1WfXgCwelqVsGuZSnu3GFGRZhXR90AeEYIM+icuB/S06Q==}
-    hasBin: true
-
   smol-toml@1.6.0:
     resolution: {integrity: sha512-4zemZi0HvTnYwLfrpk/CF9LOd9Lt87kAt50GnqhMpyF9U3poDAP2+iukq2bZsO/ufegbYehBkqINbsWxj4l4cw==}
     engines: {node: '>= 18'}
@@ -3800,7 +3799,7 @@ snapshots:
   '@esbuild/win32-x64@0.25.12':
     optional: true
 
-  '@fancyapps/ui@6.1.7': {}
+  '@fancyapps/ui@6.1.8': {}
 
   '@formspree/core@4.0.0':
     dependencies:
@@ -4473,6 +4472,8 @@ snapshots:
     dependencies:
       astro: 5.16.6(@types/node@25.0.3)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.55.1)(typescript@5.9.3)(yaml@2.8.2)
       pathe: 1.1.2
+
+  astro-masonry@1.2.2: {}
 
   astro-theme-toggle@0.8.0: {}
 
@@ -6639,8 +6640,6 @@ snapshots:
       ansi-styles: 4.3.0
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
-
-  smartypants@0.2.2: {}
 
   smol-toml@1.6.0: {}
 

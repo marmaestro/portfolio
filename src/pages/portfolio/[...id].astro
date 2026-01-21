@@ -29,21 +29,21 @@ const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.curre
 <MarkdownPostLayout
 		title = {project.data.title}
 		description = {project.data.description}
-        class = 'project-page'
 >
     <Row style="justify-content: space-between; align-items: baseline;">
         <h1>{project.data.title}</h1>
-        <a href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
+        {project.data.source.item != '' ?
+                <a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
+            : null}
     </Row>
     <h2 style="text-align: left">{project.data.subtitle}</h2>
     <Row id='project-roles'>
         {
             roles.map((role) => (
-                    <Badge label={role} variant='flat' color='mono' size='sm'/>
+                    <Badge label={role} variant='flat' color='mono' size='md'/>
             ))
         }
     </Row>
-    <!--<Divider>{formattedDate}</Divider>-->
     <br><Divider/><br>
     <Content/>
 </MarkdownPostLayout>

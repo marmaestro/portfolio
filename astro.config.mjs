@@ -1,6 +1,7 @@
 // noinspection SpellCheckingInspection
 
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
@@ -12,9 +13,6 @@ export default defineConfig({
 	site: "https://marmaestro.dev/",
 	prefetch: true,
 	vite: {
-		ssr: {
-			noExternal: [ "smartypants" ],
-		},
 		plugins: [
 			tailwindcss({
 				applyBaseStyles: false
@@ -24,6 +22,7 @@ export default defineConfig({
 	integrations: [
 		icon(),
 		react(),
+		sitemap(),
 		studiocmsUi({
 			customCss: 'src/styles/overrides.css'
 		})

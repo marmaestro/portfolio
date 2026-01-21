@@ -19,11 +19,11 @@ export const NavigationLinks = [
         name: 'Portfolio',
         url: '/portfolio',
     },
-    {
+    /*{
         name: 'Photo Gallery',
         url: '/gallery',
     },
-    /*{
+    {
         name: 'About',
         url: '/about',
     },*/
