@@ -1,6 +1,7 @@
 ---
 import Layout from "~/layouts/Layout.astro"
 import ProjectPreview from "~/components/ProjectPreview.astro";
+import Skill from '~/components/Skill.astro';
 
 import { getCollection } from "astro:content";
 import { useTranslation } from "~/i18n/utils.ts";
@@ -8,8 +9,6 @@ import { useTranslation } from "~/i18n/utils.ts";
 import type { Locale } from "~/i18n/constants.ts";
 
 import ContactForm from '~/scripts/contact.jsx';
-
-import { Badge } from 'studiocms:ui/components/badge';
 
 import '~/styles/section.css';
 import '~/styles/collection.css';
@@ -34,7 +33,7 @@ const skills = t.skills.list;
         description = {t.home.description}
 >
     <!-- Introduction -->
-    <section class='section introduction'>
+    <section class='section introduction' id='introduction'>
         <h1 id='title'>{t.home.intro.title}</h1>
         <h1 id='subtitle'>{t.home.intro.subtitle}</h1>
         <img src={t.home.intro.image.url} alt={t.home.intro.image.alt} loading="eager" />
@@ -46,18 +45,18 @@ const skills = t.skills.list;
     </section>
 
     <!-- Skill set -->
-    <section class='section skillset'>
+    <section class='section skillset' id='skills'>
         <h1>{t.skills.title}</h1>
         <p class='muted'>{t.skills.body}</p>
         <div>
             {
-                skills.map(skill => ( <Badge label={skill} variant="flat" size="lg" icon:="bi:link" /> ))
+                skills.map(skill => ( <Skill label={skill} /> ))
             }
 		</div>
     </section>
 
     <!-- Portfolio preview -->
-    <section class='section portfolio-preview'>
+    <section class='section portfolio-preview' id='portfolio'>
         <h1>{t.portfolio.title}</h1>
         <p class='muted'>{t.portfolio.body}</p>
 
@@ -80,7 +79,7 @@ const skills = t.skills.list;
     </section>
 
     <!-- Contact -->
-    <section class="section contact">
+    <section class="section contact" id='contact'>
 		<h1>{t.contact.title}</h1>
         <div id="contact-grid">
             <div>
@@ -90,10 +89,6 @@ const skills = t.skills.list;
             </div>
 			<ContactForm /> <!--TODO: Add "client:load" on deployment !!-->
         </div>
-    </section>
-
-    <!-- Footer -->
-    <section class="section footer">
-		<img src={t.contact.image.url} alt={t.contact.image.alt} style="margin: auto"/>
+		<img src={t.contact.image.url} alt={t.contact.image.alt}/>
     </section>
 </Layout>

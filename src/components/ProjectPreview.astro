@@ -12,8 +12,8 @@ const { fullWidth, title, subtitle, description, url, image, tags, pinned } = As
     </div>
 
     <div >
-        <h1>{title} <sup>{pinned ? "⭐" : ""}</sup></h1>
-        <h2>{subtitle}</h2>
+        <h1 aria-label='project title'>{title} <sup aria-label='pinned project indicator'>{pinned ? "⭐" : ""}</sup></h1>
+        {subtitle ? <h2 aria-label='project subtitle'>{subtitle}</h2> : null}
         <p class='muted'>{description}</p>
     </div>
 
@@ -26,7 +26,7 @@ const { fullWidth, title, subtitle, description, url, image, tags, pinned } = As
                     ))
                 }
             </Row>
-            <a href={url}><Icon name='bi:arrow-right-short' size={24}/></a>
+            <a href={url} aria-label='Open project'><Icon name='bi:arrow-right-short' size={24}/></a>
         </div>
     </div>
 </Card>

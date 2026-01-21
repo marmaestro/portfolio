@@ -1,4 +1,5 @@
 ---
+import { SocialLinks } from '~/config/site.ts';
 import { Footer, Row } from 'studiocms:ui/components';
 import { Icon } from 'astro-icon/components';
 ---
@@ -29,15 +30,13 @@ import { Icon } from 'astro-icon/components';
 
     <div slot='socials' class='socials'>
         <Row>
-           <a href='https://www.linkedin.com/in/marmaestro' aria-label="LinkedIn">
-               <Icon name = "bi:linkedin" />
-           </a>
-            <a href='https://github.com/marmaestro' aria-label="GitHub">
-                <Icon name = "bi:github"/>
-            </a>
-            <a href='https://bsky.app/profile/marmaestro.itch.io' aria-label="Itch.io">
-                <Icon name = "bi:bluesky"/>
-            </a>
+            {
+                SocialLinks.map((link) => (
+                        <a href={link.url} aria-label={link.name}>
+							<Icon name={link.icon}/>
+						</a>
+                ))
+            }
         </Row>
     </div>
 </Footer>

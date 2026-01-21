@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 500;
@@ -10,6 +15,7 @@ p {
 
 section {
     margin: 6rem 0;
+    scroll-snap-align: center;
 }
 
 .introduction {
@@ -39,16 +45,28 @@ section {
 
     p {
         width: 100%;
+        margin: 0;
     }
 }
 
 .skillset {
 
     div {
+        margin-top: 2rem;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+
+    .skill {
         display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem 0.25rem 0.25rem 0.75rem;
+        border-radius: var(--radius-full);
+        background: hsl(from var(--primary-base) h s l / 0.20);
     }
 }
 
@@ -67,6 +85,7 @@ section {
 }
 
 .contact {
+
     #contact-grid {
         display: grid;
         grid-template-columns: 1.75fr 2fr;
@@ -108,10 +127,9 @@ section {
             margin-bottom: 0.5em;
         }
     }
-}
 
-.footer {
     img {
         width: 100%;
+        margin-top: 2.5rem;
     }
 }

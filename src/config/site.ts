@@ -29,7 +29,7 @@ export const NavigationLinks = [
     },*/
 ]
 
-/*export const SocialLinks = [
+export const SocialLinks = [
     {
         icon: 'bi:linkedin',
         name: 'LinkedIn',
@@ -50,9 +50,9 @@ export const NavigationLinks = [
         name: 'Bluesky',
         url: 'https://bsky.app/profile/marmaestro.itch.io',
     },
-    {
+    /*{
         icon: 'bi:medium',
         name: 'Medium',
         url: 'https://medium.com/@marmaestro',
-    }
-]*/
+    }*/
+]
