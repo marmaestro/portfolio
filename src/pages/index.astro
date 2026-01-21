@@ -7,7 +7,7 @@ import { useTranslation } from "~/i18n/utils.ts";
 
 import type { Locale } from "~/i18n/constants.ts";
 
-import ContactForm from '~/components/contact.jsx';
+import ContactForm from '~/scripts/contact.jsx';
 
 import { Badge } from 'studiocms:ui/components/badge';
 
@@ -25,7 +25,7 @@ const projects = (await getCollection('portfolio'))
     ((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 const intro = t.home.intro.body;
-const skills = t.home.skills.list;
+const skills = t.skills.list;
 ---
 <!-- MAIN PAGE -->
 <Layout
@@ -37,7 +37,7 @@ const skills = t.home.skills.list;
     <section class='section introduction'>
         <h1 id='title'>{t.home.intro.title}</h1>
         <h1 id='subtitle'>{t.home.intro.subtitle}</h1>
-        <!--<Image src={} alt={t.home.intro.image.alt} loading="eager" />-->
+        <img src={t.home.intro.image.url} alt={t.home.intro.image.alt} loading="eager" />
         <div class="about-body">
             {
                 intro.map(paragraph => ( <p class='muted'>{paragraph}</p> ))
@@ -47,8 +47,8 @@ const skills = t.home.skills.list;
 
     <!-- Skill set -->
     <section class='section skillset'>
-        <h1>{t.home.skills.title}</h1>
-        <p class='muted'>{t.home.skills.body}</p>
+        <h1>{t.skills.title}</h1>
+        <p class='muted'>{t.skills.body}</p>
         <div>
             {
                 skills.map(skill => ( <Badge label={skill} variant="flat" size="lg" icon:="bi:link" /> ))
@@ -58,8 +58,8 @@ const skills = t.home.skills.list;
 
     <!-- Portfolio preview -->
     <section class='section portfolio-preview'>
-        <h1>{t.home.portfolio.title}</h1>
-        <p class='muted'>{t.home.portfolio.body}</p>
+        <h1>{t.portfolio.title}</h1>
+        <p class='muted'>{t.portfolio.body}</p>
 
         <div class="collection-container grid">
 			<ProjectPreview
@@ -81,11 +81,11 @@ const skills = t.home.skills.list;
 
     <!-- Contact -->
     <section class="section contact">
-		<h1>{t.home.contact.title}</h1>
+		<h1>{t.contact.title}</h1>
         <div id="contact-grid">
             <div>
-				<p class='muted'>{t.home.contact.body}</p>
-				<p class='muted'>{t.home.contact.message}</p>
+				<p class='muted'>{t.contact.body}</p>
+				<p class='muted'>{t.contact.message}</p>
 				<!-- TODO: Add socials prompt -->
             </div>
 			<ContactForm /> <!--TODO: Add "client:load" on deployment !!-->
@@ -94,6 +94,6 @@ const skills = t.home.skills.list;
 
     <!-- Footer -->
     <section class="section footer">
-		<!--<Image src={} alt={t.home.contact.image.alt} style="margin: auto"/>-->
+		<img src={t.contact.image.url} alt={t.contact.image.alt} style="margin: auto"/>
     </section>
 </Layout>

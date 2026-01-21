@@ -3,10 +3,10 @@ import { Row, Badge } from 'studiocms:ui/components';
 import { Card } from 'studiocms:ui/components/card';
 import { Icon } from 'astro-icon/components';
 
-const { title, subtitle, description, url, image, tags, pinned } = Astro.props;
+const { fullWidth, title, subtitle, description, url, image, tags, pinned } = Astro.props;
 ---
 
-<Card class='project' style='margin-bottom: 3rem;'>
+<Card {fullWidth} class='project' style='margin-bottom: 3rem;'>
     <div slot='header'>
 		<img src={image.url} alt={image.alt}/>
     </div>
