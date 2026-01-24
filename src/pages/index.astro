@@ -5,10 +5,9 @@ import Skill from '~/components/Skill.astro';
 
 import { getCollection } from "astro:content";
 import { useTranslation } from "~/i18n/utils.ts";
+import { ContactForm } from '~/scripts/contact.jsx';
 
 import type { Locale } from "~/i18n/constants.ts";
-
-import ContactForm from '~/scripts/contact.jsx';
 
 import '~/styles/section.css';
 import '~/styles/collection.css';
@@ -64,14 +63,14 @@ const skills = t.skills.list;
 			<ProjectPreview
 					url = {`/portfolio/${projects[0].id}`}
 					title = {projects[0].data.title}
-					description = {projects[0].data.brief}
+					description = {projects[0].data.description}
 					image = {projects[0].data.image}
 					tags = {projects[0].data.tags}
 			/>
 			<ProjectPreview
 					url = {`/portfolio/${projects[1].id}`}
 					title = {projects[1].data.title}
-					description = {projects[1].data.brief}
+					description = {projects[1].data.description}
 					image = {projects[1].data.image}
 					tags = {projects[1].data.tags}
 			/>

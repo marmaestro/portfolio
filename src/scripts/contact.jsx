@@ -1,10 +1,10 @@
-import { useForm } from '@formspree/react';
+import { useForm, ValidationError } from '@formspree/react';
 import { useTranslation } from '~/i18n/utils.ts';
 
-const formId = import.meta.env.FORMSPREE_FORM_ID;
+const formId = 'xnjjadyp'; //import.meta.env.FORMSPREE_FORM_ID;
 const t = useTranslation();
 
-export default function ContactForm() {
+export function ContactForm() {
 	const [state, handleSubmit] = useForm(formId);
 
 	if (state.succeeded) {
@@ -13,41 +13,60 @@ export default function ContactForm() {
 
 	return (
 
-		<form id='contact-form' onSubmit={handleSubmit}>
+		<form id='contact-form'
+			  onSubmit={handleSubmit}
+			  method="POST"
+			  action={"https://formspree.io/f/" + formId}>
 
 			<input
 				name='name' id='name'
 				type='text'
-				required='required'
+				required
 				autoComplete='off'
 
 				placeholder={t.contact.form.name}
 				data-validation-required-message={t.contact.form.warning}
 			/>
+			<ValidationError
+				prefix='Name'
+				field='name'
+				errors={state.errors}
+			/>
 
 			<input
 				name='email' id='email'
 				type='email'
-				required='required'
+				required
 				autoComplete='off'
 
 				placeholder={t.contact.form.email}
 				data-validation-required-message={t.contact.form.warning}
 			/>
+			<ValidationError
+				prefix='Email'
+				field='email'
+				errors={state.errors}
+			/>
 
 			<br/>
 
-			<button id='sendMessageButton' type='submit'>
+			<button	id='sendMessageButton' type='submit'
+					disabled={state.submitting}>
 				{t.contact.form.send}
 			</button>
 
 			<textarea
 				name='message' id='message'
-				required='required'
+				required
 				autoComplete='off'
 
 				placeholder={t.contact.form.message}
 				data-validation-required-message={t.contact.form.warning}
+			/>
+			<ValidationError
+				prefix='Message'
+				field='message'
+				errors={state.errors}
 			/>
 
 			<input

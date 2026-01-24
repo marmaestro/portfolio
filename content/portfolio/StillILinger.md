@@ -1,18 +1,17 @@
 ---
 title: Still I Linger
 subtitle: Bachelor's Thesis, a work in progress
-description: 'An experimental artgame about feeling lost, depression, and life.'
-brief: "Mixed-media artgame where film photographs represent reality and hand-drawn overlays represent internal perception. Navigating a city through the lens of chronic anxiety and depression."
+description: "Mixed-media artgame with film photography and hand-drawn animations. A city seen through the lens of chronic anxiety and depression."
 date: 2025-07-11
 author: marmaestro
 source:
     url: https://marmaestro.itch.io/stillilinger
     item: 'itch.io'
 image:
-    url: ../src/img/portfolio/tfg-cover.gif
+    url: ../src/img/portfolio/tfg-banner.gif
     alt: game cover
 roles: [ solo dev ]
-tags: [ game, photography ]
+tags: [ game, film photography, narrative ]
 pinned: True
 ---
 
@@ -40,7 +39,7 @@ This visual approach mirrors how depression distorts perception. The photographs
 
 ### Technical Work
 
-Built a multi-layered camera rendering system that simulates a physical <mark>Nikon FM2—main</mark> camera renders film photographs while overlay cameras handle animated elements at different depths with parallax. Taking pictures triggers branching narrative reflections.
+Built a multi-layered camera rendering system that simulates a physical <mark>Nikon FM2</mark>—main camera renders film photographs while overlay cameras handle animated elements at different depths with parallax. Taking pictures triggers branching narrative reflections.
 
 Navigation uses a custom graph system (linked lists, modified BFS) with limited daily steps representing R's emotional capacity. Not every location can be visited in one playthrough.
 

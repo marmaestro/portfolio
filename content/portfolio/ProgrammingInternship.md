@@ -1,8 +1,7 @@
 ---
 title: 'Systems Programming Internship'
 subtitle: ''
-description: ''
-brief: "Systems programming internship that turned into a deep refactoring project. Adapted RotO's GaaS architecture for a new context and learned more about real-world code than in any university course."
+description: "Systems programming internship that turned into a deep refactoring project. Adapted a decade-old GaaS architecture for a new context and era."
 date: 2025-05-23
 author: marmaestro
 source:
