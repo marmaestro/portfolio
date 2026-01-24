@@ -1,10 +1,10 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useTranslation } from '~/i18n/utils.ts';
 
-const formId = 'xnjjadyp'; //import.meta.env.FORMSPREE_FORM_ID;
+const formId = import.meta.env.FORMSPREE_FORM_ID;
 const t = useTranslation();
 
-export function ContactForm() {
+export function VerticalContactForm() {
 	const [state, handleSubmit] = useForm(formId);
 
 	if (state.succeeded) {
@@ -14,6 +14,7 @@ export function ContactForm() {
 	return (
 
 		<form id='contact-form'
+			  className='vertical'
 			  onSubmit={handleSubmit}
 			  method="POST"
 			  action={"https://formspree.io/f/" + formId}>
@@ -50,11 +51,6 @@ export function ContactForm() {
 
 			<br/>
 
-			<button	id='sendMessageButton' type='submit'
-					disabled={state.submitting}>
-				{t.contact.form.send}
-			</button>
-
 			<textarea
 				name='message' id='message'
 				required
@@ -68,6 +64,12 @@ export function ContactForm() {
 				field='message'
 				errors={state.errors}
 			/>
+
+			<button id='sendMessageButton' type='submit'
+					className='vertical'
+					disabled={state.submitting}>
+				{t.contact.form.send}
+			</button>
 
 			<input
 				name='subject' id='subject'

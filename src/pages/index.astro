@@ -5,7 +5,8 @@ import Skill from '~/components/Skill.astro';
 
 import { getCollection } from "astro:content";
 import { useTranslation } from "~/i18n/utils.ts";
-import { ContactForm } from '~/scripts/contact.jsx';
+import { WideContactForm } from '~/scripts/wideContact.jsx';
+import { VerticalContactForm } from '~/scripts/verticalContact.jsx';
 
 import type { Locale } from "~/i18n/constants.ts";
 
@@ -86,7 +87,8 @@ const skills = t.skills.list;
 				<p class='muted'>{t.contact.message}</p>
 				<!-- TODO: Add socials prompt -->
             </div>
-			<ContactForm /> <!--TODO: Add "client:load" on deployment !!-->
+			<WideContactForm/> <!--TODO: Add "client:load" on deployment !!-->
+			<VerticalContactForm/> <!--TODO: Add "client:load" on deployment !!-->
         </div>
 		<img src={t.contact.image.url} alt={t.contact.image.alt}/>
     </section>

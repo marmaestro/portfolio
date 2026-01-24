@@ -1,6 +1,10 @@
 html {
     scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
+
+    @media screen and (max-width: 750px) {
+        scroll-snap-type: y proximity;
+    }
 }
 
 section {
@@ -27,6 +31,13 @@ img {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    margin-bottom: 3rem;
+
+    @media screen and (max-width: 750px) {
+        flex-direction: column;
+        scroll-snap-align: center;
+        margin-bottom: 1.5rem !important;
+    }
 }
 
 .blog {
@@ -39,6 +50,10 @@ img {
 
 .project {
     scroll-snap-align: center;
+
+    @media screen and (max-width: 750px) {
+        margin-bottom: 1.5rem !important;
+    }
 
     h1 {
         margin: 0;
