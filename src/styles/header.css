@@ -59,6 +59,19 @@ header.custom-header {
     height: 32px;
 }
 
+/* Mobile navigation */
+#nav-links {
+    @media (max-width: 640px) {
+        display: none;
+    }
+}
+
+#dropdown-container {
+    @media (min-width: 640px) {
+        display: none !important;
+    }
+}
+
 /*#navbar {
     padding: 1rem 2.5rem;
     background: hsl(var(--background-step-1));

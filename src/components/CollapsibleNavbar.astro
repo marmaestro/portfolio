@@ -1,0 +1,21 @@
+---
+import { Icon } from "astro-icon/components";
+import { Button } from 'studiocms:ui/components/button';
+import { Dropdown } from 'studiocms:ui/components/dropdown';
+---
+
+<Dropdown
+		id='dropdown'
+		options={[
+            { label: 'Home', value: 'home', href: '/'},
+            { label: 'Portfolio', value: 'portfolio', href: '/portfolio' },
+            { label: 'Gallery', value: 'gallery', href: '/gallery'},
+        ]}
+		align='start'
+>
+	<Button color='primary'>
+        <Icon name='bi:list'/>
+	</Button>
+</Dropdown>
+
+<!-- Other buttons omitted for simplicity -->

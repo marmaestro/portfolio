@@ -1,16 +1,5 @@
 /* StudioCMS UI overrides*/
 
-/* Palette */
-:root {
-
-}
-
-
-[data-theme="light"] {
-
-}
-
-
 /* Card */
 .sui-card {
     border-radius: var(--radius-lg) !important;
@@ -25,6 +14,7 @@
     }
 }
 
+/* Card */
 .project {
 
     .sui-card {
@@ -44,4 +34,10 @@
     .sui-card-body {
         padding: 1rem !important;
     }
+}
+
+/* Dropdown */
+.sui-dropdown {
+    min-width: 5.5rem !important;
+    left: -2rem !important;
 }

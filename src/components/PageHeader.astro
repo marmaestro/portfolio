@@ -5,10 +5,11 @@ import { Toggle } from 'astro-theme-toggle/components';
 import NavbarLink from '~/components/NavbarLink.astro';
 
 import '~/styles/header.css'
+import CollapsibleNavbar from "~/components/CollapsibleNavbar.astro";
 ---
 
 <Toggle id="theme-toggle" aria-label="Theme toggle button" />
-<ul class="links">
+<ul id='nav-links' class="links">
     {
         NavigationLinks.map((link) => (
                 <NavbarLink
@@ -21,71 +22,9 @@ import '~/styles/header.css'
         ))
     }
 </ul>
-    <!--<nav id = "navbar">
-        <div id = "navigation-items">
-            {
-                WebsiteLinks.map((link) => (
-                        <NavbarLink
-                                href = {link.url}
-                                target = {link.url.charAt(0) === 'h' ? '_blank' : '_self'}
-                                rel = {link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined}
-                        >
-                            {link.name}
-                        </NavbarLink>
-                ))
-            }
-        </div>
-        <button
-                class = "navbar-toggler"
-                type = "button"
-                id = "nav-open-btn"
-        >
-            <Icon name = "bi:list" size={32} />
-        </button>
-        <button
-                class = "navbar-toggler"
-                type = "button"
-                id = "nav-close-btn"
-        >
-            <Icon name = "bi:x" size = {32} />
-        </button>
-    </nav>-->
+<CollapsibleNavbar/>
 
-<script> // TODO : Remake this script so it works in my style
-    function toggleNav() {
-        const mobileMenu = document.querySelector('#menu')
-        const openBtn = document.querySelector('#nav-open-btn')
-        const isOpen = mobileMenu?.classList.contains('mobile-nav-open')
-
-        mobileMenu?.classList.toggle('mobile-nav-open')
-
-        if (openBtn) {
-            openBtn.setAttribute('aria-expanded', (!isOpen).toString())
-        }
-
-        // Trap focus in mobile menu when open
-        if (!isOpen && mobileMenu) {
-            const closeBtn = mobileMenu.querySelector('#nav-close-btn')
-            if (closeBtn instanceof HTMLElement) {
-                closeBtn.focus()
-            }
-        }
-    }
-
-    document
-        .querySelector('#nav-open-btn')
-        ?.addEventListener('click', toggleNav)
-    document
-        .querySelector('#nav-close-btn')
-        ?.addEventListener('click', toggleNav)
-
-    // Close mobile menu on escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const mobileMenu = document.querySelector('#menu')
-            if (mobileMenu?.classList.contains('mobile-nav-open')) {
-                toggleNav()
-            }
-        }
-    })
+<script>
+    import { DropdownHelper } from "studiocms:ui/components/dropdown/client";
+    const dropdown = new DropdownHelper('dropdown');
 </script>
