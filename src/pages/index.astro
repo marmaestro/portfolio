@@ -1,7 +1,7 @@
 ---
-import Layout from "~/layouts/Layout.astro"
-import ProjectPreview from "~/components/ProjectPreview.astro";
-import Skill from '~/components/Skill.astro';
+import Layout from '/src/layouts/Layout.astro'
+import ProjectPreview from '/src/components/ProjectPreview.astro';
+import Skill from '/src/components/Skill.astro';
 
 import { getCollection } from "astro:content";
 import { useTranslation } from "~/i18n/utils.ts";
@@ -25,6 +25,8 @@ const projects = (await getCollection('portfolio'))
 
 const intro = t.home.intro.body;
 const skills = t.skills.list;
+
+
 ---
 <!-- MAIN PAGE -->
 <Layout

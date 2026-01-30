@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/Layout.astro";
+import Layout from "~/layouts/Layout.js";
 
 import { Badge } from 'studiocms:ui/components/badge';
 import { User } from 'studiocms:ui/components/user';
@@ -7,7 +7,7 @@ import type { Locale } from "~/i18n/constants.ts";
 
 import { useTranslation } from "~/i18n/utils.ts";
 import {WideContactForm} from '~/scripts/wideContact.jsx';
-import profilePicture from "public/favicon/favicon.svg";
+import profilePicture from "../../public/favicon/favicon.svg";
 
 import '~/styles/section.css';
 import '~/styles/about.css';
@@ -45,11 +45,11 @@ const description = t.about.content;
             <br>
             <div class='card'>
                 <div class='card-side front'>
-                    <img class='about-picture' src="src/img/about/mar.jpeg" alt=""/>
+                    <img class='about-picture' src="../img/about/mar.jpeg" alt=""/>
                 </div>
                 <div class='card-side back'>
                     <a href={t.about.resume.url} target="_blank" rel="noopener noreferrer">
-                        <img class='about-picture' src="src/img/about/wren.png" alt=""/>
+                        <img class='about-picture' src="../img/about/wren.png" alt=""/>
                     </a>
                 </div>
             </div>

@@ -9,50 +9,89 @@
 	"home": {
 		"title": "marmaestro",
 		"description": "Web portfolio de Mar Maestro Momparler",
-		"previews": {
-			"portfolio": "Algunos de mis proyectos",
-			"blog": "Últimas publicaciones en el blog"
+		"intro": {
+			"title": "Hola, soy Mar Maestro!",
+			"subtitle": "Desarrolladora, diseñadora y estudiante.",
+			"body": [
+				"Soy una estudiante de 24 años en la universidad Jaume I, y estudio Diseño y desarrollo de videojuegos.",
+				"Gracias a mi experiencia en programación y diseño, me centro en la solución de problemas analítica y la construcción de bases técnicas sólidas.",
+				"Me apasiona crear experiencias cautivadoras para, y experimento constantemente con nuevas herramientas y técnicas para crear nuevos mundos interactivos."
+			],
+			"image": {
+				"url": "placeholders/banner.png",
+				"alt": "Banner placeholder"
+			}
 		}
+	},
+	"skills": {
+		"title": "Mis habilidades",
+		"body": "He ganado experiencia en el desarrollo de videojuegos y otras ramas de la ingeniería informática a través de mis estudios y proyectos personales. He trabajado estas habilidades en muchos proyectos.",
+		"list": [
+			"C# & C++",
+			"Unity",
+			"Godot",
+			"VCS",
+			"Game Design",
+			"FMOD",
+			"HTML & CSS",
+			"Astro"
+		]
+	},
+	"portfolio": {
+		"title": "En qué he estado trabajando",
+		"description": "En qué he trabajado.",
+		"body": "Adoro crear cosas nuevas, y he estado haciendo juegos desde que empecé la universidad. Aquí hay algunos proyectos a los que vale la pena echarle un vistazo."
 	},
 	"blog": {
 		"title": "Blog",
 		"description": "Algunas cosas que he escrito a lo largo de los años.",
 		"titles": {
-			"top": "Últimas publicaciones",
-			"all": "Todas las publicaciones"
+			"top": "Últimas publicaciones"
 		}
-	},
-	"portfolio": {
-		"title": "Proyectos",
-		"description": "Cosas en las que he trabajado."
 	},
 	"gallery": {
 		"title": "Galería",
 		"description": "Mi trabajo de fotografía analógica. Disparo como hobby con una Nikon FM-2."
 	},
-	"intro": {
-		"title": "Sobre Mí",
-		"description": "Sección de contacto, y un poquito sobre mí y mi trayectoria.",
-		"headline": "",
-		"content": [ "" ],
+	"about": {
+		"title": "Sobre mí",
+		"description": "Sección de contacto y un poco sobre mi trayectoria.",
+		"headline": "Arquitecta de sistemas, diseñadora de juegos, amarte de las aves.",
+		"content": [
+			""
+		],
+		"profileDescription": "Programadora de videojuegos y diseñadora",
 		"resume": {
-			"text": "Mira mi currículum",
-			"url": "es/cv_es_marmaestro.pdf"
+			"text": "¡Mira mi currículum!",
+			"url": "cv/cv_es_marmaestro.pdf"
+		}
+	},
+	"contact": {
+		"title": "Creemos algo juntos",
+		"body": "Escríbeme si estas buscando un desarrollador o diseñador, si tienes una pregunta, o si simplemente quieres que nos conozcamos.",
+		"message": "Estaré encantada de responder.",
+		"image": {
+			"url": "placeholders/banner.png",
+			"alt": "Banner placeholder"
 		},
-		"contact": {
+		"form": {
 			"title": "Entremos en contacto",
 			"name": "Nombre",
-			"email": "Dirección de correo electrónico",
+			"email": "Correo electrónico",
 			"message": "Mensaje",
 			"subject": "Porfolio Contact Form [ES]",
 			"send": "Enviar",
 			"warning": "Este campo es obligatorio."
-		},
-		"error": {
-			"title": "Page not found",
-			"description": "Error 404, página no encontrada.",
-			"oops": "Oops!",
-			"text": "No hemos podido encontrar la página que buscas. Puede haber sido movida o borrada, o puede no haber existido nunca."
+		}
+	},
+	"errorPage": {
+		"title": "Página no encontrada",
+		"description": "Error 404, página no encontrada.",
+		"oops": "Oops!",
+		"text": "No hemos podido encontrar la página que buscas. Puede que haya sido movida o eliminada, o que nunca existiera.",
+		"button": {
+			"text": "Llévame de vuelta al inicio",
+			"url": "/"
 		}
 	}
 }

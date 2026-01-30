@@ -1,0 +1,27 @@
+---
+import Badge from '@studiocms/ui/components/Badge/Badge.astro'
+import { locales } from '~/i18n/constants.ts'
+import {computeCurrentLocale} from "astro/dist/i18n/utils";
+---
+
+<ul>
+    {Object.entries(locales).map(([_, lang]) => (
+			<li>
+				<button aria-label={lang.toUpperCase()} role='option' type='button' command={}>
+                    <Badge label={lang.toUpperCase()} variant='flat' color='mono' />
+                </button>
+			</li>
+    ))}
+</ul>
+
+<script>
+    dialog.addEventListener("cancel", (e) => {
+        if (!e.cancelable) return;
+        if (radio.value === "no") {
+            warning.hidden = false;
+            e.preventDefault();
+        } else {
+            warning.hidden = true;
+        }
+    });
+</script>

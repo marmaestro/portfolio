@@ -3,12 +3,13 @@ import { NavigationLinks } from '~/config/site.ts';
 import { Toggle } from 'astro-theme-toggle/components';
 
 import NavbarLink from '~/components/NavbarLink.astro';
+import CollapsibleNavbar from '~/components/CollapsibleNavbar.astro';
+import LanguagePicker from '~/components/LanguagePicker.astro';
 
-import '~/styles/header.css'
-import CollapsibleNavbar from "~/components/CollapsibleNavbar.astro";
+import '~/styles/header.css';
 ---
 
-<Toggle id="theme-toggle" aria-label="Theme toggle button" />
+<Toggle id="theme-toggle" aria-label='Theme toggle button' />
 <ul id='nav-links' class="links">
     {
         NavigationLinks.map((link) => (
@@ -22,7 +23,8 @@ import CollapsibleNavbar from "~/components/CollapsibleNavbar.astro";
         ))
     }
 </ul>
-<CollapsibleNavbar/>
+<LanguagePicker aria-label='Language picker list' />
+<CollapsibleNavbar aria-label='Collapsible navbar button' />
 
 <script>
     import { DropdownHelper } from "studiocms:ui/components/dropdown/client";
