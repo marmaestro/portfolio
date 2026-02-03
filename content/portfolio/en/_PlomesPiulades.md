@@ -9,7 +9,7 @@ source:
     url: https://punicgoose.itch.io/plomes-piulades
     item: 'itch.io'
 image:
-    url: ../src/img/portfolio/plomes-piulades.png
+    url: ../../src/img/portfolio/plomes-piulades.png
     alt: game cover
 roles: [ programmer, game designer ]
 tags: [ game, game jam ] 

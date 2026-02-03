@@ -1,6 +1,6 @@
 ---
 title: Refugio 101
-subtitle: Seasons 10.5 - 12
+subtitle: Temporadas 10.5 - 12
 description: "A radio programme about videogames."
 date: 2025-06-27
 author: Refugio 101 (4th generation)
@@ -8,11 +8,12 @@ source:
     url: https://www.ivoox.com/en/diamond-is-unbreakable-4-generacion_bk_list_10513519_1.html
     item: 'iVoox playlist'
 image:
-    url: ../src/img/portfolio/refugio-101.jpeg
+    url: ../../src/img/portfolio/refugio-101.jpeg
     alt: ""
 roles: [ director, editor, co-host ]
 tags: [ podcast ] 
 pinned: True
+lang: es
 ---
 
 _Refugio 101_ is a Spanish-speaking video games radio programme published at UJI's IP radio station. You can listen to news, essays and reviews every week.

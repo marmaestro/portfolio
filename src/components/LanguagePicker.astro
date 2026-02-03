@@ -1,27 +1,22 @@
 ---
-import Badge from '@studiocms/ui/components/Badge/Badge.astro'
-import { locales } from '~/i18n/constants.ts'
-import {computeCurrentLocale} from "astro/dist/i18n/utils";
+import { Badge } from 'studiocms:ui/components/badge';
+
+import { locales } from '~/i18n/constants.ts';
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const currentLang = Astro.currentLocale;
+const currentPath = Astro.url.pathname
+    .replace(`/${currentLang}/`, '/')
+    .replace(/^\//, '');
 ---
-
-<ul>
-    {Object.entries(locales).map(([_, lang]) => (
-			<li>
-				<button aria-label={lang.toUpperCase()} role='option' type='button' command={}>
-                    <Badge label={lang.toUpperCase()} variant='flat' color='mono' />
-                </button>
-			</li>
-    ))}
-</ul>
-
-<script>
-    dialog.addEventListener("cancel", (e) => {
-        if (!e.cancelable) return;
-        if (radio.value === "no") {
-            warning.hidden = false;
-            e.preventDefault();
-        } else {
-            warning.hidden = true;
-        }
-    });
-</script>
+<span id='language-picker'>
+    { Object.entries(locales).map(([_, lang]) => {
+        const url = getRelativeLocaleUrl(lang, currentPath);
+        const label = lang.toUpperCase();
+        return (
+            <a aria-label=`Switch to ${label} site` role='option' aria-selected={ lang == Astro.currentLocale } type='a' href={url} id = {lang == Astro.currentLocale ? 'current-lang' : undefined } >
+                <Badge label={label} variant='flat' color='mono'/>
+            </a>
+        );
+    })}
+</span>

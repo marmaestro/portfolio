@@ -10,7 +10,7 @@ image:
 tags: [ Refugio 101, video games, essay, solarpunk ] 
 ---
 
-Emitido en el programa [**_11x09 | Soles, guerras y revolución_**](https://go.ivoox.com/rf/120394994) de [**Refugio 101**](../../portfolio/refugio101).
+Emitido en el programa [**_11x09 | Soles, guerras y revolución_**](https://go.ivoox.com/rf/120394994) de [**Refugio 101**](../../portfolio/es/Refugio101.md).
 
 Hoy vengo a hablaros de **solarpunk**.
 Seguramente, no tengáis ni idea de qué es, o estéis intentando conectar puntos en vuestro cerebro con cosas que pensáis que son similares.

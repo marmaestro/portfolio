@@ -8,11 +8,12 @@ source:
     url: ''
     item: ''
 image:
-    url: ../src/img/portfolio/
+    url: ../../src/img/portfolio/
     alt: ''
 roles: [ intern, programmer, systems architect ]
 tags: [ professional work, programming ] 
 pinned: False
+lang: en
 ---
 
 **Firescale Studios S.L. | March - May 2025**

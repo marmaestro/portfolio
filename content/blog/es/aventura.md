@@ -10,7 +10,7 @@ image:
 tags: [ Refugio 101, video games, essay ] 
 ---
 
-Emitido en el programa [**_11x13 | Lista de vértices con forma monil de aventura_**]() de [**Refugio 101**](../../portfolio/refugio101).
+Emitido en el programa [**_11x13 | Lista de vértices con forma monil de aventura_**]() de [**Refugio 101**](../../portfolio/es/Refugio101.md).
 
 En mi mini sección especial voy a hablaros de probar cosas nuevas por accidente.
 Si me conocéis lo suficiente o habéis escuchado el primer programa de nuestra generación, sabréis que yo acabé en este grado por coincidencia.

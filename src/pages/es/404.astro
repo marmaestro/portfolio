@@ -1,0 +1,39 @@
+---
+import ErrorLayout from "~/layouts/ErrorLayout.astro"
+
+import { Icon } from 'astro-icon/components';
+import { Center } from 'studiocms:ui/components/center';
+import { Button } from 'studiocms:ui/components/button';
+
+import {useTranslation} from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
+
+import '~/styles/404.css'
+
+const t = useTranslation(Astro.currentLocale as Locale);
+---
+
+<ErrorLayout
+		siteName = "marmaestro"
+		title = {t.errorPage.title}
+		description = {t.errorPage.description}
+>
+	<Center>
+		<section id="errorPage">
+			<div class="errorPage-number">
+				<h1>
+					<b>4</b><Icon name="bi:bug" id="bug"/><b>4</b>
+				</h1>
+			</div>
+			<div class="errorPage-text">
+				<h2>{t.errorPage.oops}</h2>
+				<p>{t.errorPage.text}</p>
+			</div>
+			<Center>
+				<Button as='a' color='primary' variant='flat' href={t.errorPage.button.url}>
+                    {t.errorPage.button.text}
+				</Button>
+			</Center>
+		</section>
+	</Center>
+</ErrorLayout>

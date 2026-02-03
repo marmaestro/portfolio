@@ -9,7 +9,7 @@ source:
     url: https://youtu.be/NJpaTEld0kk
     item: 'YouTube'
 image:
-    url: ../src/img/portfolio/jugar-pescar.png
+    url: ../../src/img/portfolio/jugar-pescar.png
     alt: video thumbnail
 roles: [ host, writer, co-director, co-producer, editing assistant ]
 tags: [ audiovisual, documentary ] 

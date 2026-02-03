@@ -12,7 +12,7 @@ import '~/styles/justifiedGallery/reset.css';
 const t = useTranslation(Astro.currentLocale as Locale);
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-    '../img/gallery/**/**.{jpg,jpeg,png,webp}');
+    '../../img/gallery/**/**.{jpg,jpeg,png,webp}');
 ---
 
 <Layout
@@ -29,7 +29,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 								href={imageData.src}
 								target='_blank'
 								data-fancybox='gallery'
-                                aria-label='gallery image'
+								aria-label='gallery image'
 						>
 							<Image
 									format='webp'

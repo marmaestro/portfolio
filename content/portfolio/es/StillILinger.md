@@ -1,6 +1,6 @@
 ---
 title: Still I Linger
-subtitle: Bachelor's Thesis, a work in progress
+subtitle: Trabajo de fin de grado, y un proyecto en proceso
 description: "Mixed-media artgame with film photography and hand-drawn animations. A city seen through the lens of chronic anxiety and depression."
 date: 2025-07-11
 author: marmaestro
@@ -8,11 +8,12 @@ source:
     url: https://marmaestro.itch.io/stillilinger
     item: 'itch.io'
 image:
-    url: ../src/img/portfolio/tfg-banner.gif
+    url: ../../src/img/portfolio/tfg-banner.gif
     alt: game cover
 roles: [ solo dev ]
 tags: [ game, film photography, narrative ]
 pinned: True
+lang: es
 ---
 
 **June 2025**
@@ -20,7 +21,7 @@ pinned: True
 A first-person 2D artgame exploring depression from a neurodivergent perspective. Players navigate a Mediterranean city through the internal lens of R, a university student dealing with chronic anxiety and depression during their first weekend alone in a new place.
 
 <figure>
-    <img src='../src/img/portfolio/tfg-banner.gif' alt=''/>
+    <img src='../../src/img/portfolio/tfg-banner.gif' alt=''/>
     <figcaption>The game cover, selected from my favourite scene</figcaption>
 </figure>
 
@@ -46,7 +47,7 @@ Navigation uses a custom graph system (linked lists, modified BFS) with limited 
 Narrative scripted in <mark>Inky</mark> with algorithmic diary generation at day's end, weighted by player choices and emotional tags. The system deliberately feels somewhat random—matching R's mental instability.
 
 <figure>
-    <img src='../src/img/portfolio/tfg-cafe.jpg' alt=''/>
+    <img src='../../src/img/portfolio/tfg-cafe.jpg' alt=''/>
     <figcaption>One of the pictures taken for the project, before illustrating it</figcaption>
 </figure>
 

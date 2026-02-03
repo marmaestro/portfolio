@@ -18,7 +18,7 @@ const projects = (await getCollection('portfolio'))
 ---
 
 <Layout
-        sitename = 'marmaestro'
+		sitename = 'marmaestro'
 		title = {t.portfolio.title}
 		description = {t.portfolio.description}>
 
@@ -34,18 +34,18 @@ const projects = (await getCollection('portfolio'))
                          700: 2,
                          500: 1
                      }}
-        >
+		>
             {
                 projects.map(project =>
                     (
 							<ProjectPreview fullWidth
-									url = {`/portfolio/${project.id}`}
-									title = {project.data.title}
-									subtitle = {project.data.subtitle}
-									description = {project.data.description}
-									image = {project.data.image}
-									tags = {project.data.tags}
-									pinned = {project.data.pinned}
+											url = {`/portfolio/${project.id}`}
+											title = {project.data.title}
+											subtitle = {project.data.subtitle}
+											description = {project.data.description}
+											image = {project.data.image}
+											tags = {project.data.tags}
+											pinned = {project.data.pinned}
 							/>
                     ))
             }

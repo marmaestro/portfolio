@@ -2,16 +2,40 @@
 import { Icon } from "astro-icon/components";
 import { Button } from 'studiocms:ui/components/button';
 import { Dropdown } from 'studiocms:ui/components/dropdown';
----
 
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslation } from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
+
+const currentLang = Astro.currentLocale!;
+const currentPath = Astro.url.pathname
+    .replace(`/${currentLang}/`, '/')
+    .replace(/^\//, '');
+
+const t = useTranslation(Astro.currentLocale as Locale);
+---
+<!-- TODO : currentLang does not reload on link navigation through these -->
 <Dropdown
 		id='dropdown'
 		options={[
-            { label: 'Home', value: 'home', href: '/'},
-            { label: 'Portfolio', value: 'portfolio', href: '/portfolio' },
-            { label: 'Gallery', value: 'gallery', href: '/gallery'},
+            {  label: t.nav.home,
+                value: 'home',
+                href: getRelativeLocaleUrl(currentLang, '/')},
+            { label: t.nav.projects,
+                value: 'portfolio',
+                href: getRelativeLocaleUrl(currentLang, '/portfolio') },
+            { label: t.nav.gallery,
+                value: 'gallery',
+                href: getRelativeLocaleUrl(currentLang, '/gallery')},
+            { label: '' , value: '', disabled: true },
+            /* languages */
+            { label: 'EN',
+                value: 'en',
+                href: getRelativeLocaleUrl('en', currentPath) },
+            { label: 'ES',
+                value: 'es',
+                href: getRelativeLocaleUrl('es', currentPath) },
         ]}
-		align='start'
 >
 	<Button color='primary'>
         <Icon name='bi:list'/>

@@ -10,7 +10,7 @@ image:
 tags: [ Refugio 101, video games, essay, philosophy ] 
 ---
 
-Emitido en el programa [**_11x24 | Miramos los perros y el futuro_**](https://go.ivoox.com/rf/127768806) de [**Refugio 101**](../../portfolio/refugio101).
+Emitido en el programa [**_11x24 | Miramos los perros y el futuro_**](https://go.ivoox.com/rf/127768806) de [**Refugio 101**](../../portfolio/es/Refugio101.md).
 
 > **_“There will always be things in life that escape our control. We cannot fight them all. But we can mourn, remember, learn, share, and accept.”_**
 

@@ -2,6 +2,8 @@
 import { NavigationLinks } from '~/config/site.ts';
 import { Toggle } from 'astro-theme-toggle/components';
 
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
 import NavbarLink from '~/components/NavbarLink.astro';
 import CollapsibleNavbar from '~/components/CollapsibleNavbar.astro';
 import LanguagePicker from '~/components/LanguagePicker.astro';
@@ -14,7 +16,7 @@ import '~/styles/header.css';
     {
         NavigationLinks.map((link) => (
                 <NavbarLink
-                        href = {link.url}
+                        href = {getRelativeLocaleUrl(Astro.currentLocale, link.url)}
                         target = {link.url.charAt(0) === 'h' ? '_blank' : '_self'}
                         rel = {link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined}
                 >

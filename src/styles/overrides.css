@@ -38,6 +38,11 @@
 
 /* Dropdown */
 .sui-dropdown {
-    min-width: 5.5rem !important;
-    left: -2rem !important;
+    width: max-content !important;
+    min-width: unset !important;
+    max-width: unset !important;
+}
+
+.sui-dropdown.initialized.below {
+    left: calc(-50% - 0.25rem - var(--offset)) !important;
 }

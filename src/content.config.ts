@@ -36,17 +36,12 @@ const portfolio = defineCollection({
         }),
         roles: z.string().array(),
         tags: z.string().array(),
-        pinned: z.boolean()
+        pinned: z.boolean(),
+        lang: z.enum(['en', 'es']),
     })
-})
-
-const gallery = defineCollection({
-    loader: glob({ pattern: '**/[^_].*.{jpg,jpeg,webp,png}', base: '~/img/gallery' }),
-    schema: z.any()
 })
 
 export const collections = {
     /*'blog': blog,*/
     'portfolio': portfolio,
-    'gallery': gallery,
 };

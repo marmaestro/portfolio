@@ -4,7 +4,7 @@
 		"blog": "Blog",
 		"projects": "Proyectos",
 		"gallery": "Galería",
-		"intro": "Sobre Mí"
+		"about": "Sobre Mí"
 	},
 	"home": {
 		"title": "marmaestro",
@@ -18,7 +18,7 @@
 				"Me apasiona crear experiencias cautivadoras para, y experimento constantemente con nuevas herramientas y técnicas para crear nuevos mundos interactivos."
 			],
 			"image": {
-				"url": "placeholders/banner.png",
+				"url": "../placeholders/banner.png",
 				"alt": "Banner placeholder"
 			}
 		}
@@ -58,12 +58,14 @@
 		"description": "Sección de contacto y un poco sobre mi trayectoria.",
 		"headline": "Arquitecta de sistemas, diseñadora de juegos, amarte de las aves.",
 		"content": [
+			"",
+			"",
 			""
 		],
 		"profileDescription": "Programadora de videojuegos y diseñadora",
 		"resume": {
 			"text": "¡Mira mi currículum!",
-			"url": "cv/cv_es_marmaestro.pdf"
+			"url": "../cv/cv_es_marmaestro.pdf"
 		}
 	},
 	"contact": {
@@ -71,7 +73,7 @@
 		"body": "Escríbeme si estas buscando un desarrollador o diseñador, si tienes una pregunta, o si simplemente quieres que nos conozcamos.",
 		"message": "Estaré encantada de responder.",
 		"image": {
-			"url": "placeholders/banner.png",
+			"url": "../placeholders/banner.png",
 			"alt": "Banner placeholder"
 		},
 		"form": {
@@ -90,8 +92,8 @@
 		"oops": "Oops!",
 		"text": "No hemos podido encontrar la página que buscas. Puede que haya sido movida o eliminada, o que nunca existiera.",
 		"button": {
-			"text": "Llévame de vuelta al inicio",
-			"url": "/"
+			"text": "Volvamos al inicio",
+			"url": "/es/"
 		}
 	}
 }

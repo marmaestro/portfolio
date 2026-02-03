@@ -9,7 +9,7 @@ source:
     url: https://punicgoose.itch.io/prop-trip
     item: 'itch.io'
 image:
-    url: ../src/img/portfolio/prop-trip.png
+    url: ../../src/img/portfolio/prop-trip.png
     alt: game cover
 roles: [ 3D art director, game designer, narrative assistant ]
 tags: [ game, game jam ] 

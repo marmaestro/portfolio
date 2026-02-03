@@ -30,20 +30,20 @@ const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.curre
 		title = {project.data.title}
 		description = {project.data.description}
 >
-	<Row style="justify-content: space-between; align-items: baseline;">
-		<h1 class='heading'>{project.data.title}</h1>
+    <Row style="justify-content: space-between; align-items: baseline;">
+        <h1 class='heading'>{project.data.title}</h1>
         {project.data.source.item != '' ?
-				<a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
+                <a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
             : null}
-	</Row>
-	<h2 class='heading'>{project.data.subtitle}</h2>
-	<Row id='project-roles'>
+    </Row>
+    <h2 class='heading'>{project.data.subtitle}</h2>
+    <Row id='project-roles'>
         {
             roles.map((role) => (
-					<Badge label={role} variant='flat' color='mono' size='md'/>
+                    <Badge label={role} variant='flat' color='mono' size='md'/>
             ))
         }
-	</Row>
-	<br><Divider/><br>
-	<Content/>
+    </Row>
+    <br><Divider/><br>
+    <Content/>
 </MarkdownPostLayout>

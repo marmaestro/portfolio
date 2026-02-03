@@ -10,7 +10,7 @@ image:
 tags: [ Refugio 101, video games, essay, philosophy ] 
 ---
 
-Emitido en el programa [**_11x19 | El puzzle de la pérdida_**](https://go.ivoox.com/rf/124780148) de [**Refugio 101**](../../portfolio/refugio101).
+Emitido en el programa [**_11x19 | El puzzle de la pérdida_**](https://go.ivoox.com/rf/124780148) de [**Refugio 101**](../../portfolio/es/Refugio101.md).
 Incluido en el programa [**_Nuevos Niveles #1_**](https://freetoplaylab.com/nuevos-niveles/) de [**Sala Arcade**](https://freetoplaylab.com/podcast/).
 
 ![Inicio de GRIS.](../../../src/img/blog/perdida/gris-wide.png)
