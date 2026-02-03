@@ -1,11 +1,18 @@
 {
-	"nav": {
-		"home": "Inicio",
-		"blog": "Blog",
-		"projects": "Proyectos",
-		"gallery": "Galería",
-		"about": "Sobre Mí"
-	},
+	"nav": [
+		{
+			"name": "Inicio",
+			"url": "/"
+		},
+		{
+			"name": "Proyectos",
+			"url": "/portfolio"
+		},
+		{
+			"name": "Galería",
+			"url": "/gallery"
+		}
+	],
 	"home": {
 		"title": "marmaestro",
 		"description": "Web portfolio de Mar Maestro Momparler",
@@ -95,5 +102,8 @@
 			"text": "Volvamos al inicio",
 			"url": "/es/"
 		}
+	},
+	"i18n": {
+		"switchMessage": "Switch to English"
 	}
 }

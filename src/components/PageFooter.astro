@@ -2,6 +2,11 @@
 import { SocialLinks } from '~/config/site.ts';
 import { Footer, Row } from 'studiocms:ui/components';
 import { Icon } from 'astro-icon/components';
+
+import LanguagePicker from "~/components/LanguagePicker.astro";
+
+import '~/styles/footer.css';
+import LanguageSwitcher from "~/components/LanguageSwitcher.astro";
 ---
 
 <Footer id="footer"
@@ -26,6 +31,7 @@ import { Icon } from 'astro-icon/components';
         <span class='studiocms-footer-text'>
             <a href = "mailto:marmaestro@pm.me?subject=Contact">marmaestro</a>
         </span>
+		<LanguageSwitcher aria-label='Language switch' />
     </div>
 
     <div slot='socials' class='socials'>

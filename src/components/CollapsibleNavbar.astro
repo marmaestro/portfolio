@@ -7,39 +7,22 @@ import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslation } from "~/i18n/utils.ts";
 import type {Locale} from "~/i18n/constants.ts";
 
-const currentLang = Astro.currentLocale!;
-const currentPath = Astro.url.pathname
-    .replace(`/${currentLang}/`, '/')
-    .replace(/^\//, '');
 
+const locale = Astro.currentLocale! as Locale;
 const t = useTranslation(Astro.currentLocale as Locale);
+const navOptions = t.nav.map(link => ({
+    label: link.name,
+    value: link.url.replace('/', '').replace(`${locale}/`, '') || 'home',
+    href: getRelativeLocaleUrl(locale, link.url.replace(`/${locale}`, '').replace(/^\//, ''))
+}));
 ---
 <!-- TODO : currentLang does not reload on link navigation through these -->
 <Dropdown
-		id='dropdown'
-		options={[
-            {  label: t.nav.home,
-                value: 'home',
-                href: getRelativeLocaleUrl(currentLang, '/')},
-            { label: t.nav.projects,
-                value: 'portfolio',
-                href: getRelativeLocaleUrl(currentLang, '/portfolio') },
-            { label: t.nav.gallery,
-                value: 'gallery',
-                href: getRelativeLocaleUrl(currentLang, '/gallery')},
-            { label: '' , value: '', disabled: true },
-            /* languages */
-            { label: 'EN',
-                value: 'en',
-                href: getRelativeLocaleUrl('en', currentPath) },
-            { label: 'ES',
-                value: 'es',
-                href: getRelativeLocaleUrl('es', currentPath) },
-        ]}
+		id = 'dropdown'
+        align='end'
+		options = {[ ...navOptions ]}
 >
-	<Button color='primary'>
-        <Icon name='bi:list'/>
+	<Button color = 'primary'>
+        <Icon name = 'bi:list'/>
 	</Button>
 </Dropdown>
-
-<!-- Other buttons omitted for simplicity -->

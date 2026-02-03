@@ -6,7 +6,7 @@ import { Icon } from 'astro-icon/components';
 const { fullWidth, title, subtitle, description, url, image, tags, pinned } = Astro.props;
 ---
 
-<Card {fullWidth} class='project'>
+<Card {fullWidth} class='project' style={fullWidth ? 'margin-bottom: 2.5rem;': null} >
     <div slot='header'>
 		<img src={image.url} alt={image.alt}/>
     </div>

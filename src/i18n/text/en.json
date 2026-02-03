@@ -1,11 +1,18 @@
 {
-	"nav": {
-		"home": "Home",
-		"blog": "Blog",
-		"projects": "Portfolio",
-		"gallery": "Gallery",
-		"about": "About"
-	},
+	"nav": [
+		{
+			"name": "Home",
+			"url": "/"
+		},
+		{
+			"name": "Portfolio",
+			"url": "/portfolio"
+		},
+		{
+			"name": "Gallery",
+			"url": "/gallery"
+		}
+	],
 	"home": {
 		"title": "marmaestro",
 		"description": "Mar Maestro Momparler's portfolio site.",
@@ -18,7 +25,7 @@
 				"Passionate about crafting engaging player experiences, I'm constantly experimenting with new tools and techniques to bring interactive worlds to life."
 			],
 			"image": {
-				"url": "placeholders/banner.png",
+				"url": "/placeholders/banner.png",
 				"alt": "Placeholder banner"
 			}
 		}
@@ -73,7 +80,7 @@
 		"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
 		"message": "I'll be glad to message back.",
 		"image": {
-			"url": "placeholders/banner.png",
+			"url": "/placeholders/banner.png",
 			"alt": "Placeholder banner"
 		},
 		"form": {
@@ -95,5 +102,8 @@
 			"text": "Take me back home",
 			"url": "/"
 		}
+	},
+	"i18n": {
+		"switchMessage": "Cambiar a Castellano"
 	}
 }

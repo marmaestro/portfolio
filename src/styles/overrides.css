@@ -44,5 +44,6 @@
 }
 
 .sui-dropdown.initialized.below {
-    left: calc(-50% - 0.25rem - var(--offset)) !important;
+    right: 0px !important;
+    left: auto !important;
 }
