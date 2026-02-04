@@ -29,8 +29,8 @@ const projects = (await getCollection('portfolio'))
 				 columnClass = 'column'
 				 breakpointCols =
                      {{
-                         default: 2,
-                         1100: 2,
+                         default: 3,
+                         1100: 3,
                          700: 2,
                          500: 1
                      }}
@@ -38,7 +38,7 @@ const projects = (await getCollection('portfolio'))
             {
                 projects.map(project =>
                     (
-							<ProjectPreview fullWidth
+							<ProjectPreview fullWidth padded
 									url = {`/portfolio/${project.id}`}
 									title = {project.data.title}
 									subtitle = {project.data.subtitle}

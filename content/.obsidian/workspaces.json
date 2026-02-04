@@ -1,0 +1,179 @@
+{
+  "workspaces": {
+    "main layout": {
+      "main": {
+        "id": "06cf639e882eb366",
+        "type": "split",
+        "children": [
+          {
+            "id": "13830a5ac03904ca",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "43d4a008353dd844",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "-/documentation/gdd.md",
+                    "mode": "source",
+                    "backlinks": true,
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "gdd"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical"
+      },
+      "left": {
+        "id": "0d27f576fb040d9e",
+        "type": "split",
+        "children": [
+          {
+            "id": "7b7fa36e15e57904",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "f347d320cc6e6b16",
+                "type": "leaf",
+                "state": {
+                  "type": "file-explorer",
+                  "state": {
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-folder-closed",
+                  "title": "Files"
+                }
+              },
+              {
+                "id": "6971a9fdfba2c1d5",
+                "type": "leaf",
+                "state": {
+                  "type": "search",
+                  "state": {
+                    "query": "",
+                    "matchingCase": false,
+                    "explainSearch": false,
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical"
+                  },
+                  "icon": "lucide-search",
+                  "title": "Search"
+                }
+              },
+              {
+                "id": "371a89d013c7feee",
+                "type": "leaf",
+                "state": {
+                  "type": "bookmarks",
+                  "state": {},
+                  "icon": "lucide-bookmark",
+                  "title": "Bookmarks"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 200
+      },
+      "right": {
+        "id": "119ffbae1b13a7d5",
+        "type": "split",
+        "children": [
+          {
+            "id": "88f3615c07e65b1c",
+            "type": "tabs",
+            "dimension": 46.446078431372555,
+            "children": [
+              {
+                "id": "3ea88511a81d6f6d",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "file": "-/documentation/gdd.md",
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks for gdd"
+                }
+              },
+              {
+                "id": "762841e90a267510",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "01259a79a78e9a57",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "-/documentation/gdd.md"
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of gdd"
+                }
+              }
+            ],
+            "currentTab": 2
+          },
+          {
+            "id": "6b4eee9327ca22b9",
+            "type": "tabs",
+            "dimension": 53.553921568627445,
+            "children": [
+              {
+                "id": "f2e573f0cc8e8d56",
+                "type": "leaf",
+                "state": {
+                  "type": "graph",
+                  "state": {},
+                  "icon": "lucide-git-fork",
+                  "title": "Graph view"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal",
+        "width": 342.5
+      },
+      "left-ribbon": {
+        "hiddenItems": {
+          "templater-obsidian:Templater": false,
+          "switcher:Open quick switcher": false,
+          "graph:Open graph view": false,
+          "canvas:Create new canvas": false,
+          "templates:Insert template": false,
+          "command-palette:Open command palette": false,
+          "markdown-importer:Open format converter": false,
+          "workspaces:Manage workspace layouts": false
+        }
+      },
+      "active": "43d4a008353dd844",
+      "mtime": "2025-01-23T10:54:12+01:00"
+    }
+  },
+  "active": "main layout"
+}

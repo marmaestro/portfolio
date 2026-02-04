@@ -1,7 +1,7 @@
 ---
 title: Still I Linger
 subtitle: Trabajo de fin de grado, y un proyecto en proceso
-description: "Mixed-media artgame with film photography and hand-drawn animations. A city seen through the lens of chronic anxiety and depression."
+description: Artgame creado con fotografía analógica y animaciones dibujadas a mano. Una ciudad vista a través de la lente de la ansiedad crónica y la depresión.
 date: 2025-07-11
 author: marmaestro
 source:
@@ -11,59 +11,59 @@ image:
     url: ../../src/img/portfolio/tfg-banner.gif
     alt: game cover
 roles: [ solo dev ]
-tags: [ game, film photography, narrative ]
+tags: [ juego, fotografía analógica, narrativa ]
 pinned: True
 lang: es
 ---
 
-**June 2025**
+**Junio 2025**
 
-A first-person 2D artgame exploring depression from a neurodivergent perspective. Players navigate a Mediterranean city through the internal lens of R, a university student dealing with chronic anxiety and depression during their first weekend alone in a new place.
+Un *artgame* 2D en primera persona que explora la depresión desde una perspectiva neurodivergente. El jugador navega por una pequeña ciudad desde el punto de vista de R, una estudiante universitaria que lidia con ansiedad crónica y depresión durante su primer fin de semana sola en un lugar nuevo.
 
+<!--suppress HtmlUnknownTarget -->
 <figure>
     <img src='../../src/img/portfolio/tfg-banner.gif' alt=''/>
-    <figcaption>The game cover, selected from my favourite scene</figcaption>
+    <figcaption>La portada del juego, seleccionada de mi escena favorita</figcaption>
 </figure>
 
-### Overview
+### Resumen
 
-<mark>**Genre:**</mark> Interactive fiction artgame  
-<mark>**Development:**</mark> 5 months, solo project  
-<mark>**Role:**</mark> Design, programming, photography, illustration, narrative  
-<mark>**Tools:**</mark> Unity 6, C#, Nikon FM2 (35mm film), CLIP Studio Paint, Inky, FMOD
+<mark>**Género:**</mark> Ficción interactiva  , *Artgame*
+<mark>**Desarrollo:**</mark> 5 meses, proyecto en solitario  
+<mark>**Rol:**</mark> Diseño, programación, fotografía, ilustración, narrativa  
+<mark>**Herramientas:**</mark> Unity 6, C#, Nikon FM2 (película 35 mm), CLIP Studio Paint, Inky, FMOD
 
-### The Concept
+### El concepto
 
-The game uses </mark>mixed media</mark> to represent the split between objective reality and internal perception. Real locations shot on Kodak Ultramax 400 film form the environments—what's actually there. Hand-drawn digital elements overlaid on these photographs appear only through R's camera, representing their subconscious interpretation of the world.
+El juego usa <mark>medios mixtos</mark> para representar la división entre la realidad objetiva y la percepción interna. Lugares reales fotografiados en película Kodak Ultramax 400 forman los entornos, lo que realmente está ahí. Animaciones digitales superpuestas sobre las fotografías aparecen solo a través de la cámara de R, representando su interpretación subconsciente del mundo.
 
-This visual approach mirrors how depression distorts perception. The photographs can't lie. The illustrations reveal what R actually experiences.
+Este enfoque visual refleja cómo la depresión distorsiona la percepción. Las fotografías no pueden mentir, mientras que las ilustraciones revelan lo que R realmente experimenta.
 
-### Technical Work
+### Trabajo técnico
 
-Built a multi-layered camera rendering system that simulates a physical <mark>Nikon FM2</mark>—main camera renders film photographs while overlay cameras handle animated elements at different depths with parallax. Taking pictures triggers branching narrative reflections.
+Construí un sistema de renderizado compuesto utilizando varias capas para emular el funcionamiento de una <mark>Nikon FM2</mark> y la superposición onírica. La cámara principal renderiza fotografías analógicas mientras las cámaras superpuestas manejan elementos animados a diferentes profundidades con paralaje. Tomar fotos desencadena reflexiones narrativas ramificadas.
 
-Navigation uses a custom graph system (linked lists, modified BFS) with limited daily steps representing R's emotional capacity. Not every location can be visited in one playthrough.
+La navegación usa un sistema de grafos personalizado (listas enlazadas, y utilizando BFS modificada) con pasos diarios limitados que representan la capacidad emocional de R. No todas las ubicaciones pueden visitarse en una sola partida.
 
-Narrative scripted in <mark>Inky</mark> with algorithmic diary generation at day's end, weighted by player choices and emotional tags. The system deliberately feels somewhat random—matching R's mental instability.
+La narrativa está programada en <mark>Inky</mark>, con generación algorítmica de diario al final del día, ponderada por las elecciones del jugador y etiquetas emocionales. El sistema deliberadamente se siente algo aleatorio, coincidiendo con la inestabilidad mental de R.
 
 <figure>
     <img src='../../src/img/portfolio/tfg-cafe.jpg' alt=''/>
-    <figcaption>One of the pictures taken for the project, before illustrating it</figcaption>
+    <figcaption>Una de las fotografías tomadas para el proyecto, antes de ilustrarla</figcaption>
 </figure>
 
-### The Making Of
+### El Proceso de creación
 
-I shot all 13 locations around Castellón in a single sunny morning with a manual 35mm camera inherited from my family. Film's constraints—36 exposures, no instant feedback, choices you can't take back—ended up reflecting the game's themes better than I'd planned. You can't delete a film photograph. You can't undo what depression makes you see.
+Fotografié las 13 ubicaciones de Castellón en una única mañana soleada con una cámara manual de 35 mm heredada. Las restricciones de disparar en película (límite de exposiciones, ausencia de retroalimentación instantánea, elecciones irreversibles…) terminaron reflejando los temas del juego mejor de lo que había planeado. No se puede borrar una fotografía analógica, al igual que no se puede borrar lo que uno piensa.
 
+Este proyecto me llevó fuera de mi zona de confort como programadora. Tuve que aprender por mi cuenta cómo animar mientras hacía el juego, lo que significó que cada elemento dibujado tomó el doble o triple de tiempo del que había estimado. También aprendí a escribir ficción creativa mientras diseñaba los sistemas narrativos ramificados, y descubrí cómo hacer de la experiencia personal algo interactivo sin que se sintiera explotador o melodramático.
 
-This project pushed me way outside my comfort zone as a programmer. I taught myself illustration and animation while making the game, which meant every drawn element took twice as long as I'd estimated. Learning to write creative fiction while designing branching narrative systems. Figuring out how to make personal experience into something interactive without it feeling exploitative or melodramatic.
+La parte más difícil no fue el trabajo técnico, fue hacer algo tan personal mientras mi propia salud mental estaba interfiriendo activamente con el desarrollo.
 
-The hardest part wasn't the technical work—it was making something this personal while my own mental health was actively interfering with development. My thesis supervisor never gave up on the project even when I disappeared for weeks at a time. Neither did I, eventually.
+### Resultados
 
-### Outcomes
-
-Delivered a vertical slice demonstrating all core mechanics and narrative themes. The project taught me more about architecture and systems design than any coursework—building custom solutions for camera simulation, narrative graphs, and algorithmic diary generation while managing scope across multiple disciplines.
+Entregué una *vertical slice* en la que se muestran todas las mecánicas centrales y los temas narrativos. El proyecto me enseñó más sobre arquitectura y diseño de sistemas que cualquier trabajo de curso al construir soluciones personalizadas para simulación de cámara, grafos narrativos, y generación algorítmica, todo mientras gestionaba el desarrollo en múltiples disciplinas.
 
 ---
 
-<mark>**Note:**</mark> Full thesis report available upon request. Photography gallery and technical diagrams included in complete documentation.
+<mark>**Nota:**</mark> El informe completo del proyecto está disponible bajo petición. La galería fotográfica completa y los diagramas técnicos están incluidos en la documentación completa.

@@ -1,13 +1,17 @@
 ---
-title: 'Aventura: Tirarse de cabeza'
-subtitle: 'Probar cosas nuevas y descubrir pasiones por coincidencia'
-description: ''
+title: "Aventura: Tirarse de cabeza"
+subtitle: Probar cosas nuevas y descubrir pasiones por coincidencia
+description: ""
 date: 2024-01-12
 author: marmaestro
 image:
-    url: ../src/img/blog/
-    alt: ''
-tags: [ Refugio 101, video games, essay ] 
+  url: ../src/img/blog/
+  alt: ""
+tags:
+  - Refugio 101
+  - video games
+  - essay
+pinned: false
 ---
 
 Emitido en el programa [**_11x13 | Lista de vértices con forma monil de aventura_**]() de [**Refugio 101**](../../portfolio/es/Refugio101.md).

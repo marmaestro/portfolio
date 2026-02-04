@@ -1,24 +1,29 @@
 ---
-title: 'Systems Programming Internship'
-subtitle: ''
-description: "Systems programming internship that turned into a deep refactoring project. Adapted a decade-old GaaS architecture for a new context and era."
+title: Systems Programming Internship
+subtitle: ""
+description: Systems programming internship that turned into a deep refactoring project. Adapted a decade-old GaaS architecture for a new context and era.
 date: 2025-05-23
 author: marmaestro
 source:
-    url: ''
-    item: ''
+  url: ""
+  item: ""
 image:
-    url: ../../src/img/portfolio/
-    alt: ''
-roles: [ intern, programmer, systems architect ]
-tags: [ professional work, programming ] 
-pinned: False
+  url: ../../src/img/portfolio/
+  alt: ""
+roles:
+  - intern
+  - programmer
+  - systems architect
+tags:
+  - professional work
+  - programming
+pinned: false
 lang: en
 ---
 
 **Firescale Studios S.L. | March - May 2025**
 
-Two months of systems programming on an unannounced project set in the [Rise of the Overlords](https://riseoftheoverlords.com/) universe. What started as implementing new gameplay systems turned into a deep dive into architecture refactoring when I discovered the project's core couldn't support proper unit testing. Spent most of my time untangling dependencies between engine and client code, restructuring the object system that underpins everything in the game, and setting up proper assembly definitions.
+Three months of systems programming on an unannounced project set in the [Rise of the Overlords](https://riseoftheoverlords.com/) universe. What started as implementing new gameplay systems turned into a deep dive into architecture refactoring when I discovered the project's core couldn't support proper unit testing. Spent most of my time untangling dependencies between engine and client code, restructuring the object system that underpins everything in the game, and setting up proper assembly definitions.
 
 ### Overview
 
@@ -36,7 +41,7 @@ I was originally brought on to implement gameplay systems designed by another in
 
 #### The Core Problem
 
-The project inherited its architecture from Rise of the Overlords, a <mark>_Game as a Service_</mark> (GaaS) built with separate server (named internally _engine_) and client logic. When both were integrated into a single codebase for this new project, nobody had cleaned up the resulting mess:
+The project inherited its architecture from Rise of the Overlords, a <mark>*Game as a Service*</mark> (GaaS) built with separate server (named internally _engine_) and client logic. When both were integrated into a single codebase for this new project, nobody had cleaned up the resulting mess:
 
 - Code that should've been in the engine was scattered throughout the client
 - Dependencies went both ways between what should've been separate layers
@@ -52,7 +57,7 @@ I realized I couldn't just implement new features on top of this. The foundation
 
 #### Refactoring the Object System
 
-Everything in the game is either an *objekt*, derives from an *objekt*, or is a collection of *objekt*s. The `Objekt` class was at the center of the dependency nightmare, so that's where I started.
+Everything in the game is either an *objekt*, derives from an *objekt*, or is a collection of *objekt*s. The `Objekt` class was at the centre of the dependency nightmare, so that's where I started.
 
 I created interface-based data structures (`IObjektData`) to decouple Unity's `ScriptableObject` data (`ObjektTemplate`) from the core engine logic. Using inheritance and polymorphism, the engine could read the data it needed without caring whether it came from Unity or not. This pattern let me systematically separate what belonged to the engine from what belonged to the client.
 
@@ -61,11 +66,11 @@ I'll admit I took some shortcuts initially—using standard C# dictionaries inst
 #### Assembly Restructuring
 
 Created proper assembly definitions for:
-- Core "engine" (game logic, no Unity dependencies)
-- "Client" code (Unity-specific implementation)
-- Shared utility tools
+- Core “engine” (game logic, no Unity dependencies)
+- “Client” code (Unity-specific implementation)
+- Shared development tools
 
-This wasn't just organisational—it was a prerequisite for running tests in the Unity editor. I also had to adapt my work multiple times as other team members updated the game's flow, which meant extending the studio's custom visual scripting system.
+This wasn't just organizational—it was a prerequisite for running tests in the Unity editor. I also had to adapt my work multiple times as other team members updated the game's flow, which meant extending the studio's custom visual scripting system.
 
 #### Cleaning Up Technical Debt
 

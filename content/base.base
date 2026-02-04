@@ -1,0 +1,27 @@
+views:
+  - type: table
+    name: Table
+    order:
+      - title
+      - subtitle
+      - author
+      - date
+      - description
+      - lang
+      - pinned
+      - roles
+      - tags
+    sort:
+      - property: date
+        direction: ASC
+      - property: title
+        direction: ASC
+      - property: file.name
+        direction: ASC
+      - property: brief
+        direction: DESC
+    columnSize:
+      note.title: 182
+      note.subtitle: 228
+      note.author: 132
+      note.description: 369

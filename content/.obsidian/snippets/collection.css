@@ -1,0 +1,21 @@
+img {
+    max-width: 100%;
+    width: 100%;
+    place-self: end;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+
+    figcaption {
+        text-align: center;
+        opacity: 0.65;
+        font-size: 0.9rem;
+    }
+}
+
+mark {
+    color: hsl(120, 17%, 60%);
+    background-color: transparent;
+}

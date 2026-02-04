@@ -1,13 +1,18 @@
 ---
-title: 'Decisiones: Moralidad jugada y culpa'
-subtitle: 'Elegir un camino cuando no sabes dónde ir'
-description: ''
+title: "Decisiones: Moralidad jugada y culpa"
+subtitle: Elegir un camino cuando no sabes dónde ir
+description: ""
 date: 2024-04-19
 author: marmaestro
 image:
-    url: ../src/img/blog/fortuna-grave.jpg
-    alt: 'Fortuna en _The Cosmic Wheel Sisterhood_.'
-tags: [ Refugio 101, video games, essay, philosophy ] 
+  url: ../src/img/blog/fortuna-grave.jpg
+  alt: Fortuna en _The Cosmic Wheel Sisterhood_.
+tags:
+  - Refugio 101
+  - video games
+  - essay
+  - philosophy
+pinned: false
 ---
 
 Emitido en el programa [**_11x24 | Miramos los perros y el futuro_**](https://go.ivoox.com/rf/127768806) de [**Refugio 101**](../../portfolio/es/Refugio101.md).

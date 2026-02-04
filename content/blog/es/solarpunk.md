@@ -1,13 +1,18 @@
 ---
-title: 'Solarpunk'
-subtitle: 'Cozy farm simulators, juegos indie, anarquismo y plantas'
-description: ''
+title: Solarpunk
+subtitle: Cozy farm simulators, juegos indie, anarquismo y plantas
+description: ""
 date: 2023-12-01
 author: marmaestro
 image:
-    url: ../src/img/blog/solarpunk-flag.svg
-    alt: 'Bandera Solarpunk.'
-tags: [ Refugio 101, video games, essay, solarpunk ] 
+  url: ../src/img/blog/solarpunk-flag.svg
+  alt: Bandera Solarpunk.
+tags:
+  - Refugio 101
+  - video games
+  - essay
+  - solarpunk
+pinned: false
 ---
 
 Emitido en el programa [**_11x09 | Soles, guerras y revolución_**](https://go.ivoox.com/rf/120394994) de [**Refugio 101**](../../portfolio/es/Refugio101.md).

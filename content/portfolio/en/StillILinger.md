@@ -1,7 +1,7 @@
 ---
 title: Still I Linger
 subtitle: Bachelor's Thesis, a work in progress
-description: "Mixed-media artgame with film photography and hand-drawn animations. A city seen through the lens of chronic anxiety and depression."
+description: Mixed-media artgame with film photography and hand-drawn animations. A city seen through the lens of chronic anxiety and depression.
 date: 2025-07-11
 author: marmaestro
 source:
@@ -18,8 +18,9 @@ lang: en
 
 **June 2025**
 
-A first-person 2D artgame exploring depression from a neurodivergent perspective. Players navigate a Mediterranean city through the internal lens of R, a university student dealing with chronic anxiety and depression during their first weekend alone in a new place.
+A first-person 2D artgame exploring depression from a neurodivergent perspective. Players navigate a Mediterranean city through the point of view of R, a university student dealing with chronic anxiety and depression during their first weekend alone in a new place.
 
+<!--suppress HtmlUnknownTarget -->
 <figure>
     <img src='../../src/img/portfolio/tfg-banner.gif' alt=''/>
     <figcaption>The game cover, selected from my favourite scene</figcaption>
@@ -27,14 +28,14 @@ A first-person 2D artgame exploring depression from a neurodivergent perspective
 
 ### Overview
 
-<mark>**Genre:**</mark> Interactive fiction artgame  
+<mark>**Genre:**</mark> Interactive fiction, Artgame  
 <mark>**Development:**</mark> 5 months, solo project  
 <mark>**Role:**</mark> Design, programming, photography, illustration, narrative  
-<mark>**Tools:**</mark> Unity 6, C#, Nikon FM2 (35mm film), CLIP Studio Paint, Inky, FMOD
+<mark>**Tools:**</mark> Unity 6, C#, Nikon FM2 (35 mm film), CLIP Studio Paint, Inky, FMOD
 
 ### The Concept
 
-The game uses </mark>mixed media</mark> to represent the split between objective reality and internal perception. Real locations shot on Kodak Ultramax 400 film form the environments—what's actually there. Hand-drawn digital elements overlaid on these photographs appear only through R's camera, representing their subconscious interpretation of the world.
+The game uses <mark>mixed media</mark> to represent the split between objective reality and internal perception. Real locations shot on Kodak Ultramax 400 film form the environments—what's actually there. Hand-drawn digital elements overlaid on these photographs appear only through R's camera, representing their subconscious interpretation of the world.
 
 This visual approach mirrors how depression distorts perception. The photographs can't lie. The illustrations reveal what R actually experiences.
 
@@ -53,12 +54,11 @@ Narrative scripted in <mark>Inky</mark> with algorithmic diary generation at day
 
 ### The Making Of
 
-I shot all 13 locations around Castellón in a single sunny morning with a manual 35mm camera inherited from my family. Film's constraints—36 exposures, no instant feedback, choices you can't take back—ended up reflecting the game's themes better than I'd planned. You can't delete a film photograph. You can't undo what depression makes you see.
-
+I shot all 13 locations around Castellón in a single sunny morning with an inherited manual 35 mm camera. Film's constraints—36 exposures, no instant feedback, choices you can't take back—ended up reflecting the game's themes better than I'd planned. You can't delete a film photograph. You can't undo what depression makes you see.
 
 This project pushed me way outside my comfort zone as a programmer. I taught myself illustration and animation while making the game, which meant every drawn element took twice as long as I'd estimated. Learning to write creative fiction while designing branching narrative systems. Figuring out how to make personal experience into something interactive without it feeling exploitative or melodramatic.
 
-The hardest part wasn't the technical work—it was making something this personal while my own mental health was actively interfering with development. My thesis supervisor never gave up on the project even when I disappeared for weeks at a time. Neither did I, eventually.
+The hardest part wasn't the technical work—it was making something this personal while my own mental health was actively interfering with development.
 
 ### Outcomes
 

@@ -1,13 +1,18 @@
 ---
-title: 'La pérdida: Duelo y nuevas filosofías de vida'
-subtitle: 'Juegos sobre perder y continuar'
-description: ''
+title: "La pérdida: Duelo y nuevas filosofías de vida"
+subtitle: Juegos sobre perder y continuar
+description: ""
 date: 2024-02-23
 author: marmaestro
 image:
-    url: ../src/img/blog/perdida/monument-valley.png
-    alt: 'Screenshot from Monument Valley (Panoramic Edition)'
-tags: [ Refugio 101, video games, essay, philosophy ] 
+  url: ../src/img/blog/perdida/monument-valley.png
+  alt: Screenshot from Monument Valley (Panoramic Edition)
+tags:
+  - Refugio 101
+  - video games
+  - essay
+  - philosophy
+pinned: false
 ---
 
 Emitido en el programa [**_11x19 | El puzzle de la pérdida_**](https://go.ivoox.com/rf/124780148) de [**Refugio 101**](../../portfolio/es/Refugio101.md).

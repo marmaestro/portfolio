@@ -7,7 +7,6 @@ header.custom-header {
     padding: 1.75rem 10vw !important;
     color: var(--text-normal) !important;
     align-items: center;
-    scroll-snap-align: start;
 }
 
 .links {

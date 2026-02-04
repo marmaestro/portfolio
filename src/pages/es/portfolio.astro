@@ -18,34 +18,34 @@ const projects = (await getCollection('portfolio'))
 ---
 
 <Layout
-		sitename = 'marmaestro'
+        sitename = 'marmaestro'
 		title = {t.portfolio.title}
 		description = {t.portfolio.description}>
 
-	<section class='section'>
+	<section class = 'section'>
 
-		<Masonry sortByHeight={true}
-				 class='collection grid portfolio'
-				 columnClass='column'
+		<Masonry sortByHeight = {true}
+				 class = 'collection grid portfolio'
+				 columnClass = 'column'
 				 breakpointCols =
                      {{
-                         default: 2,
-                         1100: 2,
+                         default: 3,
+                         1100: 3,
                          700: 2,
                          500: 1
                      }}
-		>
+        >
             {
                 projects.map(project =>
                     (
-							<ProjectPreview fullWidth
-											url = {`/portfolio/${project.id}`}
-											title = {project.data.title}
-											subtitle = {project.data.subtitle}
-											description = {project.data.description}
-											image = {project.data.image}
-											tags = {project.data.tags}
-											pinned = {project.data.pinned}
+							<ProjectPreview fullWidth padded
+									url = {`/portfolio/${project.id}`}
+									title = {project.data.title}
+									subtitle = {project.data.subtitle}
+									description = {project.data.description}
+									image = {project.data.image}
+									tags = {project.data.tags}
+									pinned = {project.data.pinned}
 							/>
                     ))
             }

@@ -1,13 +1,17 @@
 ---
-title: 'Ira contenida: La violencia inherente a los videojuegos'
-subtitle: 'Tiroteos, ordenadores rotos, female rage, y el Yakuza'
-description: ''
+title: "Ira contenida: La violencia inherente a los videojuegos"
+subtitle: Tiroteos, ordenadores rotos, female rage, y el Yakuza
+description: ""
 date: 2024-01-26
 author: marmaestro
 image:
-    url: ../../../src/img/blog/yakuza-kiwami2.jpeg
-    alt: '_Heat Action_ durante una pelea en Yakuza Kiwami 2'
-tags: [ Refugio 101, video games, essay ] 
+  url: ../../../src/img/blog/yakuza-kiwami2.jpeg
+  alt: _Heat Action_ durante una pelea en Yakuza Kiwami 2
+tags:
+  - Refugio 101
+  - video games
+  - essay
+pinned: false
 ---
 
 Emitido en el programa [**_11x15 | El aquello emocional_**](https://go.ivoox.com/rf/123240178) de [**Refugio 101**](../../portfolio/es/Refugio101.md).

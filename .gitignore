@@ -16,11 +16,14 @@
 **/.idea/**/dynamic.xml
 
 # Rider
+/.idea/**
 # Rider auto-generates .iml files, and contentModel.xml
 **/.idea/**/*.iml
 **/.idea/**/contentModel.xml
 **/.idea/**/modules.xml
 
+
+# VS Code
 *.suo
 *.user
 .vs/
@@ -29,6 +32,17 @@
 _UpgradeReport_Files/
 [Pp]ackages/
 
+
+# Astro and pnpm
+/.astro/**
+/node_modules/**
+
+# Obsidian vault-related
+.obsidian/workspace.json
+
+
+# OS settings and caches
+.trash/
+.DS_Store
 Thumbs.db
 Desktop.ini
-.DS_Store
