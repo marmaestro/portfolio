@@ -20,9 +20,9 @@
 			"title": "Hola, soy Mar Maestro!",
 			"subtitle": "Desarrolladora, diseñadora y estudiante.",
 			"body": [
-				"Soy una estudiante de 24 años en la universidad Jaume I, y estudio Diseño y desarrollo de videojuegos.",
-				"Gracias a mi experiencia en programación y diseño, me centro en la solución de problemas analítica y la construcción de bases técnicas sólidas.",
-				"Me apasiona crear experiencias cautivadoras para, y experimento constantemente con nuevas herramientas y técnicas para crear nuevos mundos interactivos."
+				"Soy una estudiante de 24 años en la Universitat Jaume I, donde estudio Diseño y Desarrollo de Videojuegos.",
+				"Con experiencia práctica en programación y diseño, mi trabajo se centra en la resolución analítica de problemas y en construir bases técnicas sólidas.",
+				"Me apasiona crear experiencias de juego cautivadoras, y experimento constantemente con nuevas herramientas y técnicas para dar vida a mundos interactivos."
 			],
 			"image": {
 				"url": "../placeholders/banner.png",
@@ -32,7 +32,7 @@
 	},
 	"skills": {
 		"title": "Mis habilidades",
-		"body": "He ganado experiencia en el desarrollo de videojuegos y otras ramas de la ingeniería informática a través de mis estudios y proyectos personales. He trabajado estas habilidades en muchos proyectos.",
+		"body": "Tengo un sólido entendimiento en el desarrollo de videojuegos y otras ramas de la ingeniería informática a través de mis estudios y proyectos personales. He trabajado estas habilidades en muchos proyectos.",
 		"list": [
 			"C# & C++",
 			"Unity",
@@ -47,44 +47,23 @@
 	"portfolio": {
 		"title": "Portfolio",
 		"description": "En qué he estado trabajando.",
-		"body": "Adoro crear cosas nuevas, y he estado haciendo juegos desde que empecé la universidad. Aquí hay algunos proyectos a los que vale la pena echarle un vistazo."
+		"body": "Adoro crear cosas nuevas, y he estado haciendo juegos desde que empecé la universidad. Aquí hay algunos proyectos a los que vale la pena echar un vistazo."
 	},
-	"blog": {
-		"title": "Blog",
-		"description": "Algunas cosas que he escrito a lo largo de los años.",
-		"titles": {
-			"top": "Últimas publicaciones"
-		}
-	},
+
 	"gallery": {
 		"title": "Galería",
 		"description": "Mi trabajo de fotografía analógica. Disparo como hobby con una Nikon FM-2."
 	},
-	"about": {
-		"title": "Sobre mí",
-		"description": "Sección de contacto y un poco sobre mi trayectoria.",
-		"headline": "Arquitecta de sistemas, diseñadora de juegos, amarte de las aves.",
-		"content": [
-			"",
-			"",
-			""
-		],
-		"profileDescription": "Programadora de videojuegos y diseñadora",
-		"resume": {
-			"text": "¡Mira mi currículum!",
-			"url": "../cv/cv_es_marmaestro.pdf"
-		}
-	},
 	"contact": {
 		"title": "Creemos algo juntos",
-		"body": "Escríbeme si estas buscando un desarrollador o diseñador, si tienes una pregunta, o si simplemente quieres que nos conozcamos.",
+		"body": "Escríbeme si estás buscando un desarrollador o diseñador, si tienes una pregunta, o si simplemente quieres que nos conozcamos.",
 		"message": "Estaré encantada de responder.",
 		"image": {
 			"url": "../placeholders/banner.png",
 			"alt": "Banner placeholder"
 		},
 		"form": {
-			"title": "Entremos en contacto",
+			"title": "Pongámonos en contacto",
 			"name": "Nombre",
 			"email": "Correo electrónico",
 			"message": "Mensaje",

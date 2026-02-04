@@ -49,31 +49,9 @@
 		"description": "What I've been working on.",
 		"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out."
 	},
-	"blog": {
-		"title": "Blog",
-		"description": "Some things I've written throughout the years.",
-		"titles": {
-			"top": "Latest Blog Posts"
-		}
-	},
 	"gallery": {
 		"title": "Gallery",
 		"description": "My film photography works. I shoot as a hobby on a Nikon FM-2."
-	},
-	"about": {
-		"title": "About Me",
-		"description": "Contact section, and a little more about my trajectory.",
-		"headline": "Systems architect, game designer, bird lover.",
-		"content": [
-			"I'm a video game design and development student that loves to learn, create, and teach. My strength is programming, but I also enjoy creating, whether it be a system to implement, a plot to unravel or a mechanic to balance.",
-			"I make games for university and with my friends, along with other kinds of creative projects. You may see that I did indeed not code for most of my early projects. In the end, I'm a multidisciplinary programmer, ready for whatever is needed from my colleagues in other teams.",
-			"I love sharing my passions and feelings, and hearing about others'. Creating games is the best ways to do communicate this."
-		],
-		"profileDescription": "Game programmer and designer",
-		"resume": {
-			"text": "Check out my CV!",
-			"url": "cv/cv_en_marmaestro.pdf"
-		}
 	},
 	"contact": {
 		"title": "Let's create something together",
@@ -97,7 +75,7 @@
 		"title": "Page not found",
 		"description": "Error 404, page not found.",
 		"oops": "Oops!",
-		"text": "We couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all.",
+		"text": "We couldn't find the page you're looking for. It may have been moved or deleted, or may never have existed at all.",
 		"button": {
 			"text": "Take me back home",
 			"url": "/"
