@@ -1,14 +1,20 @@
 ---
 import { Badge } from 'studiocms:ui/components/badge';
 
-import { locales } from '~/i18n/constants.ts';
+import { type Locale, locales } from '~/i18n/constants.ts';
+
 import { getRelativeLocaleUrl } from "astro:i18n";
 import {useTranslation} from "~/i18n/utils.ts";
 
+
 const currentLang = Astro.currentLocale;
-const currentPath = Astro.url.pathname
+let currentPath = Astro.url.pathname
     .replace(`/${currentLang}/`, '/')
     .replace(/^\//, '');
+
+if (currentPath.startsWith('portfolio/')) {
+    currentPath = 'portfolio';
+}
 
 const t = useTranslation(Astro.currentLocale as Locale);
 ---

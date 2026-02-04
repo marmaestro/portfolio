@@ -5,9 +5,13 @@ import { locales } from '~/i18n/constants.ts';
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLang = Astro.currentLocale;
-const currentPath = Astro.url.pathname
+let currentPath = Astro.url.pathname
     .replace(`/${currentLang}/`, '/')
     .replace(/^\//, '');
+
+if (currentPath.startsWith('portfolio/')) {
+    currentPath = 'portfolio';
+}
 ---
 <span id='language-picker'>
     { Object.entries(locales).map(([_, lang]) => {
