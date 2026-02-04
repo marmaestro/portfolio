@@ -2,7 +2,6 @@
 title: ''
 subtitle: ''
 description: ''
-brief: ''
 date: 
 author: marmaestro
 source:

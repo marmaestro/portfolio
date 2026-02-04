@@ -16,7 +16,6 @@ const navOptions = t.nav.map(link => ({
     href: getRelativeLocaleUrl(locale, link.url.replace(`/${locale}`, '').replace(/^\//, ''))
 }));
 ---
-<!-- TODO : currentLang does not reload on link navigation through these -->
 <Dropdown
 		id = 'dropdown'
         align='end'

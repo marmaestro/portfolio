@@ -2,14 +2,13 @@
 title: ''
 subtitle: ''
 description: ''
-brief: ''
 date: 
 author: marmaestro
 source:
     url: 
     item: ''
 image:
-    url: ../src/img/portfolio/
+    url: ../../src/img/portfolio/
     alt: ''
 roles: []  
 tags: []
@@ -21,7 +20,7 @@ lang: es
 
 2-3 sentence summary: What you built, the core challenge you faced, and what you actually spent most of your time doing. Be specific and direct.
 
-### Overview
+### Resumen
 
 <mark>**Role/Position:**</mark> Your role  
 <mark>**Context:**</mark> Team size/Duration/Type of project  

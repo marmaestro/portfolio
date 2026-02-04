@@ -4,20 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "0b98898fd5fa3ad1",
+        "id": "4dee72ce772dafaf",
         "type": "tabs",
         "children": [
           {
-            "id": "0ce6880ec478b4a1",
+            "id": "56027cc9c709f60d",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "base.base",
-                "viewName": "Table"
+                "file": "portfolio/es/Refugio101.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
               },
-              "icon": "lucide-table",
-              "title": "base"
+              "icon": "lucide-file",
+              "title": "Refugio101"
             }
           }
         ]
@@ -93,12 +104,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "base.base",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from base"
+              "title": "Outgoing links"
             }
           },
           {
@@ -122,21 +132,36 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
+              "title": "Outline"
+            }
+          }
+        ],
+        "currentTab": 2
+      },
+      {
+        "id": "7772f254f317527f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9941045b15e0b032",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 371.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -152,21 +177,24 @@
       "bases:Create new base": false
     }
   },
-  "active": "0ce6880ec478b4a1",
+  "active": "6227849020aef517",
   "lastOpenFiles": [
-    "portfolio/en/StillILinger.md",
-    "portfolio/es/StillILinger.md",
-    "base.base",
-    "portfolio/es/Prácticas.md",
     "portfolio/es/Refugio101.md",
+    "portfolio/en/GoblinMancer.md",
     "portfolio/en/Internship.md",
+    "portfolio/en/K-Boom.md",
     "portfolio/en/Refugio101.md",
+    "portfolio/en/StillILinger.md",
+    "portfolio/es/GoblinMancer.md",
+    "portfolio/es/K-Boom.md",
+    "portfolio/es/Prácticas.md",
+    "portfolio/es/StillILinger.md",
     "portfolio/en/_PropTrip.md",
-    "portfolio/en/Untitled.md",
     "templates/es_project.md",
-    "templates/es_blogPost.md",
     "templates/en_project.md",
     "templates/en_blogPost.md",
+    "base.base",
+    "templates/es_blogPost.md",
     "templates/es",
     "templates/Untitled.md",
     "node_modules/bl/LICENSE.md",

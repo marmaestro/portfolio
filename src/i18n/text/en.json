@@ -45,8 +45,8 @@
 		]
 	},
 	"portfolio": {
-		"title": "What I've been working on",
-		"description": "Things I've worked on.",
+		"title": "Portfolio",
+		"description": "What I've been working on.",
 		"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out."
 	},
 	"blog": {

@@ -12,9 +12,7 @@ import '~/styles/collection.css';
 const t = useTranslation(Astro.currentLocale as Locale);
 
 const projects = (await getCollection('portfolio'))
-    .filter(project => project.data.lang == Astro.currentLocale)
-    .sort((a, b) =>
-        b.data.date.valueOf() - a.data.date.valueOf());
+    .filter(project => project.data.lang == Astro.currentLocale);
 ---
 
 <Layout

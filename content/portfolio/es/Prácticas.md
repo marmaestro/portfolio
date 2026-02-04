@@ -1,7 +1,7 @@
 ---
 title: 'Prácticas de programación de sistemas'
 subtitle: ''
-description: Prácticas de programación que terminaron siendo un proyecto de refactorización. Adapté una arquitectura GaaS de una década de antigüedad a un nuevo contexto y era.
+description: Prácticas que terminaron siendo un proyecto de refactorización. Adapté una arquitectura GaaS de una década de antigüedad a un nuevo contexto y era.
 date: 2025-05-23
 author: marmaestro
 source:
@@ -26,7 +26,7 @@ Prácticas de 35 días como programador de sistemas en un juego no anunciado bas
 
 #### Rol y responsabilidades
 
-<mark>**Posición:**</mark> Programadora de sistemas  
+<mark>**Roles:**</mark> Programación de sistemas  
 <mark>**Tamaño del Equipo:**</mark> Equipo permanente de 6 personas  
 <mark>**Modelo de Trabajo:**</mark> Presencial, 4 días/semana
 

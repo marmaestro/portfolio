@@ -28,12 +28,12 @@ Un *artgame* 2D en primera persona que explora la depresión desde una perspecti
 
 ### Resumen
 
-<mark>**Género:**</mark> Ficción interactiva  , *Artgame*
+<mark>**Género:**</mark> Ficción interactiva  , *Artgame*  
 <mark>**Desarrollo:**</mark> 5 meses, proyecto en solitario  
-<mark>**Rol:**</mark> Diseño, programación, fotografía, ilustración, narrativa  
+<mark>**Roles:**</mark> Diseño, programación, fotografía, ilustración, narrativa  
 <mark>**Herramientas:**</mark> Unity 6, C#, Nikon FM2 (película 35 mm), CLIP Studio Paint, Inky, FMOD
 
-### El concepto
+### Concepto
 
 El juego usa <mark>medios mixtos</mark> para representar la división entre la realidad objetiva y la percepción interna. Lugares reales fotografiados en película Kodak Ultramax 400 forman los entornos, lo que realmente está ahí. Animaciones digitales superpuestas sobre las fotografías aparecen solo a través de la cámara de R, representando su interpretación subconsciente del mundo.
 

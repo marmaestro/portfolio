@@ -20,9 +20,9 @@ lang: es
 
 <mark>Refugio 101</mark> es un programa de radio en castellano publicado en la radio IP de la UJI. Durante una hora a la semana, puedes escuchar noticias, ensayos y reseñas.
 
-### Overview
+### Resumen
 
-<mark>**Roles:**</mark> Directora, co-presentatora, escritora, editora
+<mark>**Roles:**</mark> Dirección, presentatora, guion, edición
 
 Cada pocos años, el programa de radio es confiado de veteranos a novatos. Para la cuarta generación fuimos yo y mis compañeros quienes lo heredamos.
 

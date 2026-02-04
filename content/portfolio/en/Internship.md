@@ -1,7 +1,7 @@
 ---
 title: Systems Programming Internship
 subtitle: ""
-description: Systems programming internship that turned into a deep refactoring project. Adapted a decade-old GaaS architecture for a new context and era.
+description: Internship that turned into a deep refactoring project. Adapted a decade-old GaaS architecture for a new context and era.
 date: 2025-05-23
 author: marmaestro
 source:
@@ -31,7 +31,7 @@ Three months of systems programming on an unannounced project set in the [Rise o
 
 #### Role & Responsibilities
 
-<mark>**Position:**</mark> Systems Programmer  
+<mark>**Role:**</mark> Systems programming  
 <mark>**Team Size:**</mark> 6-person core team  
 <mark>**Work Model:**</mark> On-site, 4 days/week
 

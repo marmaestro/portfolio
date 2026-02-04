@@ -22,7 +22,7 @@ lang: en
 
 ### Overview
 
-<mark>**Roles:**</mark> Director, co-host, editor, writer
+<mark>**Roles:**</mark> Direction, hosting, editing, writing
 
 Every few years, this radio programme changes hands from seniors to freshmen. For the 4th generation, it was me—along with my colleagues—that got to work on it.
 

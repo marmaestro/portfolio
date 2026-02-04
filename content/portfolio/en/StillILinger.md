@@ -30,7 +30,7 @@ A first-person 2D artgame exploring depression from a neurodivergent perspective
 
 <mark>**Genre:**</mark> Interactive fiction, Artgame  
 <mark>**Development:**</mark> 5 months, solo project  
-<mark>**Role:**</mark> Design, programming, photography, illustration, narrative  
+<mark>**Roles:**</mark> Design, programming, photography, illustration, narrative  
 <mark>**Tools:**</mark> Unity 6, C#, Nikon FM2 (35 mm film), CLIP Studio Paint, Inky, FMOD
 
 ### The Concept

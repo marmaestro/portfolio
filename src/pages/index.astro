@@ -17,9 +17,6 @@ import {getRelativeLocaleUrl} from "astro:i18n";
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
-/*const posts = (await getCollection('blog')).sort
-    ((a, b) =>
-        b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 5);*/
 const projects = (await getCollection('portfolio'))
     .filter(project => project.data.lang == Astro.currentLocale)
     .filter(project => project.data.pinned)
