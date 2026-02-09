@@ -1,4 +1,7 @@
 autoInstallPeers: true
 
+packages:
+  - 'package.json'
+
 onlyBuiltDependencies:
   - esbuild
