@@ -4,16 +4,18 @@ import ProjectPreview from '~/components/ProjectPreview.astro';
 import Skill from '~/components/Skill.astro';
 
 import { getCollection } from 'astro:content';
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslation } from '~/i18n/utils.ts';
 import { WideContactForm } from '~/scripts/wideContact.jsx';
 import { VerticalContactForm } from '~/scripts/verticalContact.jsx';
+
+import { Image } from 'astro:assets';
 
 import type { Locale } from "~/i18n/constants.ts";
 
 import '~/styles/section.css';
 import '~/styles/collection.css';
 import '~/styles/home.css';
-import {getRelativeLocaleUrl} from "astro:i18n";
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
@@ -24,6 +26,8 @@ const projects = (await getCollection('portfolio'))
 
 const intro = t.home.intro.body;
 const skills = t.skills.list;
+
+import placeholder from '/src/img/placeholders/banner.png';
 ---
 <!-- MAIN PAGE -->
 <Layout
@@ -36,7 +40,7 @@ const skills = t.skills.list;
 	<section class='section introduction' id='introduction'>
 		<h1 id='title'>{t.home.intro.title}</h1>
 		<h1 id='subtitle'>{t.home.intro.subtitle}</h1>
-		<img src={t.home.intro.image.url} alt={t.home.intro.image.alt} loading="eager" />
+		<Image src={placeholder} alt={t.home.intro.image} loading='eager'/>
 		<div class="about-body">
             {
                 intro.map(paragraph => ( <p class='muted'>{paragraph}</p> ))
@@ -90,6 +94,6 @@ const skills = t.skills.list;
 			<WideContactForm/> <!--TODO: Add "client:load" on deployment !!-->
 			<VerticalContactForm/> <!--TODO: Add "client:load" on deployment !!-->
 		</div>
-		<img src={t.contact.image.url} alt={t.contact.image.alt}/>
+		<Image src={placeholder} alt={t.contact.image} loading='lazy' />
 	</section>
 </Layout>

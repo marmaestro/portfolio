@@ -8,30 +8,36 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import studiocmsUi from '@studiocms/ui';
 
+import mdx from '@astrojs/mdx';
+
 export default defineConfig({
-	siteName: "marmaestro",
-	site: "https://marmaestro.dev/",
-	prefetch: true,
-	i18n: {
-		locales: ["en", "es"],
-		defaultLocale: "en",
-		routing: {
-			prefixDefaultLocale: false,
-		}
-	},
-	vite: {
-		plugins: [
-			tailwindcss({
-				applyBaseStyles: false
-			})
-		]
-	},
-	integrations: [
+    siteName: "marmaestro",
+    site: "https://marmaestro.dev",
+    prefetch: true,
+    build: {
+        inlineStylesheets: 'always'
+    },
+    i18n: {
+        locales: ["en", "es"],
+        defaultLocale: "en",
+        routing: {
+            prefixDefaultLocale: false,
+        }
+    },
+    vite: {
+        plugins: [
+            tailwindcss({
+                applyBaseStyles: true
+            })
+        ]
+    },
+    integrations: [
 		icon(),
 		react(),
 		sitemap(),
 		studiocmsUi({
-			customCss: 'src/styles/overrides.css'
-		})
+        	customCss: 'src/styles/overrides.css'
+		}),
+		mdx()
 	],
 });

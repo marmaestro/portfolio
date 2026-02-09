@@ -30,10 +30,7 @@ const portfolio = defineCollection({
             item: z.string(),
             url: z.string()
         }),
-        image: z.object({
-            url: z.string(),
-            alt: z.string()
-        }),
+        image: z.string(),
         roles: z.string().array(),
         tags: z.string().array(),
         pinned: z.boolean(),

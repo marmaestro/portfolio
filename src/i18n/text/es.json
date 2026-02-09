@@ -24,10 +24,7 @@
 				"Con experiencia práctica en programación y diseño, mi trabajo se centra en la resolución analítica de problemas y en construir bases técnicas sólidas.",
 				"Me apasiona crear experiencias de juego cautivadoras, y experimento constantemente con nuevas herramientas y técnicas para dar vida a mundos interactivos."
 			],
-			"image": {
-				"url": "../placeholders/banner.png",
-				"alt": "Banner placeholder"
-			}
+			"image": "Banner placeholder"
 		}
 	},
 	"skills": {
@@ -58,10 +55,7 @@
 		"title": "Creemos algo juntos",
 		"body": "Escríbeme si estás buscando un desarrollador o diseñador, si tienes una pregunta, o si simplemente quieres que nos conozcamos.",
 		"message": "Estaré encantada de responder.",
-		"image": {
-			"url": "../placeholders/banner.png",
-			"alt": "Banner placeholder"
-		},
+		"image": "Banner placeholder",
 		"form": {
 			"title": "Pongámonos en contacto",
 			"name": "Nombre",

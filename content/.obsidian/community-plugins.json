@@ -14,5 +14,6 @@
   "obsidian-tasks-plugin",
   "highlightr-plugin",
   "list-style",
-  "drawio-obsidian"
+  "drawio-obsidian",
+  "obsidian-markdown-file-suffix"
 ]

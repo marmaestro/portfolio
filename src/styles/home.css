@@ -22,6 +22,10 @@ section {
     scroll-snap-align: center;
 }
 
+img {
+    height: auto !important;
+}
+
 .introduction {
 
     #title {

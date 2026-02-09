@@ -55,6 +55,11 @@ img {
         margin-bottom: 1.5rem !important;
     }
 
+    img {
+        height: auto !important;
+        max-width: 100%;
+    }
+
     h1 {
         margin: 0;
         letter-spacing: normal;

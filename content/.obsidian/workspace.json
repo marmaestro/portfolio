@@ -13,22 +13,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "portfolio/es/Refugio101.md",
+                "file": "portfolio/en/GoblinMancer.mdx",
                 "mode": "source",
                 "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
+                "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "Refugio101"
+              "title": "GoblinMancer"
             }
           }
         ]
@@ -63,9 +54,9 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "../../../src/img/",
                 "matchingCase": false,
-                "explainSearch": false,
+                "explainSearch": true,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
@@ -132,12 +123,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "portfolio/en/GoblinMancer.mdx",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of GoblinMancer"
             }
           }
         ],
@@ -166,36 +158,44 @@
   "left-ribbon": {
     "hiddenItems": {
       "templater-obsidian:Templater": false,
-      "markdown-importer:Open format converter": false,
-      "audio-recorder:Start/stop recording": false,
       "workspaces:Manage workspace layouts": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
-      "canvas:Create new canvas": false,
-      "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false
     }
   },
-  "active": "6227849020aef517",
+  "active": "56027cc9c709f60d",
   "lastOpenFiles": [
-    "portfolio/es/Refugio101.md",
-    "portfolio/en/GoblinMancer.md",
-    "portfolio/en/Internship.md",
-    "portfolio/en/K-Boom.md",
-    "portfolio/en/Refugio101.md",
-    "portfolio/en/StillILinger.md",
-    "portfolio/es/GoblinMancer.md",
-    "portfolio/es/K-Boom.md",
-    "portfolio/es/Prácticas.md",
-    "portfolio/es/StillILinger.md",
-    "portfolio/en/_PropTrip.md",
+    "portfolio/en/K-Boom.mdx",
+    "portfolio/es/K-Boom.mdx",
+    "portfolio/es/Refugio101.mdx",
+    "portfolio/en/_GrowingFear.mdx",
+    "templates/en_blogPost.md",
+    "templates/es_project.mdx",
+    "templates/en_project.mdx",
+    "templates/en_blogPost.mdx",
+    "portfolio/es/StillILinger.mdx",
+    "portfolio/es/Prácticas.mdx",
+    "portfolio/es/GoblinMancer.mdx",
+    "portfolio/en/_PropTrip.mdx",
     "templates/es_project.md",
     "templates/en_project.md",
-    "templates/en_blogPost.md",
-    "base.base",
+    "portfolio/es/StillILinger.md",
+    "portfolio/es/Refugio101.md",
+    "portfolio/es/Prácticas.md",
+    "portfolio/es/K-Boom.md",
+    "portfolio/es/GoblinMancer.md",
+    "portfolio/en/StillILinger.md",
+    "portfolio/en/Refugio101.md",
+    "portfolio/en/K-Boom.md",
+    "portfolio/en/Internship.md",
+    "portfolio/en/GoblinMancer.md",
+    "portfolio/en/_PropTrip.md",
+    "portfolio/en/_PlomesPiulades.md",
+    "portfolio/en/_GrowingFear.md",
+    "portfolio/en/_JugarPescar.md",
     "templates/es_blogPost.md",
-    "templates/es",
     "templates/Untitled.md",
     "node_modules/bl/LICENSE.md",
     "Welcome.md"

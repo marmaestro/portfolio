@@ -24,10 +24,7 @@
 				"With hands-on experience in both programming and design, my work centers on analytical problem-solving and building solid technical foundations.",
 				"Passionate about crafting engaging player experiences, I'm constantly experimenting with new tools and techniques to bring interactive worlds to life."
 			],
-			"image": {
-				"url": "/placeholders/banner.png",
-				"alt": "Placeholder banner"
-			}
+			"image": "Placeholder banner"
 		}
 	},
 	"skills": {
@@ -57,10 +54,7 @@
 		"title": "Let's create something together",
 		"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
 		"message": "I'll be glad to message back.",
-		"image": {
-			"url": "/placeholders/banner.png",
-			"alt": "Placeholder banner"
-		},
+		"image": "Placeholder banner",
 		"form": {
 			"title": "Get in Contact",
 			"name": "Name",
