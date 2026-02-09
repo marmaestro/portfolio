@@ -36,6 +36,7 @@ _UpgradeReport_Files/
 # Astro and pnpm
 /.astro/**
 /node_modules/**
+/dist/**
 
 # Obsidian vault-related
 .obsidian/workspace.json
