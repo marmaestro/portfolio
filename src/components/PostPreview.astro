@@ -7,13 +7,13 @@ import type { ImageMetadata } from 'astro';
 import '~/styles/collection.css'
 
 const { title, subtitle, description, image, tags } = Astro.props;
-const portfolioImages = import.meta.glob<{ default: ImageMetadata }>('/src/img/portfolio/*.{jpeg,jpg,png,gif}');
+const portfolioImages = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfolio/*.{jpeg,jpg,png,gif}');
 ---
 
 <Card variant='filled' style='margin-bottom: 1.5rem;'>
     <div class='grid-item'>
 		<Image src={portfolioImages[image]()} alt=''/>
-        <img src=`~/img/portfolio/${image}` alt=""/>
+        <img src=`~/assets/portfolio/${image}` alt=""/>
 		<div>
 			<h1>{title}</h1>
 			<h2>{subtitle}</h2>

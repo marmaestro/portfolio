@@ -7,19 +7,23 @@ author: marmaestro
 source:
     url: https://marmaestro.itch.io/stillilinger
     item: 'itch.io'
-image: /src/img/portfolio/tfg-banner.gif
+image: /src/assets/portfolio/tfg-banner.gif
 roles: [ solo dev ]
 tags: [ juego, fotografía analógica, narrativa ]
 pinned: True
 lang: es
 ---
 
+import { Image } from 'astro:assets';
+import banner from '../../../src/assets/portfolio/tfg-banner.gif';
+import cafe from '../../../src/assets/portfolio/tfg-cafe.jpg';
+
 **Junio 2025**
 
 Un *artgame* 2D en primera persona que explora la depresión desde una perspectiva neurodivergente. El jugador navega por una pequeña ciudad desde el punto de vista de R, una estudiante universitaria que lidia con ansiedad crónica y depresión durante su primer fin de semana sola en un lugar nuevo.
 
 <figure>
-    <img src='/img/portfolio/tfg-banner.gif' alt=''/>
+	<Image src={banner} alt='' loading='eager'/>
     <figcaption>La portada del juego, seleccionada de mi escena favorita</figcaption>
 </figure>
 
@@ -45,7 +49,7 @@ La navegación usa un sistema de grafos personalizado (listas enlazadas, y utili
 La narrativa está programada en <mark>Inky</mark>, con generación algorítmica de diario al final del día, ponderada por las elecciones del jugador y etiquetas emocionales. El sistema deliberadamente se siente algo aleatorio, coincidiendo con la inestabilidad mental de R.
 
 <figure>
-    <img src='/img/portfolio/tfg-cafe.jpg' alt=''/>
+	<Image src={cafe} alt='' loading='eager' />
     <figcaption>Una de las fotografías tomadas para el proyecto, antes de ilustrarla</figcaption>
 </figure>
 

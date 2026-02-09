@@ -27,7 +27,7 @@ const projects = (await getCollection('portfolio'))
 const intro = t.home.intro.body;
 const skills = t.skills.list;
 
-import placeholder from '/src/img/placeholders/banner.png';
+import placeholder from '/src/assets/placeholders/banner.png';
 ---
 <!-- MAIN PAGE -->
 <Layout
@@ -66,14 +66,14 @@ import placeholder from '/src/img/placeholders/banner.png';
 
 		<div class="collection-container grid">
 			<ProjectPreview
-					url = { getRelativeLocaleUrl(Astro.currentLocale, `/portfolio/${projects[0].id}`) }
+					url = {`/portfolio/${projects[0].id}`}
 					title = {projects[0].data.title}
 					description = {projects[0].data.description}
 					image = {projects[0].data.image}
 					tags = {projects[0].data.tags}
 			/>
 			<ProjectPreview
-					url = {`/portfolio/${Astro.currentLocale}/${projects[1].id}`}
+					url = {`/portfolio/${projects[1].id}`}
 					title = {projects[1].data.title}
 					description = {projects[1].data.description}
 					image = {projects[1].data.image}

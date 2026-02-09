@@ -12,7 +12,7 @@ import '~/styles/justifiedGallery/reset.css';
 const t = useTranslation(Astro.currentLocale as Locale);
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
-    '../img/gallery/**/**.{jpg,jpeg,png,webp}');
+    '../assets/gallery/**/**.{jpg,jpeg,png,webp}');
 ---
 
 <Layout

@@ -54,7 +54,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "../../../src/img/",
+                "query": "../../../src/assets/",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,

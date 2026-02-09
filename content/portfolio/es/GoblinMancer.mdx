@@ -7,12 +7,15 @@ author: Back to Bits
 source:
   url: https://backtobitsstudio.com/es/#projects
   item: Preview del proyecto
-image: /src/img/portfolio/goblinmancer-thumbnail.png
+image: /src/assets/portfolio/goblinmancer-thumbnail.png
 roles: [ programadora ]
 tags: [ videojuego, Back to Bits ]
 pinned: false
 lang: es
 ---
+
+import { Image } from 'astro:assets';
+import screenshot from '../../../src/assets/portfolio/goblinmancer-screenshot.png';
 
 **Back to Bits | TBA**
 
@@ -26,6 +29,6 @@ Un juego de defensa de torres en desarrollo, basado en un prototipo para una [ga
 
 <br/>
 <figure>
-    <img alt='' src="//img/portfolio/goblinmancer-screenshot.png" />
+    <Image alt='' src={screenshot} loading='eager' />
     <figcaption>Captura al final de una partida del prototipo</figcaption>
 </figure>

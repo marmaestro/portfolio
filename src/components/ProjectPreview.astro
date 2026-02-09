@@ -7,8 +7,8 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 
 const { fullWidth, padded, title, subtitle, description, url, image, tags, pinned } = Astro.props;
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/img/portfolio/*.{jpeg,jpg,png,gif}');
-if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/img/portfolio/*.{jpeg,jpg,png,gif}"`);
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfolio/*.{jpeg,jpg,png,gif}');
+if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/assets/portfolio/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <Card {fullWidth} class='project' style={padded ? 'margin-bottom: 2.5rem;': null} >

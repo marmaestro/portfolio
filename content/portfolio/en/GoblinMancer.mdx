@@ -7,7 +7,7 @@ author: Back to Bits
 source:
   url: https://backtobitsstudio.com/#projects
   item: Project preview
-image: /src/img/portfolio/goblinmancer-thumbnail.png
+image: /src/assets/portfolio/goblinmancer-thumbnail.png
 roles: [ programmer ]
 tags: [ video game, Back to Bits ]
 pinned: false
@@ -15,7 +15,7 @@ lang: en
 ---
 
 import { Image } from 'astro:assets';
-import screenshot from '../../../src/img/portfolio/goblinmancer-screenshot.png';
+import screenshot from '../../../src/assets/portfolio/goblinmancer-screenshot.png';
 
 **Back to Bits | TBA**
 
@@ -29,6 +29,6 @@ Tower defense game in development, based on a prototype for a [game jam](https:/
 
 <br/>
 <figure>
-    <Image alt='' src={screenshot} />
+    <Image alt='' src={screenshot} loading='eager' />
     <figcaption>Late-game screenshot from the prototype</figcaption>
 </figure>
