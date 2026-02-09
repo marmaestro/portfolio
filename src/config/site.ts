@@ -17,7 +17,7 @@ export const SocialLinks = [
     {
         icon: 'bi:bluesky',
         name: 'Bluesky',
-        url: 'https://bsky.app/profile/marmaestro.itch.io',
+        url: 'https://bsky.app/profile/marmaestro.dev',
     },
     /*{
         icon: 'bi:medium',
