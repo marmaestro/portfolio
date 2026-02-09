@@ -1,1 +1,0 @@
-import{i as n}from"./index.DPpxZ3MW.js";var t=()=>!!document.querySelector('[name="astro-view-transitions-enabled"]');window.addEventListener("load",()=>{t()||document.dispatchEvent(new Event("astro:page-load"))});n();

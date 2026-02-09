@@ -1,1 +1,0 @@
-import{N as t}from"./fancybox.VySXQmLD.js";t.bind("[data-fancybox]",{theme:"auto",mainStyle:{"--f-button-width":"44px","--f-button-height":"44px","--f-button-border-radius":"50%","--f-toolbar-padding":"16px"},Carousel:{Arrows:!1,Toolbar:{display:{left:[],middle:[],right:["close"]}},transition:"slide"}});
