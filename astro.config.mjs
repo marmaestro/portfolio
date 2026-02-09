@@ -11,35 +11,40 @@ import studiocmsUi from '@studiocms/ui';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-    siteName: "marmaestro",
-    site: "https://marmaestro.dev",
-    prefetch: true,
+	siteName: "marmaestro",
+	site: "https://marmaestro.dev",
+
+	prefetch: true,
 	output: 'static',
 	trailingSlash: 'never',
-    build: {
-        inlineStylesheets: 'always',
+	build: {
+		assets: 'assets',
+		inlineStylesheets: 'always',
 		format: 'file'
-    },
-    i18n: {
-        locales: ["en", "es"],
-        defaultLocale: "en",
-        routing: {
-            prefixDefaultLocale: false,
-        }
-    },
-    vite: {
-        plugins: [
-            tailwindcss({
-                applyBaseStyles: true
-            })
-        ]
-    },
-    integrations: [
+	},
+
+	i18n: {
+		locales: ["en", "es"],
+		defaultLocale: "en",
+		routing: {
+			prefixDefaultLocale: false,
+		}
+	},
+
+	vite: {
+		plugins: [
+			tailwindcss({
+				applyBaseStyles: true
+			})
+		]
+	},
+
+	integrations: [
 		icon(),
 		react(),
 		sitemap(),
 		studiocmsUi({
-        	customCss: 'src/styles/overrides.css'
+			customCss: 'src/styles/overrides.css'
 		}),
 		mdx()
 	],

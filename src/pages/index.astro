@@ -91,8 +91,8 @@ import placeholder from '/src/assets/placeholders/banner.png';
 				<p class='muted'>{t.contact.message}</p>
 				<!-- TODO: Add socials prompt -->
             </div>
-			<WideContactForm/> <!--TODO: Add "client:load" on deployment !!-->
-			<VerticalContactForm/> <!--TODO: Add "client:load" on deployment !!-->
+			<WideContactForm client:load/> <!--TODO: Add "client:load" on deployment !!-->
+			<VerticalContactForm client:load/> <!--TODO: Add "client:load" on deployment !!-->
         </div>
 		<Image src={placeholder} alt={t.contact.image} loading='lazy' />
     </section>
