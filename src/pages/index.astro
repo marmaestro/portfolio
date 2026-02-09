@@ -27,7 +27,8 @@ const projects = (await getCollection('portfolio'))
 const intro = t.home.intro.body;
 const skills = t.skills.list;
 
-import placeholder from '/src/assets/placeholders/banner.png';
+import introBanner from '/src/assets/about/skyline.jpg';
+import contactBanner from '/src/assets/about/abstract-wall.jpg';
 ---
 <!-- MAIN PAGE -->
 <Layout
@@ -40,7 +41,7 @@ import placeholder from '/src/assets/placeholders/banner.png';
     <section class='section introduction' id='introduction'>
         <h1 id='title'>{t.home.intro.title}</h1>
         <h1 id='subtitle'>{t.home.intro.subtitle}</h1>
-        <Image src={placeholder} alt={t.home.intro.image} loading='eager'/>
+        <Image src={introBanner} alt={t.home.intro.image} loading='eager'/>
         <div class="about-body">
             {
                 intro.map(paragraph => ( <p class='muted'>{paragraph}</p> ))
@@ -91,9 +92,9 @@ import placeholder from '/src/assets/placeholders/banner.png';
 				<p class='muted'>{t.contact.message}</p>
 				<!-- TODO: Add socials prompt -->
             </div>
-			<WideContactForm client:load/> <!--TODO: Add "client:load" on deployment !!-->
-			<VerticalContactForm client:load/> <!--TODO: Add "client:load" on deployment !!-->
+			<WideContactForm client:load/>
+			<VerticalContactForm client:load/>
         </div>
-		<Image src={placeholder} alt={t.contact.image} loading='lazy' />
+		<Image src={contactBanner} alt={t.contact.image} loading='lazy' />
     </section>
 </Layout>
