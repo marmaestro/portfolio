@@ -1,0 +1,14 @@
+---
+import Layout from './Layout.astro';
+
+const { title, description, image } = Astro.props;
+
+import '~/styles/justifiedGallery/gallery.css';
+import '~/styles/justifiedGallery/reset.css';
+---
+
+<Layout
+    title = {title}
+    description = {description}>
+	<slot/>
+</Layout>

@@ -1,0 +1,41 @@
+---
+import { Toggle } from 'astro-theme-toggle/components';
+
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { useTranslation } from "~/i18n/utils.ts";
+
+import type { Locale } from "~/i18n/constants.ts";
+
+import NavbarLink from '~/components/NavbarLink.astro';
+import CollapsibleNavbar from '~/components/CollapsibleNavbar.astro';
+import LanguagePicker from '~/components/LanguagePicker.astro';
+
+import '~/styles/header.css';
+
+const t = useTranslation(Astro.currentLocale as Locale);
+const navigationLinks = t.nav;
+---
+
+<Toggle id='theme-toggle' aria-label='Theme toggle button' />
+<ul id='nav-links' class='links'>
+
+
+    {
+        navigationLinks.map((link) => (
+                <NavbarLink
+                        href = { getRelativeLocaleUrl(Astro.currentLocale, link.url).replace(/\/$/, '') }
+                        target = { link.url.charAt(0) === 'h' ? '_blank' : '_self' }
+                        rel = { link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined }
+                >
+                    { link.name }
+                </NavbarLink>
+        ))
+    }
+</ul>
+<LanguagePicker aria-label='Language picker list' />
+<CollapsibleNavbar aria-label='Collapsible navbar button' />
+
+<script>
+    import { DropdownHelper } from 'studiocms:ui/components/dropdown/client';
+    const dropdown = new DropdownHelper('dropdown');
+</script>

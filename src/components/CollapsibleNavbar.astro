@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+import { Button } from 'studiocms:ui/components/button';
+import { Dropdown } from 'studiocms:ui/components/dropdown';
+
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { useTranslation } from "~/i18n/utils.ts";
+import type {Locale} from "~/i18n/constants.ts";
+
+
+const locale = Astro.currentLocale! as Locale;
+const t = useTranslation(Astro.currentLocale as Locale);
+const navOptions = t.nav.map(link => ({
+    label: link.name,
+    value: link.url.replace('/', '').replace(`${locale}/`, '') || 'home',
+    href: getRelativeLocaleUrl(locale, link.url.replace(`/${locale}`, '').replace(/^\//, ''))
+}));
+---
+<Dropdown
+		id = 'dropdown'
+        align='end'
+		options = {[ ...navOptions ]}
+>
+	<Button color = 'primary'>
+        <Icon name = 'bi:list'/>
+	</Button>
+</Dropdown>

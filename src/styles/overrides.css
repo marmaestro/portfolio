@@ -1,0 +1,49 @@
+/* StudioCMS UI overrides*/
+
+/* Card */
+.sui-card {
+    border-radius: var(--radius-lg) !important;
+    height: min-content !important;
+}
+
+.sui-card-body {
+    padding: 2rem !important;
+
+    img {
+        border-radius: var(--radius-md) !important;
+    }
+}
+
+/* Card */
+.project {
+
+    .sui-card {
+        border: none;
+    }
+
+    .sui-card-header {
+        padding: 0;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+    }
+
+    .sui-card-body {
+        padding: 1rem !important;
+    }
+}
+
+/* Dropdown */
+.sui-dropdown {
+    width: max-content !important;
+    min-width: unset !important;
+    max-width: unset !important;
+}
+
+.sui-dropdown.initialized.below {
+    right: 0px !important;
+    left: auto !important;
+}

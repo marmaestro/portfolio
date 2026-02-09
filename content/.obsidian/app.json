@@ -1,0 +1,29 @@
+{
+  "promptDelete": true,
+  "showInlineTitle": false,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "current",
+  "showUnsupportedFiles": true,
+  "attachmentFolderPath": "/",
+  "spellcheck": true,
+  "spellcheckDictionary": [
+    "neurodivergence",
+    "Izz",
+    "Izz",
+    "cishet",
+    "artgame",
+    "neurodivergente",
+    "neurodivergent",
+    "artgame",
+    "Elyse",
+    "objekt",
+    "Ultramax"
+  ],
+  "showLineNumber": false,
+  "userIgnoreFilters": [
+    "templates/"
+  ],
+  "propertiesInDocument": "source",
+  "autoConvertHtml": false,
+  "trashOption": "system"
+}

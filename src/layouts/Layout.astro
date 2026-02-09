@@ -1,0 +1,55 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import { ThemeScript } from 'astro-theme-toggle/components';
+
+import '~/styles/global.css';
+import '~/styles/overrides.css';
+
+import PageHeader from '~/components/PageHeader.astro';
+import PageFooter from '~/components/PageFooter.astro';
+
+const siteName : string = 'marmaestro';
+const { title, description, lang } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = siteName == title ? siteName : `${siteName} | ${title}`;
+---
+
+<!doctype html>
+<html
+        lang = {lang} >
+<head>
+	<title set:html = {pageTitle} />
+
+    <meta charset = 'utf-8' />
+    <meta name = 'viewport' content = 'width = device-width, initial-scale = 1' />
+    <meta name = 'generator' content = {Astro.generator} />
+    <meta name = 'description' content = {description} />
+    <meta property = 'og:title' content = {title} />
+    <meta property = 'og:type' content = 'website' />
+    <meta property = 'og:description' content = {description} />
+    <meta property = 'og:url' content = {canonicalURL} />
+    <meta property = 'og:locale' content = 'en_US' />
+    <meta property = 'og:site_name' content = {siteName} />
+    <meta name = 'generator' content = {Astro.generator} />
+
+    <link rel='icon' type='image/png' href='/favicon/favicon-96x96.png' sizes='96x96' />
+	<link rel='icon' type='image/svg+xml' href='/favicon/favicon.svg' />
+	<link rel='shortcut icon' href='/favicon/favicon.ico' />
+	<link rel='apple-touch-icon' sizes='180x180' href='/favicon/apple-touch-icon.png' />
+	<meta name='apple-mobile-web-app-title' content='marmaestro' />
+	<link rel='manifest' href='/favicon/site.webmanifest' />
+
+    <ClientRouter/>
+	<ThemeScript />
+</head>
+<header class='custom-header'>
+    <PageHeader/>
+</header>
+<body>
+    <slot/>
+</body>
+<footer>
+    <PageFooter/>
+</footer>
+</html>

@@ -1,0 +1,32 @@
+---
+import { Badge } from 'studiocms:ui/components/badge';
+
+import { locales } from '~/i18n/constants.ts';
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+const currentLang = Astro.currentLocale;
+const rawPath = Astro.url.pathname;
+
+const currentPath  = !currentLang ? rawPath : rawPath
+    .replace(new RegExp(`^/${currentLang}/?`), '')
+    .replace(/^\//, '');
+
+const targetPath = !currentPath.startsWith('portfolio/') ?
+    currentPath : 'portfolio';
+
+---
+<span id='language-picker'>
+    { Object.entries(locales).map(([_, lang]) => {
+        const url = getRelativeLocaleUrl(lang, targetPath)
+            .replace(/\/$/, '') || '/';
+        const label = lang.toUpperCase();
+        return (
+            <a aria-label=`Switch to ${label} site`
+               role='option' type='a'
+               aria-selected={ lang == Astro.currentLocale }
+               href={url} id = {lang == Astro.currentLocale ? 'current-lang' : undefined } >
+                <Badge label={label} variant='flat' color='mono'/>
+            </a>
+        );
+    })}
+</span>

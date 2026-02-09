@@ -1,0 +1,48 @@
+---
+import { SocialLinks } from '~/config/site.ts';
+import { Footer, Row } from 'studiocms:ui/components';
+import { Icon } from 'astro-icon/components';
+
+import LanguagePicker from "~/components/LanguagePicker.astro";
+
+import '~/styles/footer.css';
+import LanguageSwitcher from "~/components/LanguageSwitcher.astro";
+---
+
+<Footer id="footer"
+        links = {{
+            'Contact': [
+                { label: 'Linkedin', href: 'https://linkedin.com/in/marmaestro' },
+                { label: 'Bluesky', href: 'https://bsky.app/profile/marmaestro.dev' },
+            ],
+            'My works': [
+                { label: 'GitHub', href: 'https://github.com/marmaestro' },
+                { label: 'itch.io', href: 'https://marmaestro.itch.io/' },
+            ],
+            /*'More of it': [
+                { label: 'Medium', href: 'https://medium.com/@marmaestro' },
+                { label: 'Tumblr', href: 'https://filmteapot.tumblr.com/' },
+            ],*/
+        }}
+        copyright = 'MIT License © 2026 - marmaestro'
+>
+
+    <div slot='brand' class='footer-brand'>
+        <span class='studiocms-footer-text'>
+            <a href = "mailto:contact@marmaestro.dev?subject=Contact">marmaestro</a>
+        </span>
+		<LanguageSwitcher aria-label='Language switch' />
+    </div>
+
+    <div slot='socials' class='socials'>
+        <Row>
+            {
+                SocialLinks.map((link) => (
+                        <a href={link.url} aria-label={link.name}>
+							<Icon name={link.icon}/>
+						</a>
+                ))
+            }
+        </Row>
+    </div>
+</Footer>

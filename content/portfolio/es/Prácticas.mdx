@@ -1,0 +1,107 @@
+---
+title: 'Prácticas de programación de sistemas'
+subtitle: ''
+description: Prácticas que terminaron siendo un proyecto de refactorización. Adapté una arquitectura GaaS de una década de antigüedad a un nuevo contexto y era.
+date: 2025-05-23
+author: marmaestro
+source:
+    url: ''
+    item: ''
+image: /src/assets/portfolio/internship-unity-code.jpg
+roles: [ becaria, programadora, arquitecta de sistemas ]
+tags: [ trabajo profesional, programación ] 
+pinned: False
+lang: es
+---
+
+**Firescale Studios S.L. | marzo - mayo 2025**
+
+Tres meses de programación de sistemas en un proyecto no anunciado ambientado en el universo de [Rise of the Overlords](https://riseoftheoverlords.com/). Lo que comenzó como la implementación de nuevos sistemas de juego se convirtió en una inmersión profunda en la refactorización de arquitectura al descubrir que el núcleo del proyecto no podía soportar pruebas unitarias adecuadas. Pasé la mayor parte del tiempo limpiando dependencias entre código del motor y del cliente, reestructurando el sistema de objetos que sustenta todo en el juego, y configurando definiciones de ensamblado apropiadas.
+
+### Resumen
+
+Prácticas de 35 días como programador de sistemas en un juego no anunciado basado en Rise of the Overlords, trabajando con <mark>Unity</mark> y <mark>C#</mark> en un pequeño estudio en Castellón de la Plana.
+
+#### Rol y responsabilidades
+
+<mark>**Roles:**</mark> Programación de sistemas  
+<mark>**Tamaño del Equipo:**</mark> Equipo permanente de 6 personas  
+<mark>**Modelo de Trabajo:**</mark> Presencial, 4 días/semana
+
+Originalmente, me contrataron para implementar sistemas de juego diseñados por otro becario que trabajaba como diseñador de juego (*game designer*). El plan era sencillo: él diseñaría nuevos sistemas de juego, los documentaría, y yo los implementaría y sometería a tests. En el momento de empezar a configurar pruebas unitarias usando <mark>NUnit</mark> y el framework de pruebas de Unity, me topé con un muro: la estructura del proyecto no lo permitía.
+
+### Desafíos técnicos
+
+#### El problema principal
+
+El proyecto heredó su arquitectura de Rise of the Overlords, un <mark>_Game as a Service_</mark> (GaaS) construido con lógica separada de servidor (nombrado internamente en la empresa _engine_) y cliente. Cuando ambos se integraron en una única base de código para este nuevo proyecto, nadie había limpiado el desastre resultante:
+
+- El código perteneciente a la lógica propia del servidor estaba disperso entre este y el cliente.
+- Las dependencias entre ambas partes eran bidireccionales y, en la mayoría de casos, también cíclicas.
+- Había gran cantidad de implementaciones duplicadas y/o redundantes.
+- Resultaba imposible implementar tests unitarios de forma eficiente en Unity al no poder crear *assemblies* en el proyecto.
+- El Sistema de Objetos<mark>\*</mark> (diseñado para la arquitectura GaaS de RotO) no funcionaba correctamente en este nuevo contexto.
+
+<mark>\*</mark>El proyecto usa otro término que sustituiré por _*Objekt*_ a lo largo de esta página. Esto es para respetar el NDA del proyecto entonces firmado.
+
+Me di cuenta de que no tendría sentido implementar nuevas características encima de todo esto. Los cimientos necesitaban arreglarse primero, comenzando por hacer funcional el Sistema de Objetos para una arquitectura no-GaaS.
+
+### Mi trabajo
+
+#### Refactorización del sistema de objetos
+
+Todo en el juego es un *objekt*, deriva de un *objekt*, o es una colección de *objekt*s. La clase `Objekt` estaba en el centro del nudo de dependencias, así que ahí es donde comencé.
+
+Creé estructuras de datos basadas en interfaces (`IObjektData`) para desacoplar los datos de `ScriptableObject` de Unity (`ObjektTemplate`) de la lógica central del motor. Usando herencia y polimorfismo, el motor podría leer los datos que necesitaba sin importarle si venían de Unity o no. Este patrón me permitió separar sistemáticamente lo que pertenecía al motor de lo que pertenecía al cliente.
+
+Admito que tomé algunos atajos inicialmente, usando diccionarios estándar de C# en lugar de la implementación personalizada del estudio para evitar reescribir constructores. Una vez que la refactorización funcionó, volví atrás y corregí esos atajos.
+
+#### Reestructuración de *assemblies*
+
+Creé definiciones de *assemblies* apropiadas para:
+- El núcleo lógico, la parte llamada internamente “*engine” o *backend* (lógica del juego, sin dependencias de Unity)
+- El código *middleware*, también llamado “cliente” (implementación específica que trabaja con Unity)
+- Herramientas de desarrollo que requieren acceso a ambos bloques de código
+
+Esto no fue solo organizacional, sino un prerrequisito para ejecutar pruebas en el editor de Unity. También tuve que adaptar mi trabajo múltiples veces a medida que otros miembros del equipo actualizaban el flujo del juego, como extender el sistema de scripting visual personalizado del estudio.
+
+#### Limpieza de código
+
+En mis últimos días de prácticas eliminé elementos hardcodeados que mis compañeros habían implementado durante el periodo de refactorización, reemplazándolos con las estructuras de datos apropiadas que había construido. Extendí el sistema de *blackboard* del bucle de juego para incorporar apropiadamente la nueva arquitectura.
+
+#### Herramientas y Tecnologías
+
+- <mark>**Motor:**</mark> Unity 6000.0.38f1
+- <mark>**Lenguaje:**</mark> C#
+- <mark>**IDE:**</mark> JetBrains Rider
+- <mark>**Control de Versiones:**</mark> Git (Sourcetree, Git CLI, integración Git Rider)
+- <mark>**Testing:**</mark> NUnit, Unity Test Framework
+- <mark>**Gestión de Proyecto:**</mark> Azure DevOps (tableros Kanban, documentación, repositorio remoto)
+
+### Flujo de Trabajo y Metodología
+
+El estudio funciona con comunicación informal. ¿Necesitas hablar con alguien? Camina hasta su escritorio. El seguimiento de tareas ocurre a través de tableros Kanban en Azure DevOps. Trabajé mayormente de forma autónoma, lo cual fue intimidante al principio, pero me obligó a tomar mis propias decisiones técnicas y apropiarme de ellas.
+
+Tuve que mantenerme flexible a medida que los requisitos fueron evolucionando y creciendo. Cuando los miembros del equipo actualizaban sistemas centrales, necesitaba integrar esos cambios en mi trabajo de refactorización sin romper nada antes de poder continuar.
+
+### Resultados
+
+El trabajo de refactorización desbloqueó la capacidad del equipo para:
+- Implementar flujos de trabajo de pruebas unitarias
+- Mantener una separación de responsabilidades más clara
+- Reducir la duplicidad y redundancia del código
+- Habilitar un desarrollo a largo plazo más sostenible
+
+#### Lo Que Aprendí
+
+<mark>**Habilidades técnicas:**</mark> Estas prácticas me enseñaron más sobre arquitectura de sistemas que cualquier curso universitario. Depurar dependencias circulares, diseñar para desacoplar, trabajar con polimorfismo en una base de código en producción… Estas son cosas que realmente no se pueden aprender de tutoriales. Me familiaricé con flujos de trabajo de control de versiones profesionales, escribí pruebas unitarias que realmente importaban, y aprendí a tomar decisiones técnicas que afectarían al proyecto meses, e incluso años, después.
+
+<mark>**Choque con la realidad profesional:**</mark> La universidad te prepara para la teoría, no para heredar una base de código con años de deuda técnica y que te digan “arréglalo”. Aprendí a trabajar de forma autónoma cuando no tenía un punto de referencia claro, a cuestionar decisiones técnicas (incluso aunque me tomara demasiado tiempo empezar a hacerlo), y a adaptarme cuando las prioridades cambian a mitad de implementación.
+
+<mark>**Lo que cambiaría:**</mark> Debería haber discutido ciertos enfoques técnicos que sabía que eran problemáticos mucho antes. Quería ser agradable y demostrar mi valía, así que seguí direcciones que luego resultaron estar equivocadas. Una vez que empecé a comunicar mis preocupaciones más claramente, el trabajo fue mucho más fluido.
+
+El equipo fue solidario y colaborativo a pesar del aislamiento que supuso mi trabajo para con el suyo. Nada de presión excesiva, solo buena gente haciendo un trabajo interesante juntos.
+
+### Contexto
+
+Estas prácticas cumplieron con el requisito de prácticas externas (_VJ1240 - Prácticas Externas_) para el grado de [Diseño y Desarrollo de Videojuegos](https://www.uji.es/estudis/base/2023/graus/videojocs/?urlRedirect=https://www.uji.es/estudis/base/2023/graus/videojocs/&url=/estudis/base/2023/graus/videojocs/&urlRedirect=https://www.uji.es/estudis/base/2023/graus/videojocs/&url=/estudis/base/2023/graus/videojocs/) en la [Universitat Jaume I](https://www.uji.es/).

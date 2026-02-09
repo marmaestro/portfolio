@@ -1,0 +1,49 @@
+---
+import MarkdownPostLayout from "~/layouts/MarkdownPostLayout.astro";
+import { Divider, Badge, Row } from 'studiocms:ui/components';
+import { getCollection, render } from 'astro:content';
+
+import '~/styles/collection.css';
+
+export async function getStaticPaths() {
+    const portfolio = await getCollection('portfolio');
+    return portfolio.map(project => ({
+        params: { id: project.id },
+        props: { project }
+    }));
+}
+
+const { project } = Astro.props;
+const { Content} = await render(project);
+const roles = project.data.roles;
+
+const dateOptions: object = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+};
+
+const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.currentLocale, dateOptions);
+---
+
+<MarkdownPostLayout
+		title = {project.data.title}
+		description = {project.data.description}
+>
+    <Row style="justify-content: space-between; align-items: baseline;">
+        <h1 class='heading'>{project.data.title}</h1>
+        {project.data.source.item != '' ?
+                <a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
+            : null}
+    </Row>
+    <h2 class='heading'>{project.data.subtitle}</h2>
+    <Row id='project-roles'>
+        {
+            roles.map((role) => (
+                    <Badge label={role} variant='flat' color='mono' size='md'/>
+            ))
+        }
+    </Row>
+    <br><Divider/><br>
+    <Content/>
+</MarkdownPostLayout>

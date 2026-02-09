@@ -1,0 +1,82 @@
+{
+	"nav": [
+		{
+			"name": "Home",
+			"url": "/"
+		},
+		{
+			"name": "Portfolio",
+			"url": "/portfolio"
+		},
+		{
+			"name": "Gallery",
+			"url": "/gallery"
+		}
+	],
+	"home": {
+		"title": "marmaestro",
+		"description": "Mar Maestro Momparler's portfolio site.",
+		"intro": {
+			"title": "Hi, I'm Mar Maestro!",
+			"subtitle": "Game Developer, Designer and Student.",
+			"body": [
+				"I'm a 24-year-old student at Jaume I University currently studying Video Game Design and Development.",
+				"With hands-on experience in both programming and design, my work centers on analytical problem-solving and building solid technical foundations.",
+				"Passionate about crafting engaging player experiences, I'm constantly experimenting with new tools and techniques to bring interactive worlds to life.",
+				"I'm also quite passionate about film photography and birds."
+			],
+			"image": "Placeholder banner"
+		}
+	},
+	"skills": {
+		"title": "My Skills",
+		"body": "Through my studies and personal projects, I've gained a solid understanding of game development and other branches of computer engineering. I've applied and developed these skills in several projects.",
+		"list": [
+			"C# & C++",
+			"Unity",
+			"Godot",
+			"VCS",
+			"Game Design",
+			"FMOD",
+			"HTML & CSS",
+			"Astro"
+		]
+	},
+	"portfolio": {
+		"title": "Portfolio",
+		"description": "What I've been working on.",
+		"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out."
+	},
+	"gallery": {
+		"title": "Gallery",
+		"description": "My film photography works. I shoot as a hobby on a Nikon FM-2."
+	},
+	"contact": {
+		"title": "Let's create something together",
+		"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
+		"message": "I'll be glad to message back.",
+		"image": "Placeholder banner",
+		"form": {
+			"title": "Get in Contact",
+			"name": "Name",
+			"email": "Email Address",
+			"message": "Message",
+			"subject": "Porfolio Contact Form [EN]",
+			"send": "Send",
+			"warning": "This field is required."
+		}
+	},
+	"errorPage": {
+		"title": "Page not found",
+		"description": "Error 404, page not found.",
+		"oops": "Oops!",
+		"text": "We couldn't find the page you're looking for. It may have been moved or deleted, or may never have existed at all.",
+		"button": {
+			"text": "Take me back home",
+			"url": "/"
+		}
+	},
+	"i18n": {
+		"switchMessage": "Cambiar a Castellano"
+	}
+}
