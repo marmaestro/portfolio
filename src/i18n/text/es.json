@@ -73,7 +73,7 @@
 		"text": "No hemos podido encontrar la página que buscas. Puede que haya sido movida o eliminada, o que nunca existiera.",
 		"button": {
 			"text": "Volvamos al inicio",
-			"url": "/es/"
+			"url": "/es"
 		}
 	},
 	"i18n": {

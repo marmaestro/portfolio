@@ -5,20 +5,26 @@ import { locales } from '~/i18n/constants.ts';
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLang = Astro.currentLocale;
-let currentPath = Astro.url.pathname
-    .replace(`/${currentLang}/`, '/')
+const rawPath = Astro.url.pathname;
+
+const currentPath  = !currentLang ? rawPath : rawPath
+    .replace(new RegExp(`^/${currentLang}/?`), '')
     .replace(/^\//, '');
 
-if (currentPath.startsWith('portfolio/')) {
-    currentPath = 'portfolio';
-}
+const targetPath = !currentPath.startsWith('portfolio/') ?
+    currentPath : 'portfolio';
+
 ---
 <span id='language-picker'>
     { Object.entries(locales).map(([_, lang]) => {
-        const url = getRelativeLocaleUrl(lang, currentPath);
+        const url = getRelativeLocaleUrl(lang, targetPath)
+            .replace(/\/$/, '') || '/';
         const label = lang.toUpperCase();
         return (
-            <a aria-label=`Switch to ${label} site` role='option' aria-selected={ lang == Astro.currentLocale } type='a' href={url} id = {lang == Astro.currentLocale ? 'current-lang' : undefined } >
+            <a aria-label=`Switch to ${label} site`
+               role='option' type='a'
+               aria-selected={ lang == Astro.currentLocale }
+               href={url} id = {lang == Astro.currentLocale ? 'current-lang' : undefined } >
                 <Badge label={label} variant='flat' color='mono'/>
             </a>
         );

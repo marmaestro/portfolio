@@ -14,8 +14,11 @@ export default defineConfig({
     siteName: "marmaestro",
     site: "https://marmaestro.dev",
     prefetch: true,
+	output: 'static',
+	trailingSlash: 'never',
     build: {
-        inlineStylesheets: 'always'
+        inlineStylesheets: 'always',
+		format: 'file'
     },
     i18n: {
         locales: ["en", "es"],
