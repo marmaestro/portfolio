@@ -23,7 +23,7 @@ const navigationLinks = t.nav;
     {
         navigationLinks.map((link) => (
                 <NavbarLink
-                        href = { getRelativeLocaleUrl(Astro.currentLocale, link.url).replace(/\/$/, '') }
+                        href = { getRelativeLocaleUrl(Astro.currentLocale, link.url).replace(/\/$/, '') || '/' }
                         target = { link.url.charAt(0) === 'h' ? '_blank' : '_self' }
                         rel = { link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined }
                 >

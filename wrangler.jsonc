@@ -1,6 +1,6 @@
 {
 	"name": "portfolio",
-	"compatibility_date": "2026-02-01", // Day of deployment
+	"compatibility_date": "2026-02-26", // Day of deployment
 	"assets": {
 		"directory": "./dist",
 		"html_handling": "drop-trailing-slash",
