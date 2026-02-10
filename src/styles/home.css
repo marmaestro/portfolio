@@ -157,7 +157,7 @@ img {
         margin-top: 1rem;
 
         @media screen and (max-width: 550px) {
-            display: block;
+            display: flex;
         }
 
         @media screen and (max-width: 500px) {
@@ -181,10 +181,14 @@ img {
         flex-wrap: nowrap;
         flex-direction: column;
         justify-content: end;
-        gap: 0.5rem;
+        gap: 1rem;
 
         @media screen and (min-width: 500px) {
             display: none;
+        }
+
+        @media screen and (max-width: 500px) {
+            display: flex;
         }
 
         textarea {
