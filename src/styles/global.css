@@ -11,11 +11,6 @@
     background-color: hsl(from var(--primary-active) h s l / 0.45);
 }
 
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y proximity;
-}
-
 h1 {
     font-size: 1.75rem;
 }

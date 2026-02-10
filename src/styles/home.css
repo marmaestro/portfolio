@@ -1,8 +1,3 @@
-html {
-    scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-}
-
 h1 {
     font-size: 2.5rem !important;
     font-weight: 500;
@@ -19,7 +14,6 @@ p {
 
 section {
     margin: 6rem 0;
-    scroll-snap-align: center;
 }
 
 img {
@@ -109,7 +103,6 @@ img {
     margin-bottom: 0;
 
     .project {
-        scroll-snap-align: none !important;
 
         h1, p {
             margin: 1rem;
