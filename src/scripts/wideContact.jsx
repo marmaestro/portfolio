@@ -52,12 +52,6 @@ export function WideContactForm({ locale }) {
 
 			<br/>
 
-			<div
-				id='cf-turnstile'
-				className='cf-turnstile'
-				data-sitekey={turnstileKey}
-			/>
-
 			<button id='sendMessageButton' type='submit'
                     disabled={state.submitting}>
 				{t.contact.form.send}
