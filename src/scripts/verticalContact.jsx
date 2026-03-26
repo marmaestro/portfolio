@@ -66,6 +66,13 @@ export function VerticalContactForm({ locale }) {
 				errors={state.errors}
 			/>
 
+			<div
+				id='cf-turnstile'
+				className='cf-turnstile'
+				data-size='flexible'
+				data-sitekey={turnstileKey}
+			/>
+
 			<button id='sendMessageButton' type='submit'
 					className='vertical'
 					disabled={state.submitting}>
