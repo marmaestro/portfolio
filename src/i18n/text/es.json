@@ -64,7 +64,8 @@
 			"message": "Mensaje",
 			"subject": "Porfolio Contact Form [ES]",
 			"send": "Enviar",
-			"warning": "Este campo es obligatorio."
+			"warning": "Este campo es obligatorio.",
+			"success": "¡Gracias por tu mensaje!"
 		}
 	},
 	"errorPage": {

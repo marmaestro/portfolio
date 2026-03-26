@@ -63,7 +63,8 @@
 			"message": "Message",
 			"subject": "Porfolio Contact Form [EN]",
 			"send": "Send",
-			"warning": "This field is required."
+			"warning": "This field is required.",
+			"success": "Thanks for your submission!"
 		}
 	},
 	"errorPage": {
