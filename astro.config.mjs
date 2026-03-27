@@ -7,9 +7,7 @@ import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import studiocmsUi from '@studiocms/ui';
-
 import mdx from '@astrojs/mdx';
-
 export default defineConfig({
 	siteName: "marmaestro",
 	site: "https://marmaestro.dev",
