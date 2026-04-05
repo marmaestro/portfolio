@@ -2,8 +2,6 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useTranslation } from '~/i18n/utils.ts';
 
 const formId = import.meta.env.FORMSPREE_FORM_ID;
-const turnstileKey = import.meta.env.TURNSTILE_SITE_KEY;
-
 export function VerticalContactForm({ locale }) {
 	const t = useTranslation(locale);
 	const [state, handleSubmit] = useForm(formId);
@@ -64,13 +62,6 @@ export function VerticalContactForm({ locale }) {
 				prefix='Message'
 				field='message'
 				errors={state.errors}
-			/>
-
-			<div
-				id='cf-turnstile'
-				className='cf-turnstile'
-				data-size='flexible'
-				data-sitekey={turnstileKey}
 			/>
 
 			<button id='sendMessageButton' type='submit'
