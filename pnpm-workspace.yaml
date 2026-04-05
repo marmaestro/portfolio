@@ -1,7 +1,9 @@
-autoInstallPeers: true
 
 packages:
   - 'node_modules'
+autoInstallPeers: true
 
 onlyBuiltDependencies:
   - esbuild
+  - sharp
+  - workerd
