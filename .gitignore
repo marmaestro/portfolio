@@ -33,18 +33,15 @@ _UpgradeReport_Files/
 [Pp]ackages/
 
 
-# Astro and pnpm
-/.astro/**
-/node_modules/**
-/dist/**
+# Astro, npm, etc
+.astro
+.wrangler
+.node_modules
+.dist
 
 
 # Obsidian vault-related
 .obsidian/workspace.json
-
-
-# Wrangler
-.wrangler
 
 # OS settings and caches
 .trash/
