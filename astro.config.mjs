@@ -8,6 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import studiocmsUi from '@studiocms/ui';
 import mdx from '@astrojs/mdx';
+import { fontProviders } from 'astro/config'
+
 export default defineConfig({
 	siteName: "marmaestro",
 	site: "https://marmaestro.dev",

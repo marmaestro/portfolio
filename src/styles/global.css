@@ -4,7 +4,7 @@
 
 :root {
     color-scheme: light dark;
-    --font: system-ui, roboto, poppins;
+    --font: system-ui, Chivo, Poppins, "Cabinet Grotesk Variable", "Satoshi Variable";
 }
 
 ::selection {
@@ -21,6 +21,10 @@ h2 {
     font-weight: 500;
 }
 
+h1,h2,h3 {
+    font-family: "Cabinet Grotesk Variable", Poppins;
+}
+
 img {
     max-width: 100%;
     margin: 0;
@@ -29,8 +33,9 @@ img {
 
 body {
     background-color: hsl(var(--background-base));
-    font-family: Chivo, Roboto, Poppins, serif;
+    font-family: "Satoshi Variable", sans-serif;
     font-size: 1rem;
+    font-weight: 450;
     color: hsl(var(--text-normal));
 }
 
