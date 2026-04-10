@@ -38,9 +38,13 @@ _UpgradeReport_Files/
 /node_modules/**
 /dist/**
 
+
 # Obsidian vault-related
 .obsidian/workspace.json
 
+
+# Wrangler
+.wrangler
 
 # OS settings and caches
 .trash/
