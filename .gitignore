@@ -36,8 +36,8 @@ _UpgradeReport_Files/
 # Astro, npm, etc
 .astro
 .wrangler
-.node_modules
-.dist
+dist
+node_modules
 
 
 # Obsidian vault-related

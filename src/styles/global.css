@@ -2,9 +2,13 @@
 @import url('studioCmsUi/resets.css');
 @import url('studioCmsUi/radii.css');
 
+@import url('fonts/poppins.css');
+@import url('fonts/cabinet-grotesk.css');
+@import url('fonts/satoshi.css');
+
 :root {
     color-scheme: light dark;
-    --font: system-ui, Chivo, Poppins, "Cabinet Grotesk Variable", "Satoshi Variable";
+    --font: system-ui, Chivo, Poppins, "CabinetGrotesk-Variable", "Satoshi-Variable";
 }
 
 ::selection {
@@ -22,7 +26,7 @@ h2 {
 }
 
 h1,h2,h3 {
-    font-family: "Cabinet Grotesk Variable", Poppins;
+    font-family: "CabinetGrotesk-Variable", Poppins;
 }
 
 img {
@@ -33,7 +37,7 @@ img {
 
 body {
     background-color: hsl(var(--background-base));
-    font-family: "Satoshi Variable", sans-serif;
+    font-family: "Satoshi-Variable", sans-serif;
     font-size: 1rem;
     font-weight: 450;
     color: hsl(var(--text-normal));
