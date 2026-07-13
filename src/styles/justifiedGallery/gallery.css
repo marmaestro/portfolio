@@ -1,4 +1,4 @@
-@import url(~/styles/justifiedGallery/reset.css);
+@import "./reset.css";
 
 .justified-gallery {
     --padding: max(2.5vw, 12px);
