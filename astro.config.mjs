@@ -38,10 +38,7 @@ export default defineConfig({
             tailwindcss({
                 applyBaseStyles: true
             })
-        ],
-        ssr: {
-            external: ['sharp']
-        }
+        ]
     },
 
     integrations: [
