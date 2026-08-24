@@ -25,6 +25,7 @@
     "@astropub/md": "^1.0.0",
     "@fancyapps/ui": "^6.1.13",
     "@formspree/react": "^3.0.0",
+    "@mux/mux-player-astro": "^3.13.2",
     "@studiocms/ui": "^1.2.0",
     "@tailwindcss/vite": "^4.2.2",
     "@types/react": "^19.2.14",

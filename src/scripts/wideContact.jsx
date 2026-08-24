@@ -12,14 +12,14 @@ export function WideContactForm({ locale }) {
 
 	return (
 
-		<form id='contact-form'
+		<form id='contact-form-wide'
               className='wide'
               onSubmit={handleSubmit}
               method="POST"
               action={"https://formspree.io/f/" + formId}>
 
 			<input
-                name='name' id='name'
+                name='name' id='name-wide'
                 type='text'
                 required
                 autoComplete='off'
@@ -34,7 +34,7 @@ export function WideContactForm({ locale }) {
 			/>
 
 			<input
-                name='email' id='email'
+                name='email' id='email-wide'
                 type='email'
                 required
                 autoComplete='off'
@@ -50,13 +50,13 @@ export function WideContactForm({ locale }) {
 
 			<br/>
 
-			<button id='sendMessageButton' type='submit'
+			<button id='sendMessageButton-wide' type='submit'
                     disabled={state.submitting}>
 				{t.contact.form.send}
 			</button>
 
 			<textarea
-                name='message' id='message'
+                name='message' id='message-wide'
 				required
 				autoComplete='off'
 
@@ -70,7 +70,7 @@ export function WideContactForm({ locale }) {
 			/>
 
 			<input
-				name='subject' id='subject'
+				name='subject' id='subject-wide'
                 type='hidden'
                 value={t.contact.form.subject}
 			/>

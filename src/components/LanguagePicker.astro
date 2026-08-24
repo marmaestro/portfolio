@@ -1,15 +1,31 @@
 ---
 import { Badge } from 'studiocms:ui/components/badge';
 
-import { locales } from '~/i18n/constants.ts';
+import { locales, defaultLocale, type Locale } from '~/i18n/constants.ts';
 import { getRelativeLocaleUrl } from "astro:i18n";
+import { getCollection, getEntry } from 'astro:content';
+import { getProjectUrl } from '~/i18n/utils.ts';
 
-const currentLang = Astro.currentLocale;
+const currentLang = (Astro.currentLocale as Locale) ?? defaultLocale;
 const rawPath = Astro.url.pathname;
 
-const currentPath  = !currentLang ? rawPath : rawPath
-    .replace(new RegExp(`^/${currentLang}/?`), '')
+const currentPath  = !Astro.currentLocale ? rawPath : rawPath
+    .replace(new RegExp(`^/${Astro.currentLocale}/?`), '')
     .replace(/^\//, '');
+
+const projectMatch = currentPath.match(/^portfolio\/(.+)$/);
+const currentProject = projectMatch
+    ? await getEntry('portfolio', `${currentLang}/${projectMatch[1]}`)
+    : undefined;
+
+const translatedProjectUrls: Partial<Record<Locale, string>> = {};
+if (currentProject) {
+    const siblings = await getCollection('portfolio',
+        project => project.data.image === currentProject.data.image);
+    for (const project of siblings) {
+        translatedProjectUrls[project.data.lang] = getProjectUrl(project);
+    }
+}
 
 const targetPath = !currentPath.startsWith('portfolio/') ?
     currentPath : 'portfolio';
@@ -17,8 +33,8 @@ const targetPath = !currentPath.startsWith('portfolio/') ?
 ---
 <span id='language-picker'>
     { Object.entries(locales).map(([_, lang]) => {
-        const url = getRelativeLocaleUrl(lang, targetPath)
-            .replace(/\/$/, '') || '/';
+        const url = translatedProjectUrls[lang]
+            ?? (getRelativeLocaleUrl(lang, targetPath).replace(/\/$/, '') || '/');
         const label = lang.toUpperCase();
         return (
             <a aria-label=`Switch to ${label} site`

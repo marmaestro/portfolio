@@ -38,6 +38,15 @@ const pageTitle = siteName == title ? siteName : `${siteName} | ${title}`;
 
 	<ClientRouter/>
 	<ThemeScript />
+	<script is:inline>
+		// Some page transitions fail natively (browser `moveBefore` hierarchy
+		// errors), which aborts the swap before `astro:after-swap` fires and
+		// leaves the theme unapplied. `astro:page-load` fires regardless of
+		// swap success, so re-apply the theme there as a safety net.
+		document.addEventListener('astro:page-load', () => {
+			window.astroThemeToggle?.setTheme(window.astroThemeToggle.getTheme());
+		});
+	</script>
 </head>
 <header class='custom-header'>
     <PageHeader/>

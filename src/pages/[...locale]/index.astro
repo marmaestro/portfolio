@@ -1,11 +1,10 @@
 ---
 import Layout from '~/layouts/Layout.astro'
 import ProjectPreview from '~/components/ProjectPreview.astro';
-import Skill from '~/components/Skill.astro';
+import Skill from '~/components/patterns/Skill.astro';
 
 import { getCollection } from 'astro:content';
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { useTranslation } from '~/i18n/utils.ts';
+import { useTranslation, getProjectUrl, getLocaleStaticPaths } from '~/i18n/utils.ts';
 import { WideContactForm } from '~/scripts/wideContact.jsx';
 import { VerticalContactForm } from '~/scripts/verticalContact.jsx';
 
@@ -16,13 +15,20 @@ import type { Locale } from "~/i18n/constants.ts";
 import '~/styles/collection.css';
 import '~/styles/home.css';
 
+export function getStaticPaths() {
+    return getLocaleStaticPaths();
+}
+
 const locale = Astro.currentLocale as Locale;
 const t = useTranslation(locale);
 
 const projects = (await getCollection('portfolio'))
     .filter(project => project.data.lang == locale)
-    .filter(project => project.data.pinned)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+    .sort((a, b) => {
+        if (a.data.pinned !== b.data.pinned) return a.data.pinned ? -1 : 1;
+        return b.data.date.valueOf() - a.data.date.valueOf();
+    })
+    .slice(0, 2);
 
 const intro = t.home.intro.body;
 const skills = t.skills.list;
@@ -66,20 +72,17 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
         <p class='muted'>{t.portfolio.body}</p>
 
 		<div class="collection-container grid">
-			<ProjectPreview
-					url = {`/portfolio/${projects[0].id}`}
-					title = {projects[0].data.title}
-					description = {projects[0].data.description}
-					image = {projects[0].data.image}
-					tags = {projects[0].data.tags}
-			/>
-			<ProjectPreview
-					url = {`/portfolio/${projects[1].id}`}
-					title = {projects[1].data.title}
-					description = {projects[1].data.description}
-					image = {projects[1].data.image}
-					tags = {projects[1].data.tags}
-			/>
+            {
+                projects.map(project => (
+                    <ProjectPreview
+                            url = {getProjectUrl(project)}
+                            title = {project.data.title}
+                            description = {project.data.description}
+                            image = {project.data.image}
+                            tags = {project.data.tags}
+                    />
+                ))
+            }
 		</div>
     </section>
 

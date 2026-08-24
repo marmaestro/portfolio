@@ -1,6 +1,11 @@
-
 packages:
   - 'node_modules'
+overrides:
+  sharp: ^0.34.5
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
 autoInstallPeers: true
 
 onlyBuiltDependencies:

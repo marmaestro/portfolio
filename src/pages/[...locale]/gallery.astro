@@ -2,12 +2,16 @@
 import Layout from '~/layouts/Layout.astro';
 
 import { Image } from 'astro:assets';
-import { useTranslation } from '~/i18n/utils.ts';
+import { useTranslation, getLocaleStaticPaths } from '~/i18n/utils.ts';
 import type { Locale } from '~/i18n/constants.ts';
 
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import '~/styles/justifiedGallery/gallery.css';
 import '~/styles/justifiedGallery/reset.css';
+
+export function getStaticPaths() {
+    return getLocaleStaticPaths();
+}
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
@@ -48,24 +52,35 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 <script>
     import { Fancybox } from '@fancyapps/ui/dist/fancybox/';
 
-    Fancybox.bind('[data-fancybox]', {
-        theme: 'auto',
-        mainStyle: {
-            '--f-button-width': '44px',
-            '--f-button-height': '44px',
-            '--f-button-border-radius': '50%',
-            '--f-toolbar-padding': '16px',
-        },
-        Carousel: {
-            Arrows: false,
-            Toolbar: {
-                display: {
-                    left: [],
-                    middle: [],
-                    right: ['close'],
-                },
+    // Astro's view transitions don't always re-execute this script's imports
+    // cleanly on navigation (a partial/failed swap can leave a stale Fancybox
+    // binding attached to nodes that no longer exist, or double-bind on top
+    // of a survived one). Destroying before every (re)bind, on both first
+    // load and subsequent swaps, keeps exactly one live binding at all times.
+    function bindGallery() {
+        Fancybox.destroy();
+        Fancybox.bind('[data-fancybox]', {
+            theme: 'auto',
+            mainStyle: {
+                '--f-button-width': '44px',
+                '--f-button-height': '44px',
+                '--f-button-border-radius': '50%',
+                '--f-toolbar-padding': '16px',
             },
-            transition: 'slide',
-        },
-    });
+            Carousel: {
+                Arrows: false,
+                Toolbar: {
+                    display: {
+                        left: [],
+                        middle: [],
+                        right: ['close'],
+                    },
+                },
+                transition: 'slide',
+            },
+        });
+    }
+
+    bindGallery();
+    document.addEventListener('astro:page-load', bindGallery);
 </script>

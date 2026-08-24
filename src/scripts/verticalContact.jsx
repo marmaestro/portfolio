@@ -12,14 +12,14 @@ export function VerticalContactForm({ locale }) {
 
 	return (
 
-		<form id='contact-form'
+		<form id='contact-form-vertical'
 			  className='vertical'
 			  onSubmit={handleSubmit}
 			  method="POST"
 			  action={"https://formspree.io/f/" + formId}>
 
 			<input
-				name='name' id='name'
+				name='name' id='name-vertical'
 				type='text'
 				required
 				autoComplete='off'
@@ -34,7 +34,7 @@ export function VerticalContactForm({ locale }) {
 			/>
 
 			<input
-				name='email' id='email'
+				name='email' id='email-vertical'
 				type='email'
 				required
 				autoComplete='off'
@@ -51,7 +51,7 @@ export function VerticalContactForm({ locale }) {
 			<br/>
 
 			<textarea
-				name='message' id='message'
+				name='message' id='message-vertical'
 				required
 				autoComplete='off'
 
@@ -64,14 +64,14 @@ export function VerticalContactForm({ locale }) {
 				errors={state.errors}
 			/>
 
-			<button id='sendMessageButton' type='submit'
+			<button id='sendMessageButton-vertical' type='submit'
 					className='vertical'
 					disabled={state.submitting}>
 				{t.contact.form.send}
 			</button>
 
 			<input
-				name='subject' id='subject'
+				name='subject' id='subject-vertical'
 				type='hidden'
 				value={t.contact.form.subject}
 			/>
