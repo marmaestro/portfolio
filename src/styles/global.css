@@ -4,9 +4,14 @@
 @import url('studioCmsUi/resets.css');
 @import url('studioCmsUi/radii.css');
 
-@import url('fonts/poppins.css');
-@import url('fonts/cabinet-grotesk.css');
-@import url('fonts/satoshi.css');
+/* NOTE: the self-hosted @font-face declarations (fonts/poppins.css,
+   fonts/cabinet-grotesk.css, fonts/satoshi.css) are intentionally NOT
+   @import-ed here. Tailwind v4's Vite plugin bundles this file through its
+   own CSS pipeline, which silently drops @font-face rules pulled in via a
+   nested @import (verified: content survives when authored directly in this
+   file, but not through @import, with either url() or bare import syntax).
+   They're loaded as plain, separately-processed stylesheets from
+   Layout.astro / ErrorLayout.astro instead. */
 
 /* Maps this project's existing design tokens (studiocms-ui's HSL custom
    properties, already theme-switched via [data-theme]) into Tailwind's
@@ -138,6 +143,46 @@
        author-written content, not our own markup, so they can't carry
        Tailwind classes directly. Same role as a typical `.prose` block. */
     .post {
+        /* Tailwind's preflight zeroes margins/list-style on every element, so
+           the MDX body needs its own vertical rhythm and list markers back —
+           none of this was needed pre-migration since it just inherited
+           normal browser defaults. */
+        p, ul, ol {
+            margin: 1em 0;
+        }
+
+        blockquote {
+            margin: 1em 40px;
+        }
+
+        ul, ol {
+            padding-left: 1.5em;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+
+        li {
+            margin: 0.25em 0;
+        }
+
+        li > ul, li > ol {
+            margin: 0.25em 0;
+        }
+
+        /* h1 here covers author-written `# headings` inside the MDX body
+           (e.g. a pull-quote-style line), not the page's own title — that one
+           carries its own margin utility classes, which win over this. */
+        h1, h3, h4 {
+            font-family: var(--font-display);
+            margin: 1.25em 0 0.5em;
+        }
+
         h3 {
             font-size: 1.5rem;
         }
@@ -146,13 +191,26 @@
             font-size: 1.1rem;
         }
 
-        img {
+        /* Images/video and headings had zero margin (inherited from the
+           sitewide `img { margin: 0 }` reset), so anything placed right next
+           to one — another image, a video, a heading — touched it directly. */
+        img, mux-player {
+            margin: 1.5em 0;
+        }
+
+        figure {
+            margin: 1.5em 0;
+        }
+
+        figure img {
+            margin: 0;
             width: 100%;
             height: auto;
         }
 
-        figure {
-            margin: 0;
+        img {
+            width: 100%;
+            height: auto;
         }
 
         figure figcaption {

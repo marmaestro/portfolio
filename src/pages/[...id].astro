@@ -15,27 +15,19 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { Content} = await render(project);
 const roles = project.data.roles;
-
-const dateOptions: object = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-};
-
-const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.currentLocale, dateOptions);
 ---
 
 <MarkdownPostLayout
 		title = {project.data.title}
 		description = {project.data.description}
 >
-	<Row class='justify-between items-baseline'>
-		<h1 class='text-[1.75rem] tracking-[-0.15rem]'>{project.data.title}</h1>
+	<div class='flex flex-row flex-wrap gap-4 justify-between items-baseline'>
+		<h1 class='mt-0 mb-1 text-[2.25rem] font-bold'>{project.data.title}</h1>
         {project.data.source.item != '' ?
 				<a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
             : null}
-	</Row>
-	<h2 class='mt-[-1.5rem] text-[1.5rem] font-medium not-italic tracking-[-0.05rem]'>{project.data.subtitle}</h2>
+	</div>
+	<h2 class='mt-0 text-[1.5rem] font-medium not-italic'>{project.data.subtitle}</h2>
 	<Row id='project-roles'>
         {
             roles.map((role) => (

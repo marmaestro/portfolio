@@ -4,6 +4,9 @@ import { ThemeScript } from 'astro-theme-toggle/components';
 
 import '~/styles/global.css';
 import '~/styles/overrides.css';
+import '~/styles/fonts/poppins.css';
+import '~/styles/fonts/cabinet-grotesk.css';
+import '~/styles/fonts/satoshi.css';
 
 import PageHeader from '~/components/PageHeader.astro';
 import PageFooter from '~/components/PageFooter.astro';
@@ -34,7 +37,7 @@ const pageTitle = siteName == title ? siteName : `${siteName} | ${title}`;
     <meta name = 'generator' content = {Astro.generator} />
 	<meta name='apple-mobile-web-app-title' content='marmaestro' />
 
-	<script async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js" />
+	<script is:inline async defer src="https://challenges.cloudflare.com/turnstile/v0/api.js" />
 
 	<ClientRouter/>
 	<ThemeScript />

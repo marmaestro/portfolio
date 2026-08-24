@@ -13,7 +13,11 @@ export function VerticalContactForm({ locale }) {
 	return (
 
 		<form id='contact-form-vertical'
-			  className='vertical'
+			  className='flex flex-nowrap flex-col justify-end gap-4 min-[500px]:hidden
+                [&_input]:bg-background-step-1 [&_input]:backdrop-blur-[10px] [&_input]:rounded-sm [&_input]:p-[0.75em]
+                [&_textarea]:bg-background-step-1 [&_textarea]:backdrop-blur-[10px] [&_textarea]:rounded-sm [&_textarea]:p-[0.75em]
+                [&_textarea]:min-h-[10em]
+                [&_button]:py-2 [&_button]:px-4 [&_button]:self-center'
 			  onSubmit={handleSubmit}
 			  method="POST"
 			  action={"https://formspree.io/f/" + formId}>
