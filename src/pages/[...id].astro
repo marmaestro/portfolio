@@ -22,12 +22,12 @@ const roles = project.data.roles;
 		description = {project.data.description}
 >
 	<div class='flex flex-row flex-wrap gap-4 justify-between items-baseline'>
-		<h1 class='mt-0 mb-1 text-[2.25rem] font-bold'>{project.data.title}</h1>
+		<h1 class='h-xl'>{project.data.title}</h1>
         {project.data.source.item != '' ?
 				<a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
             : null}
 	</div>
-	<h2 class='mt-0 text-[1.5rem] font-medium not-italic'>{project.data.subtitle}</h2>
+	<h2 class='text-[length:var(--text-lg)] font-medium'>{project.data.subtitle}</h2>
 	<Row id='project-roles'>
         {
             roles.map((role) => (

@@ -1,6 +1,4 @@
 ---
-import { Badge } from 'studiocms:ui/components/badge';
-
 import { locales, defaultLocale, type Locale } from '~/i18n/constants.ts';
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getCollection, getEntry } from 'astro:content';
@@ -31,7 +29,7 @@ const targetPath = !currentPath.startsWith('portfolio/') ?
     currentPath : 'portfolio';
 
 ---
-<span class='flex flex-row flex-wrap justify-end gap-2 max-sm:hidden'>
+<span class='flex flex-row flex-wrap justify-end gap-3 max-sm:hidden'>
     { Object.entries(locales).map(([_, lang]) => {
         const url = translatedProjectUrls[lang]
             ?? (getRelativeLocaleUrl(lang, targetPath).replace(/\/$/, '') || '/');
@@ -41,9 +39,14 @@ const targetPath = !currentPath.startsWith('portfolio/') ?
             <a aria-label=`Switch to ${label} site`
                role='option' type='a'
                aria-selected={ isCurrent }
-               class:list={[ isCurrent && 'cursor-default' ]}
+               class:list={[
+                   'text-sm font-bold uppercase tracking-[0.08em] no-underline',
+                   isCurrent
+                       ? 'cursor-default text-foreground'
+                       : 'text-foreground-dimmed hover:text-primary-text'
+               ]}
                href={url}>
-                <Badge label={label} variant='flat' color='mono'/>
+                {label}
             </a>
         );
     })}

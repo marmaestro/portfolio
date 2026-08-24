@@ -42,19 +42,23 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
 >
     <!-- Introduction -->
     <section class='section my-24' id='introduction'>
-        <h1 class='mb-0 text-[4rem] font-black'>{t.home.intro.title}</h1>
-        <h1 class='mt-0 text-[2.5rem] font-bold'>{t.home.intro.subtitle}</h1>
-        <Image src={introBanner} alt={t.home.intro.image} loading='eager' class='h-auto'/>
-        <div class="mt-5 grid grid-flow-col grid-cols-2 grid-rows-2 gap-4 max-[700px]:flex max-[700px]:flex-col">
-            {
-                intro.map(paragraph => ( <p class='muted m-0 w-full'>{paragraph}</p> ))
-            }
+        <div class='grid grid-cols-[3fr_2fr] items-start gap-12 max-[900px]:grid-cols-1'>
+            <div>
+                <h1 class='h-display'>{t.home.intro.title}</h1>
+                <h2 class='h-xl'>{t.home.intro.subtitle}</h2>
+                <div class='grid grid-cols-2 gap-6 max-[700px]:grid-cols-1'>
+                    {
+                        intro.map(paragraph => ( <p class='lead muted m-0 w-full'>{paragraph}</p> ))
+                    }
+                </div>
+            </div>
+            <Image src={introBanner} alt={t.home.intro.image} loading='eager' class='h-full w-full object-cover max-[900px]:h-auto'/>
         </div>
     </section>
 
     <!-- Skill set -->
     <section class='section my-24' id='skills'>
-        <h1 class='text-[2.5rem] font-bold'>{t.skills.title}</h1>
+        <h2 class='h-xl'>{t.skills.title}</h2>
         <p class='muted w-[65%] max-[900px]:w-full'>{t.skills.body}</p>
         <div class='mt-8 grid grid-flow-col grid-cols-4 grid-rows-2 gap-6 max-[900px]:grid-flow-row max-[900px]:grid-cols-3 max-[900px]:grid-rows-3 max-[500px]:grid-cols-2 max-[500px]:grid-rows-4 max-[350px]:grid-cols-1 max-[350px]:grid-rows-8'>
             {
@@ -65,8 +69,8 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
 
     <!-- Portfolio preview -->
     <section class='section mt-24 mb-0' id='portfolio'>
-        <h1 class='text-[2.5rem] font-bold'>{t.portfolio.title}</h1>
-        <p class='muted w-[65%] max-[900px]:w-full'>{t.portfolio.body}</p>
+        <h2 class='h-xl'>{t.portfolio.title}</h2>
+        <p class='muted w-[65%] max-[900px]:w-full mb-6'>{t.portfolio.body}</p>
 
 		<div class="flex flex-row gap-4 mb-12 max-[750px]:flex-col max-[750px]:!mb-6">
             {
@@ -85,7 +89,7 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
 
     <!-- Contact -->
     <section class="section my-24" id='contact'>
-		<h1 class='text-[2.5rem] font-bold'>{t.contact.title}</h1>
+		<h2 class='h-xl'>{t.contact.title}</h2>
         <div class="grid grid-cols-[1.75fr_2fr] items-start gap-8 max-[1280px]:block">
             <div>
 				<p class='muted w-full'>{t.contact.body}</p>

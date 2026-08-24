@@ -2,7 +2,6 @@
 import ErrorLayout from "~/layouts/ErrorLayout.astro"
 
 import { Icon } from 'astro-icon/components';
-import { Center } from 'studiocms:ui/components/center';
 import { Button } from 'studiocms:ui/components/button';
 
 import {useTranslation} from "~/i18n/utils.ts";
@@ -16,22 +15,20 @@ const t = useTranslation(Astro.currentLocale as Locale);
         title = {t.errorPage.title}
         description = {t.errorPage.description}
 >
-    <Center>
-        <section class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
-            <div class="text-[5rem] text-foreground">
-                <h1 class="m-0 inline text-[10rem] max-[800px]:text-[8rem]">
-                    <b>4</b><Icon name="bi:bug" class="relative top-5 max-[800px]:top-4"/><b>4</b>
-                </h1>
-            </div>
-            <div class="text-center font-medium">
-                <h2 class="my-[10px]">{t.errorPage.oops}</h2>
-                <p>{t.errorPage.text}</p>
-            </div>
-            <Center>
-                <Button as='a' color='primary' variant='flat' href={t.errorPage.button.url}>
-                    {t.errorPage.button.text}
-                </Button>
-			</Center>
-        </section>
-	</Center>
+    <section class="w-full text-center">
+        <div class="text-foreground">
+            <h1 class="m-0 inline-flex items-center justify-center text-[10rem] font-display font-extrabold tracking-tight max-[800px]:text-[8rem]">
+                <b>4</b><Icon name="bi:bug" class="inline-block"/><b>4</b>
+            </h1>
+        </div>
+        <div class="text-center">
+            <h2 class="my-[10px] h-lg">{t.errorPage.oops}</h2>
+            <p class="text-foreground-dimmed">{t.errorPage.text}</p>
+        </div>
+        <div class="mt-6 flex justify-center">
+            <Button as='a' color='primary' variant='flat' href={t.errorPage.button.url}>
+                {t.errorPage.button.text}
+            </Button>
+        </div>
+    </section>
 </ErrorLayout>

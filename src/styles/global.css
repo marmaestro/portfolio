@@ -1,17 +1,20 @@
 @import 'tailwindcss';
 
-@import url('studioCmsUi/colors.css');
-@import url('studioCmsUi/resets.css');
-@import url('studioCmsUi/radii.css');
-
-/* NOTE: the self-hosted @font-face declarations (fonts/poppins.css,
-   fonts/cabinet-grotesk.css, fonts/satoshi.css) are intentionally NOT
-   @import-ed here. Tailwind v4's Vite plugin bundles this file through its
-   own CSS pipeline, which silently drops @font-face rules pulled in via a
-   nested @import (verified: content survives when authored directly in this
-   file, but not through @import, with either url() or bare import syntax).
-   They're loaded as plain, separately-processed stylesheets from
-   Layout.astro / ErrorLayout.astro instead. */
+/* NOTE: studioCmsUi/{colors,resets,radii}.css and the self-hosted
+   @font-face declarations (fonts/cabinet-grotesk.css, fonts/satoshi.css)
+   are intentionally NOT @import-ed here. Tailwind v4's Vite plugin bundles
+   this file through its own CSS pipeline, which silently serves a stale
+   version of anything pulled in via a nested @import after edits — the
+   @import ends up positioned after Tailwind's own generated output, which
+   is invalid per spec ("@import must precede all other statements") and the
+   nested file's fresh content never makes it through even on a full dev
+   server restart (verified: content updates correctly when authored
+   directly in this file, but not through a nested @import, with either
+   url() or bare import syntax). They're all loaded as plain,
+   separately-processed stylesheets from Layout.astro / ErrorLayout.astro
+   instead — load order there matters: colors before resets/radii before
+   this file, since resets.css and this file's @theme mapping both read the
+   custom properties colors.css defines. */
 
 /* Maps this project's existing design tokens (studiocms-ui's HSL custom
    properties, already theme-switched via [data-theme]) into Tailwind's
@@ -32,6 +35,10 @@
     --color-primary: var(--primary-base);
     --color-primary-hover: var(--primary-hover);
     --color-primary-active: var(--primary-active);
+    /* Darker step for body text/links on light backgrounds, where
+       --color-primary alone doesn't clear AA contrast (see colors.css). In
+       dark mode this equals --primary-base, which already clears AA. */
+    --color-primary-text: var(--primary-text);
 
     --color-border: var(--border);
     --color-shadow: var(--shadow);
@@ -42,7 +49,25 @@
     --radius-full: var(--radius-full);
 
     --font-sans: "Satoshi-Variable", sans-serif;
-    --font-display: "CabinetGrotesk-Variable", Poppins, sans-serif;
+    /* Reserved for hero/H1-level display type only — everything else
+       (h2/h3, card titles, subheadings) uses --font-sans at a bold weight. */
+    --font-display: "CabinetGrotesk-Variable", sans-serif;
+
+    /* Swiss-poster type scale — bigger and bolder throughout. Hero text
+       scales with viewport via clamp(); everything below it is fixed so the
+       grid stays predictable. These --text-* keys double as overrides of
+       Tailwind's own text-sm/base/lg/xl utilities (Tailwind v4 reads font
+       sizes from this exact namespace), so nav links, badges, and any plain
+       text-sm/text-lg/text-xl usage pick up the same scale automatically. */
+    --text-display: clamp(3.5rem, 10vw, 8rem);
+    --text-xl: clamp(2.5rem, 5vw, 3.5rem);
+    --text-lg: 1.75rem;
+    --text-md: 1.25rem;
+    --text-base: 1.125rem;
+    --text-sm: 0.95rem;
+    /* em-based so it scales proportionally at every size, unlike a fixed
+       rem value which reads disproportionately tight/loose across sizes. */
+    --tracking-tight: -0.03em;
 }
 
 @layer base {
@@ -54,18 +79,29 @@
         background-color: hsl(from var(--primary-active) h s l / 0.45);
     }
 
-    h1, h2, h3 {
+    /* Cabinet Grotesk is reserved for hero/H1-level display type; h2/h3 use
+       Satoshi at a bold weight so mid-level headings read closer to body
+       text instead of competing with the hero. */
+    h1 {
         font-family: var(--font-display);
+        font-size: var(--text-xl);
+        letter-spacing: var(--tracking-tight);
+        margin: 0 0 1.5rem;
     }
 
-    h1 {
-        font-size: 1.75rem;
+    h2, h3 {
+        font-family: var(--font-sans);
+        font-weight: 700;
     }
 
     h2 {
-        font-size: 1.35rem;
-        font-style: italic;
-        font-weight: 500;
+        font-size: var(--text-lg);
+        margin: 0 0 1.25rem;
+    }
+
+    h3 {
+        font-size: var(--text-md);
+        margin: 0 0 1rem;
     }
 
     img {
@@ -77,32 +113,32 @@
     body {
         background-color: var(--color-background);
         font-family: var(--font-sans);
-        font-size: 1rem;
+        font-size: var(--text-base);
         font-weight: 450;
+        line-height: 1.6;
         color: var(--color-foreground);
     }
 
+    /* Fixed grid instead of viewport-scaled padding: a real max-width column
+       with clamped gutters reads more like a strict Swiss layout than fluid
+       vw-based margins that never settle. */
     section {
-        margin: auto;
-        padding: 1rem 8vw;
-    }
-
-    @media screen and (min-width: 600px) {
-        section {
-            padding: 1rem 15vw;
-        }
-    }
-
-    @media screen and (min-width: 900px) {
-        section {
-            padding: 1rem 20vw;
-        }
+        max-width: 1400px;
+        margin-inline: auto;
+        padding-block: 1rem;
+        padding-inline: clamp(1.5rem, 5vw, 6rem);
     }
 
     a, button {
         text-decoration: none;
-        color: var(--color-primary);
         transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Links are body-text-sized, so they use --color-primary-text (the
+       darker violet step in light mode) rather than --color-primary, which
+       doesn't clear AA contrast at text weight/size on a white background. */
+    a {
+        color: var(--color-primary-text);
     }
 
     a:hover {
@@ -114,6 +150,7 @@
     }
 
     button {
+        color: var(--color-primary);
         border-radius: var(--radius-md);
         background-color: var(--color-background-step-1);
     }
@@ -138,17 +175,64 @@
 }
 
 @layer components {
+    /* Heading utility classes so page markup stops repeating arbitrary
+       Tailwind values (text-[4rem], tracking-[-0.15rem], etc.) for the same
+       few sizes. .h-display is the only one carrying Cabinet Grotesk — every
+       other size stays on the body font at a bold weight. */
+    .h-display {
+        font-family: var(--font-display);
+        font-size: var(--text-display);
+        letter-spacing: var(--tracking-tight);
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 2rem;
+    }
+
+    .h-xl {
+        font-family: var(--font-sans);
+        font-size: var(--text-xl);
+        letter-spacing: var(--tracking-tight);
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 1.75rem;
+    }
+
+    .h-lg {
+        font-family: var(--font-sans);
+        font-size: var(--text-lg);
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 0 1.25rem;
+    }
+
+    /* Lead paragraph — for intro/standfirst copy that should read larger
+       than regular running body text (e.g. the home page introduction). */
+    .lead {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        line-height: 1.5;
+    }
+
     /* Styling for the arbitrary MDX/markdown body of a project post
        (`<Content/>` in src/pages/[...id].astro) — these elements come from
        author-written content, not our own markup, so they can't carry
        Tailwind classes directly. Same role as a typical `.prose` block. */
     .post {
+        /* Narrower reading column than the site's default 1400px section
+           grid — long-form project copy reads badly that wide. Overrides
+           the base `section` rule's max-width via Tailwind's layer order
+           (components > base), keeping that rule's centering/padding. */
+        max-width: 900px;
+        /* Larger and looser than the sitewide body default — long-form
+           article copy needs more breathing room than UI text. */
+        font-size: 1.2rem;
+        line-height: 1.5;
+
         /* Tailwind's preflight zeroes margins/list-style on every element, so
            the MDX body needs its own vertical rhythm and list markers back —
            none of this was needed pre-migration since it just inherited
            normal browser defaults. */
         p, ul, ol {
-            margin: 1em 0;
+            margin: 1.25em 0;
         }
 
         blockquote {
@@ -175,20 +259,33 @@
             margin: 0.25em 0;
         }
 
-        /* h1 here covers author-written `# headings` inside the MDX body
-           (e.g. a pull-quote-style line), not the page's own title — that one
-           carries its own margin utility classes, which win over this. */
-        h1, h3, h4 {
-            font-family: var(--font-display);
-            margin: 1.25em 0 0.5em;
+        /* Headings authored in MDX as `#`/`##`/`###`/`####` are shifted down 2
+           levels at render time (see astro.config.mjs's rehypeShiftHeadings),
+           landing here as h3-h6 — so they never collide with the page's own
+           real <h1>/<h2> title/subtitle. Satoshi Bold, not Cabinet Grotesk:
+           that's reserved for the hero only. */
+        h3, h4, h5, h6 {
+            font-family: var(--font-sans);
+            font-weight: 700;
+            margin: 2em 0 0.75em;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: var(--text-lg);
         }
 
         h4 {
-            font-size: 1.1rem;
+            font-size: var(--text-md);
+        }
+
+        h5 {
+            font-size: var(--text-sm);
+        }
+
+        h6 {
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         /* Images/video and headings had zero margin (inherited from the
@@ -228,7 +325,7 @@
         }
 
         mark {
-            color: var(--color-primary);
+            color: var(--color-primary-text);
             background-color: transparent;
         }
     }

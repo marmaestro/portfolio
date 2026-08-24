@@ -1,9 +1,14 @@
 /* StudioCMS UI overrides*/
 
-/* Card */
+/* Card — border-color shift on hover instead of a shadow, flatter/Swiss. */
 .sui-card {
     border-radius: var(--radius-lg) !important;
     height: min-content !important;
+    transition: border-color 0.2s ease;
+}
+
+.sui-card.project:hover {
+    border-color: var(--color-primary);
 }
 
 .sui-card-body {
@@ -32,5 +37,25 @@
 #dropdown-container {
     @media (min-width: 640px) {
         display: none !important;
+    }
+}
+
+/* Footer — align padding with the site's fixed-grid section gutters, bold
+   uppercase tracked-out column headers instead of the vendor default. */
+footer.sui-footer {
+    background-color: var(--background-base) !important;
+    padding: 3rem clamp(1.5rem, 5vw, 6rem) 2rem !important;
+}
+
+.sui-footer-link-label {
+    font-size: 0.85em !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+@media screen and (max-width: 1440px) {
+    footer.sui-footer {
+        padding: 3rem clamp(1.5rem, 5vw, 6rem) 2rem !important;
     }
 }

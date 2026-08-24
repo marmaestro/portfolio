@@ -1,6 +1,4 @@
 ---
-import { Badge } from 'studiocms:ui/components/badge';
-
 import { type Locale, locales } from '~/i18n/constants.ts';
 
 import { getRelativeLocaleUrl } from "astro:i18n";
@@ -31,8 +29,9 @@ const t = useTranslation(Astro.currentLocale as Locale);
         return (
             <a aria-label=`Switch to ${label} site`
                role='button' type='a'
+               class='text-sm font-bold uppercase tracking-[0.08em]'
                href={url} >
-                <Badge label={label} variant='flat' color='primary'/>
+                {label}
             </a>
         );
     })}
