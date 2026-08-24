@@ -1,23 +1,22 @@
 ---
+// Mobile menu — modeled on Astro Rocket's Header.astro mobile drawer
+// (https://github.com/hansmartensdev/Astro-Rocket): a full-width panel that
+// drops down directly under the header (not a true full-screen takeover),
+// with a dimmed/blurred backdrop over the rest of the page, sectioned rows
+// (Navigate / Language / Connect) with a staggered entrance animation. No
+// separate Theme section — PageHeader's theme toggle already sits in the
+// header at every screen size (it isn't hidden on mobile), so duplicating
+// it in here would be redundant. Self-contained — owns its own open/close
+// script — since the vendor studiocms:ui Dropdown component's
+// absolute-positioning math assumes a small anchored menu, not a
+// full-width panel, and its transition:persist behavior caused real bugs
+// here (see PageHeader.astro's git history).
 import { Icon } from "astro-icon/components";
-import { Button } from 'studiocms:ui/components/button';
-// The vendor <Dropdown> component always marks its container/list
-// transition:persist, which freezes the whole menu (including every
-// option's href) to whatever it was on first render across client-side
-// navigations — stale for the language row, whose targets are page-specific
-// — and is implicated in the moveBefore view-transition failures that could
-// leave the toggle listener double-attached (see the guard in
-// PageHeader.astro). Hand-authoring the same markup/classes below, driven
-// by the same DropdownHelper client class (it only needs matching IDs and
-// CSS classes, not the component that produced them), sidesteps both: the
-// menu re-renders fresh — and DropdownHelper re-initializes on it — every
-// page load. It also lets the language row hold two links (EN/ES) as one
-// list entry, which <Dropdown>'s one-href-per-option model can't express.
-import '@studiocms/ui/components/Dropdown/dropdown.css';
 
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { useTranslation, getLocalizedUrls } from "~/i18n/utils.ts";
 import { locales, defaultLocale, type Locale } from "~/i18n/constants.ts";
+import { SocialLinks } from '~/config/site.ts';
 
 
 const locale = (Astro.currentLocale as Locale) ?? defaultLocale;
@@ -27,37 +26,292 @@ const navOptions = t.nav.map(link => ({
     href: getRelativeLocaleUrl(locale, link.url.replace(`/${locale}`, '').replace(/^\//, ''))
 }));
 
-// Small-screen language switching lives here instead of a separate footer
-// button — reuses the desktop LanguagePicker's project-aware URL
-// resolution, so switching language on a project page lands on that
-// project's translation instead of the bare portfolio listing.
+// Reuses the desktop LanguagePicker's project-aware URL resolution, so
+// switching language on a project page lands on that project's translation
+// instead of the bare portfolio listing.
 const urls = await getLocalizedUrls(Astro.url.pathname, Astro.currentLocale as Locale);
 ---
-<div class="sui-dropdown-container" id="dropdown-container" data-align="end" data-trigger="left">
-    <div class="sui-dropdown-toggle" id="dropdown-toggle-btn">
-        <Button color="primary">
-            <Icon name="bi:list" />
-        </Button>
+<div class="mobile-menu-anchor sm:hidden">
+    <button
+            type="button"
+            id="mobile-menu-button"
+            class="mobile-menu-toggle"
+            aria-expanded="false"
+            aria-controls="mobile-menu-panel"
+            aria-label={t.menu.open}
+            data-label-open={t.menu.open}
+            data-label-close={t.menu.close}
+    >
+        <span class="menu-icon"><Icon name="bi:list" size={24} /></span>
+        <span class="close-icon hidden"><Icon name="bi:x-lg" size={20} /></span>
+    </button>
+
+    <div id="mobile-menu-panel" class="mobile-menu-panel hidden" role="navigation" aria-label={t.menu.navigate}>
+        <div class="mobile-menu-body">
+            <section class="mobile-menu-section w-full">
+                <p class="mobile-menu-label">{t.menu.navigate}</p>
+                <ul class="flex flex-col gap-0.5">
+                    {navOptions.map(({ label, href }, idx) => (
+                        <li>
+                            <a href={href} class="mobile-menu-row mobile-menu-stagger justify-normal!" style={`--i: ${idx}`}>
+                                <span class="mobile-menu-dot" aria-hidden="true" />
+                                <span class="text-left">{label}</span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            <section class="mobile-menu-section">
+                <p class="mobile-menu-label">{t.menu.language}</p>
+                <div class="mobile-menu-row mobile-menu-stagger" style={`--i: ${navOptions.length}`}>
+                    <span class="text-sm text-foreground-muted">{t.menu.language}</span>
+                    <span class="flex flex-row gap-3">
+                        {locales.map((lang) => {
+                            const isCurrent = lang === locale;
+                            return isCurrent ? (
+                                <span class="text-sm font-bold uppercase tracking-[0.08em] cursor-default text-foreground">{lang.toUpperCase()}</span>
+                            ) : (
+                                <a href={urls[lang]} class="text-sm font-bold uppercase tracking-[0.08em] text-foreground-dimmed hover:text-primary-text">{lang.toUpperCase()}</a>
+                            );
+                        })}
+                    </span>
+                </div>
+            </section>
+
+            <section class="mobile-menu-section">
+                <p class="mobile-menu-label">{t.menu.connect}</p>
+                <div class="mobile-menu-stagger flex flex-wrap items-center gap-2 px-1 pt-1 pb-1" style={`--i: ${navOptions.length + 1}`}>
+                    {SocialLinks.map((link) => (
+                        <a href={link.url} target="_blank" rel="noopener noreferrer" aria-label={link.name} title={link.name} class="mobile-menu-social">
+                            <Icon name={link.icon} size={18} />
+                        </a>
+                    ))}
+                </div>
+            </section>
+        </div>
     </div>
-    <ul class="sui-dropdown end" role="listbox" id="dropdown-dropdown" aria-labelledby="dropdown-toggle-btn" style="--offset: 0px;">
-        {navOptions.map(({ label, href }) => (
-            <li class="sui-dropdown-option has-href" role="option" aria-selected="false">
-                <a href={href} class="sui-dropdown-link sui-dropdown-line-container">
-                    <span>{label}</span>
-                </a>
-            </li>
-        ))}
-        <li class="sui-dropdown-option has-href" role="option" aria-selected="false">
-            <span class="sui-dropdown-line-container gap-3">
-                {locales.map((lang) => {
-                    const isCurrent = lang === locale;
-                    return isCurrent ? (
-                        <span class="text-sm font-bold uppercase tracking-[0.08em] cursor-default text-foreground">{lang.toUpperCase()}</span>
-                    ) : (
-                        <a href={urls[lang]} class="text-sm font-bold uppercase tracking-[0.08em] text-foreground-dimmed hover:text-primary-text">{lang.toUpperCase()}</a>
-                    );
-                })}
-            </span>
-        </li>
-    </ul>
 </div>
+
+<div id="mobile-menu-backdrop" class="mobile-menu-backdrop hidden" aria-hidden="true"></div>
+
+<script>
+    function initMobileMenu() {
+        const button = document.getElementById('mobile-menu-button');
+        const panel = document.getElementById('mobile-menu-panel');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+        const menuIcon = button?.querySelector('.menu-icon');
+        const closeIcon = button?.querySelector('.close-icon');
+        if (!button || !panel || !backdrop || !menuIcon || !closeIcon) return;
+        if (button.dataset.menuInit) return;
+        button.dataset.menuInit = 'true';
+
+        let isOpen = false;
+
+        function open() {
+            if (isOpen) return;
+            isOpen = true;
+            button!.setAttribute('aria-expanded', 'true');
+            button!.setAttribute('aria-label', button!.dataset.labelClose || '');
+            menuIcon!.classList.add('hidden');
+            closeIcon!.classList.remove('hidden');
+
+            panel!.classList.remove('hidden');
+            backdrop!.classList.remove('hidden');
+            // Reflow before adding the "open" classes so the transition
+            // actually runs instead of snapping straight to the end state.
+            void panel!.offsetHeight;
+            panel!.classList.add('mobile-menu-panel-open');
+            backdrop!.classList.add('mobile-menu-backdrop-open');
+
+            document.querySelector('main')?.classList.add('mobile-menu-blur');
+            document.querySelector('footer')?.classList.add('mobile-menu-blur');
+        }
+
+        function close() {
+            if (!isOpen) return;
+            isOpen = false;
+            button!.setAttribute('aria-expanded', 'false');
+            button!.setAttribute('aria-label', button!.dataset.labelOpen || '');
+            menuIcon!.classList.remove('hidden');
+            closeIcon!.classList.add('hidden');
+
+            panel!.classList.remove('mobile-menu-panel-open');
+            backdrop!.classList.remove('mobile-menu-backdrop-open');
+
+            document.querySelector('main')?.classList.remove('mobile-menu-blur');
+            document.querySelector('footer')?.classList.remove('mobile-menu-blur');
+
+            window.setTimeout(() => {
+                if (!isOpen) {
+                    panel!.classList.add('hidden');
+                    backdrop!.classList.add('hidden');
+                }
+            }, 200);
+        }
+
+        button.addEventListener('click', () => (isOpen ? close() : open()));
+        backdrop.addEventListener('click', close);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isOpen) close();
+        });
+        panel.querySelectorAll('a').forEach((link) => link.addEventListener('click', close));
+    }
+
+    initMobileMenu();
+    document.addEventListener('astro:page-load', initMobileMenu);
+</script>
+
+<style>
+    /* No position:relative here on purpose — .mobile-menu-panel is
+       absolutely positioned with left:0/right:0 and needs its containing
+       block to be the full-width <header> (position:relative, set in
+       Layout.astro), not this small anchor wrapping just the button. If
+       this element were itself a positioning context, the panel would only
+       span the button's own width off at the header's right edge instead
+       of the full viewport — which is exactly the "opens outside the
+       screen" bug. Deliberately left without a `position` declaration so
+       it doesn't become one (Tailwind's `sm:hidden` on the element still
+       applies fine either way).
+       display:contents was considered instead but rejected: this
+       component-scoped <style> block is unlayered CSS, which always beats
+       Tailwind's `sm:hidden` utility (in @layer utilities) regardless of
+       source order — an unconditional `display:contents` here would win
+       over `sm:hidden` and show the mobile menu on desktop too. */
+    .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: var(--radius-md);
+        color: var(--color-foreground);
+        background: transparent;
+        transition: background-color 0.15s ease;
+    }
+
+    .mobile-menu-toggle:hover {
+        background-color: var(--color-background-step-1);
+    }
+
+    .mobile-menu-panel {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        right: 0;
+        z-index: 30;
+        background-color: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+        box-shadow: 0 12px 24px -12px var(--color-shadow);
+
+        transform-origin: top;
+        transform: scaleY(0.96);
+        opacity: 0;
+        transition: transform 0.16s ease, opacity 0.16s ease;
+    }
+
+    .mobile-menu-panel-open {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    .mobile-menu-backdrop {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        background-color: var(--color-background);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+    }
+
+    .mobile-menu-backdrop-open {
+        opacity: 0.6;
+        pointer-events: auto;
+    }
+
+    .mobile-menu-body {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.5rem clamp(1.5rem, 5vw, 6rem) 1.25rem;
+    }
+
+    .mobile-menu-section + .mobile-menu-section {
+        width: 100%;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid var(--color-border);
+    }
+
+    .mobile-menu-label {
+        padding: 0.5rem 0.25rem 0.25rem;
+        font-size: 0.6875rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--color-foreground-muted);
+    }
+
+    .mobile-menu-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.625rem 0.25rem;
+        border-radius: var(--radius-md);
+        color: var(--color-foreground);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    a.mobile-menu-row:hover {
+        background-color: var(--color-background-step-1);
+        color: var(--color-primary-text);
+    }
+
+    .mobile-menu-dot {
+        display: inline-block;
+        width: 0.5rem;
+        height: 0.5rem;
+        flex-shrink: 0;
+        background-color: var(--color-primary);
+    }
+
+    .mobile-menu-social {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.25rem;
+        height: 2.25rem;
+        color: var(--color-foreground-muted);
+        transition: color 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+    }
+
+    .mobile-menu-social:hover {
+        color: var(--color-primary-text);
+        background-color: var(--color-background-step-1);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        .mobile-menu-panel-open .mobile-menu-stagger {
+            opacity: 0;
+            animation: mobileMenuRowIn 220ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            animation-delay: calc(var(--i, 0) * 24ms + 40ms);
+        }
+    }
+
+    @keyframes mobileMenuRowIn {
+        from {
+            opacity: 0;
+            transform: translateY(4px);
+        }
+        to {
+            opacity: 1;
+            transform: none;
+        }
+    }
+</style>

@@ -26,25 +26,12 @@
     color: var(--primary-text) !important;
 }
 
-/* Dropdown */
-.sui-dropdown {
-    width: max-content !important;
-    min-width: unset !important;
-    max-width: unset !important;
-}
-
-.sui-dropdown.initialized.below {
-    right: 0 !important;
-    left: auto !important;
-}
-
-/* Collapsible nav (mobile-only dropdown menu button rendered by
-   studiocms-ui's Dropdown component) — its root container isn't ours to
-   attach a Tailwind class to, so the responsive visibility stays here. */
-#dropdown-container {
-    @media (min-width: 640px) {
-        display: none !important;
-    }
+/* Mobile menu blur — dims/blurs the page behind the CollapsibleNavbar
+   drawer while it's open (see CollapsibleNavbar.astro's open()/close()). */
+.mobile-menu-blur {
+    opacity: 0.5;
+    filter: blur(3px);
+    transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
 /* Footer — align padding with the site's fixed-grid section gutters, bold

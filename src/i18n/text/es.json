@@ -81,5 +81,12 @@
 	},
 	"i18n": {
 		"switchMessage": "Switch to English"
+	},
+	"menu": {
+		"open": "Abrir menú",
+		"close": "Cerrar menú",
+		"navigate": "Navegar",
+		"language": "Idioma",
+		"connect": "Conectar"
 	}
 }

@@ -80,5 +80,12 @@
 	},
 	"i18n": {
 		"switchMessage": "Cambiar a Castellano"
+	},
+	"menu": {
+		"open": "Open menu",
+		"close": "Close menu",
+		"navigate": "Navigate",
+		"language": "Language",
+		"connect": "Connect"
 	}
 }

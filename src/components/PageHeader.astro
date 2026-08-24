@@ -38,30 +38,6 @@ const homeUrl = getRelativeLocaleUrl(locale, '/').replace(/\/$/, '') || '/';
     <CollapsibleNavbar aria-label='Collapsible navbar button' />
 </div>
 
-<script>
-    import { DropdownHelper } from 'studiocms:ui/components/dropdown/client';
-
-    // CollapsibleNavbar's dropdown markup is fresh on every page (no
-    // transition:persist — see the comment there), so DropdownHelper needs
-    // to (re-)initialize on every page load, which astro:page-load covers.
-    // The container-flag guard is defense in depth for this exact class of
-    // bug: a failed view-transition swap (browser `moveBefore` hierarchy
-    // errors, see the astro:page-load listener in Layout.astro) can leave
-    // Astro's script-dedup bookkeeping out of sync, causing this script to
-    // run twice for one node — `new DropdownHelper()` would then attach a
-    // second click listener to the same toggle button, so a single click
-    // calls toggle() twice and the menu appears to never open.
-    function initDropdown() {
-        const container = document.getElementById('dropdown-container');
-        if (!container || container.dataset.dropdownInit) return;
-        container.dataset.dropdownInit = 'true';
-        new DropdownHelper('dropdown');
-    }
-
-    initDropdown();
-    document.addEventListener('astro:page-load', initDropdown);
-</script>
-
 <style>
     #nav-links :global(a) {
         color: var(--color-foreground);
