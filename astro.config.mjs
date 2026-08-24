@@ -11,6 +11,8 @@ import mdx from '@astrojs/mdx';
 
 import webmanifest from 'astro-webmanifest';
 
+import rehypeShiftHeadings from './src/lib/rehypeShiftHeadings.mjs';
+
 export default defineConfig({
     siteName: "marmaestro",
     site: "https://marmaestro.dev",
@@ -43,9 +45,18 @@ export default defineConfig({
 		react(),
 		sitemap(),
 		studiocmsUi({
-			customCss: 'src/styles/overrides.css'
+			customCss: 'src/styles/overrides.css',
+			// The integration auto-injects its own default colors/radii/reset
+			// CSS on every page unless told not to — that copy was silently
+			// clobbering this project's customized tokens (src/styles/
+			// studioCmsUi/{colors,radii,resets}.css), which are loaded
+			// manually from Layout.astro/ErrorLayout.astro instead.
+			noInjectCSS: true,
+			noInjectResetCSS: true
 		}),
-		mdx(),
+		mdx({
+			rehypePlugins: [[rehypeShiftHeadings, 2]]
+		}),
 		webmanifest({
 			name: 'marmaestro',
 			icon: 'src/assets/icon.png',

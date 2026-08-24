@@ -4,7 +4,7 @@ import { Icon } from 'astro-icon/components';
 const { label } = Astro.props
 ---
 
-<span class='flex items-center gap-2 rounded-full bg-[hsl(from_var(--color-primary)_h_s_l/20%)] py-1 pr-1 pl-3 max-[350px]:mx-auto max-[350px]:w-4/5'>
-    <Icon name='bi:circle-fill' size={6} title={label}/>
+<span class='flex items-center gap-2 rounded-sm border border-border px-3 py-1.5 text-sm font-bold uppercase tracking-[0.04em] max-[350px]:mx-auto max-[350px]:w-4/5'>
+    <Icon name='bi:circle-fill' size={6} class='text-primary' title={label}/>
     {label}
 </span>

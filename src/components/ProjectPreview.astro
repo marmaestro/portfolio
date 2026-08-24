@@ -15,7 +15,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
       class:list={[
           'project max-[750px]:mb-6',
           '[&_.sui-card-header]:!p-0 [&_.sui-card-header_img]:h-auto [&_.sui-card-header_img]:w-full',
-          '[&_.sui-card-header_img]:rounded-t-[10px] [&_.sui-card-header_img]:object-cover',
+          '[&_.sui-card-header_img]:rounded-t-[var(--radius-lg)] [&_.sui-card-header_img]:object-cover',
           '[&_.sui-card-body]:!p-4',
           padded && 'mb-10',
       ]}
@@ -25,9 +25,13 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
     </div>
 
     <div>
-        <h1 aria-label='project title' class='m-0 text-[1.75rem] font-bold'>{title} <sup aria-label='pinned project indicator'>{pinned ? "⭐" : ""}</sup></h1>
-        {subtitle ? <h2 aria-label='project subtitle' class='m-0 text-base font-medium italic'>{subtitle}</h2> : null}
-        <p class='muted my-1 text-[0.9rem]'>{description}</p>
+        <h3 class='mt-0 mb-1 text-[1.75rem] font-bold font-sans tracking-tight'>
+            {pinned && <span class='mr-1.5 inline-block h-2 w-2 bg-primary align-middle' aria-hidden='true' />}
+            {title}
+            {pinned && <span class='sr-only'> (pinned project)</span>}
+        </h3>
+        {subtitle ? <h4 class='m-0 mb-2 text-base font-medium'>{subtitle}</h4> : null}
+        <p class='muted mt-0 mb-1'>{description}</p>
     </div>
 
     <div slot='footer'>
@@ -35,7 +39,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
             <Row gapSize="md">
                 {
                     tags && tags.map((tag: string) => (
-                                <Badge label={tag} variant='flat'/>
+                                <Badge label={tag} variant='flat' color='primary' rounding='semi'/>
                     ))
                 }
             </Row>

@@ -23,11 +23,11 @@ lang: en
 
 Three months of systems programming on an unannounced project set in the [Rise of the Overlords](https://riseoftheoverlords.com/) universe. What started as implementing new gameplay systems turned into a deep dive into architecture refactoring when I discovered the project's core couldn't support proper unit testing. Spent most of my time untangling dependencies between engine and client code, restructuring the object system that underpins everything in the game, and setting up proper assembly definitions.
 
-### Overview
+# Overview
 
 35-day internship as a systems programmer on an unannounced game based on Rise of the Overlords, working with <mark>Unity</mark> and <mark>C#</mark> at a small studio in Castellón de la Plana.
 
-#### Role & Responsibilities
+## Role & Responsibilities
 
 <mark>**Role:**</mark> Systems programming  
 <mark>**Team Size:**</mark> 6-person core team  
@@ -35,9 +35,9 @@ Three months of systems programming on an unannounced project set in the [Rise o
 
 I was originally brought on to implement gameplay systems designed by another intern working as a game designer. The plan was straightforward: he'd design game systems, document them, and I'd implement and test them. But when I tried to set up unit tests using <mark>NUnit</mark> and Unity's test framework, I hit a wall—the project structure wouldn't allow it.
 
-### Technical Challenges
+# Technical Challenges
 
-#### The Core Problem
+## The Core Problem
 
 The project inherited its architecture from Rise of the Overlords, a <mark>*Game as a Service*</mark> (GaaS) built with separate server (named internally _engine_) and client logic. When both were integrated into a single codebase for this new project, nobody had cleaned up the resulting mess:
 
@@ -51,9 +51,9 @@ The project inherited its architecture from Rise of the Overlords, a <mark>*Game
 
 I realized I couldn't just implement new features on top of this. The foundation needed fixing first, starting with making the Object System functional for a non-GaaS architecture.
 
-### What I Actually Did
+# What I Actually Did
 
-#### Refactoring the Object System
+## Refactoring the Object System
 
 Everything in the game is either an *objekt*, derives from an *objekt*, or is a collection of *objekt*s. The `Objekt` class was at the centre of the dependency nightmare, so that's where I started.
 
@@ -61,7 +61,7 @@ I created interface-based data structures (`IObjektData`) to decouple Unity's `S
 
 I'll admit I took some shortcuts initially—using standard C# dictionaries instead of the studio's custom implementation to avoid rewriting constructors. Once the refactoring worked, I went back and fixed those shortcuts.
 
-#### Assembly Restructuring
+## Assembly Restructuring
 
 Created proper assembly definitions for:
 - Core “engine” (game logic, no Unity dependencies)
@@ -70,11 +70,11 @@ Created proper assembly definitions for:
 
 This wasn't just organizational—it was a prerequisite for running tests in the Unity editor. I also had to adapt my work multiple times as other team members updated the game's flow, which meant extending the studio's custom visual scripting system.
 
-#### Cleaning Up Technical Debt
+## Cleaning Up Technical Debt
 
 In the final days, I removed hardcoded elements that teammates had implemented during the refactoring period, replacing them with the proper data structures I'd built. Extended the game loop's blackboard system to properly incorporate the new architecture.
 
-#### Tools & Technologies
+## Tools & Technologies
 
 - <mark>**Engine:**</mark> Unity 6000.0.38f1
 - <mark>**Language:**</mark> C#
@@ -83,13 +83,13 @@ In the final days, I removed hardcoded elements that teammates had implemented d
 - <mark>**Testing:**</mark> NUnit, Unity Test Framework
 - <mark>**Project Management:**</mark> Azure DevOps (Kanban boards, documentation, remote repository)
 
-### Workflow & Methodology
+# Workflow & Methodology
 
 The studio runs on informal communication—need to talk to someone? Walk over to their desk. Task tracking happens through extensive Kanban boards on Azure DevOps. I worked mostly autonomously, which was intimidating at first but forced me to make my own technical decisions and own them.
 
 Had to stay flexible as requirements changed. When team members updated core systems, I'd need to integrate those changes into my refactoring work without breaking anything.
 
-### Outcomes
+# Outcomes
 
 The refactoring work unblocked the team's ability to:
 - Implement proper unit testing workflows
@@ -97,7 +97,7 @@ The refactoring work unblocked the team's ability to:
 - Reduce code duplication
 - Enable more sustainable long-term development
 
-#### What I Learned
+## What I Learned
 
 <mark>**Technical Skills:**</mark> This internship taught me more about real-world architecture than any university course. Debugging circular dependencies, designing for decoupling, working with polymorphism in a production codebase—these are things you can't really learn from tutorials. I got comfortable with professional version control workflows, wrote unit tests that actually mattered, and learned to make technical decisions that would affect the project months down the line.
 
@@ -107,11 +107,11 @@ The refactoring work unblocked the team's ability to:
 
 The team was supportive and collaborative despite the isolation of the work itself. No excessive pressure, just good people doing interesting technical work together.
 
-### Context
+# Context
 
 This internship fulfilled the external practicum requirement (_VJ1240 - External Work Placement_) for the [Video Game Design and Development](https://www.uji.es/estudis/base/2023/graus/videojocs/?urlRedirect=https://www.uji.es/estudis/base/2023/graus/videojocs/&url=/estudis/base/2023/graus/videojocs/&urlRedirect=https://www.uji.es/estudis/base/2023/graus/videojocs/&url=/estudis/base/2023/graus/videojocs/) degree at [Universitat Jaume I](https://www.uji.es/).
 
-### TL;DR
+# TL;DR
 
 35-day systems programming internship at Firescale Studios on an unannounced Rise of the Overlords project.
 The inherited GaaS architecture blocked unit testing, so I decoupled the core *objekt* system from Unity, split engine and client code into proper assembly definitions, and cleaned up the resulting technical debt.
