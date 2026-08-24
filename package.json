@@ -2,6 +2,7 @@
   "name": "eva-astro-starter",
   "type": "module",
   "version": "0.0.1",
+  "packageManager": "pnpm@10.11.1",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky",
@@ -39,7 +40,6 @@
     "help": "^3.0.2",
     "lodash": "^4.18.1",
     "p-limit": "^7.3.0",
-    "pnpm": "^10.33.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tailwindcss": "^4.2.2",
