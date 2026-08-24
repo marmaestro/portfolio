@@ -1,0 +1,22 @@
+---
+import { MuxPlayer } from "@mux/mux-player-astro";
+
+interface Props {
+    id: string;
+    title: string;
+}
+
+const { id, title } = Astro.props;
+---
+
+<MuxPlayer
+    playbackId = {id}
+    metadata = {{
+        video_title: {title},
+    }}
+    autoplay = "muted"
+    theme = "minimal"
+    accent-color = "oklch(62.5% 0.22  257.87)"
+    
+    style = "aspect-ratio: 16/9"
+/>

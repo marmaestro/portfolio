@@ -1,0 +1,12 @@
+---
+import { Icon } from 'astro-icon/components';
+
+import '~/styles/home.css'
+
+const { label } = Astro.props
+---
+
+<span class='skill'>
+    <Icon name='bi:circle-fill' size={6} title={label}/>
+    {label}
+</span>
