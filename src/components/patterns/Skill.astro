@@ -1,12 +1,10 @@
 ---
 import { Icon } from 'astro-icon/components';
 
-import '~/styles/home.css'
-
 const { label } = Astro.props
 ---
 
-<span class='skill'>
+<span class='flex items-center gap-2 rounded-full bg-[hsl(from_var(--color-primary)_h_s_l/20%)] py-1 pr-1 pl-3 max-[350px]:mx-auto max-[350px]:w-4/5'>
     <Icon name='bi:circle-fill' size={6} title={label}/>
     {label}
 </span>

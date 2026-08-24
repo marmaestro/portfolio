@@ -4,8 +4,6 @@ import { Divider, Badge, Row } from 'studiocms:ui/components';
 import { getCollection, render } from 'astro:content';
 import { getProjectUrl } from '~/i18n/utils.ts';
 
-import '~/styles/collection.css';
-
 export async function getStaticPaths() {
     const portfolio = await getCollection('portfolio');
     return portfolio.map(project => ({
@@ -31,13 +29,13 @@ const formattedDate = new Date(project.data.date).toLocaleDateString(Astro.curre
 		title = {project.data.title}
 		description = {project.data.description}
 >
-	<Row style="justify-content: space-between; align-items: baseline;">
-		<h1 class='heading'>{project.data.title}</h1>
+	<Row class='justify-between items-baseline'>
+		<h1 class='text-[1.75rem] tracking-[-0.15rem]'>{project.data.title}</h1>
         {project.data.source.item != '' ?
 				<a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
             : null}
 	</Row>
-	<h2 class='heading'>{project.data.subtitle}</h2>
+	<h2 class='mt-[-1.5rem] text-[1.5rem] font-medium not-italic tracking-[-0.05rem]'>{project.data.subtitle}</h2>
 	<Row id='project-roles'>
         {
             roles.map((role) => (

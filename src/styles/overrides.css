@@ -14,28 +14,6 @@
     }
 }
 
-/* Card */
-.project {
-
-    .sui-card {
-        border: none;
-    }
-
-    .sui-card-header {
-        padding: 0;
-
-        img {
-            object-fit: cover;
-            width: 100%;
-            border-radius: 10px 10px 0 0;
-        }
-    }
-
-    .sui-card-body {
-        padding: 1rem !important;
-    }
-}
-
 /* Dropdown */
 .sui-dropdown {
     width: max-content !important;
@@ -46,4 +24,13 @@
 .sui-dropdown.initialized.below {
     right: 0px !important;
     left: auto !important;
+}
+
+/* Collapsible nav (mobile-only dropdown menu button rendered by
+   studiocms-ui's Dropdown component) — its root container isn't ours to
+   attach a Tailwind class to, so the responsive visibility stays here. */
+#dropdown-container {
+    @media (min-width: 640px) {
+        display: none !important;
+    }
 }

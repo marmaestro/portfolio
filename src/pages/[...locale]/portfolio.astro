@@ -7,8 +7,6 @@ import { getCollection } from 'astro:content';
 import { useTranslation, getProjectUrl, getLocaleStaticPaths } from '~/i18n/utils.ts';
 import type { Locale } from '~/i18n/constants.ts';
 
-import '~/styles/collection.css';
-
 export function getStaticPaths() {
     return getLocaleStaticPaths();
 }
@@ -28,9 +26,9 @@ const projects = (await getCollection('portfolio'))
 		title = {t.portfolio.title}
 		description = {t.portfolio.description}>
 
-	<section class = 'section'>
+	<section class = 'section mt-12'>
 		<Masonry sortByHeight = {false}
-				 class = 'collection grid portfolio'
+				 class = 'flex flex-row gap-12 mb-12 max-[750px]:flex-col max-[750px]:!mb-6'
 				 columnClass = 'column'
 				 breakpointCols =
                      {{

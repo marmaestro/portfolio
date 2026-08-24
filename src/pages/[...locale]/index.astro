@@ -12,9 +12,6 @@ import { Image } from 'astro:assets';
 
 import type { Locale } from "~/i18n/constants.ts";
 
-import '~/styles/collection.css';
-import '~/styles/home.css';
-
 export function getStaticPaths() {
     return getLocaleStaticPaths();
 }
@@ -44,22 +41,22 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
         lang = {locale}
 >
     <!-- Introduction -->
-    <section class='section introduction' id='introduction'>
-        <h1 id='title'>{t.home.intro.title}</h1>
-        <h1 id='subtitle'>{t.home.intro.subtitle}</h1>
-        <Image src={introBanner} alt={t.home.intro.image} loading='eager'/>
-        <div class="about-body">
+    <section class='section my-24' id='introduction'>
+        <h1 class='mb-0 text-[4rem] font-black tracking-[-0.15rem]'>{t.home.intro.title}</h1>
+        <h1 class='mt-0 text-[2.5rem] font-bold tracking-[-0.15rem]'>{t.home.intro.subtitle}</h1>
+        <Image src={introBanner} alt={t.home.intro.image} loading='eager' class='h-auto'/>
+        <div class="mt-5 grid grid-flow-col grid-cols-2 grid-rows-2 gap-4 max-[700px]:flex max-[700px]:flex-col">
             {
-                intro.map(paragraph => ( <p class='muted'>{paragraph}</p> ))
+                intro.map(paragraph => ( <p class='muted m-0 w-full'>{paragraph}</p> ))
             }
         </div>
     </section>
 
     <!-- Skill set -->
-    <section class='section skillset' id='skills'>
-        <h1>{t.skills.title}</h1>
-        <p class='muted'>{t.skills.body}</p>
-        <div>
+    <section class='section my-24' id='skills'>
+        <h1 class='text-[2.5rem] font-bold tracking-[-0.15rem]'>{t.skills.title}</h1>
+        <p class='muted w-[65%] max-[900px]:w-full'>{t.skills.body}</p>
+        <div class='mt-8 grid grid-flow-col grid-cols-4 grid-rows-2 gap-6 max-[900px]:grid-flow-row max-[900px]:grid-cols-3 max-[900px]:grid-rows-3 max-[500px]:grid-cols-2 max-[500px]:grid-rows-4 max-[350px]:grid-cols-1 max-[350px]:grid-rows-8'>
             {
                 skills.map(skill => ( <Skill label={skill} /> ))
             }
@@ -67,11 +64,11 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
     </section>
 
     <!-- Portfolio preview -->
-    <section class='section portfolio-preview' id='portfolio'>
-        <h1>{t.portfolio.title}</h1>
-        <p class='muted'>{t.portfolio.body}</p>
+    <section class='section mt-24 mb-0' id='portfolio'>
+        <h1 class='text-[2.5rem] font-bold tracking-[-0.15rem]'>{t.portfolio.title}</h1>
+        <p class='muted w-[65%] max-[900px]:w-full'>{t.portfolio.body}</p>
 
-		<div class="collection-container grid">
+		<div class="flex flex-row gap-4 mb-12 max-[750px]:flex-col max-[750px]:!mb-6">
             {
                 projects.map(project => (
                     <ProjectPreview
@@ -87,17 +84,17 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
     </section>
 
     <!-- Contact -->
-    <section class="section contact" id='contact'>
-		<h1>{t.contact.title}</h1>
-        <div id="contact-grid">
+    <section class="section my-24" id='contact'>
+		<h1 class='text-[2.5rem] font-bold tracking-[-0.15rem]'>{t.contact.title}</h1>
+        <div class="grid grid-cols-[1.75fr_2fr] items-start gap-8 max-[1280px]:block">
             <div>
-				<p class='muted'>{t.contact.body}</p>
-				<p class='muted'>{t.contact.message}</p>
+				<p class='muted w-full'>{t.contact.body}</p>
+				<p class='muted w-full'>{t.contact.message}</p>
 				<!-- TODO: Add socials prompt -->
             </div>
 			<WideContactForm locale={locale} />
 			<VerticalContactForm locale={locale} />
         </div>
-		<Image src={contactBanner} alt={t.contact.image} loading='lazy' />
+		<Image src={contactBanner} alt={t.contact.image} loading='lazy' class='h-auto w-full mt-10' />
     </section>
 </Layout>

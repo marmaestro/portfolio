@@ -1,3 +1,5 @@
+@import 'tailwindcss';
+
 @import url('studioCmsUi/colors.css');
 @import url('studioCmsUi/resets.css');
 @import url('studioCmsUi/radii.css');
@@ -6,92 +8,221 @@
 @import url('fonts/cabinet-grotesk.css');
 @import url('fonts/satoshi.css');
 
-:root {
-    color-scheme: light dark;
-    --font: system-ui, Chivo, Poppins, "CabinetGrotesk-Variable", "Satoshi-Variable";
+/* Maps this project's existing design tokens (studiocms-ui's HSL custom
+   properties, already theme-switched via [data-theme]) into Tailwind's
+   namespace, so utilities like `bg-background` / `text-muted` / `rounded-md`
+   resolve to the same tokens the rest of the site already uses. */
+@theme {
+    --color-background: var(--background-base);
+    --color-background-step-1: var(--background-step-1);
+    --color-background-step-2: var(--background-step-2);
+    --color-background-step-3: var(--background-step-3);
+    --color-background-gray: var(--background-gray);
+
+    --color-foreground: var(--text-normal);
+    --color-foreground-dimmed: var(--text-dimmed);
+    --color-foreground-muted: var(--text-muted);
+    --color-foreground-inverted: var(--text-inverted);
+
+    --color-primary: var(--primary-base);
+    --color-primary-hover: var(--primary-hover);
+    --color-primary-active: var(--primary-active);
+
+    --color-border: var(--border);
+    --color-shadow: var(--shadow);
+
+    --radius-sm: var(--radius-sm);
+    --radius-md: var(--radius-md);
+    --radius-lg: var(--radius-lg);
+    --radius-full: var(--radius-full);
+
+    --font-sans: "Satoshi-Variable", sans-serif;
+    --font-display: "CabinetGrotesk-Variable", Poppins, sans-serif;
 }
 
-::selection {
-    background-color: hsl(from var(--primary-active) h s l / 0.45);
-}
-
-h1 {
-    font-size: 1.75rem;
-}
-
-h2 {
-    font-size: 1.35rem;
-    font-style: italic;
-    font-weight: 500;
-}
-
-h1,h2,h3 {
-    font-family: "CabinetGrotesk-Variable", Poppins;
-}
-
-img {
-    max-width: 100%;
-    margin: 0;
-    place-self: end;
-}
-
-body {
-    background-color: hsl(var(--background-base));
-    font-family: "Satoshi-Variable", sans-serif;
-    font-size: 1rem;
-    font-weight: 450;
-    color: hsl(var(--text-normal));
-}
-
-section {
-    margin: auto;
-
-    @media screen and (min-width: 900px) {
-        padding: 1rem 20vw;
+@layer base {
+    :root {
+        color-scheme: light dark;
     }
 
-    @media screen and (min-width: 600px) and (max-width: 900px) {
-        padding: 1rem 15vw;
+    ::selection {
+        background-color: hsl(from var(--primary-active) h s l / 0.45);
     }
 
-    @media screen and (max-width: 600px) {
+    h1, h2, h3 {
+        font-family: var(--font-display);
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.35rem;
+        font-style: italic;
+        font-weight: 500;
+    }
+
+    img {
+        max-width: 100%;
+        margin: 0;
+        place-self: end;
+    }
+
+    body {
+        background-color: var(--color-background);
+        font-family: var(--font-sans);
+        font-size: 1rem;
+        font-weight: 450;
+        color: var(--color-foreground);
+    }
+
+    section {
+        margin: auto;
         padding: 1rem 8vw;
     }
+
+    @media screen and (min-width: 600px) {
+        section {
+            padding: 1rem 15vw;
+        }
+    }
+
+    @media screen and (min-width: 900px) {
+        section {
+            padding: 1rem 20vw;
+        }
+    }
+
+    a, button {
+        text-decoration: none;
+        color: var(--color-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover {
+        color: var(--color-primary-hover);
+    }
+
+    a:is(:focus, :active) {
+        color: var(--color-primary-active);
+    }
+
+    button {
+        border-radius: var(--radius-md);
+        background-color: var(--color-background-step-1);
+    }
+
+    button:hover {
+        background-color: hsl(from var(--color-background-step-1) h s calc(l + 2));
+        color: var(--color-primary-hover);
+        cursor: pointer;
+    }
+
+    button:is(:focus, :active) {
+        background-color: hsl(from var(--color-background-step-1) h s calc(l + 3));
+        color: var(--color-primary-active);
+        cursor: pointer;
+    }
 }
 
-a, button {
-    text-decoration: none;
-    color: var(--primary-base);
-    transition:
-            background-color 0.3s ease,
-            color 0.3s ease;
+@layer utilities {
+    .muted {
+        opacity: 70%;
+    }
 }
 
-a:hover {
-    color: var(--primary-hover);
-}
+@layer components {
+    /* Styling for the arbitrary MDX/markdown body of a project post
+       (`<Content/>` in src/pages/[...id].astro) — these elements come from
+       author-written content, not our own markup, so they can't carry
+       Tailwind classes directly. Same role as a typical `.prose` block. */
+    .post {
+        h3 {
+            font-size: 1.5rem;
+        }
 
-a:is(:focus,:active) {
-    color: var(--primary-active);
-}
+        h4 {
+            font-size: 1.1rem;
+        }
 
-button {
-    border-radius: var(--radius-md);
-    background-color: var(--background-step-1);
-}
+        img {
+            width: 100%;
+            height: auto;
+        }
 
-button:hover {
-    background-color: hsl(from var(--background-step-1) h s calc(l + 2));
-    color: hsl(var(--primary-hover));
-    cursor: pointer;
-}
+        figure {
+            margin: 0;
+        }
 
-button:is(:focus,:active){
-    background-color: hsl(from var(--background-step-1) h s calc(l + 3));
-    color: hsl(var(--primary-active));
-    cursor: pointer;
-}
+        figure figcaption {
+            text-align: center;
+            opacity: 0.65;
+            font-size: 0.9rem;
+        }
 
-.muted {
-    opacity: 70%;
+        a {
+            text-decoration: underline;
+        }
+
+        a.source {
+            text-decoration: none;
+        }
+
+        mark {
+            color: var(--color-primary);
+            background-color: transparent;
+        }
+    }
+
+    /* Justified photo gallery (src/pages/[...locale]/gallery.astro) — a
+       flex-based justified layout where each item's flex-grow/flex-basis is
+       derived from its own aspect ratio via inline `--width`/`--height`
+       custom properties. No Tailwind utility expresses that calc(), so it
+       stays as its own component class. */
+    .justified-gallery {
+        --padding: max(2.5vw, 12px);
+        --space: max(2.5vw, 12px);
+        --min-height: clamp(200px, 20vw, 400px);
+
+        padding: var(--padding);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space);
+
+        a {
+            flex-grow: calc(var(--width) * (100000 / var(--height)));
+            flex-basis: calc(var(--min-height) * (var(--width) / var(--height)));
+            aspect-ratio: var(--width) / var(--height);
+            overflow: hidden;
+            opacity: 1;
+            transition: all 0.05s ease-in-out;
+        }
+
+        a img {
+            display: block;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+
+        a:focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+            transform: scale(1.05);
+            z-index: 1;
+            border-radius: 2px;
+            box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        a.hidden {
+            transition: opacity 0.4s ease-in-out;
+            opacity: 0;
+        }
+
+        &::after {
+            content: " ";
+            flex-grow: 1000000000;
+        }
+    }
 }

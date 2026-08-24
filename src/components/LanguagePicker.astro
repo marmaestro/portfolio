@@ -31,16 +31,18 @@ const targetPath = !currentPath.startsWith('portfolio/') ?
     currentPath : 'portfolio';
 
 ---
-<span id='language-picker'>
+<span class='flex flex-row flex-wrap justify-end gap-2 max-sm:hidden'>
     { Object.entries(locales).map(([_, lang]) => {
         const url = translatedProjectUrls[lang]
             ?? (getRelativeLocaleUrl(lang, targetPath).replace(/\/$/, '') || '/');
         const label = lang.toUpperCase();
+        const isCurrent = lang == Astro.currentLocale;
         return (
             <a aria-label=`Switch to ${label} site`
                role='option' type='a'
-               aria-selected={ lang == Astro.currentLocale }
-               href={url} id = {lang == Astro.currentLocale ? 'current-lang' : undefined } >
+               aria-selected={ isCurrent }
+               class:list={[ isCurrent && 'cursor-default' ]}
+               href={url}>
                 <Badge label={label} variant='flat' color='mono'/>
             </a>
         );

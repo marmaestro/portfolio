@@ -8,8 +8,6 @@ import { Button } from 'studiocms:ui/components/button';
 import {useTranslation} from "~/i18n/utils.ts";
 import type {Locale} from "~/i18n/constants.ts";
 
-import '~/styles/404.css'
-
 const t = useTranslation(Astro.currentLocale as Locale);
 ---
 
@@ -19,14 +17,14 @@ const t = useTranslation(Astro.currentLocale as Locale);
         description = {t.errorPage.description}
 >
     <Center>
-        <section id="errorPage">
-            <div class="errorPage-number">
-                    <h1>
-                        <b>4</b><Icon name="bi:bug" id="bug"/><b>4</b>
-                    </h1>
+        <section class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+            <div class="text-[5rem] text-foreground">
+                <h1 class="m-0 inline text-[10rem] max-[800px]:text-[8rem]">
+                    <b>4</b><Icon name="bi:bug" class="relative top-5 max-[800px]:top-4"/><b>4</b>
+                </h1>
             </div>
-            <div class="errorPage-text">
-                <h2>{t.errorPage.oops}</h2>
+            <div class="text-center font-medium tracking-[2px]">
+                <h2 class="my-[10px]">{t.errorPage.oops}</h2>
                 <p>{t.errorPage.text}</p>
             </div>
             <Center>

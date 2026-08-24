@@ -11,19 +11,27 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfol
 if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/assets/portfolio/**/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<Card {fullWidth} class='project' style={padded ? 'margin-bottom: 2.5rem;': null} >
+<Card {fullWidth}
+      class:list={[
+          'project max-[750px]:mb-6',
+          '[&_.sui-card-header]:!p-0 [&_.sui-card-header_img]:h-auto [&_.sui-card-header_img]:w-full',
+          '[&_.sui-card-header_img]:rounded-t-[10px] [&_.sui-card-header_img]:object-cover',
+          '[&_.sui-card-body]:!p-4',
+          padded && 'mb-10',
+      ]}
+>
     <div slot='header'>
 		<Image src={images[image]()} alt ='' loading='eager' />
     </div>
 
     <div>
-        <h1 aria-label='project title'>{title} <sup aria-label='pinned project indicator'>{pinned ? "⭐" : ""}</sup></h1>
-        {subtitle ? <h2 aria-label='project subtitle'>{subtitle}</h2> : null}
-        <p class='muted'>{description}</p>
+        <h1 aria-label='project title' class='m-0 text-[1.75rem] tracking-[-0.15rem]'>{title} <sup aria-label='pinned project indicator'>{pinned ? "⭐" : ""}</sup></h1>
+        {subtitle ? <h2 aria-label='project subtitle' class='m-0 text-base font-medium italic tracking-[-0.05rem]'>{subtitle}</h2> : null}
+        <p class='muted my-1 text-[0.9rem]'>{description}</p>
     </div>
 
     <div slot='footer'>
-        <div class='footer'>
+        <div class='flex items-center justify-between'>
             <Row gapSize="md">
                 {
                     tags && tags.map((tag: string) => (
@@ -31,7 +39,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
                     ))
                 }
             </Row>
-            <a href={url} aria-label='Open project'><Icon name='bi:arrow-right-short' size={24}/></a>
+            <a href={url} aria-label='Open project'><Icon name='bi:arrow-right-short' size={24} class='block'/></a>
         </div>
     </div>
 </Card>

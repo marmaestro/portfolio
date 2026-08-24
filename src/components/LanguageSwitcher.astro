@@ -19,7 +19,7 @@ const targetPath = !currentPath.startsWith('portfolio/') ?
 
 const t = useTranslation(Astro.currentLocale as Locale);
 ---
-<span id='language-switcher'>
+<span class='hidden max-sm:flex max-sm:justify-start max-sm:pt-2'>
     { Object.entries(locales).map(([_, lang]) => {
         if (lang === currentLang)
         {

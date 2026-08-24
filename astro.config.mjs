@@ -35,9 +35,7 @@ export default defineConfig({
 
     vite: {
         plugins: [
-            tailwindcss({
-                applyBaseStyles: true
-            })
+            tailwindcss()
         ]
     },
 
