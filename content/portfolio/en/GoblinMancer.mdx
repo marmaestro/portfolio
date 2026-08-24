@@ -1,34 +1,55 @@
 ---
-title: GoblinMancer
-subtitle: ''
-description: Tower defense game about goblins and necromancy. Work in progress.
-date: 2026-12-01
-author: Back to Bits
+title: Goblinmancer
+subtitle: Dawn after Death!
+description: Tower-defence game where you build your citadel by resurrecting the corpses of your goblin enemies.
+date: 2028-01-01
+author: BackToBits Studio
 source:
-  url: https://backtobitsstudio.com/#projects
+  url: https://backtobitsstudio.com/games/goblinmancer/
   item: Project preview
-image: /src/assets/portfolio/goblinmancer-thumbnail.png
-roles: [ programmer ]
-tags: [ video game, Back to Bits ]
-pinned: false
+image: /src/assets/portfolio/goblinmancer/banner.png
+roles: [ programmer, team lead, producer ]
+tags: [ game, BackToBits Studio ]
+pinned: true
 lang: en
 ---
 
 import { Image } from 'astro:assets';
-import screenshot from '../../../src/assets/portfolio/goblinmancer-screenshot.png';
+import VideoPlayer from 'src/components/patterns/VideoPlayer.astro';
 
-**Back to Bits | TBA**
+import goblin from 'src/assets/portfolio/goblinmancer/goblin-outline.png';
+import lateGame from 'src/assets/portfolio/goblinmancer/late-game.png';
+import humans from 'src/assets/portfolio/madebyhumans.png';
 
-Tower defense game in development, based on a prototype for a [game jam](https://kiskidiego.itch.io/goblinmancer).
+**BackToBits Studio | TBA**
+
+Tower defence game in development, based on a prototype for a [game jam](https://kiskidiego.itch.io/goblinmancer).
 
 ### Overview
 
-<mark>**Role:**</mark> Programming  
+<mark>**Roles:**</mark> Programming, team lead, producer
 <mark>**Context:**</mark> Work in progress  
-<mark>**Tools:**</mark> Unity 6
+<mark>**Tools:**</mark> Unity ECS
 
-<br/>
-<figure>
-    <Image alt='' src={screenshot} loading='eager' />
-    <figcaption>Late-game screenshot from the prototype</figcaption>
-</figure>
+<Image src={goblin} alt='Some random goblin' style='width: 25%; margin:auto; margin-bottom: -4rem'/>
+
+# The goblin brethren are not too fond of your antics.<br/>A shame their corpses will be the bricks of your undead empire.
+
+*Goblinmancer* is a tower-defense game where you build your citadel and struggle to survive day after day defending against hordes of goblins who want you dead... no, that ain't the word. Let's say destroyed.
+
+Use the flesh and bones of the fallen to construct an army, towers, crypts and laboratories; burn their blood in sacrilegious ritual to smite them with spells of fire and thunder.
+
+Look at them, their funny ears, confident demeanor, their festivities echoing through to your cursed able hearing. They all hate you, and have no place for you in their world. Let it be so, their world torn asunder. You won't go down without a fight, will you?
+
+<Image src={lateGame} alt='Late in-game screenshot' style='width: 100%'/>
+
+<VideoPlayer
+    id = "3JTYZs01zPPrOPJyhehqP02D2rm9PVeh8iZRW8aa3jliQ"
+    title = "Goblinmancer Trailer"
+/>
+
+### This game is still in early stages of development.<br/>The prototype that inspired the game is available to play!
+
+The game jam prototype can be found on [itch.io](https://kiskidiego.itch.io/goblinmancer).
+
+<Image src={humans} alt='This game has been made by humans' style='width: 20%; margin: auto'/>

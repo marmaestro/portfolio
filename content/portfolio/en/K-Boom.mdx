@@ -1,23 +1,27 @@
 ---
 title: K-Boom!
-subtitle: ''
-description: Puzzle game about a lost chameleon and bombs. Work in progress.
+subtitle: Every bomb counts!
+description: Puzzle game about a lost chameleon, puzzles, and blowing up stuff.
 date: 2026-06-01
-author: Back to Bits
+author: BackToBits Studio
 source:
   url: https://backtobitsstudio.com/#projects
   item: Project preview
-image: /src/assets/portfolio/kboom-thumbnail.gif
+image: /src/assets/portfolio/kboom/banner.png
 roles: [ programmer, QA ]
-tags: [ video game, Back to Bits ]
-pinned: false
+tags: [ video game, BackToBits Studio ]
+pinned: true
 lang: en
 ---
 
 import { Image } from 'astro:assets';
-import gameplay from '../../../src/assets/portfolio/kboom-gameplay.gif';
+import VideoPlayer from 'src/components/patterns/VideoPlayer.astro';
 
-**Back to Bits | TBA**
+import camilo from 'src/assets/portfolio/kboom/camilo-outline.png';
+import tutorial from 'src/assets/portfolio/kboom/tutorial.png'
+import humans from 'src/assets/portfolio/madebyhumans.png';
+
+**BackToBits Studio | TBA**
 
 Puzzle game in development, based on a prototype for a [game jam](https://kiskidiego.itch.io/k-boom).
 
@@ -27,8 +31,27 @@ Puzzle game in development, based on a prototype for a [game jam](https://kiskid
 <mark>**Context:**</mark> Work in progress  
 <mark>**Tools:**</mark> Unity 6
 
+<Image src={camilo} alt='Camilo the chameleon' style='width: 25%; margin:auto; margin-bottom: -4rem'/>
+
+# Every bomb you place is a step closer to your goal.
+
+Camilo the chameleon has an arsenal of bombs at his disposal. Choose your strategy before planting bombs in the right order, and then push the trigger!
+
+As the bombs explode in order, things might fall right into place or... not at all.
+Try and test, plan and strategise, forge ahead!
+
+*K-Boom!* follows a world-level structure that introduces new elements in each world. Each element can be moved, toppled or blown up in its own particular way.
+A great deal of level design has gone into these!
+
+<Image src={tutorial} alt='The current tutorial' style='width: 75%; margin: auto'/>
 <br/>
-<figure>
-	<Image alt='' src={gameplay} loading='eager' />
-    <figcaption>Quick gameplay from the prototype</figcaption>
-</figure>
+<VideoPlayer
+    id = 'eprIJRyV6e97BQYDYquN6p1ZI3FDIDfwVLU0081qrbdg'
+    title = 'Vertical Slice level 4 playthrough'
+/>
+> A level from the latest vertical slice.
+
+We hope to be able to bring you a game demo soon.
+The prototype that inspired the game is available on [itch.io](https://kiskidiego.itch.io/k-boom).
+
+<Image src={humans} alt='This game has been made by humans' style='width: 20%; margin: auto'/>

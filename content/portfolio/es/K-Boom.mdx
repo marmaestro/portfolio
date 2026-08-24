@@ -1,23 +1,27 @@
 ---
 title: K-Boom!
-subtitle: ''
-description: Juego de puzles sobre un camaleón perdido y bombas. Proyecto en curso.
-date: 2026-06-01
-author: Back to Bits
+subtitle: ¡Cada bomba cuenta!
+description: Juego de puzles sobre un camaleón perdido, puzles y volar cosas por los aires.
+date: 2027-06-01
+author: BackToBits Studio
 source:
-  url: https://backtobitsstudio.com/es/#projects
-  item: Preview del proyecto
-image: /src/assets/portfolio/kboom-thumbnail.gif
+  url: https://backtobitsstudio.com/es/games/kboom
+  item: Página del proyecto
+image: /src/assets/portfolio/kboom/banner.png
 roles: [ programadora, QA ]
-tags: [ videojuego, Back to Bits ]
-pinned: false
+tags: [ videojuego, BackToBits Studio ]
+pinned: true
 lang: es
 ---
 
 import { Image } from 'astro:assets';
-import gameplay from '../../../src/assets/portfolio/kboom-gameplay.gif';
+import VideoPlayer from 'src/components/patterns/VideoPlayer.astro';
 
-**Back to Bits | TBA**
+import camilo from 'src/assets/portfolio/kboom/camilo-outline.png';
+import tutorial from 'src/assets/portfolio/kboom/tutorial.png'
+import humans from 'src/assets/portfolio/madebyhumans.png';
+
+**BackToBits Studio | TBA**
 
 Un juego de puzles en desarrollo, basado en un prototipo para una [game jam](https://kiskidiego.itch.io/k-boom).
 
@@ -27,8 +31,30 @@ Un juego de puzles en desarrollo, basado en un prototipo para una [game jam](htt
 <mark>**Contexto:**</mark> Proyecto en curso  
 <mark>**Herramientas:**</mark> Unity 6
 
+<Image src={camilo} alt='Camilo el camaleón' style='width: 25%; margin:auto; margin-bottom: -4rem'/>
+
+# Cada bomba que colocas, un paso más hacia tu destino.
+
+Camilo el camaleón tiene un arsenal de bombas a su disposición.
+Planea tu estrategia antes de plantar los explosivos en el orden correcto y aprieta el botón.
+¡Bomba va!
+
+A medida que las bombas explotan en orden las cosas pueden haber salido a pedir de boca… o no tanto.
+Prueba y falla, planea y rebobina.
+¡Avanza!
+
+*K-Boom!* sigue una estructura de mundo-nivel que integra poco a poco elementos al escenario que pueden moverse, tumbarse o volar por los aires de varias otras maneras.
+¡Estos niveles se han diseñado con gran precisión!
+
+<Image src={tutorial} alt='El tutorial actual' style='width: 75%; margin: auto'/>
 <br/>
-<figure>
-	<Image alt='' src={gameplay} loading='eager' />
-    <figcaption>Pequeño gameplay de la versión de la game jam</figcaption>
-</figure>
+<VideoPlayer
+    id = 'eprIJRyV6e97BQYDYquN6p1ZI3FDIDfwVLU0081qrbdg'
+    title = 'Vertical Slice level 4 playthrough'
+/>
+> Un nivel de la última vértical slice.
+
+Esperamos poder traeros pronto una demo.
+¡El prototipo que inspiró el juego está en [itch.io](https://kiskidiego.itch.io/k-boom)!
+
+<Image src={humans} alt='Este juego ha sido hecho por humanos' style='width: 20%; margin: auto'/>

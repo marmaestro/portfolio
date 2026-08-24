@@ -1,34 +1,59 @@
 ---
-title: GoblinMancer
-subtitle: ''
-description: Juego de defensa de torres sobre goblins y necromancia. Proyecto en curso.
-date: 2026-12-01
-author: Back to Bits
+title: Goblinmancer
+subtitle: ¡Alba tras Muerte!
+description: Juego tower defense en el que construyes una ciudadela resucitando los cadáveres de tus enemigos goblin.
+date: 2028-01-01
+author: BackToBits Studio
 source:
-  url: https://backtobitsstudio.com/es/#projects
-  item: Preview del proyecto
-image: /src/assets/portfolio/goblinmancer-thumbnail.png
-roles: [ programadora ]
-tags: [ videojuego, Back to Bits ]
-pinned: false
+  url: https://backtobitsstudio.com/es/games/goblinmancer/
+  item: Página del proyecto
+image: /src/assets/portfolio/goblinmancer/banner.png
+roles: [ programadora, team lead, productora ]
+tags: [ videojuego, BackToBits Studio ]
+pinned: true
 lang: es
 ---
 
 import { Image } from 'astro:assets';
-import screenshot from '../../../src/assets/portfolio/goblinmancer-screenshot.png';
+import VideoPlayer from 'src/components/patterns/VideoPlayer.astro';
 
-**Back to Bits | TBA**
+import goblin from 'src/assets/portfolio/goblinmancer/goblin-outline.png';
+import lateGame from 'src/assets/portfolio/goblinmancer/late-game.png';
+import humans from 'src/assets/portfolio/madebyhumans.png';
+
+**BackToBits Studio | TBA**
 
 Un juego de defensa de torres en desarrollo, basado en un prototipo para una [game jam](https://kiskidiego.itch.io/goblinmancer).
 
 ### Resumen
 
-<mark>**Rol:**</mark> Programación  
+<mark>**Roles:**</mark> Programación, team lead, productora
 <mark>**Contexto:**</mark> Proyecto en curso  
 <mark>**Herramientas:**</mark> Unity 6
 
-<br/>
-<figure>
-    <Image alt='' src={screenshot} loading='eager' />
-    <figcaption>Captura al final de una partida del prototipo</figcaption>
-</figure>
+<Image src={goblin} alt='Un goblin random' style='width: 25%; margin:auto; margin-bottom: -4rem'/>
+
+# Los pueblos goblin están bastante desencantados con tus últimos logros. Una pena que sus cadáveres sean los cimientos de tu imperio no-muerto.
+
+*Goblinmancer* es un juego tower-defense donde construyes tu ciudadela y sobrevives día tras día a las incursiones de goblins que quieren verte muerto…
+O, más bien, destruido.
+
+Usa la carne y huesos de los caídos para construir un ejército, torres, criptas y laboratorios;
+quema su sangre en sacrílego ritual para lanzar sobre ellos hechizos de llamas y relámpagos.
+
+Míralos, con sus orejotas estúpidas y sus andares confiados, tus oídos tienen que sufrir el jolgorio de sus fiestas.
+Te odian, todos ellos, y jamás tendrán lugar para ti en su mundo. Que así sea, ese mundo será entonces destruido.
+Al fin y al cabo no te rendirás sin dar una buena pelea, ¿verdad?
+
+<Image src={lateGame} alt='Captura del late game' style='width: 100%'/>
+
+<VideoPlayer
+    id = "3JTYZs01zPPrOPJyhehqP02D2rm9PVeh8iZRW8aa3jliQ"
+    title = "Tráiler de Goblinmancer"
+/>
+
+### Este juego está en las primeras fases de desarrollo.<br/>¡El prototipo que inspiró el juego está disponible para jugar!
+
+Puedes encontrar el prototipo en [itch.io](https://kiskidiego.itch.io/goblinmancer).
+
+<Image src={humans} alt='Este juego ha sido hecho por humanos' style='width: 20%; margin: auto'/>
