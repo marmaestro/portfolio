@@ -1,27 +1,63 @@
 ---
 import { Icon } from "astro-icon/components";
 import { Button } from 'studiocms:ui/components/button';
-import { Dropdown } from 'studiocms:ui/components/dropdown';
+// The vendor <Dropdown> component always marks its container/list
+// transition:persist, which freezes the whole menu (including every
+// option's href) to whatever it was on first render across client-side
+// navigations — stale for the language row, whose targets are page-specific
+// — and is implicated in the moveBefore view-transition failures that could
+// leave the toggle listener double-attached (see the guard in
+// PageHeader.astro). Hand-authoring the same markup/classes below, driven
+// by the same DropdownHelper client class (it only needs matching IDs and
+// CSS classes, not the component that produced them), sidesteps both: the
+// menu re-renders fresh — and DropdownHelper re-initializes on it — every
+// page load. It also lets the language row hold two links (EN/ES) as one
+// list entry, which <Dropdown>'s one-href-per-option model can't express.
+import '@studiocms/ui/components/Dropdown/dropdown.css';
 
 import { getRelativeLocaleUrl } from "astro:i18n";
-import { useTranslation } from "~/i18n/utils.ts";
-import type {Locale} from "~/i18n/constants.ts";
+import { useTranslation, getLocalizedUrls } from "~/i18n/utils.ts";
+import { locales, defaultLocale, type Locale } from "~/i18n/constants.ts";
 
 
-const locale = Astro.currentLocale! as Locale;
-const t = useTranslation(Astro.currentLocale as Locale);
+const locale = (Astro.currentLocale as Locale) ?? defaultLocale;
+const t = useTranslation(locale);
 const navOptions = t.nav.map(link => ({
     label: link.name,
-    value: link.url.replace('/', '').replace(`${locale}/`, '') || 'home',
     href: getRelativeLocaleUrl(locale, link.url.replace(`/${locale}`, '').replace(/^\//, ''))
 }));
+
+// Small-screen language switching lives here instead of a separate footer
+// button — reuses the desktop LanguagePicker's project-aware URL
+// resolution, so switching language on a project page lands on that
+// project's translation instead of the bare portfolio listing.
+const urls = await getLocalizedUrls(Astro.url.pathname, Astro.currentLocale as Locale);
 ---
-<Dropdown
-		id = 'dropdown'
-        align='end'
-		options = {[ ...navOptions ]}
->
-	<Button color = 'primary'>
-        <Icon name = 'bi:list'/>
-	</Button>
-</Dropdown>
+<div class="sui-dropdown-container" id="dropdown-container" data-align="end" data-trigger="left">
+    <div class="sui-dropdown-toggle" id="dropdown-toggle-btn">
+        <Button color="primary">
+            <Icon name="bi:list" />
+        </Button>
+    </div>
+    <ul class="sui-dropdown end" role="listbox" id="dropdown-dropdown" aria-labelledby="dropdown-toggle-btn" style="--offset: 0px;">
+        {navOptions.map(({ label, href }) => (
+            <li class="sui-dropdown-option has-href" role="option" aria-selected="false">
+                <a href={href} class="sui-dropdown-link sui-dropdown-line-container">
+                    <span>{label}</span>
+                </a>
+            </li>
+        ))}
+        <li class="sui-dropdown-option has-href" role="option" aria-selected="false">
+            <span class="sui-dropdown-line-container gap-3">
+                {locales.map((lang) => {
+                    const isCurrent = lang === locale;
+                    return isCurrent ? (
+                        <span class="text-sm font-bold uppercase tracking-[0.08em] cursor-default text-foreground">{lang.toUpperCase()}</span>
+                    ) : (
+                        <a href={urls[lang]} class="text-sm font-bold uppercase tracking-[0.08em] text-foreground-dimmed hover:text-primary-text">{lang.toUpperCase()}</a>
+                    );
+                })}
+            </span>
+        </li>
+    </ul>
+</div>

@@ -1,8 +1,10 @@
 ---
 import MarkdownPostLayout from "~/layouts/MarkdownPostLayout.astro";
-import { Divider, Badge, Row } from 'studiocms:ui/components';
+import { Divider, Badge, Row, Breadcrumbs, Button } from 'studiocms:ui/components';
 import { getCollection, render } from 'astro:content';
-import { getProjectUrl } from '~/i18n/utils.ts';
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { getProjectUrl, getProjectSlug, useTranslation } from '~/i18n/utils.ts';
+import type { Locale } from '~/i18n/constants.ts';
 
 export async function getStaticPaths() {
     const portfolio = await getCollection('portfolio');
@@ -15,6 +17,16 @@ export async function getStaticPaths() {
 const { project } = Astro.props;
 const { Content} = await render(project);
 const roles = project.data.roles;
+
+const lang = project.data.lang as Locale;
+const t = useTranslation(lang);
+const homeSegment = getRelativeLocaleUrl(lang, '/').replace(/\/$/, '');
+const portfolioUrl = getRelativeLocaleUrl(lang, 'portfolio').replace(/\/$/, '');
+const breadcrumbSegments = [
+    { label: t.nav[0].name, segment: homeSegment },
+    { label: t.portfolio.title, segment: 'portfolio' },
+    { label: project.data.title, segment: getProjectSlug(project) }
+];
 ---
 
 <MarkdownPostLayout
@@ -24,17 +36,25 @@ const roles = project.data.roles;
 	<div class='flex flex-row flex-wrap gap-4 justify-between items-baseline'>
 		<h1 class='h-xl'>{project.data.title}</h1>
         {project.data.source.item != '' ?
-				<a class='source' href = {project.data.source.url}><Badge variant='flat' size='md' label={project.data.source.item}/></a>
+				<a class='source' href = {project.data.source.url}><Badge variant='flat' color='primary' rounding='semi'     label={project.data.source.item}/></a>
             : null}
 	</div>
 	<h2 class='text-[length:var(--text-lg)] font-medium'>{project.data.subtitle}</h2>
 	<Row id='project-roles'>
         {
             roles.map((role) => (
-						<Badge label={role} variant='flat' color='mono' size='md'/>
+						<Badge label={role} variant='flat' color='primary' rounding='semi' size='md'/>
             ))
         }
 	</Row>
 	<br><Divider/><br>
+	<div class='mb-4'>
+		<Breadcrumbs segments={breadcrumbSegments} />
+	</div>
 	<Content/>
+	<div class='mt-12 flex justify-start'>
+		<Button as='a' color='primary' variant='flat' href={portfolioUrl}>
+			{t.portfolio.back}
+		</Button>
+	</div>
 </MarkdownPostLayout>

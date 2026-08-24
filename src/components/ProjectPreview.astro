@@ -39,7 +39,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
             <Row gapSize="md">
                 {
                     tags && tags.map((tag: string) => (
-                                <Badge label={tag} variant='outlined' color='mono' rounding='semi'/>
+                                <Badge label={tag} variant='flat' color='primary' rounding='semi'/>
                     ))
                 }
             </Row>

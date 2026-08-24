@@ -59,7 +59,7 @@
        Tailwind's own text-sm/base/lg/xl utilities (Tailwind v4 reads font
        sizes from this exact namespace), so nav links, badges, and any plain
        text-sm/text-lg/text-xl usage pick up the same scale automatically. */
-    --text-display: clamp(3.5rem, 10vw, 8rem);
+    --text-display: clamp(3.5rem, 10vw, 6rem);
     --text-xl: clamp(2.5rem, 5vw, 3.5rem);
     --text-lg: 1.75rem;
     --text-md: 1.25rem;

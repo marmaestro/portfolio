@@ -19,6 +19,13 @@
     }
 }
 
+/* Button — vendor's primary/flat variant hardcodes a violet accent
+   (hsl(259, ...)) instead of reading the theme's actual primary hue, so it
+   clashes with this site's yellow-green primary in both color modes. */
+.sui-button.primary.flat {
+    color: var(--primary-text) !important;
+}
+
 /* Dropdown */
 .sui-dropdown {
     width: max-content !important;

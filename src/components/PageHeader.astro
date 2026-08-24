@@ -4,18 +4,19 @@ import { Toggle } from 'astro-theme-toggle/components';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { useTranslation } from "~/i18n/utils.ts";
 
-import type { Locale } from "~/i18n/constants.ts";
+import { defaultLocale, type Locale } from "~/i18n/constants.ts";
 
 import NavbarLink from '~/components/NavbarLink.astro';
 import CollapsibleNavbar from '~/components/CollapsibleNavbar.astro';
 import LanguagePicker from '~/components/LanguagePicker.astro';
 
-const t = useTranslation(Astro.currentLocale as Locale);
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const t = useTranslation(locale);
 const navigationLinks = t.nav;
-const homeUrl = getRelativeLocaleUrl(Astro.currentLocale, '/').replace(/\/$/, '') || '/';
+const homeUrl = getRelativeLocaleUrl(locale, '/').replace(/\/$/, '') || '/';
 ---
 
-<a href={homeUrl} class='h-lg text-foreground no-underline shrink-0' aria-label='marmaestro home'>marmaestro</a>
+<a href={homeUrl} class='h-lg text-foreground no-underline shrink-0 m-0 pt-2 pb-2' aria-label='marmaestro home'>marmaestro</a>
 
 <div class='flex flex-row items-center gap-8'>
     <ul id='nav-links' class='flex flex-row flex-wrap justify-end gap-6 list-none max-sm:hidden'>
@@ -23,7 +24,7 @@ const homeUrl = getRelativeLocaleUrl(Astro.currentLocale, '/').replace(/\/$/, ''
             navigationLinks.map((link) => (
                     <NavbarLink
                             class='text-sm font-bold uppercase tracking-[0.08em] no-underline'
-                            href = { getRelativeLocaleUrl(Astro.currentLocale, link.url).replace(/\/$/, '') || '/' }
+                            href = { getRelativeLocaleUrl(locale, link.url).replace(/\/$/, '') || '/' }
                             target = { link.url.charAt(0) === 'h' ? '_blank' : '_self' }
                             rel = { link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined }
                     >
@@ -39,7 +40,26 @@ const homeUrl = getRelativeLocaleUrl(Astro.currentLocale, '/').replace(/\/$/, ''
 
 <script>
     import { DropdownHelper } from 'studiocms:ui/components/dropdown/client';
-    new DropdownHelper('dropdown');
+
+    // CollapsibleNavbar's dropdown markup is fresh on every page (no
+    // transition:persist — see the comment there), so DropdownHelper needs
+    // to (re-)initialize on every page load, which astro:page-load covers.
+    // The container-flag guard is defense in depth for this exact class of
+    // bug: a failed view-transition swap (browser `moveBefore` hierarchy
+    // errors, see the astro:page-load listener in Layout.astro) can leave
+    // Astro's script-dedup bookkeeping out of sync, causing this script to
+    // run twice for one node — `new DropdownHelper()` would then attach a
+    // second click listener to the same toggle button, so a single click
+    // calls toggle() twice and the menu appears to never open.
+    function initDropdown() {
+        const container = document.getElementById('dropdown-container');
+        if (!container || container.dataset.dropdownInit) return;
+        container.dataset.dropdownInit = 'true';
+        new DropdownHelper('dropdown');
+    }
+
+    initDropdown();
+    document.addEventListener('astro:page-load', initDropdown);
 </script>
 
 <style>
