@@ -1,9 +1,14 @@
 /* StudioCMS UI overrides*/
 
-/* Card */
+/* Card — border-color shift on hover instead of a shadow, flatter/Swiss. */
 .sui-card {
     border-radius: var(--radius-lg) !important;
     height: min-content !important;
+    transition: border-color 0.2s ease;
+}
+
+.sui-card.project:hover {
+    border-color: var(--color-primary);
 }
 
 .sui-card-body {
@@ -14,23 +19,37 @@
     }
 }
 
-/* Dropdown */
-.sui-dropdown {
-    width: max-content !important;
-    min-width: unset !important;
-    max-width: unset !important;
+/* Button — vendor's primary/flat variant hardcodes a violet accent
+   (hsl(259, ...)) instead of reading the theme's actual primary hue, so it
+   clashes with this site's yellow-green primary in both color modes. */
+.sui-button.primary.flat {
+    color: var(--primary-text) !important;
 }
 
-.sui-dropdown.initialized.below {
-    right: 0 !important;
-    left: auto !important;
+/* Mobile menu blur — dims/blurs the page behind the CollapsibleNavbar
+   drawer while it's open (see CollapsibleNavbar.astro's open()/close()). */
+.mobile-menu-blur {
+    opacity: 0.5;
+    filter: blur(3px);
+    transition: opacity 0.2s ease, filter 0.2s ease;
 }
 
-/* Collapsible nav (mobile-only dropdown menu button rendered by
-   studiocms-ui's Dropdown component) — its root container isn't ours to
-   attach a Tailwind class to, so the responsive visibility stays here. */
-#dropdown-container {
-    @media (min-width: 640px) {
-        display: none !important;
+/* Footer — align padding with the site's fixed-grid section gutters, bold
+   uppercase tracked-out column headers instead of the vendor default. */
+footer.sui-footer {
+    background-color: var(--background-base) !important;
+    padding: 3rem clamp(1.5rem, 5vw, 6rem) 2rem !important;
+}
+
+.sui-footer-link-label {
+    font-size: 0.85em !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+@media screen and (max-width: 1440px) {
+    footer.sui-footer {
+        padding: 3rem clamp(1.5rem, 5vw, 6rem) 2rem !important;
     }
 }

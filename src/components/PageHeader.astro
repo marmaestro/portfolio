@@ -4,35 +4,74 @@ import { Toggle } from 'astro-theme-toggle/components';
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { useTranslation } from "~/i18n/utils.ts";
 
-import type { Locale } from "~/i18n/constants.ts";
+import { defaultLocale, type Locale } from "~/i18n/constants.ts";
 
 import NavbarLink from '~/components/NavbarLink.astro';
 import CollapsibleNavbar from '~/components/CollapsibleNavbar.astro';
 import LanguagePicker from '~/components/LanguagePicker.astro';
 
-const t = useTranslation(Astro.currentLocale as Locale);
+const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
+const t = useTranslation(locale);
 const navigationLinks = t.nav;
+const homeUrl = getRelativeLocaleUrl(locale, '/').replace(/\/$/, '') || '/';
 ---
 
-<Toggle id='theme-toggle' class='!mr-auto !h-8 !w-8' aria-label='Theme toggle button' />
-<ul id='nav-links' class='flex flex-row flex-wrap justify-end gap-4 list-none max-sm:hidden'>
-    {
-        navigationLinks.map((link) => (
-                <NavbarLink
-                        class='text-[1.25em] no-underline'
-                        href = { getRelativeLocaleUrl(Astro.currentLocale, link.url).replace(/\/$/, '') || '/' }
-                        target = { link.url.charAt(0) === 'h' ? '_blank' : '_self' }
-                        rel = { link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined }
-                >
-                    { link.name }
-                </NavbarLink>
-        ))
-    }
-</ul>
-<LanguagePicker aria-label='Language picker list' />
-<CollapsibleNavbar aria-label='Collapsible navbar button' />
+<a href={homeUrl} class='h-lg text-foreground no-underline shrink-0 m-0 pt-2 pb-2' aria-label='marmaestro home'>marmaestro</a>
 
-<script>
-    import { DropdownHelper } from 'studiocms:ui/components/dropdown/client';
-    new DropdownHelper('dropdown');
-</script>
+<div class='flex flex-row items-center gap-8'>
+    <ul id='nav-links' class='flex flex-row flex-wrap justify-end gap-6 list-none max-sm:hidden'>
+        {
+            navigationLinks.map((link) => (
+                    <NavbarLink
+                            class='text-sm font-bold uppercase tracking-[0.08em] no-underline'
+                            href = { getRelativeLocaleUrl(locale, link.url).replace(/\/$/, '') || '/' }
+                            target = { link.url.charAt(0) === 'h' ? '_blank' : '_self' }
+                            rel = { link.url.charAt(0) === 'h' ? 'noopener noreferrer' : undefined }
+                    >
+                        { link.name }
+                    </NavbarLink>
+            ))
+        }
+    </ul>
+    <Toggle id='theme-toggle' class='theme-toggle !h-8 !w-8 p-1.5 text-foreground' aria-label='Theme toggle button' />
+    <LanguagePicker aria-label='Language picker list' />
+    <CollapsibleNavbar aria-label='Collapsible navbar button' />
+</div>
+
+<style>
+    #nav-links :global(a) {
+        color: var(--color-foreground);
+        position: relative;
+        padding-bottom: 2px;
+    }
+
+    #nav-links :global(a.active) {
+        color: var(--color-primary-text);
+    }
+
+    #nav-links :global(a::after) {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 100%;
+        bottom: 0;
+        height: 1px;
+        background: currentColor;
+        transition: right 0.2s ease;
+    }
+
+    #nav-links :global(a:hover::after),
+    #nav-links :global(a.active::after) {
+        right: 0;
+    }
+
+    :global(.theme-toggle) {
+        border-radius: var(--radius-sm);
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    :global(.theme-toggle:hover) {
+        background-color: var(--color-background-step-1);
+        color: var(--color-primary-text);
+    }
+</style>

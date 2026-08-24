@@ -21,6 +21,10 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 		title={t.gallery.title}
 		description={t.gallery.description}
 >
+	<section class='section mt-24 mb-12'>
+		<h1 class='h-xl'>{t.gallery.title}</h1>
+		<p class='muted w-[65%] max-[900px]:w-full'>{t.gallery.description}</p>
+	</section>
 	<section class='justified-gallery' id='photoswipe'>
         {
             Object.entries(images).reverse().map(async ([_path, image], index) => {

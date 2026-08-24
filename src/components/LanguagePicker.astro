@@ -1,49 +1,27 @@
 ---
-import { Badge } from 'studiocms:ui/components/badge';
-
 import { locales, defaultLocale, type Locale } from '~/i18n/constants.ts';
-import { getRelativeLocaleUrl } from "astro:i18n";
-import { getCollection, getEntry } from 'astro:content';
-import { getProjectUrl } from '~/i18n/utils.ts';
+import { getLocalizedUrls } from '~/i18n/utils.ts';
 
 const currentLang = (Astro.currentLocale as Locale) ?? defaultLocale;
-const rawPath = Astro.url.pathname;
-
-const currentPath  = !Astro.currentLocale ? rawPath : rawPath
-    .replace(new RegExp(`^/${Astro.currentLocale}/?`), '')
-    .replace(/^\//, '');
-
-const projectMatch = currentPath.match(/^portfolio\/(.+)$/);
-const currentProject = projectMatch
-    ? await getEntry('portfolio', `${currentLang}/${projectMatch[1]}`)
-    : undefined;
-
-const translatedProjectUrls: Partial<Record<Locale, string>> = {};
-if (currentProject) {
-    const siblings = await getCollection('portfolio',
-        project => project.data.image === currentProject.data.image);
-    for (const project of siblings) {
-        translatedProjectUrls[project.data.lang] = getProjectUrl(project);
-    }
-}
-
-const targetPath = !currentPath.startsWith('portfolio/') ?
-    currentPath : 'portfolio';
-
+const urls = await getLocalizedUrls(Astro.url.pathname, Astro.currentLocale as Locale);
 ---
-<span class='flex flex-row flex-wrap justify-end gap-2 max-sm:hidden'>
+<span class='flex flex-row flex-wrap justify-end gap-3 max-sm:hidden'>
     { Object.entries(locales).map(([_, lang]) => {
-        const url = translatedProjectUrls[lang]
-            ?? (getRelativeLocaleUrl(lang, targetPath).replace(/\/$/, '') || '/');
+        const url = urls[lang];
         const label = lang.toUpperCase();
-        const isCurrent = lang == Astro.currentLocale;
+        const isCurrent = lang == currentLang;
         return (
             <a aria-label=`Switch to ${label} site`
                role='option' type='a'
                aria-selected={ isCurrent }
-               class:list={[ isCurrent && 'cursor-default' ]}
+               class:list={[
+                   'text-sm font-bold uppercase tracking-[0.08em] no-underline',
+                   isCurrent
+                       ? 'cursor-default text-foreground'
+                       : 'text-foreground-dimmed hover:text-primary-text'
+               ]}
                href={url}>
-                <Badge label={label} variant='flat' color='mono'/>
+                {label}
             </a>
         );
     })}

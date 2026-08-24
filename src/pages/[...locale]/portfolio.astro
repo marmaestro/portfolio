@@ -26,7 +26,11 @@ const projects = (await getCollection('portfolio'))
 		title = {t.portfolio.title}
 		description = {t.portfolio.description}>
 
-	<section class = 'section mt-12'>
+	<section class='section mt-24 mb-12'>
+		<h1 class='h-xl'>{t.portfolio.title}</h1>
+		<p class='muted w-[65%] max-[900px]:w-full'>{t.portfolio.body}</p>
+	</section>
+	<section class = 'section mt-0'>
 		<Masonry sortByHeight = {false}
 				 class = 'flex flex-row gap-12 mb-12 max-[750px]:flex-col max-[750px]:!mb-6'
 				 columnClass = 'column'
