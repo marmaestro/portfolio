@@ -70,9 +70,13 @@
     --tracking-tight: -0.03em;
 }
 
+/*noinspection ALL*/
 @layer base {
     :root {
         color-scheme: light dark;
+		text-rendering: optimizeLegibility;
+		font-kerning: normal;
+		font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
     }
 
     ::selection {
@@ -174,6 +178,7 @@
     }
 }
 
+/*noinspection ALL*/
 @layer components {
     /* Heading utility classes so page markup stops repeating arbitrary
        Tailwind values (text-[4rem], tracking-[-0.15rem], etc.) for the same
@@ -225,7 +230,7 @@
         /* Larger and looser than the sitewide body default — long-form
            article copy needs more breathing room than UI text. */
         font-size: 1.2rem;
-        line-height: 1.5;
+        line-height: 1.3;
 
         /* Tailwind's preflight zeroes margins/list-style on every element, so
            the MDX body needs its own vertical rhythm and list markers back —
@@ -262,8 +267,7 @@
         /* Headings authored in MDX as `#`/`##`/`###`/`####` are shifted down 2
            levels at render time (see astro.config.mjs's rehypeShiftHeadings),
            landing here as h3-h6 — so they never collide with the page's own
-           real <h1>/<h2> title/subtitle. Satoshi Bold, not Cabinet Grotesk:
-           that's reserved for the hero only. */
+           real <h1>/<h2> title/subtitle. */
         h3, h4, h5, h6 {
             font-family: var(--font-sans);
             font-weight: 700;
@@ -288,9 +292,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* Images/video and headings had zero margin (inherited from the
-           sitewide `img { margin: 0 }` reset), so anything placed right next
-           to one — another image, a video, a heading — touched it directly. */
         img, mux-player {
             margin: 1.5em 0;
         }
