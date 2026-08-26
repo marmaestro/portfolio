@@ -18,19 +18,19 @@
 		"description": "Mar Maestro Momparler's portfolio site.",
 		"intro": {
 			"title": "marmaestro",
-			"subtitle": "Game Developer, Designer and Student.",
+			"subtitle": "Game Developer, Designer and Producer.",
 			"body": [
-				"I'm a 24-year-old student at Jaume I University currently studying Video Game Design and Development.",
-				"With hands-on experience in both programming and design, my work centers on analytical problem-solving and building solid technical foundations.",
-				"Passionate about crafting engaging player experiences, I'm constantly experimenting with new tools and techniques to bring interactive worlds to life.",
-				"I'm also quite passionate about film photography and birds."
+				"I'm a 24-year-old game developer and designer. I'm currently finishing my degree at Jaume I University.",
+				"I have hands-on experience in game programming, producing and design. My work centers on analytical problem-solving and solid technical foundations.",
+				"I love crafting engaging player experiences. I'm always experimenting with new tools and techniques to bring interactive worlds to life.",
+				"I'm also passionate about film photography and birds."
 			],
 			"image": "Placeholder banner"
 		}
 	},
 	"skills": {
 		"title": "My Skills",
-		"body": "Through my studies and personal projects, I've gained a solid understanding of game development and other branches of computer engineering. I've applied and developed these skills in several projects.",
+		"body": "I've built a solid understanding of game development and other branches of computer engineering through my studies and personal projects. I've put those skills to work on several projects.",
 		"list": [
 			"C# + C++",
 			"Unity + ECS",
@@ -45,16 +45,16 @@
 	"portfolio": {
 		"title": "Portfolio",
 		"description": "What I've been working on.",
-		"body": "I love creating new things, and have been making games since I started university. Here are some projects worth checking out.",
+		"body": "I love creating things: games, podcasts, and more. Here's some of my work.",
 		"back": "Back to Portfolio"
 	},
 	"gallery": {
 		"title": "Gallery",
-		"description": "My film photography works. I shoot as a hobby on a Nikon FM-2."
+		"description": "My film photography works. I shoot as a hobby on a Nikon FM-2 and an Olympus PEN EE-3."
 	},
 	"contact": {
 		"title": "Let's create something together",
-		"body": "Feel free to  reach out if you're looking for a game developer or designer, have a question, or just want to connect.",
+		"body": "Feel free to reach out if you're looking for a game developer, designer or producer, have a question, or just want to connect.",
 		"message": "I'll be glad to message back.",
 		"image": "Placeholder banner",
 		"form": {
@@ -62,7 +62,7 @@
 			"name": "Name",
 			"email": "Email Address",
 			"message": "Message",
-			"subject": "Porfolio Contact Form [EN]",
+			"subject": "Portfolio Contact Form [EN]",
 			"send": "Send",
 			"warning": "This field is required.",
 			"success": "Thanks for your submission!"
