@@ -1,14 +1,13 @@
 ---
-import { Toggle } from 'astro-theme-toggle/components';
-
 import { getRelativeLocaleUrl } from 'astro:i18n';
 import { useTranslation } from "~/i18n/utils.ts";
 
 import { defaultLocale, type Locale } from "~/i18n/constants.ts";
 
-import NavbarLink from '~/components/NavbarLink.astro';
+import NavbarLink from '~/components/patterns/NavbarLink.astro';
 import CollapsibleNavbar from '~/components/CollapsibleNavbar.astro';
 import LanguagePicker from '~/components/LanguagePicker.astro';
+import ThemeToggle from "~/components/ThemeToggle.astro";
 
 const locale = (Astro.currentLocale ?? defaultLocale) as Locale;
 const t = useTranslation(locale);
@@ -33,7 +32,7 @@ const homeUrl = getRelativeLocaleUrl(locale, '/').replace(/\/$/, '') || '/';
             ))
         }
     </ul>
-    <Toggle id='theme-toggle' class='theme-toggle !h-8 !w-8 p-1.5 text-foreground' aria-label='Theme toggle button' />
+    <ThemeToggle />
     <LanguagePicker aria-label='Language picker list' />
     <CollapsibleNavbar aria-label='Collapsible navbar button' />
 </div>
@@ -63,15 +62,5 @@ const homeUrl = getRelativeLocaleUrl(locale, '/').replace(/\/$/, '') || '/';
     #nav-links :global(a:hover::after),
     #nav-links :global(a.active::after) {
         right: 0;
-    }
-
-    :global(.theme-toggle) {
-        border-radius: var(--radius-sm);
-        transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    :global(.theme-toggle:hover) {
-        background-color: var(--color-background-step-1);
-        color: var(--color-primary-text);
     }
 </style>

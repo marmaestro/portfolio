@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro'
-import ProjectPreview from '~/components/ProjectPreview.astro';
+import ProjectPreview from '~/components/patterns/ProjectPreview.astro';
 import Skill from '~/components/patterns/Skill.astro';
 
 import { getCollection } from 'astro:content';
@@ -81,6 +81,7 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
                             description = {project.data.description}
                             image = {project.data.image}
                             tags = {project.data.tags}
+                            loading ='lazy'
                     />
                 ))
             }

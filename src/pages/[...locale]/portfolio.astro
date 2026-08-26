@@ -1,6 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro'
-import ProjectPreview from '~/components/ProjectPreview.astro'
+import ProjectPreview from '~/components/patterns/ProjectPreview.astro'
 
 import { Masonry } from 'astro-masonry';
 import { getCollection } from 'astro:content';
@@ -43,7 +43,7 @@ const projects = (await getCollection('portfolio'))
                      }}
         >
             {
-                projects.map(project =>
+                projects.map((project, index) =>
                     (
 							<ProjectPreview fullWidth padded
 									url = {getProjectUrl(project)}
@@ -53,6 +53,7 @@ const projects = (await getCollection('portfolio'))
 									image = {project.data.image}
 									tags = {project.data.tags}
 									pinned = {project.data.pinned}
+                                    loading={index < 5 ? 'eager' : 'lazy'}
 							/>
                     ))
             }

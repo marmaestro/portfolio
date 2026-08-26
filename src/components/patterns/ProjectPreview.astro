@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 
 import type { ImageMetadata } from "astro";
 
-const { fullWidth, padded, title, subtitle, description, url, image, tags, pinned } = Astro.props;
+const { fullWidth, padded, title, subtitle, description, url, image, tags, pinned, loading = 'eager' } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfolio/**/*.{jpeg,jpg,png,gif}');
 if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/assets/portfolio/**/*.{jpeg,jpg,png,gif}"`);
 ---
@@ -14,14 +14,14 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
 <Card {fullWidth}
       class:list={[
           'project max-[750px]:mb-6',
-          '[&_.sui-card-header]:!p-0 [&_.sui-card-header_img]:h-auto [&_.sui-card-header_img]:w-full',
-          '[&_.sui-card-header_img]:rounded-t-[var(--radius-lg)] [&_.sui-card-header_img]:object-cover',
-          '[&_.sui-card-body]:!p-4',
+          '[&_.sui-card-header]:p-0! [&_.sui-card-header_img]:h-auto [&_.sui-card-header_img]:w-full',
+          '[&_.sui-card-header_img]:rounded-t-lg [&_.sui-card-header_img]:object-cover',
+          '[&_.sui-card-body]:p-4!',
           padded && 'mb-10',
       ]}
 >
     <div slot='header'>
-		<Image src={images[image]()} alt ='' loading='eager' />
+		<Image src={images[image]()} alt ='' loading={loading} />
     </div>
 
     <div>

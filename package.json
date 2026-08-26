@@ -49,6 +49,7 @@
   },
   "devDependencies": {
     "@iconify-json/bi": "^1.2.7",
+    "@iconify-json/lucide": "^1.2.126",
     "husky": "^9.1.7",
     "sharp": "^0.34.5",
     "stylelint-config-astro": "^2.0.0",
