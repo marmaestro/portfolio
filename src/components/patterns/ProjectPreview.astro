@@ -27,8 +27,8 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
 				loading={loading}
 				fetchpriority={loading === 'eager' ? 'high' : undefined}
 				format='webp'
-				width={600}
-				densities={[1, 2]}
+				widths={[400, 700, 1000]}
+				sizes='(min-width: 700px) 50vw, 100vw'
 				quality={80}
 		/>
     </div>
