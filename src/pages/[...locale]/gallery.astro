@@ -42,6 +42,8 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 									src={imageData}
 									alt=''
 									height={400}
+									densities={[1, 2]}
+									quality={85}
 									loading={index < 20 ? 'eager' : 'lazy'}
 							/>
 						</a>

@@ -21,7 +21,16 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
       ]}
 >
     <div slot='header'>
-		<Image src={images[image]()} alt ='' loading={loading} />
+		<Image
+				src={images[image]()}
+				alt=''
+				loading={loading}
+				fetchpriority={loading === 'eager' ? 'high' : undefined}
+				format='webp'
+				width={600}
+				densities={[1, 2]}
+				quality={80}
+		/>
     </div>
 
     <div>

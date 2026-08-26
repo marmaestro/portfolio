@@ -52,7 +52,17 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
                     }
                 </div>
             </div>
-            <Image src={introBanner} alt={t.home.intro.image} loading='eager' class='h-full w-full object-cover max-[900px]:h-auto'/>
+            <Image
+                    src={introBanner}
+                    alt={t.home.intro.image}
+                    loading='eager'
+                    fetchpriority='high'
+                    format='webp'
+                    width={700}
+                    densities={[1, 2]}
+                    quality={82}
+                    class='h-full w-full object-cover max-[900px]:h-auto'
+            />
         </div>
     </section>
 
@@ -100,6 +110,15 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
 			<WideContactForm locale={locale} />
 			<VerticalContactForm locale={locale} />
         </div>
-		<Image src={contactBanner} alt={t.contact.image} loading='lazy' class='h-auto w-full mt-10' />
+		<Image
+				src={contactBanner}
+				alt={t.contact.image}
+				loading='lazy'
+				format='webp'
+				width={1200}
+				densities={[1, 2]}
+				quality={80}
+				class='h-auto w-full mt-10'
+		/>
     </section>
 </Layout>
