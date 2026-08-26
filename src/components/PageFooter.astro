@@ -22,7 +22,7 @@ import { Icon } from 'astro-icon/components';
         copyright = 'MIT License © 2026 - marmaestro'
 >
 
-    <div slot='brand' class='footer-brand'>
+    <div slot='brand' class='mar footer-brand'>
         <span class='studiocms-footer-text'>
             <a href = "mailto:contact@marmaestro.dev?subject=Contact">marmaestro</a>
         </span>
@@ -40,3 +40,14 @@ import { Icon } from 'astro-icon/components';
         </Row>
     </div>
 </Footer>
+
+<style>
+    /* copyright is a plain string prop on studiocms:ui's Footer, rendered as
+       text — can't wrap just "marmaestro" in a .mar span like the brand logo
+       above, so this applies ss01 to the whole line instead. Harmless: no
+       other character in "MIT License © 2026 - marmaestro" uses the
+       affected glyph. */
+    :global(#footer .copyright-span) {
+        font-feature-settings: "ss01" 1;
+    }
+</style>

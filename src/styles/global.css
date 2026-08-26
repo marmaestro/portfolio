@@ -51,7 +51,7 @@
     --font-sans: "Satoshi-Variable", sans-serif;
     /* Reserved for hero/H1-level display type only — everything else
        (h2/h3, card titles, subheadings) uses --font-sans at a bold weight. */
-    --font-display: "CabinetGrotesk-Variable", sans-serif;
+    --font-display: "Satoshi-Variable", sans-serif; /*"CabinetGrotesk-Variable", sans-serif;*/
 
     /* Swiss-poster type scale — bigger and bolder throughout. Hero text
        scales with viewport via clamp(); everything below it is fixed so the
@@ -76,7 +76,13 @@
         color-scheme: light dark;
 		text-rendering: optimizeLegibility;
 		font-kerning: normal;
-		font-variant-ligatures: common-ligatures discretionary-ligatures contextual;
+		/* Requesting these as raw feature tags instead of the
+		   font-variant-ligatures/-numeric shorthands: "dlig" specifically has
+		   weaker, inconsistent cross-browser support through the shorthand
+		   (font-variant-ligatures: discretionary-ligatures silently no-ops in
+		   some engines), while font-feature-settings is honored directly. */
+		--font-features-base: "liga" 1, "dlig" 1, "calt" 1, "frac" 1;
+		font-feature-settings: var(--font-features-base);
     }
 
     ::selection {
@@ -176,15 +182,31 @@
     .muted {
         opacity: 70%;
     }
+
+    /* Superscript figures (footnote markers, ordinals, exponents) — the
+       font only has superior forms for digits, not letters, so this only
+       visibly affects numbers. */
+    .superscript {
+        font-variant-position: super;
+    }
 }
 
-/*noinspection ALL*/
 @layer components {
     /* Heading utility classes so page markup stops repeating arbitrary
        Tailwind values (text-[4rem], tracking-[-0.15rem], etc.) for the same
        few sizes. .h-display is the only one carrying Cabinet Grotesk — every
        other size stays on the body font at a bold weight. */
-    .h-display {
+    /* font-variant-alternates: styleset(ss01) needs a matching
+       @font-feature-values block to resolve the name, which this project
+       doesn't define — using the raw feature tag directly instead, same fix
+       as the ligatures/fractions above. Doesn't need the shared base
+       ligature/fraction list: this only ever styles "marmaestro", which has
+       no ligature-able letter pairs. */
+    .mar {
+		font-feature-settings: "ss01" 1;
+	}
+
+	.h-display {
         font-family: var(--font-display);
         font-size: var(--text-display);
         letter-spacing: var(--tracking-tight);

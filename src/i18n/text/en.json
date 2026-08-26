@@ -32,14 +32,14 @@
 		"title": "My Skills",
 		"body": "Through my studies and personal projects, I've gained a solid understanding of game development and other branches of computer engineering. I've applied and developed these skills in several projects.",
 		"list": [
-			"C# & C++",
+			"C# + C++",
 			"Unity + ECS",
 			"Godot",
 			"VCS",
 			"Game Design",
 			"FMOD",
-			"HTML & CSS",
-			"Astro & TypeScript"
+			"HTML + CSS",
+			"Astro + TypeScript"
 		]
 	},
 	"portfolio": {
