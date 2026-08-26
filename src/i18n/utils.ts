@@ -1,10 +1,34 @@
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getCollection, getEntry, type CollectionEntry } from "astro:content";
 
-import { locales, defaultLocale, translations, type Locale } from "./constants";
+import { locales, defaultLocale, translations, type Locale, type Translations, type DeepPartial } from "./constants";
 
-export function useTranslation(locale?: Locale) {
-    return translations[locale || defaultLocale];
+/**
+ * Recursively fills in any key missing from `override` with the corresponding
+ * value from `base`. Arrays are treated as leaves (used whole, not merged
+ * element-by-element) so lists like `nav` or `skills.list` aren't spliced.
+ */
+function mergeWithDefault<T>(base: T, override: DeepPartial<T> | undefined): T {
+    if (override === undefined) return base;
+    if (Array.isArray(base) || typeof base !== "object" || base === null) return override as T;
+
+    const result = { ...base } as Record<string, unknown>;
+    for (const key of Object.keys(base)) {
+        result[key] = mergeWithDefault(
+            (base as Record<string, unknown>)[key],
+            (override as Record<string, unknown>)[key] as DeepPartial<unknown>,
+        );
+    }
+    return result as T;
+}
+
+const mergedTranslations: Record<Locale, Translations> = Object.fromEntries(
+    locales.map(locale => [locale, mergeWithDefault(translations[defaultLocale] as Translations, translations[locale])]),
+) as Record<Locale, Translations>;
+
+export function useTranslation(locale?: Locale)
+{
+    return mergedTranslations[locale || defaultLocale];
 }
 
 /**

@@ -17,7 +17,6 @@
 		"title": "marmaestro",
 		"description": "Web portfolio de Mar Maestro Momparler",
 		"intro": {
-			"title": "Hola, soy Mar Maestro!",
 			"subtitle": "Desarrolladora, diseñadora y estudiante.",
 			"body": [
 				"Soy una estudiante de 24 años en la Universitat Jaume I, donde estudio Diseño y Desarrollo de Videojuegos.",
@@ -30,17 +29,7 @@
 	},
 	"skills": {
 		"title": "Mis habilidades",
-		"body": "Tengo un sólido entendimiento en el desarrollo de videojuegos y otras ramas de la ingeniería informática a través de mis estudios y proyectos personales. He trabajado estas habilidades en muchos proyectos.",
-		"list": [
-			"C# & C++",
-			"Unity + ECS",
-			"Godot",
-			"VCS",
-			"Game Design",
-			"FMOD",
-			"HTML & CSS",
-			"Astro & TypeScript"
-		]
+		"body": "Tengo un sólido entendimiento en el desarrollo de videojuegos y otras ramas de la ingeniería informática a través de mis estudios y proyectos personales. He trabajado estas habilidades en muchos proyectos."
 	},
 	"portfolio": {
 		"title": "Portfolio",
