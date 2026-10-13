@@ -1,70 +1,76 @@
 ---
 title: Still I Linger
-subtitle: Trabajo de fin de grado, y un proyecto en proceso
-description: Un artgame de técnica mixta que combina fotografía analógica con animación para explorar una ciudad y el interior propio.
+subtitle: Trabajo de fin de grado
+description: Un artgame de técnica mixta que combina fotografía analógica con animación dibujada a mano para explorar una ciudad y el mundo interior propio.
 date: 2025-07-11
 author: marmaestro
 source:
-    url: https://marmaestro.itch.io/stillilinger
-    item: 'itch.io'
+url: https://marmaestro.itch.io/stillilinger
+item: 'itch.io'
 image: /src/assets/portfolio/tfg/tfg-banner.gif
-roles: [ solo dev ]
-tags: [ juego, fotografía analógica, narrativa ]
+roles: [ desarrolladora en solitario ]
+tags: [ videojuego, fotografía analógica, desarrolladora en solitario ]
 pinned: false
 lang: es
 ---
 
 import { Image } from 'astro:assets';
-import banner from '../../../src/assets/portfolio/tfg/tfg-banner.gif';
-import cafe from '../../../src/assets/portfolio/tfg/tfg-cafe.jpg';
+import banner from 'src/assets/portfolio/tfg/tfg-banner.gif';
+import cafe from 'src/assets/portfolio/tfg/tfg-cafe.jpg';
 
-**Junio 2025**
+## Trabajo de fin de grado | junio 2025
 
-Un *artgame* 2D en primera persona que explora la depresión desde una perspectiva neurodivergente. El jugador navega por una pequeña ciudad desde el punto de vista de R, una estudiante universitaria que lidia con ansiedad crónica y depresión durante su primer fin de semana sola en un lugar nuevo.
+# Rol
+
+Este juego fue desarrollado de forma independiente.
+Todos los recursos del juego (excepto las fuentes, la música y los efectos de sonido) fueron creados por mí.
+
+# Sobre el juego
+
+Still I Linger es un artgame corto en primera persona que explora la depresión y la juventud.
+El jugador recorre una ciudad desde el punto de vista de R, que explora rincones de una ciudad en la que acaba de mudarse.
+
+La jugabilidad consiste en narración al estilo de novela visual y en monólogos internos, pero la interacción se realiza usando el visor de una cámara y tomando fotografías con ella.
 
 <figure>
-	<Image src={banner} alt='' loading='eager'/>
-    <figcaption>La portada del juego, seleccionada de mi escena favorita</figcaption>
+    <Image src={banner} alt='' loading='eager' />
+    <figcaption>La portada del juego, elegida de mi escena favorita</figcaption>
 </figure>
 
-# Resumen
+## Trabajo técnico
 
-<mark>**Género:**</mark> Ficción interactiva, *Artgame*  
-<mark>**Desarrollo:**</mark> 5 meses, proyecto en solitario  
-<mark>**Roles:**</mark> Diseño, programación, fotografía, ilustración, narrativa  
-<mark>**Herramientas:**</mark> Unity 6, C#, Nikon FM2 (película 35 mm), CLIP Studio Paint, Inky, FMOD
+Construí un sistema de renderizado con cámaras en varias capas que simula mi Nikon FM2, con la que tomé las fotografías originales.
+La cámara principal del juego renderiza fotografías analógicas, mientras que las cámaras superpuestas gestionan los elementos animados a distintas profundidades con paralaje.
+Tomar fotos activa reflexiones narrativas ramificadas.
 
-# Concepto
+El sistema de navegación entre escenas usa un grafo personalizado (listas enlazadas y BFS modificado) con pasos diarios limitados que representan la capacidad emocional de R.
+No todas las ubicaciones pueden visitarse en una sola partida.
 
-El juego usa <mark>medios mixtos</mark> para representar la división entre la realidad objetiva y la percepción interna. Lugares reales fotografiados en película Kodak Ultramax 400 forman los entornos, lo que realmente está ahí. Animaciones digitales superpuestas sobre las fotografías aparecen solo a través de la cámara de R, representando su interpretación subconsciente del mundo.
-
-Este enfoque visual refleja cómo la depresión distorsiona la percepción. Las fotografías no pueden mentir, mientras que las ilustraciones revelan lo que R realmente experimenta.
-
-# Trabajo técnico
-
-Construí un sistema de renderizado compuesto utilizando varias capas para emular el funcionamiento de una <mark>Nikon FM2</mark> y la superposición onírica. La cámara principal renderiza fotografías analógicas mientras las cámaras superpuestas manejan elementos animados a diferentes profundidades con paralaje. Tomar fotos desencadena reflexiones narrativas ramificadas.
-
-La navegación usa un sistema de grafos personalizado (listas enlazadas, y utilizando BFS modificada) con pasos diarios limitados que representan la capacidad emocional de R. No todas las ubicaciones pueden visitarse en una sola partida.
-
-La narrativa está programada en <mark>Inky</mark>, con generación algorítmica de diario al final del día, ponderada por las elecciones del jugador y etiquetas emocionales. El sistema deliberadamente se siente algo aleatorio, coincidiendo con la inestabilidad mental de R.
+La narrativa está programada en Inky.
+Las reacciones y reflexiones del personaje principal se escribieron para que resulten algo aleatorias, reflejando la inestabilidad mental de R.
 
 <figure>
-	<Image src={cafe} alt='' loading='eager' />
+    <Image src={cafe} alt='' loading='eager' />
     <figcaption>Una de las fotografías tomadas para el proyecto, antes de ilustrarla</figcaption>
 </figure>
 
-# El Proceso de creación
+## El proceso de creación
 
-Fotografié las 13 ubicaciones de Castellón en una única mañana soleada con una cámara manual de 35 mm heredada. Las restricciones de disparar en película (límite de exposiciones, ausencia de retroalimentación instantánea, elecciones irreversibles…) terminaron reflejando los temas del juego mejor de lo que había planeado. No se puede borrar una fotografía analógica, al igual que no se puede borrar lo que uno piensa.
+Fotografié 13 ubicaciones de Castellón en una sola mañana soleada, con una cámara manual de 35 mm heredada y película Kodak Ultramax 400.
+Las limitaciones del medio (36 exposiciones, ninguna retroalimentación inmediata, decisiones que no se pueden deshacer) reflejan por sí mismas el tema del juego.
 
-Este proyecto me llevó fuera de mi zona de confort como programadora. Tuve que aprender por mi cuenta cómo animar mientras hacía el juego, lo que significó que cada elemento dibujado tomó el doble o triple de tiempo del que había estimado. También aprendí a escribir ficción creativa mientras diseñaba los sistemas narrativos ramificados, y descubrí cómo hacer de la experiencia personal algo interactivo sin que se sintiera explotador o melodramático.
+Este proyecto me sacó mucho de mi zona de confort como programadora.
+Aprendí ilustración y animación por mi cuenta mientras hacía el juego, lo que significó que cada elemento dibujado tardó el doble de lo que había estimado.
+También aprendí a escribir ficción creativa mientras diseñaba un sistema narrativo ramificado.
 
-La parte más difícil no fue el trabajo técnico, fue hacer algo tan personal mientras mi propia salud mental estaba interfiriendo activamente con el desarrollo.
+Fue un proyecto interesante de trabajar.
+Es difícil convertir una experiencia tan personal en algo interactivo sin que resulte explotador o melodramático.
 
-# Resultados
+## Resultados
 
-Entregué una *vertical slice* en la que se muestran todas las mecánicas centrales y los temas narrativos. El proyecto me enseñó más sobre arquitectura y diseño de sistemas que cualquier trabajo de curso al construir soluciones personalizadas para simulación de cámara, grafos narrativos, y generación algorítmica, todo mientras gestionaba el desarrollo en múltiples disciplinas.
+Entregué una vertical slice que demuestra todas las mecánicas centrales y los temas narrativos.
+Quizá retome el proyecto en el futuro para seguir trabajando en él.
 
 ---
 
-<mark>**Nota:**</mark> El informe completo del proyecto está disponible bajo petición. La galería fotográfica completa y los diagramas técnicos están incluidos en la documentación completa.
+*El informe completo de la tesis está disponible bajo petición. La galería fotográfica y los diagramas técnicos están incluidos en la documentación completa.*

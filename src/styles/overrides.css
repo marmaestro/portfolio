@@ -2,6 +2,7 @@
 
 /* Card — border-color shift on hover instead of a shadow, flatter/Swiss. */
 .sui-card {
+	display: block;
     border-radius: var(--radius-lg) !important;
     height: min-content !important;
     transition: border-color 0.2s ease;
@@ -17,6 +18,16 @@
     img {
         border-radius: var(--radius-md) !important;
     }
+}
+
+a.sui-card,
+a.sui-card * {
+	color: var(--card-text, inherit) !important;
+}
+
+a.sui-card:hover,
+a.sui-card:focus-visible {
+	text-decoration: none !important;
 }
 
 /* Button — vendor's primary/flat variant hardcodes a violet accent

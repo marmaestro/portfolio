@@ -11,12 +11,16 @@ const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfol
 if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/assets/portfolio/**/*.{jpeg,jpg,png,gif}"`);
 ---
 
-<Card {fullWidth}
+<Card as='a'
+      href={url}
+      aria-label='Open project'
+      {fullWidth}
       class:list={[
           'project max-[750px]:mb-6',
           '[&_.sui-card-header]:p-0! [&_.sui-card-header_img]:h-auto [&_.sui-card-header_img]:w-full',
           '[&_.sui-card-header_img]:rounded-t-lg [&_.sui-card-header_img]:object-cover',
           '[&_.sui-card-body]:p-4!',
+          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',
           padded && 'mb-10',
       ]}
 >
@@ -52,7 +56,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
                     ))
                 }
             </Row>
-            <a href={url} aria-label='Open project'><Icon name='bi:arrow-right-short' size={24} class='block'/></a>
+            <Icon name='bi:arrow-right-short' size={24} class='block'/>
         </div>
     </div>
 </Card>
