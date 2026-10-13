@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 
 import type { ImageMetadata } from "astro";
 
-const { fullWidth, padded, title, subtitle, description, url, image, tags, pinned, loading = 'eager' } = Astro.props;
+const { fullWidth, padded, title, subtitle, description, url, image, roles, pinned, loading = 'eager' } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/portfolio/**/*.{jpeg,jpg,png,gif}');
 if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/assets/portfolio/**/*.{jpeg,jpg,png,gif}"`);
 ---
@@ -51,7 +51,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
         <div class='flex items-center justify-between'>
             <Row gapSize="md">
                 {
-                    tags && tags.map((tag: string) => (
+                    roles && roles.map((tag: string) => (
                                 <Badge label={tag} variant='flat' color='primary' rounding='semi'/>
                     ))
                 }

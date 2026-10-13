@@ -51,7 +51,7 @@ const projects = (await getCollection('portfolio'))
 									subtitle = {project.data.subtitle}
 									description = {project.data.description}
 									image = {project.data.image}
-									tags = {project.data.tags}
+									roles = {project.data.roles}
 									pinned = {project.data.pinned}
                                     loading={index < 5 ? 'eager' : 'lazy'}
 							/>

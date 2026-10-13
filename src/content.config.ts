@@ -32,7 +32,6 @@ const portfolio = defineCollection({
         }),
         image: z.string(),
         roles: z.string().array(),
-        tags: z.string().array(),
         pinned: z.boolean(),
         lang: z.enum(['en', 'es']),
     })
