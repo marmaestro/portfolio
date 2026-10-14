@@ -42,12 +42,12 @@ export function getLocaleStaticPaths() {
     }));
 }
 
-export function getProjectSlug(project: CollectionEntry<'portfolio'>): string {
+export function getProjectSlug(project: CollectionEntry<'projects'>): string {
     return project.id.slice(project.data.lang.length + 1);
 }
 
-export function getProjectUrl(project: CollectionEntry<'portfolio'>): string {
-    return getRelativeLocaleUrl(project.data.lang, `portfolio/${getProjectSlug(project)}`)
+export function getProjectUrl(project: CollectionEntry<'projects'>): string {
+    return getRelativeLocaleUrl(project.data.lang, `projects/${getProjectSlug(project)}`)
         .replace(/\/$/, '');
 }
 
@@ -56,7 +56,7 @@ export function getProjectUrl(project: CollectionEntry<'portfolio'>): string {
  * used by both the desktop language picker and the mobile hamburger menu's
  * language entry, so switching language on a project detail page lands on
  * that same project's translation (matched by shared `image`) rather than
- * bouncing to the bare portfolio listing.
+ * bouncing to the bare projects listing.
  */
 export async function getLocalizedUrls(pathname: string, currentLocale?: Locale): Promise<Record<Locale, string>> {
     const currentLang = currentLocale ?? defaultLocale;
@@ -64,21 +64,21 @@ export async function getLocalizedUrls(pathname: string, currentLocale?: Locale)
         .replace(new RegExp(`^/${currentLocale}/?`), '')
         .replace(/^\//, '');
 
-    const projectMatch = currentPath.match(/^portfolio\/(.+)$/);
+    const projectMatch = currentPath.match(/^projects\/(.+)$/);
     const currentProject = projectMatch
-        ? await getEntry('portfolio', `${currentLang}/${projectMatch[1]}`)
+        ? await getEntry('projects', `${currentLang}/${projectMatch[1]}`)
         : undefined;
 
     const translatedProjectUrls: Partial<Record<Locale, string>> = {};
     if (currentProject) {
-        const siblings = await getCollection('portfolio',
+        const siblings = await getCollection('projects',
             project => project.data.image === currentProject.data.image);
         for (const project of siblings) {
             translatedProjectUrls[project.data.lang] = getProjectUrl(project);
         }
     }
 
-    const targetPath = !currentPath.startsWith('portfolio/') ? currentPath : 'portfolio';
+    const targetPath = !currentPath.startsWith('projects/') ? currentPath : 'projects';
 
     return Object.fromEntries(locales.map(lang => [
         lang,

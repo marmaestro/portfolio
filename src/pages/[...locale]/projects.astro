@@ -13,7 +13,7 @@ export function getStaticPaths() {
 
 const t = useTranslation(Astro.currentLocale as Locale);
 
-const projects = (await getCollection('portfolio'))
+const projects = (await getCollection('projects'))
     .filter(project => project.data.lang == Astro.currentLocale)
     .sort((a, b) => {
         if (a.data.pinned !== b.data.pinned) return a.data.pinned ? -1 : 1;
@@ -23,12 +23,12 @@ const projects = (await getCollection('portfolio'))
 
 <Layout
         sitename = 'marmaestro'
-		title = {t.portfolio.title}
-		description = {t.portfolio.description}>
+		title = {t.projects.title}
+		description = {t.projects.description}>
 
 	<section class='section mt-24 mb-12'>
-		<h1 class='h-xl'>{t.portfolio.title}</h1>
-		<p class='muted w-[65%] max-[900px]:w-full'>{t.portfolio.body}</p>
+		<h1 class='h-xl'>{t.projects.title}</h1>
+		<p class='muted w-[65%] max-[900px]:w-full'>{t.projects.body}</p>
 	</section>
 	<section class = 'section mt-0'>
 		<Masonry sortByHeight = {false}

@@ -5,8 +5,8 @@
 			"url": "/"
 		},
 		{
-			"name": "Portfolio",
-			"url": "/portfolio"
+			"name": "Projects",
+			"url": "/projects"
 		},
 		{
 			"name": "Gallery",
@@ -42,11 +42,11 @@
 			"Astro + TypeScript"
 		]
 	},
-	"portfolio": {
-		"title": "Portfolio",
+	"projects": {
+		"title": "Projects",
 		"description": "What I've been working on.",
 		"body": "I love creating. Here's some of my work.",
-		"back": "Back to Portfolio"
+		"back": "Back to Projects"
 	},
 	"gallery": {
 		"title": "Gallery",

@@ -61,7 +61,7 @@ export default defineConfig({
 			name: 'marmaestro',
 			icon: 'src/assets/icon.png',
 			short_name: 'marmaestro',
-			description: "Mar Maestro Momparler's portfolio site. Game developer.",
+			description: "Mar Maestro Momparler's projects site. Game developer.",
 			start_url: '/',
 			lang: 'en',
 			display: 'standalone',
@@ -69,7 +69,7 @@ export default defineConfig({
 			locales: {
 				es: {
 					name: 'marmaestro',
-					description: "Web portfolio de Mar Maestro Momparler. Desarrolladora de videojuegos.",
+					description: "Web projects de Mar Maestro Momparler. Desarrolladora de videojuegos.",
 					start_url: "/es",
 					lang: "es"
 				}

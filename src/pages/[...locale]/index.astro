@@ -19,7 +19,7 @@ export function getStaticPaths() {
 const locale = Astro.currentLocale as Locale;
 const t = useTranslation(locale);
 
-const projects = (await getCollection('portfolio'))
+const projects = (await getCollection('projects'))
     .filter(project => project.data.lang == locale)
     .sort((a, b) => {
         if (a.data.pinned !== b.data.pinned) return a.data.pinned ? -1 : 1;
@@ -77,10 +77,10 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
 		</div>
     </section>
 
-    <!-- Portfolio preview -->
-    <section class='section mt-24 mb-0' id='portfolio'>
-        <h2 class='h-xl'>{t.portfolio.title}</h2>
-        <p class='muted w-[65%] max-[900px]:w-full mb-6'>{t.portfolio.body}</p>
+    <!-- projects preview -->
+    <section class='section mt-24 mb-0' id='projects'>
+        <h2 class='h-xl'>{t.projects.title}</h2>
+        <p class='muted w-[65%] max-[900px]:w-full mb-6'>{t.projects.body}</p>
 
 		<div class="flex flex-row gap-4 mb-12 max-[750px]:flex-col max-[750px]:!mb-6">
             {

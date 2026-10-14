@@ -7,8 +7,8 @@ import { getProjectUrl, getProjectSlug, useTranslation } from '~/i18n/utils.ts';
 import type { Locale } from '~/i18n/constants.ts';
 
 export async function getStaticPaths() {
-    const portfolio = await getCollection('portfolio');
-    return portfolio.map(project => ({
+    const projects = await getCollection('projects');
+    return projects.map(project => ({
         params: { id: getProjectUrl(project).replace(/^\//, '') },
         props: { project }
     }));
@@ -21,9 +21,9 @@ const roles = project.data.roles;
 const lang = project.data.lang as Locale;
 const t = useTranslation(lang);
 const homeSegment = getRelativeLocaleUrl(lang, '/').replace(/\/$/, '');
-const portfolioUrl = getRelativeLocaleUrl(lang, 'portfolio').replace(/\/$/, '');
+const projectsUrl = getRelativeLocaleUrl(lang, 'projects').replace(/\/$/, '');
 const breadcrumbSegments = [
-    { label: t.portfolio.title, segment: 'portfolio' },
+    { label: t.projects.title, segment: 'projects' },
     { label: project.data.title, segment: getProjectSlug(project) }
 ];
 ---
@@ -52,8 +52,8 @@ const breadcrumbSegments = [
 	</div>-->
 	<Content/>
 	<div class='mt-12 flex justify-start'>
-		<Button as='a' color='primary' variant='flat' href={portfolioUrl}>
-			{t.portfolio.back}
+		<Button as='a' color='primary' variant='flat' href={projectsUrl}>
+			{t.projects.back}
 		</Button>
 	</div>
 </MarkdownPostLayout>

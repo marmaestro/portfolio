@@ -28,7 +28,7 @@ const navOptions = t.nav.map(link => ({
 
 // Reuses the desktop LanguagePicker's project-aware URL resolution, so
 // switching language on a project page lands on that project's translation
-// instead of the bare portfolio listing.
+// instead of the bare projects listing.
 const urls = await getLocalizedUrls(Astro.url.pathname, Astro.currentLocale as Locale);
 ---
 <div class="mobile-menu-anchor sm:hidden">

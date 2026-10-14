@@ -18,8 +18,8 @@ import { z } from 'astro/zod';
     })
 });*/
 
-const portfolio = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: '~/../content/portfolio' }),
+const projects = defineCollection({
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: '~/../content/projects' }),
     schema: z.object({
         title: z.string(),
         subtitle: z.string(),
@@ -39,5 +39,5 @@ const portfolio = defineCollection({
 
 export const collections = {
     /*'blog': blog,*/
-    'portfolio': portfolio,
+    'projects': projects,
 };

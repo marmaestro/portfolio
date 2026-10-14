@@ -6,7 +6,7 @@
 		},
 		{
 			"name": "Proyectos",
-			"url": "/portfolio"
+			"url": "/projects"
 		},
 		{
 			"name": "Galería",
@@ -29,11 +29,11 @@
 		"title": "Mis habilidades",
 		"body": "He construido un sólido entendimiento del desarrollo de videojuegos y otras ramas de la ingeniería informática a través de mis estudios y proyectos personales. He puesto esas habilidades en práctica en varios proyectos."
 	},
-	"portfolio": {
+	"projects": {
 		"title": "Proyectos",
 		"description": "En qué he estado trabajando.",
 		"body": "Adoro crear. Estos son algunos de mis trabajos.",
-		"back": "Volver al Portfolio"
+		"back": "Volver a los proyectos"
 	},
 
 	"gallery": {
