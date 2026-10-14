@@ -82,7 +82,7 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
         <h2 class='h-xl'>{t.projects.title}</h2>
         <p class='muted w-[65%] max-[900px]:w-full mb-6'>{t.projects.body}</p>
 
-		<div class="flex flex-row gap-4 mb-12 max-[750px]:flex-col max-[750px]:!mb-6">
+		<div class="flex flex-row gap-4 mb-12 max-[750px]:flex-col max-[750px]:mb-6!">
             {
                 projects.map(project => (
                     <ProjectPreview
@@ -90,7 +90,7 @@ import contactBanner from '/src/assets/about/abstract-wall.jpg';
                             title = {project.data.title}
                             description = {project.data.description}
                             image = {project.data.image}
-                            tags = {project.data.tags}
+                            roles = {project.data.roles}
                             loading ='lazy'
                     />
                 ))

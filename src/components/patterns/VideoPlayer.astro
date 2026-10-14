@@ -13,9 +13,6 @@ const { id, title, comment } = Astro.props;
 <div>
     <MuxPlayer
         playbackId = {id}
-        metadata = {{
-            video_title: {title},
-        }}
         autoplay = "muted"
         theme = "minimal"
         accent-color = "oklch(62.5% 0.22  257.87)"

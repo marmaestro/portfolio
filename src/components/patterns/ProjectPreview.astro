@@ -16,6 +16,7 @@ if (!images[image]) throw new Error(`"${image}" does not exist in glob: "/src/as
       aria-label='Open project'
       {fullWidth}
       class:list={[
+          'sui-card',
           'project max-[750px]:mb-6',
           '[&_.sui-card-header]:p-0! [&_.sui-card-header_img]:h-auto [&_.sui-card-header_img]:w-full',
           '[&_.sui-card-header_img]:rounded-t-lg [&_.sui-card-header_img]:object-cover',

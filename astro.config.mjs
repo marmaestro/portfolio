@@ -1,17 +1,19 @@
 // noinspection SpellCheckingInspection
 
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 
 import sitemap from '@astrojs/sitemap';
 import icon from 'astro-icon';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import studiocmsUi from '@studiocms/ui';
-import mdx from '@astrojs/mdx';
 
 import webmanifest from 'astro-webmanifest';
 
 import rehypeShiftHeadings from './src/lib/rehypeShiftHeadings.mjs';
+
+import mdx from '@astrojs/mdx';
 
 export default defineConfig({
     siteName: "marmaestro",
@@ -40,39 +42,39 @@ export default defineConfig({
         ]
     },
 
-    integrations: [
-		icon(),
-		react(),
-		sitemap(),
-		studiocmsUi({
-			customCss: 'src/styles/overrides.css',
-			// The integration auto-injects its own default colors/radii/reset
-			// CSS on every page unless told not to — that copy was silently
-			// clobbering this project's customized tokens (src/styles/
-			// studioCmsUi/{colors,radii,resets}.css), which are loaded
-			// manually from Layout.astro/ErrorLayout.astro instead.
-			noInjectCSS: true,
-			noInjectResetCSS: true
-		}),
-		mdx({
-			rehypePlugins: [[rehypeShiftHeadings, 2]]
-		}),
-		webmanifest({
-			name: 'marmaestro',
-			icon: 'src/assets/icon.png',
-			short_name: 'marmaestro',
-			description: "Mar Maestro Momparler's projects site. Game developer.",
-			start_url: '/',
-			lang: 'en',
-			display: 'standalone',
+    markdown: {
+        processor: unified({
+            features: { remarkRehype: true },
+            rehypePlugins: [[rehypeShiftHeadings, 2]]
+        })
+    },
 
-			locales: {
-				es: {
-					name: 'marmaestro',
-					description: "Web projects de Mar Maestro Momparler. Desarrolladora de videojuegos.",
-					start_url: "/es",
-					lang: "es"
-				}
-			}
-		})],
+    integrations: [
+        icon(),
+        react(),
+        sitemap(),
+        studiocmsUi({
+            customCss: 'src/styles/overrides.css',
+            noInjectCSS: true,
+            noInjectResetCSS: true
+		}),
+        webmanifest({
+            name: 'marmaestro',
+            icon: 'src/assets/icon.png',
+            short_name: 'marmaestro',
+            description: "Mar Maestro Momparler's projects site. Game developer.",
+            start_url: '/',
+            lang: 'en',
+            display: 'standalone',
+
+            locales: {
+                es: {
+                    name: 'marmaestro',
+                    description: "Web projects de Mar Maestro Momparler. Desarrolladora de videojuegos.",
+                    start_url: "/es",
+                    lang: "es"
+                }
+            }
+        }),
+        mdx()],
 });
