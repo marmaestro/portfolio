@@ -19,7 +19,7 @@ import { z } from 'astro/zod';
 });*/
 
 const projects = defineCollection({
-    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: '~/../content/projects' }),
+    loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: 'src/content/projects' }),
     schema: z.object({
         title: z.string(),
         subtitle: z.string(),
