@@ -14,7 +14,7 @@ pinned: false
 lang: es
 ---
 
-import { Image } from 'astro:assets';
+import ImageFigure from 'src/components/patterns/ImageFigure.astro';
 import banner from 'src/assets/portfolio/tfg/tfg-banner.gif';
 import cafe from 'src/assets/portfolio/tfg/tfg-cafe.jpg';
 
@@ -32,10 +32,10 @@ El jugador recorre una ciudad desde el punto de vista de R, que explora rincones
 
 La jugabilidad consiste en narración al estilo de novela visual y en monólogos internos, pero la interacción se realiza usando el visor de una cámara y tomando fotografías con ella.
 
-<figure>
-    <Image src={banner} alt='' loading='eager' />
-    <figcaption>La portada del juego, elegida de mi escena favorita</figcaption>
-</figure>
+<ImageFigure
+    src={banner} loading='eager'
+    caption='La portada del juego, elegida de mi escena favorita.'
+/>
 
 ## Trabajo técnico
 
@@ -49,10 +49,10 @@ No todas las ubicaciones pueden visitarse en una sola partida.
 La narrativa está programada en Inky.
 Las reacciones y reflexiones del personaje principal se escribieron para que resulten algo aleatorias, reflejando la inestabilidad mental de R.
 
-<figure>
-    <Image src={cafe} alt='' loading='eager' />
-    <figcaption>Una de las fotografías tomadas para el proyecto, antes de ilustrarla</figcaption>
-</figure>
+<ImageFigure
+    src={cafe} loading='lazy'
+    caption='Una de las fotografías tomadas para el proyecto, antes de ilustrarla.'
+/>
 
 ## El proceso de creación
 

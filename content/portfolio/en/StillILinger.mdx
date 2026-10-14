@@ -14,7 +14,7 @@ pinned: false
 lang: en
 ---
 
-import { Image } from 'astro:assets';
+import ImageFigure from 'src/components/patterns/ImageFigure.astro';
 import banner from 'src/assets/portfolio/tfg/tfg-banner.gif';
 import cafe from 'src/assets/portfolio/tfg/tfg-cafe.jpg';
 
@@ -32,10 +32,10 @@ Players navigate a city through the point of view of R, who explores corners of 
 
 The gameplay consists of visual novel-style narration and self-talk, but interaction is made by using a camera's viewfinder and taking pictures with it.
 
-<figure>
-	<Image src={banner} alt='' loading='eager' />
-	<figcaption>The game cover, selected from my favourite scene</figcaption>
-</figure>
+<ImageFigure
+    src={banner} loading='eager'
+    caption='The game cover, selected from my favourite scene.'
+/>
 
 ## Technical Work
 
@@ -49,10 +49,10 @@ Not every location can be visited in one playthrough.
 Narrative is scripted in Inky.
 The main character's reactions and reflections were written to feel somewhat random, thus matching R's mental instability.
 
-<figure>
-	<Image src={cafe} alt='' loading='eager' />
-	<figcaption>One of the pictures taken for the project, before illustrating it</figcaption>
-</figure>
+<ImageFigure
+	src={cafe} loading='lazy'
+	caption='One of the pictures taken for the project, before illustrating it.'
+/>
 
 ## The Making Of
 
