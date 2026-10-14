@@ -14,9 +14,9 @@ pinned: false
 lang: es
 ---
 
-## Firescale Studios S.L. | marzo - mayo 2025
+## Firescale Studios S.L. | Marzo - Mayo 2025
 
-Prácticas de 35 días como programadora de sistemas en un juego no anunciado, trabajando con <mark>Unity</mark> y <mark>C#</mark>.
+Prácticas de 35 días como programadora de sistemas en un juego no anunciado, trabajando con <mark>Unity</mark> en <mark>C#</mark>.
 
 # Rol
 
@@ -26,21 +26,21 @@ Me incorporaron para implementar sistemas de juego, pero la estructura del proye
 
 # Sobre el proyecto
 
-El proyecto heredó una arquitectura <mark>Game as a Service</mark> (GaaS), con el código del motor y del cliente mezclados en una misma base de código.
+El proyecto heredó una arquitectura *<mark>Game as a Service</mark>* (GaaS), con el código del motor y del cliente mezclados en una misma base de código.
 El Sistema de Objetos<mark>\*</mark> ya no funcionaba fuera de su contexto original.
 
 <mark>\*</mark>El proyecto usa otro término, que sustituyo por _*Objekt*_ para respetar el NDA firmado.
 
-## Lo que hice
+## Mi trabajo
 
-- Desacoplé la clase `Objekt` de Unity con interfaces `IObjektData`, de forma que el motor lee los datos sin saber de dónde provienen.
+- Desacoplé la clase `Objekt` de Unity con interfaces `IObjektData`, de forma que el motor lea datos sin necesidad de conocer o depender de su procedencia.
 - Dividí el código en definiciones de ensamblado para el motor, el cliente y las herramientas de desarrollo.
-Sin esto, los tests no podían ejecutarse.
-- Reemplacé los elementos hardcodeados que mis compañeros habían añadido por las nuevas estructuras de datos.
+Sin esto, los tests no podrían ejecutarse.
+- Reemplacé los elementos *hardcodeados* que mis compañeros habían añadido por las nuevas estructuras de datos.
 
 ## Resultados
 
-Tras mi trabajo, el núcleo "backend" del proyecto quedó desacoplado.
+Tras mi trabajo, el *backend* del proyecto quedó desacoplado.
 Separé el código del motor y del cliente, y reduje la duplicidad.
 A partir de entonces, el equipo pudo ejecutar tests unitarios.
 

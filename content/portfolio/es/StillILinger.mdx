@@ -17,17 +17,17 @@ import ImageFigure from 'src/components/patterns/ImageFigure.astro';
 import banner from 'src/assets/portfolio/tfg/tfg-banner.gif';
 import cafe from 'src/assets/portfolio/tfg/tfg-cafe.jpg';
 
-## Trabajo de fin de grado | junio 2025
+## Trabajo de fin de grado | Junio 2025
 
 # Rol
 
 Este juego fue desarrollado de forma independiente.
-Todos los recursos del juego (excepto las fuentes, la música y los efectos de sonido) fueron creados por mí.
+Todos los recursos del juego (excepto fuentes, música y efectos de sonido) fueron creados por mí.
 
 # Sobre el juego
 
 Still I Linger es un artgame corto en primera persona que explora la depresión y la juventud.
-El jugador recorre una ciudad desde el punto de vista de R, que explora rincones de una ciudad en la que acaba de mudarse.
+El jugador recorre una ciudad desde el punto de vista de R, que explora rincones de una ciudad a la que acaba de mudarse.
 
 La jugabilidad consiste en narración al estilo de novela visual y en monólogos internos, pero la interacción se realiza usando el visor de una cámara y tomando fotografías con ella.
 
@@ -39,13 +39,13 @@ La jugabilidad consiste en narración al estilo de novela visual y en monólogos
 ## Trabajo técnico
 
 Construí un sistema de renderizado con cámaras en varias capas que simula mi Nikon FM2, con la que tomé las fotografías originales.
-La cámara principal del juego renderiza fotografías analógicas, mientras que las cámaras superpuestas gestionan los elementos animados a distintas profundidades con paralaje.
-Tomar fotos activa reflexiones narrativas ramificadas.
+La cámara principal del juego renderiza fotografías analógicas, mientras que las cámaras superpuestas gestionan los elementos animados a distintas profundidades con paralaje (*parallax*).
+Sacar fotos activa reflexiones narrativas ramificadas.
 
 El sistema de navegación entre escenas usa un grafo personalizado (listas enlazadas y BFS modificado) con pasos diarios limitados que representan la capacidad emocional de R.
 No todas las ubicaciones pueden visitarse en una sola partida.
 
-La narrativa está programada en Inky.
+La narrativa está programada en *Inky*.
 Las reacciones y reflexiones del personaje principal se escribieron para que resulten algo aleatorias, reflejando la inestabilidad mental de R.
 
 <ImageFigure
@@ -56,18 +56,18 @@ Las reacciones y reflexiones del personaje principal se escribieron para que res
 ## El proceso de creación
 
 Fotografié 13 ubicaciones de Castellón en una sola mañana soleada, con una cámara manual de 35 mm heredada y película Kodak Ultramax 400.
-Las limitaciones del medio (36 exposiciones, ninguna retroalimentación inmediata, decisiones que no se pueden deshacer) reflejan por sí mismas el tema del juego.
+Las limitaciones del medio (36 exposiciones, sin retroalimentación inmediata, decisiones irreversibles) reflejan por sí mismas el tema del juego.
 
 Este proyecto me sacó mucho de mi zona de confort como programadora.
 Aprendí ilustración y animación por mi cuenta mientras hacía el juego, lo que significó que cada elemento dibujado tardó el doble de lo que había estimado.
 También aprendí a escribir ficción creativa mientras diseñaba un sistema narrativo ramificado.
 
-Fue un proyecto interesante de trabajar.
-Es difícil convertir una experiencia tan personal en algo interactivo sin que resulte explotador o melodramático.
+Fue un proyecto interesante en el que trabajar.
+Es difícil convertir una experiencia tan personal en algo interactivo sin que se sienta excesivo o melodramático.
 
 ## Resultados
 
-Entregué una vertical slice que demuestra todas las mecánicas centrales y los temas narrativos.
+Terminé una vertical slice que muestra todas las mecánicas centrales y los temas narrativos.
 Quizá retome el proyecto en el futuro para seguir trabajando en él.
 
 ---
